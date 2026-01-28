@@ -116,6 +116,24 @@ Torque stripe inspection camera app for maintenance techs.
 - PROACTIVE_OPS_PRD.md has the full plan
 - Synchronicity framework integrated into daily briefs
 
+### VPS Migration (Jan 28)
+- Moving Clawdbot from laptop to VPS for 24/7 uptime
+- VPS: srv1078052.hstgr.cloud / 72.60.175.144
+- systemd service created at /etc/systemd/system/clawdbot.service
+- Workspace at /root/jarvis-workspace/
+- Config at /root/.clawdbot/clawdbot.json
+- **STATUS: Ready to flip — waiting for Mike's go-ahead**
+- After flip: laptop becomes a "node" for local browser/screen access
+
+### Game Theory Engine (Jan 27)
+- Framework: projects/game-theory/FRAMEWORK.md
+- Active games: projects/game-theory/ACTIVE_GAMES.md
+- Game 2: Stardust Racers — Mike's work game at Universal Epic Universe
+  - Mack Rides dual launched coaster, 9 trains, 3rd shift PM inspections
+  - Key: underutilized electrician doing inspection work = paid R&D for FactoryLM
+  - MUST CHECK: employment contract IP clauses
+  - Strategy: be invisible, harvest domain knowledge, build in stealth
+
 ### Google Photos OAuth
 - Project: aismartmeter
 - Account: harperhousebuyers@gmail.com
