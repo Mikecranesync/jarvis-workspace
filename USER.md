@@ -19,7 +19,7 @@
 
 Mike is a software entrepreneur with deep industrial automation roots. He has multiple projects (active and dormant) that need to be audited, prioritized, and shipped.
 
-**Schedule:** Works third shift (nights) — usually active late night / early morning EST.
+**Schedule:** Third shift (nights). Wakes up ~3:00 PM EST, goes to bed ~10:00 AM EST. His "morning" is afternoon, his "evening" is early morning. Peak work hours: 6 PM - 6 AM EST.
 
 **Goal:** Turn existing code and ideas into revenue-generating products.
 

@@ -1,36 +1,70 @@
-# TOOLS.md - Local Notes
+# TOOLS.md - Jarvis Local Notes
 
-Skills define *how* tools work. This file is for *your* specifics — the stuff that's unique to your setup.
+## Configured Skills
 
-## What Goes Here
+### Gemini ♊️
+- **API Key:** Configured in clawdbot.json
+- **Models available:** gemini-2.5-flash, gemini-2.5-pro, gemini-2.0-flash
+- **Use for:** Quick queries, second opinions, cheap token usage
 
-Things like:
-- Camera names and locations
-- SSH hosts and aliases  
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+### Coding Agent 🤖
+- **Status:** Available
+- **Use for:** Spawn sub-agents for complex/long-running coding tasks
 
-## Examples
-
-```markdown
-### Cameras
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
-```
-
-## Why Separate?
-
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+### GitHub
+- **CLI:** `gh` installed and authenticated
+- **Use for:** Repo management, PRs, issues
 
 ---
 
-Add whatever helps you do your job. This is your cheat sheet.
+## Mike's Environment
+
+### Hardware
+- **Main laptop:** Windows, Clawdbot host
+- **Second laptop:** Connected to Micro 820 PLC + push button panel (Factory I/O)
+- **Phone:** Android (RideView testing)
+
+### Projects
+- **FactoryLM:** Industrial AI platform (factorylm.com)
+- **RideView:** Torque stripe inspection camera
+- **Factory I/O:** PLC simulation integration
+
+### GitHub
+- https://github.com/Mikecranesync
+
+---
+
+## Future Skills to Consider
+
+| Skill | What For | Needs |
+|-------|----------|-------|
+| **sag** | Voice TTS output | ElevenLabs API key |
+| **discord** | Community management | Discord bot token |
+| **openai-whisper-api** | Transcribe audio | OpenAI API key |
+
+---
+
+## Hostinger VPS (Production Server)
+
+| Spec | Value |
+|------|-------|
+| **Hostname** | srv1078052.hstgr.cloud |
+| **IP** | 72.60.175.144 |
+| **OS** | Ubuntu 24.04 LTS |
+| **CPU** | 1 core |
+| **RAM** | 4 GB |
+| **Disk** | 50 GB |
+| **Location** | Boston, USA |
+| **SSH User** | root |
+| **Expires** | Feb 21, 2026 (auto-renew ON) |
+
+### Deployed Services (TODO)
+- [ ] Clawdbot (Jarvis)
+- [ ] Rivet-PRO (PLC-Copilot bot)
+- [ ] PostgreSQL
+- [ ] Nginx
+- [ ] Twilio WhatsApp webhook
+
+---
+
+*Updated: 2026-01-26*

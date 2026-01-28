@@ -1,0 +1,58 @@
+# Temporary scripts
+*.pyc
+__pycache__/
+*.db
+*.sh
+fix_*.py
+fix_*.sh
+check_*.py
+check_*.sh
+patch_*.sh
+hide_*.sh
+make_*.sh
+rebrand.sh
+find_routes.sh
+add_*.py
+bot_freemium_patch.py
+current_bot.py
+inventory_repos.py
+test_*.py
+test_*.db
+
+# One-off scripts
+trello_setup.py
+trello_move.py
+trello_add_card.py
+
+# Caddy config fragments
+*.txt
+!README.txt
+
+# HTML exports (keep .md originals)
+*.html
+!projects/factorylm/landing/index.html
+!projects/rideview/web_tool/templates/index.html
+!projects/plc-copilot-landing/*.html
+
+# Test images
+rideview_test/
+
+# Secrets
+trello_board.json
+SECRETS_INVENTORY.md
+projects/rideview/google_auth/credentials.json
+projects/rideview/google_auth/tokens.json
+
+# IDE
+.vscode/
+.idea/
+
+# Embedded git repos (cloned inventories)
+projects/_inventory/
+projects/rivet-pro/
+projects/plc-copilot-landing/
+projects/factorylm-plc-client/
+
+# OS
+Thumbs.db
+.DS_Store
