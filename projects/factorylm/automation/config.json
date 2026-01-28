@@ -1,0 +1,26 @@
+{
+  "trello": {
+    "board_id": "69792938e831d80be34b2a86",
+    "board_name": "FactoryLM Command Center",
+    "board_url": "https://trello.com/b/1tBQLCez/factorylm-command-center",
+    "lists": {
+      "backlog": "697a8a56b001de1b06c33b76",
+      "in_progress": "697a8a57dc04278fbe0b2c68",
+      "review": "697a8a57cd3ec2048393bcc2",
+      "done": "6979293917d20accb7228e84"
+    },
+    "webhook_url": "http://72.60.175.144:8078",
+    "api_key": "55029ab0628e6d7ddc1d15bfbe73222f"
+  },
+  "jarvis": {
+    "vps_host": "72.60.175.144",
+    "telegram_bot": "@JarvisMIO_bot",
+    "telegram_chat_id": "8445149012"
+  },
+  "subagents": {
+    "default_model": "anthropic/claude-sonnet-4-20250514",
+    "research_model": "google/gemini-2.5-flash",
+    "max_concurrent": 5,
+    "timeout_seconds": 1800
+  }
+}
