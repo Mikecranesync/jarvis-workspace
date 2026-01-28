@@ -20,7 +20,31 @@ Turn Mike's code and ideas into shipped products and real money. Think like a se
 
 ## Projects
 
-### FactoryLM Ecosystem (Priority #1)
+### Project Puppeteer / FactoryLM AR (NEW - Priority #1)
+AR glasses for industrial maintenance technicians.
+
+| Aspect | Detail |
+|--------|--------|
+| **Codename** | Puppeteer (Master of Puppets) |
+| **Hardware** | Brilliant Frame glasses ($349) |
+| **Exit Target** | $325M acquisition |
+| **Position** | "TeamViewer for hands-on work" |
+| **Primary Market** | US/EU SMB Industrial |
+| **Secondary Market** | HVAC/MEP Contractors |
+
+**Key Components:**
+- Frame SDK cloned (projects/factorylm/frame-sdk/)
+- Puppeteer bot deployed on VPS (@testbotrivet_bot)
+- Trello automation pipeline (webhook + crons)
+- Market study completed (MARKET-STUDY.md)
+
+**Glasses Status:** Ordered 2x ($698), arriving early March 2026
+
+**Two Jarvis Setup:**
+- Laptop Jarvis: @testbotrivet_bot (local dev, browser)
+- VPS Jarvis: @JarvisMIO_bot (24/7 uptime)
+
+### FactoryLM Ecosystem
 Mike's main product family - industrial AI platform:
 
 | Project | Status | Notes |
