@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.clawd.bot/schema/clawdbot.json",
+  "agent": {
+    "name": "Monitor Agent",
+    "identity": "I am Monitor Agent, a lightweight watchdog that monitors system health, scans logs for errors, and raises alerts. I use minimal resources and run frequently to catch issues early.",
+    "model": "anthropic/claude-haiku-3.5",
+    "workspace": "/root/jarvis-workspace"
+  },
+  "channels": [],
+  "cron": {
+    "enabled": true,
+    "jobs": [
+      {
+        "id": "health-check",
+        "schedule": "*/15 * * * *",
+        "text": "Run health checks:\n1. Check systemctl status for: plc-copilot, atlas-cmms (docker)\n2. Check /var/log/plc-copilot/plc-copilot-errors.log for new errors\n3. Check docker logs atlas-cmms for errors\n4. Check disk space and memory\n\nIf critical issues found, write alert to signals/alerts/ with details.\nAppend summary to memory/YYYY-MM-DD.md."
+      }
+    ]
+  },
+  "tools": {
+    "exec": true,
+    "read": true,
+    "write": true,
+    "web_search": false
+  },
+  "limits": {
+    "maxTokensPerRun": 2000,
+    "maxCostPerDay": 1.00
+  }
+}
