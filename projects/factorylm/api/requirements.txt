@@ -1,0 +1,16 @@
+# FastAPI and ASGI server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Data validation and email handling
+pydantic[email]==2.5.0
+
+# HTTP requests for Telegram notifications
+requests==2.31.0
+
+# Database (SQLite is built into Python)
+# No additional dependencies needed for SQLite
+
+# Development and testing (optional)
+# pytest==7.4.3
+# httpx==0.25.2

@@ -1,0 +1,41 @@
+# FactoryLM — main domain with auto SSL
+factorylm.com, www.factorylm.com {
+	# API endpoints (signup backend)
+	handle /api/* {
+		reverse_proxy localhost:8090
+	}
+
+	# RideView Inspect tool
+	handle /inspect* {
+		reverse_proxy localhost:8002
+	}
+
+	# RideView analyze endpoint
+	handle /analyze* {
+		reverse_proxy localhost:8002
+	}
+
+	# Static assets for RideView
+	handle /static/* {
+		reverse_proxy localhost:8002
+	}
+
+	# Trello Webhook for Jarvis
+	handle /trello-webhook* {
+		reverse_proxy localhost:8078
+	}
+
+	# Landing page (catch-all)
+	handle {
+		root * /opt/factorylm/www
+		file_server
+	}
+
+	encode gzip zstd
+
+	header {
+		Strict-Transport-Security max-age=31536000;
+		X-Content-Type-Options nosniff
+		X-Frame-Options SAMEORIGIN
+	}
+}
