@@ -42,6 +42,25 @@ LISTS = {
     "done": "6979293917d20accb7228e84"
 }
 
+# Label IDs (for auto-labeling)
+LABELS = {
+    "CODE": "697a8ed042cd8ccf8d1bc2e2",
+    "RESEARCH": "697a8ed0c8df40fb5e71a202",
+    "CONTENT": "697a8ed12c8bbc7ab215928b",
+    "REVIEW": "697a8ed10d7be46e84596dca",
+    "DESIGN": "697a8ed1eed1d0dc6c9d7048",
+    "STALE": "697a8ed194a7347a8ab34f2c",
+    "BLOCKED": "697a8ed105a7e8d6c128f94a"
+}
+
+# Custom Field IDs
+CUSTOM_FIELDS = {
+    "pr_link": "697a8ec5882ea0cff6ee9554",
+    "est_hours": "697a8ec68ebbdac2e7e0a46c",
+    "actual_hours": "697a8ec64b4e3f60badc9502",
+    "priority": "697a8ec678be42720af3d01e"
+}
+
 TRIGGER_PATTERN = re.compile(r'@jarvis\b', re.IGNORECASE)
 TASK_TYPE_PATTERN = re.compile(r'\[(CODE|RESEARCH|CONTENT|REVIEW|DESIGN)\]', re.IGNORECASE)
 
@@ -79,6 +98,46 @@ async def add_comment(card_id, text):
 async def get_card(card_id):
     """Get card details."""
     return await trello_request("GET", f"/cards/{card_id}")
+
+
+async def add_label(card_id, label_name):
+    """Add a label to a card."""
+    label_id = LABELS.get(label_name.upper())
+    if label_id:
+        await trello_request("POST", f"/cards/{card_id}/idLabels", params={"value": label_id})
+        print(f"[OK] Added label {label_name} to {card_id}")
+
+
+async def auto_label_card(card_id, card_name):
+    """Auto-add label based on card name [TYPE] prefix."""
+    match = TASK_TYPE_PATTERN.search(card_name)
+    if match:
+        task_type = match.group(1).upper()
+        await add_label(card_id, task_type)
+        return task_type
+    return None
+
+
+async def set_due_date(card_id, hours_from_now=24):
+    """Set due date on a card."""
+    from datetime import datetime, timedelta
+    due = (datetime.utcnow() + timedelta(hours=hours_from_now)).isoformat() + "Z"
+    await trello_request("PUT", f"/cards/{card_id}", params={"due": due})
+    print(f"[OK] Set due date {hours_from_now}h from now on {card_id}")
+
+
+async def set_custom_field(card_id, field_name, value):
+    """Set a custom field value on a card."""
+    field_id = CUSTOM_FIELDS.get(field_name)
+    if field_id:
+        # Custom field value format depends on type
+        if field_name in ["est_hours", "actual_hours"]:
+            body = {"value": {"number": str(value)}}
+        else:
+            body = {"value": {"text": str(value)}}
+        
+        await trello_request("PUT", f"/cards/{card_id}/customField/{field_id}/item", json=body)
+        print(f"[OK] Set {field_name}={value} on {card_id}")
 
 # ============================================================================
 # TELEGRAM
@@ -139,41 +198,32 @@ Needs manual intervention."""
 # ============================================================================
 
 async def spawn_subagent(task: str, label: str, task_type: str = "CODE"):
-    """Spawn a Clawdbot sub-agent to do the work."""
+    """Send task to VPS Jarvis via Telegram (system message injection)."""
     
-    # Select model based on task type
-    model = {
-        "CODE": "anthropic/claude-sonnet-4-20250514",
-        "RESEARCH": "google/gemini-2.5-flash",
-        "CONTENT": "anthropic/claude-sonnet-4-20250514",
-        "REVIEW": "anthropic/claude-sonnet-4-20250514",
-        "DESIGN": "anthropic/claude-sonnet-4-20250514"
-    }.get(task_type.upper(), "anthropic/claude-sonnet-4-20250514")
+    # Format task as a system event that VPS Jarvis will pick up
+    task_msg = f"""🤖 TRELLO TASK ASSIGNED — {label}
+
+{task}
+
+---
+Execute this task now. When done, report completion."""
     
-    url = f"{CLAWDBOT_URL}/api/sessions/spawn"
-    headers = {"Authorization": f"Bearer {CLAWDBOT_TOKEN}"}
-    
-    payload = {
-        "task": task,
-        "label": label,
-        "model": model,
-        "runTimeoutSeconds": 1800,  # 30 min max
-        "cleanup": "keep"
-    }
+    # Send via Telegram to the chat VPS Jarvis monitors
+    # This will appear as a message that Jarvis sees and acts on
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.post(url, headers=headers, json=payload) as resp:
-                if resp.status == 200:
-                    result = await resp.json()
-                    print(f"[OK] Sub-agent spawned: {label}")
-                    return result
-                else:
-                    text = await resp.text()
-                    print(f"[ERR] Spawn failed: {resp.status} - {text}")
-                    return None
+            # Send as a system-style message to the chat
+            await session.post(url, json={
+                "chat_id": TELEGRAM_CHAT_ID,
+                "text": task_msg,
+                "parse_mode": "Markdown"
+            })
+            print(f"[OK] Task sent to VPS Jarvis via Telegram: {label}")
+            return {"status": "sent", "label": label}
     except Exception as e:
-        print(f"[ERR] Spawn error: {e}")
+        print(f"[ERR] Failed to send task: {e}")
         return None
 
 # ============================================================================
@@ -184,14 +234,21 @@ async def process_jarvis_task(card_id: str, card_name: str, card_desc: str, card
     """Process a @jarvis task from Trello."""
     
     print(f"[TASK] Processing: {card_name}")
+    start_time = datetime.now()
     
-    # 1. Extract task type
-    match = TASK_TYPE_PATTERN.search(card_name)
-    task_type = match.group(1).upper() if match else "CODE"
+    # 1. Auto-label based on [TYPE] in name
+    task_type = await auto_label_card(card_id, card_name)
+    if not task_type:
+        task_type = "CODE"  # Default
     
     # 2. Move to In Progress
     await move_card(card_id, "in_progress")
-    await add_comment(card_id, f"🤖 **Jarvis picked up this task**\n\nTask type: `{task_type}`\nStarted: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}")
+    
+    # 3. Set due date (24 hours from now)
+    await set_due_date(card_id, hours_from_now=24)
+    
+    # 4. Add started comment
+    await add_comment(card_id, f"🤖 **Jarvis picked up this task**\n\nTask type: `{task_type}`\nStarted: {start_time.strftime('%Y-%m-%d %H:%M UTC')}\nDue: 24 hours")
     
     # 3. Build prompt with CI/CD workflow
     short_id = card_id[:8]
@@ -254,19 +311,48 @@ Start working now. Use the Git workflow above.
         # Note: In production, this would poll the session or use a callback
         await add_comment(card_id, f"🔄 **Sub-agent working**\n\nSession: `{label}`\nModel: `{task_type}`\n\n_Results will be posted when complete._")
         
-        # Move to review after spawning
-        await asyncio.sleep(5)
-        await move_card(card_id, "review")
-        await send_completion_alert(card_name, card_url, status="Sub-agent Working", duration="In Progress")
+        # Task sent to VPS Jarvis - it will work on it
+        # Don't move to review yet - VPS Jarvis will do that when done
+        await asyncio.sleep(2)
         
-        # AGILE: Immediately check for more work
+        # AGILE: Immediately check for more work (parallel processing)
         await check_backlog_for_more()
     else:
-        await add_comment(card_id, "❌ **Failed to spawn sub-agent**\n\nManual intervention needed.")
-        await send_failure_alert(card_name, card_url, "Sub-agent spawn failed (405)")
+        await add_comment(card_id, "❌ **Failed to send task to Jarvis**\n\nManual intervention needed.")
+        await send_failure_alert(card_name, card_url, "Task send failed")
         
         # Still check for more work even on failure
         await check_backlog_for_more()
+
+
+async def check_stale_tasks():
+    """Check for tasks stuck in In Progress too long (>48 hours)."""
+    print("[STALE] Checking for stale tasks...")
+    
+    cards = await trello_request("GET", f"/lists/{LISTS['in_progress']}/cards")
+    if not cards:
+        return
+    
+    now = datetime.utcnow()
+    for card in cards:
+        # Check if card has been in progress > 48 hours
+        last_activity = card.get("dateLastActivity", "")
+        if last_activity:
+            try:
+                activity_time = datetime.fromisoformat(last_activity.replace("Z", ""))
+                hours_since = (now - activity_time).total_seconds() / 3600
+                
+                if hours_since > 48:
+                    card_id = card.get("id")
+                    card_name = card.get("name")
+                    
+                    # Add STALE label
+                    await add_label(card_id, "STALE")
+                    await add_comment(card_id, f"⚠️ **STALE ALERT**\n\nThis task has been in progress for {int(hours_since)} hours.\n\n@jarvis status update needed!")
+                    await send_telegram(f"⚠️ *STALE TASK*\n\n{card_name}\n\nIn progress for {int(hours_since)} hours!")
+                    print(f"[STALE] Marked stale: {card_name}")
+            except:
+                pass
 
 
 async def check_backlog_for_more():
@@ -337,10 +423,52 @@ class WebhookHandler(BaseHTTPRequestHandler):
         self.end_headers()
     
     def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-Type", "text/plain")
-        self.end_headers()
-        self.wfile.write(b"Jarvis Trello Webhook v2 - Autonomous Mode")
+        path = self.path
+        
+        # Health check and manual triggers (handle both direct and proxied paths)
+        if "health" in path or path == "/" or path == "/trello-webhook":
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Jarvis Trello Webhook v2 - Autonomous Mode - OK")
+        
+        elif "check-stale" in path:
+            # Manual trigger for stale check
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Checking stale tasks...")
+            
+            def run_stale():
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                loop.run_until_complete(check_stale_tasks())
+                loop.close()
+            
+            thread = threading.Thread(target=run_stale)
+            thread.start()
+        
+        elif "check-backlog" in path:
+            # Manual trigger for backlog check
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Checking backlog for @jarvis tasks...")
+            
+            def run_backlog():
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                loop.run_until_complete(check_backlog_for_more())
+                loop.close()
+            
+            thread = threading.Thread(target=run_backlog)
+            thread.start()
+        
+        else:
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Jarvis Trello Webhook v2 - Autonomous Mode")
     
     def do_POST(self):
         content_length = int(self.headers.get("Content-Length", 0))

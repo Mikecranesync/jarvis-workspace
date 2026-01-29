@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.1.25"
+  },
+  "env": {
+    "GEMINI_API_KEY": "AIzaSyAGRt1kKdBygARiiCv7TiA_tpf4hUjtkJI",
+    "GOOGLE_API_KEY": "AIzaSyAGRt1kKdBygARiiCv7TiA_tpf4hUjtkJI",
+    "JARVIS_EMAIL": "jarvis@cranesync.com",
+    "JARVIS_EMAIL_APP_PASSWORD": "bhopohvfpwizchtw",
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "587",
+    "IMAP_HOST": "imap.gmail.com",
+    "IMAP_PORT": "993",
+    "SENDGRID_API_KEY": "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",
+    "TRELLO_API_KEY": "55029ab0628e6d7ddc1d15bfbe73222f",
+    "TRELLO_TOKEN": "ATTA21c9138e8d7ddbdde41f94a969cdab79ec966d5875f4f4b286cdd14d2c7083bb6510E2EF"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-opus-4-5",
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-20250514",
+          "google/gemini-2.5-flash"
+        ]
+      },
+      "imageModel": {
+        "primary": "google/gemini-2.5-flash",
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-20250514"
+        ]
+      },
+      "workspace": "/root/jarvis-workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "heartbeat": {
+        "every": "2m",
+        "target": "telegram",
+        "to": "8445149012"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8,
+        "model": {
+          "primary": "anthropic/claude-sonnet-4-20250514",
+          "fallbacks": [
+            "google/gemini-2.5-flash"
+          ]
+        }
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "botToken": "8519329029:AAEbztWcFXky4P7sB8xouQZRoVQO-aNhwFM",
+      "allowFrom": ["*"],
+      "groupPolicy": "allowlist",
+      "streamMode": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "e4d794504a4e47459ac08b26f5c668677aae6088d7f6a841"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}

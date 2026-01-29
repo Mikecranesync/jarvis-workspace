@@ -29,6 +29,7 @@ import json
 import asyncio
 import logging
 import aiohttp
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -37,6 +38,7 @@ from telegram.ext import (
     CallbackQueryHandler, filters, ContextTypes
 )
 import google.generativeai as genai
+import edge_tts
 
 # ============================================================================
 # CONFIG
@@ -52,6 +54,10 @@ CMMS_PASSWORD = os.getenv("CMMS_PASSWORD", "CraneSync2026!")
 ALLOWED_USERS = {
     8445149012,  # Mike
 }
+
+# Voice settings
+VOICE_ID = "en-US-GuyNeural"  # Male technical voice (can change to en-US-JennyNeural for female)
+VOICE_RATE = "+10%"  # Slightly faster for field use
 
 # Logging
 logging.basicConfig(
@@ -253,9 +259,77 @@ def get_session(user_id: int) -> dict:
             "last_diagnosis": None,
             "last_photo": None,
             "last_equipment": None,
-            "history": []
+            "history": [],
+            "voice_mode": False  # Toggle for voice responses
         }
     return user_sessions[user_id]
+
+
+# ============================================================================
+# TEXT TO SPEECH (Edge TTS - Microsoft Neural Voices)
+# ============================================================================
+
+async def text_to_speech(text: str, voice: str = VOICE_ID) -> str:
+    """Convert text to speech, return path to audio file."""
+    
+    # Clean text for speech (remove markdown, emojis that don't speak well)
+    clean_text = text
+    # Remove markdown formatting
+    for char in ['*', '_', '`', '#', '•']:
+        clean_text = clean_text.replace(char, '')
+    # Replace emojis with spoken equivalents
+    emoji_map = {
+        '📋': '', '🔍': '', '⚠️': 'Warning:', '🔧': '', 
+        '💰': 'Estimated cost:', '✅': '', '❌': 'Error:',
+        '📝': '', '🎤': '', '🥽': ''
+    }
+    for emoji, spoken in emoji_map.items():
+        clean_text = clean_text.replace(emoji, spoken)
+    
+    # Limit length for voice (keep it concise)
+    if len(clean_text) > 1000:
+        clean_text = clean_text[:1000] + "... See text for full details."
+    
+    try:
+        # Create temp file
+        with tempfile.NamedTemporaryFile(suffix='.mp3', delete=False) as f:
+            output_path = f.name
+        
+        # Generate speech
+        communicate = edge_tts.Communicate(clean_text, voice, rate=VOICE_RATE)
+        await communicate.save(output_path)
+        
+        logger.info(f"TTS generated: {len(clean_text)} chars → {output_path}")
+        return output_path
+    except Exception as e:
+        logger.error(f"TTS error: {e}")
+        return None
+
+
+async def send_voice_response(update: Update, text: str, context: ContextTypes.DEFAULT_TYPE):
+    """Send response as voice message + text caption."""
+    
+    audio_path = await text_to_speech(text)
+    
+    if audio_path:
+        try:
+            with open(audio_path, 'rb') as audio:
+                # Send voice with abbreviated text as caption
+                caption = text[:1024] if len(text) <= 1024 else text[:1020] + "..."
+                await update.message.reply_voice(
+                    voice=audio,
+                    caption=caption,
+                    parse_mode='Markdown'
+                )
+            # Cleanup
+            os.unlink(audio_path)
+        except Exception as e:
+            logger.error(f"Voice send error: {e}")
+            # Fall back to text
+            await update.message.reply_text(text, parse_mode='Markdown')
+    else:
+        # Fall back to text
+        await update.message.reply_text(text, parse_mode='Markdown')
 
 # ============================================================================
 # TELEGRAM HANDLERS
@@ -267,7 +341,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if user_id not in ALLOWED_USERS:
         await update.message.reply_text("⛔ Access denied. Contact admin for access.")
         return
-        
+    
+    session = get_session(user_id)
+    voice_status = "🔊 ON" if session["voice_mode"] else "🔇 OFF"
+    
     await update.message.reply_text(
         "🥽 *PUPPETEER ONLINE*\n\n"
         "Industrial AR Assistant ready.\n\n"
@@ -276,12 +353,35 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🎤 Send voice → Voice command\n"
         "💬 Type question → AI response\n\n"
         "*Quick Actions:*\n"
+        "/voice — Toggle voice responses " + voice_status + "\n"
         "/wo — Create work order from last diagnosis\n"
         "/history — View recent diagnoses\n"
         "/status — System status\n\n"
         "_Point. Ask. Fix._",
         parse_mode='Markdown'
     )
+
+
+async def cmd_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Toggle voice mode"""
+    user_id = update.effective_user.id
+    if user_id not in ALLOWED_USERS:
+        return
+    
+    session = get_session(user_id)
+    session["voice_mode"] = not session["voice_mode"]
+    
+    if session["voice_mode"]:
+        msg = "🔊 *Voice Mode ON*\n\nI'll speak my responses. Put your earpiece in!"
+        # Send a test voice
+        await update.message.reply_text(msg, parse_mode='Markdown')
+        audio_path = await text_to_speech("Voice mode activated. I'll guide you through repairs with spoken instructions.")
+        if audio_path:
+            with open(audio_path, 'rb') as audio:
+                await update.message.reply_voice(voice=audio)
+            os.unlink(audio_path)
+    else:
+        await update.message.reply_text("🔇 *Voice Mode OFF*\n\nBack to text responses.", parse_mode='Markdown')
 
 async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Process equipment photo"""
@@ -331,6 +431,10 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
         
+        # Voice response if enabled
+        if session["voice_mode"]:
+            await send_voice_response(update, diagnosis, context)
+        
         logger.info(f"Photo analyzed for user {user_id}")
         
     except Exception as e:
@@ -363,6 +467,11 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ])
         
         await status_msg.edit_text(response.text)
+        
+        # Voice response if enabled (or always for voice input - natural flow)
+        if session["voice_mode"]:
+            await send_voice_response(update, response.text, context)
+        
         logger.info(f"Voice processed for user {user_id}")
         
     except Exception as e:
@@ -386,7 +495,13 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
         context_parts.append(f"Technician asks: {question}")
         
         response = model.generate_content(context_parts)
+        
+        # Text response first
         await update.message.reply_text(response.text)
+        
+        # Voice response if enabled
+        if session["voice_mode"]:
+            await send_voice_response(update, response.text, context)
         
     except Exception as e:
         logger.error(f"Text handler error: {e}")
@@ -539,6 +654,7 @@ def main():
     
     # Handlers
     app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("voice", cmd_voice))
     app.add_handler(CommandHandler("wo", cmd_wo))
     app.add_handler(CommandHandler("history", cmd_history))
     app.add_handler(CommandHandler("status", cmd_status))
