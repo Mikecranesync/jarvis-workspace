@@ -48,6 +48,13 @@ except ImportError:
 # ============================================================================
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyAGRt1kKdBygARiiCv7TiA_tpf4hUjtkJI")
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
+
+# Model selection: "gemini" | "deepseek" | "ollama" | "auto"
+# Auto = try ollama first (free), fallback to deepseek (cheap), then gemini
+MODEL_PROVIDER = os.getenv("MODEL_PROVIDER", "auto")
+
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Thresholds
@@ -55,8 +62,8 @@ BLUR_THRESHOLD = 100  # Laplacian variance below this = blurry
 SIMILARITY_THRESHOLD = 0.95  # Hash similarity above this = duplicate
 MIN_FRAME_INTERVAL = 0.5  # Minimum seconds between frames
 
-# Vision model
-model = genai.GenerativeModel("gemini-2.0-flash-exp")
+# Vision models by provider
+gemini_model = genai.GenerativeModel("gemini-2.0-flash-exp")
 
 # ============================================================================
 # FRAME EXTRACTION
@@ -253,26 +260,120 @@ Output as structured JSON:
 """
 
 
-async def analyze_frame(frame: dict, output_dir: str) -> dict:
-    """Analyze a single frame with vision AI."""
+async def analyze_with_ollama(image_path: str, prompt: str) -> str:
+    """Analyze image with local Ollama (LLaVA)."""
+    try:
+        with open(image_path, "rb") as f:
+            image_b64 = base64.b64encode(f.read()).decode()
+        
+        async with aiohttp.ClientSession() as session:
+            async with session.post(
+                f"{OLLAMA_URL}/api/generate",
+                json={
+                    "model": "llava",  # or llava:13b for better quality
+                    "prompt": prompt,
+                    "images": [image_b64],
+                    "stream": False
+                },
+                timeout=aiohttp.ClientTimeout(total=60)
+            ) as resp:
+                if resp.status == 200:
+                    result = await resp.json()
+                    return result.get("response", "")
+    except Exception as e:
+        print(f"   Ollama failed: {e}")
+    return None
+
+
+async def analyze_with_deepseek(image_path: str, prompt: str) -> str:
+    """Analyze image with DeepSeek VL."""
+    try:
+        with open(image_path, "rb") as f:
+            image_b64 = base64.b64encode(f.read()).decode()
+        
+        async with aiohttp.ClientSession() as session:
+            async with session.post(
+                "https://api.deepseek.com/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "model": "deepseek-chat",  # Use vision model when available
+                    "messages": [
+                        {
+                            "role": "user",
+                            "content": [
+                                {"type": "text", "text": prompt},
+                                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{image_b64}"}}
+                            ]
+                        }
+                    ],
+                    "max_tokens": 2000
+                },
+                timeout=aiohttp.ClientTimeout(total=60)
+            ) as resp:
+                if resp.status == 200:
+                    result = await resp.json()
+                    return result["choices"][0]["message"]["content"]
+    except Exception as e:
+        print(f"   DeepSeek failed: {e}")
+    return None
+
+
+async def analyze_with_gemini(image_path: str, prompt: str) -> str:
+    """Analyze image with Gemini."""
+    try:
+        with open(image_path, "rb") as f:
+            image_data = f.read()
+        
+        response = gemini_model.generate_content([
+            prompt,
+            {"mime_type": "image/jpeg", "data": image_data}
+        ])
+        return response.text
+    except Exception as e:
+        print(f"   Gemini failed: {e}")
+    return None
+
+
+async def analyze_frame(frame: dict, output_dir: str, provider: str = None) -> dict:
+    """Analyze a single frame with vision AI (multi-provider)."""
     
     path = frame["path"]
     extracted_dir = Path(output_dir) / "extracted"
     extracted_dir.mkdir(exist_ok=True)
     
+    provider = provider or MODEL_PROVIDER
+    text = None
+    used_provider = None
+    
     try:
-        # Read image
-        with open(path, "rb") as f:
-            image_data = f.read()
+        # Try providers in order based on setting
+        if provider == "auto":
+            # Try free first, then cheap, then premium
+            text = await analyze_with_ollama(path, EXTRACTION_PROMPT)
+            if text:
+                used_provider = "ollama"
+            else:
+                text = await analyze_with_deepseek(path, EXTRACTION_PROMPT)
+                if text:
+                    used_provider = "deepseek"
+                else:
+                    text = await analyze_with_gemini(path, EXTRACTION_PROMPT)
+                    used_provider = "gemini"
+        elif provider == "ollama":
+            text = await analyze_with_ollama(path, EXTRACTION_PROMPT)
+            used_provider = "ollama"
+        elif provider == "deepseek":
+            text = await analyze_with_deepseek(path, EXTRACTION_PROMPT)
+            used_provider = "deepseek"
+        else:  # gemini or fallback
+            text = await analyze_with_gemini(path, EXTRACTION_PROMPT)
+            used_provider = "gemini"
         
-        # Analyze with Gemini
-        response = model.generate_content([
-            EXTRACTION_PROMPT,
-            {"mime_type": "image/jpeg", "data": image_data}
-        ])
-        
-        # Parse response
-        text = response.text
+        if not text:
+            return {"error": "All providers failed", "source_frame": Path(path).name}
         
         # Try to extract JSON
         if "```json" in text:
@@ -288,6 +389,7 @@ async def analyze_frame(frame: dict, output_dir: str) -> dict:
         # Add metadata
         result["source_frame"] = Path(path).name
         result["timestamp"] = frame.get("timestamp", 0)
+        result["provider"] = used_provider
         
         # Save
         output_path = extracted_dir / f"{Path(path).stem}.json"
@@ -304,7 +406,7 @@ async def analyze_frame(frame: dict, output_dir: str) -> dict:
 async def analyze_all_frames(frames: list, output_dir: str, max_concurrent: int = 5) -> list:
     """Analyze all frames with rate limiting."""
     
-    print(f"🧠 Analyzing {len(frames)} frames with Gemini Vision...")
+    print(f"🧠 Analyzing {len(frames)} frames (provider: {MODEL_PROVIDER})...")
     
     results = []
     for i, frame in enumerate(frames):
@@ -459,8 +561,14 @@ def main():
     parser.add_argument("--output", "-o", default="./output", help="Output directory")
     parser.add_argument("--fps", type=float, default=1.0, help="Frames per second to extract")
     parser.add_argument("--transcribe", "-t", action="store_true", help="Transcribe audio")
+    parser.add_argument("--provider", "-p", default="auto", 
+                       choices=["auto", "ollama", "deepseek", "gemini"],
+                       help="AI provider: auto (free→cheap→premium), ollama (free), deepseek (cheap), gemini")
     
     args = parser.parse_args()
+    
+    global MODEL_PROVIDER
+    MODEL_PROVIDER = args.provider
     
     if not os.path.exists(args.input):
         print(f"Error: Input file not found: {args.input}")
