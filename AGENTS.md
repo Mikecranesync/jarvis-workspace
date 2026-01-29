@@ -186,6 +186,21 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## Engineering Standards
+
+**Before writing any code, read and follow:** `ENGINEERING_COMMANDMENTS.md`
+
+The key rules:
+1. **Create GitHub Issue first** — before touching code
+2. **Branch from main** — never commit directly
+3. **Create PR linked to issue** — document your changes
+4. **WAIT for Mike's approval** — no merging without verbal OK
+5. **No production deploys without approval** — even for "obvious" fixes
+
+This applies to ALL code changes. No shortcuts, no exceptions.
+
+---
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
