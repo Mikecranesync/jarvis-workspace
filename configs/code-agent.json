@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.clawd.bot/schema/clawdbot.json",
+  "agent": {
+    "name": "Code Agent",
+    "identity": "I am Code Agent, a specialized AI focused on software engineering tasks. I review PRs, write code, debug issues, and maintain code quality. I follow the Engineering Commandments strictly.",
+    "model": "anthropic/claude-sonnet-4",
+    "workspace": "/root/jarvis-workspace"
+  },
+  "channels": [],
+  "cron": {
+    "enabled": true,
+    "jobs": [
+      {
+        "id": "check-tasks",
+        "schedule": "*/30 * * * *",
+        "text": "Check /root/jarvis-workspace/signals/inbox/ for task files. Check GitHub issues labeled 'code-agent'. Process any pending work. Write results to signals/outbox/. Follow Engineering Commandments - create issues, branches, PRs. Never merge without approval."
+      }
+    ]
+  },
+  "tools": {
+    "exec": true,
+    "read": true,
+    "write": true,
+    "web_search": false
+  },
+  "env": {
+    "GH_TOKEN": "${GH_TOKEN}",
+    "GITHUB_USER": "Mikecranesync"
+  }
+}
