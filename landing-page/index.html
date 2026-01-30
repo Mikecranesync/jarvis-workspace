@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactoryLM — AI-Powered Diagnostics for Industrial Maintenance Teams</title>
+    <meta name="description" content="Photo any equipment error, get instant diagnosis in 60 seconds. Built by a 20-year industrial maintenance veteran.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        
+        .nav-cta:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+        
+        .hero-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .hero-sub {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 18px;
+            margin-bottom: 48px;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        
+        .step {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .step h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .step p {
+            color: var(--gray);
+        }
+        
+        .step-note {
+            margin-top: 12px;
+            font-size: 14px;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        
+        .feature {
+            padding: 32px;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            transition: all 0.2s;
+        }
+        
+        .feature:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .feature h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .feature p {
+            color: var(--gray);
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            padding: 80px 0;
+            background: var(--dark);
+            color: white;
+        }
+        
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonial blockquote {
+            font-size: 24px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        
+        .testimonial cite {
+            font-style: normal;
+            color: #94a3b8;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+        }
+        
+        .pricing-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 16px 0;
+        }
+        
+        .pricing-card .price span {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--gray);
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin: 24px 0;
+            text-align: left;
+        }
+        
+        .pricing-card li {
+            padding: 8px 0;
+            color: var(--gray);
+        }
+        
+        .pricing-card li::before {
+            content: "✓";
+            color: var(--secondary);
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .pricing-cta {
+            display: block;
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .pricing-cta.primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .pricing-cta.primary:hover {
+            background: var(--primary-dark);
+        }
+        
+        .pricing-cta.secondary {
+            background: var(--light);
+            color: var(--dark);
+        }
+        
+        .pricing-cta.secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+        }
+        
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 24px 0;
+        }
+        
+        .faq-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .faq-item p {
+            color: var(--gray);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .final-cta p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+        
+        .final-cta a {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.2s;
+        }
+        
+        .final-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        footer a {
+            color: var(--gray);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        
+        footer a:hover {
+            color: var(--primary);
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Factory<span>LM</span></a>
+            <a href="https://calendly.com/mike-cranesync/30min" class="nav-cta">Book Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">🔧 Built by a 20-year industrial maintenance veteran</div>
+            <h1>AI-Powered Diagnostics for<br>Industrial Maintenance Teams</h1>
+            <p>Photo any equipment error → Get instant diagnosis, fix steps, and parts needed in 60 seconds.</p>
+            <a href="https://calendly.com/mike-cranesync/30min" class="hero-cta">Book 15-Minute Demo</a>
+            <p class="hero-sub">No credit card required. See it in action.</p>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">From error to fix in under 90 seconds</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>📸 Photo the Error</h3>
+                    <p>Snap a picture of your PLC screen, error code, or fault indicator.</p>
+                    <p class="step-note">Works with Siemens, Allen-Bradley, ABB, Schneider, Mitsubishi & more</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>🤖 FactoryLM Analyzes</h3>
+                    <p>Our AI — trained on 20 years of troubleshooting data — identifies the issue instantly.</p>
+                    <p class="step-note">No more digging through 500-page manuals</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>✅ Get Your Diagnosis</h3>
+                    <p>Receive probable cause, step-by-step fix, and parts needed — all in under 90 seconds.</p>
+                    <p class="step-note">Average downtime saved: 2.3 hours per incident</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">What FactoryLM Does</h2>
+            <p class="section-subtitle">More than just diagnostics</p>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Diagnostics</h3>
+                    <p>AI-powered troubleshooting via photo. Send us an error code, get the fix in 60 seconds.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Maintenance Tracking</h3>
+                    <p>Track work orders, schedule preventive maintenance, manage your team — all in one place.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Knowledge Capture</h3>
+                    <p>Capture tribal knowledge. Every fix becomes searchable. Train new techs 3x faster.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <blockquote>"We had a Siemens fault that would've taken 3-4 hours to diagnose. FactoryLM identified the voltage supply issue in 90 seconds. That's $1,200 in downtime we didn't lose."</blockquote>
+                <cite>— Maintenance Manager, Manufacturing Company</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple Pricing</h2>
+            <p class="section-subtitle">Start free, upgrade when you're ready</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$0<span>/month</span></div>
+                    <ul>
+                        <li>5 diagnoses per month</li>
+                        <li>All equipment brands</li>
+                        <li>Email support</li>
+                        <li>Response time: < 5 min</li>
+                    </ul>
+                    <a href="https://calendly.com/mike-cranesync/30min" class="pricing-cta secondary">Start Free</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Professional</h3>
+                    <div class="price">$99<span>/user/month</span></div>
+                    <ul>
+                        <li>Unlimited diagnoses</li>
+                        <li>Knowledge base</li>
+                        <li>Priority support</li>
+                        <li>Response time: < 90 sec</li>
+                    </ul>
+                    <a href="https://calendly.com/mike-cranesync/30min" class="pricing-cta primary">Start Trial</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul>
+                        <li>Everything in Pro</li>
+                        <li>API access</li>
+                        <li>Dedicated support</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                    <a href="https://calendly.com/mike-cranesync/30min" class="pricing-cta secondary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>What equipment does FactoryLM support?</h3>
+                    <p>FactoryLM works with all major industrial equipment: Siemens, Allen-Bradley (Rockwell), ABB, Schneider Electric, Mitsubishi, Omron, and more. We're adding new equipment weekly.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How accurate is the AI?</h3>
+                    <p>Our pilot customers report 80-85% accuracy on first diagnosis. The AI learns from every interaction, getting smarter over time.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need to install software?</h3>
+                    <p>No. FactoryLM works via Telegram messaging app — no IT approval needed. Just download Telegram (free) and message our bot.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is my data secure?</h3>
+                    <p>Yes. All data is encrypted in transit and at rest. We never share proprietary information. SOC 2 Type II compliance in progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to cut diagnostic time by 70%?</h2>
+            <p>Stop digging through manuals. Start fixing faster.</p>
+            <a href="https://calendly.com/mike-cranesync/30min">Book Your Demo Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>FactoryLM</strong> — Industrial AI for Maintenance Teams</p>
+            <p style="margin-top: 16px;">
+                <a href="https://calendly.com/mike-cranesync/30min">Demo</a>
+                <a href="#pricing">Pricing</a>
+                <a href="mailto:mike@factorylm.com">Contact</a>
+            </p>
+            <p style="margin-top: 24px; font-size: 14px;">© 2026 FactoryLM. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
