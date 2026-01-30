@@ -1,0 +1,171 @@
+{
+  "name": "Lead Import → Mautic",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Check Every 15 Min",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {
+          "range": "A:F"
+        }
+      },
+      "id": "google-sheets",
+      "name": "Get Leads from Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [220, 0],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "filter-processed",
+              "leftValue": "={{ $json.processed }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-new",
+      "name": "Filter New Leads Only",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://mautic:80/api/contacts/new",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"email\": \"{{ $json.email }}\",\n  \"firstname\": \"{{ $json.first_name }}\",\n  \"lastname\": \"{{ $json.last_name }}\",\n  \"company\": \"{{ $json.company }}\",\n  \"title\": \"{{ $json.title }}\",\n  \"tags\": [\"imported\", \"cold-lead\"]\n}",
+        "options": {}
+      },
+      "id": "create-mautic-contact",
+      "name": "Create Mautic Contact",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 0],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "",
+          "name": "Mautic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "chatId": "8445149012",
+        "text": "=📥 New lead imported: {{ $json.first_name }} {{ $json.last_name }} at {{ $json.company }}",
+        "additionalFields": {}
+      },
+      "id": "telegram-notify",
+      "name": "Notify Mike",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [880, 0],
+      "credentials": {
+        "telegramApi": {
+          "id": "",
+          "name": "Telegram Bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Check Every 15 Min": {
+      "main": [
+        [
+          {
+            "node": "Get Leads from Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Leads from Sheet": {
+      "main": [
+        [
+          {
+            "node": "Filter New Leads Only",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter New Leads Only": {
+      "main": [
+        [
+          {
+            "node": "Create Mautic Contact",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Mautic Contact": {
+      "main": [
+        [
+          {
+            "node": "Notify Mike",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=factorylm2026
+      - N8N_HOST=n8n.srv1078052.hstgr.cloud
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://n8n.srv1078052.hstgr.cloud/
+      - GENERIC_TIMEZONE=America/Chicago
+    volumes:
+      - n8n_data:/home/node/.n8n
+    networks:
+      - sales-automation
+
+  mautic:
+    image: mautic/mautic:latest
+    container_name: mautic
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      - MAUTIC_DB_HOST=mautic_db
+      - MAUTIC_DB_USER=mautic
+      - MAUTIC_DB_PASSWORD=mautic2026
+      - MAUTIC_DB_NAME=mautic
+      - MAUTIC_RUN_CRON_JOBS=true
+    volumes:
+      - mautic_data:/var/www/html
+    depends_on:
+      - mautic_db
+    networks:
+      - sales-automation
+
+  mautic_db:
+    image: mariadb:10.6
+    container_name: mautic_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=mautic_root_2026
+      - MYSQL_DATABASE=mautic
+      - MYSQL_USER=mautic
+      - MYSQL_PASSWORD=mautic2026
+    volumes:
+      - mautic_db_data:/var/lib/mysql
+    networks:
+      - sales-automation
+
+networks:
+  sales-automation:
+    driver: bridge
+
+volumes:
+  n8n_data:
+  mautic_data:
+  mautic_db_data:

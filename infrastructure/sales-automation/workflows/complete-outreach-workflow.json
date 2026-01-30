@@ -1,0 +1,118 @@
+{
+  "name": "Complete Sales Outreach Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "new-lead",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook",
+      "name": "New Lead Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "new-lead"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Write a cold outreach email to {{ $json.first_name }} {{ $json.last_name }}, {{ $json.title }} at {{ $json.company }} in the {{ $json.industry }} industry.\\n\\nOur product: FactoryLM - AI-powered maintenance diagnostics. Photo any PLC or VFD error, get the fix in 60 seconds. Reduces diagnostic time by 70%.\\n\\nRequirements:\\n- 100 words max\\n- Conversational, NOT salesy\\n- First line: specific observation about {{ $json.industry }} maintenance challenges\\n- Address ONE pain point: time wasted on manual diagnostics\\n- CTA: 'Worth a quick look? Here's a 2-min demo: [link]'\\n\\nRespond with ONLY valid JSON, no markdown:\\n{\\\"subject\\\": \\\"string\\\", \\\"body\\\": \\\"string\\\"}\"\n    }\n  ]\n}"
+      },
+      "id": "claude",
+      "name": "Claude - Write Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [250, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nconst content = response.content[0].text;\n\n// Parse JSON from Claude\nlet emailData;\ntry {\n  // Try direct parse\n  emailData = JSON.parse(content);\n} catch (e) {\n  // Extract from code block if present\n  const match = content.match(/{[\\s\\S]*}/);\n  if (match) {\n    emailData = JSON.parse(match[0]);\n  } else {\n    throw new Error('Could not parse: ' + content);\n  }\n}\n\n// Merge with original lead data\nconst lead = $('New Lead Webhook').first().json;\nreturn [{\n  json: {\n    ...lead,\n    email_subject: emailData.subject,\n    email_body: emailData.body\n  }\n}];"
+      },
+      "id": "parse",
+      "name": "Parse Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [500, 0]
+    },
+    {
+      "parameters": {
+        "fromEmail": "mike@cranesync.com",
+        "toEmail": "={{ $json.email }}",
+        "subject": "={{ $json.email_subject }}",
+        "text": "={{ $json.email_body }}\n\n--\nMike Harper\nFounder, FactoryLM\nmike@cranesync.com",
+        "options": {
+          "replyTo": "mike@cranesync.com"
+        }
+      },
+      "id": "send-email",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.sendEmail",
+      "typeVersion": 2.1,
+      "position": [750, 0],
+      "credentials": {
+        "smtp": {
+          "id": "",
+          "name": "SendGrid SMTP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "8445149012",
+        "text": "=📧 Email sent to {{ $json.first_name }} {{ $json.last_name }} at {{ $json.company }}\n\nSubject: {{ $json.email_subject }}",
+        "additionalFields": {}
+      },
+      "id": "telegram",
+      "name": "Notify Mike",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [1000, 0]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"status\": \"sent\", \"to\": \"{{ $json.email }}\", \"subject\": \"{{ $json.email_subject }}\"}",
+        "options": {}
+      },
+      "id": "respond",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1000, 200]
+    }
+  ],
+  "connections": {
+    "New Lead Webhook": {
+      "main": [[{"node": "Claude - Write Email", "type": "main", "index": 0}]]
+    },
+    "Claude - Write Email": {
+      "main": [[{"node": "Parse Email", "type": "main", "index": 0}]]
+    },
+    "Parse Email": {
+      "main": [
+        [{"node": "Send Email", "type": "main", "index": 0}],
+        [{"node": "Respond OK", "type": "main", "index": 0}]
+      ]
+    },
+    "Send Email": {
+      "main": [[{"node": "Notify Mike", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {"executionOrder": "v1"}
+}

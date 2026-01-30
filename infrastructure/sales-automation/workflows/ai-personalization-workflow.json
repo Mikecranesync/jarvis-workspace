@@ -1,0 +1,119 @@
+{
+  "name": "AI Email Personalization",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "personalize-email",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "personalize-email"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "={{ $credentials.httpHeaderAuth.value }}"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"Write a cold outreach email to {{ $json.lead_name }} at {{ $json.company_name }} in the {{ $json.industry }} industry.\\n\\nOur product: FactoryLM - AI-powered maintenance diagnostics platform that helps technicians diagnose equipment faults 70% faster.\\n\\nRequirements:\\n- 120 words max\\n- Conversational, non-salesy tone\\n- Specific observation about their industry in first line\\n- One clear pain point addressed\\n- CTA: 'Would a 10-minute demo be helpful?'\\n\\nOutput ONLY valid JSON: {\\\"subject\\\": \\\"string\\\", \\\"body\\\": \\\"string\\\"}\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "id": "claude-api",
+      "name": "Claude API - Generate Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "",
+          "name": "Anthropic API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Claude's response\nconst response = $input.first().json;\nconst content = response.content[0].text;\n\n// Extract JSON from response\ntry {\n  const emailData = JSON.parse(content);\n  return [{ json: emailData }];\n} catch (e) {\n  // Try to extract JSON from markdown code block\n  const jsonMatch = content.match(/```json\\n([\\s\\S]*?)\\n```/) || content.match(/{[\\s\\S]*}/);\n  if (jsonMatch) {\n    const emailData = JSON.parse(jsonMatch[1] || jsonMatch[0]);\n    return [{ json: emailData }];\n  }\n  throw new Error('Could not parse Claude response: ' + content);\n}"
+      },
+      "id": "parse-response",
+      "name": "Parse Claude Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "respond-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [660, 0]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Claude API - Generate Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude API - Generate Email": {
+      "main": [
+        [
+          {
+            "node": "Parse Claude Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Claude Response": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
