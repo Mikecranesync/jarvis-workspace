@@ -2,15 +2,18 @@
   "board_id": "69792944285b43a963e9b858",
   "board_url": "https://trello.com/b/3lxABXX4",
   "lists": {
-    "\ud83d\udce6 Shipped": "697929455129a02ee8f3483c",
-    "\u2705 Done": "6979294563c650cad02d8f08",
-    "\ud83d\udc40 Review / Testing": "6979294559653c80b8f88837",
-    "\ud83c\udfd7\ufe0f In Progress": "697929459d88b2e1f87aceeb",
-    "\ud83d\udccb Backlog": "697929460bc411801260b8f3",
-    "\ud83d\udd2c Research": "69792946726ee75fbdaa8bc8",
-    "\ud83d\udce5 Inbox": "69792946ed623aff9c3288ec"
+    "🎯 Visions": "697b7de0ef5fdd2d4e402384",
+    "📥 Inbox": "69792946ed623aff9c3288ec",
+    "🔬 Research": "69792946726ee75fbdaa8bc8",
+    "📋 Backlog": "697929460bc411801260b8f3",
+    "🏗️ In Progress": "697929459d88b2e1f87aceeb",
+    "👀 Review / Testing": "6979294559653c80b8f88837",
+    "✅ Done": "6979294563c650cad02d8f08",
+    "📦 Shipped": "697929455129a02ee8f3483c"
   },
   "labels": {
+    "Vision": "697b7de7b4c785ee1968e2cb",
+    "Step": "697b7de7a8685f7e58ecef1b",
     "RideView": "697929461d490685eef46acb",
     "Maint-NPC": "697929478d65759397931109",
     "FactoryLM": "697929479ea92018fe396be5",

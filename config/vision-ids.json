@@ -1,0 +1,10 @@
+{
+  "visions": [
+    {"priority": 1, "name": "Landing Pages", "id": "697b80ef92a944d09699da92", "url": "https://trello.com/c/kYSMUr6h", "status": "active"},
+    {"priority": 2, "name": "LinkedIn Content", "id": "697b80efe713ede8585e16d3", "url": "https://trello.com/c/VcTDNx54", "status": "queued"},
+    {"priority": 3, "name": "Home Lab Factory", "id": "697b80f0903198ed9f0481cb", "url": "https://trello.com/c/6j0FV9R8", "status": "queued"},
+    {"priority": 4, "name": "CMMS Demo", "id": "697b80f0f5f38e9b1e107941", "url": "https://trello.com/c/perN7rQF", "status": "queued"},
+    {"priority": 5, "name": "PLC Video Demo", "id": "697b80f1ad38c22fee4c5756", "url": "https://trello.com/c/YkhLTae7", "status": "queued"}
+  ],
+  "currentVision": 1
+}

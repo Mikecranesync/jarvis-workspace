@@ -1,0 +1,74 @@
+name: Constitution Enforcement
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  commandments-check:
+    name: Engineering Commandments
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: "Commandment 1: Check for linked issue"
+        run: |
+          BODY="${{ github.event.pull_request.body }}"
+          if [[ -z "$BODY" ]]; then
+            echo "❌ PR description is empty"
+            exit 1
+          fi
+          if ! echo "$BODY" | grep -qiE "(fix|close|resolve|address|implement)[s]?\s*#[0-9]+"; then
+            echo "❌ PR must link to an issue (e.g., 'Fixes #123')"
+            echo "   Commandment 1: Create GitHub Issue FIRST"
+            exit 1
+          fi
+          echo "✅ Issue linked"
+          
+      - name: "Commandment 2: Check branch naming"
+        run: |
+          BRANCH="${{ github.head_ref }}"
+          if [[ "$BRANCH" == "main" ]]; then
+            echo "❌ Cannot PR from main to main"
+            exit 1
+          fi
+          echo "✅ Branch: $BRANCH"
+          
+      - name: "Amendment III: Check for artifact"
+        run: |
+          # Check if PR includes artifact files
+          FILES=$(gh pr view ${{ github.event.pull_request.number }} --json files -q '.files[].path')
+          if echo "$FILES" | grep -q "artifacts/"; then
+            echo "✅ Artifact included in PR"
+          else
+            echo "⚠️ No artifact file detected (may be code-only PR)"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  commit-message-check:
+    name: Commit Convention
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Check commit message format
+        run: |
+          COMMITS=$(git log --format="%s" origin/main..HEAD)
+          FAILED=0
+          while IFS= read -r msg; do
+            if [[ -n "$msg" ]]; then
+              # Check for [agent-name] prefix or standard prefixes
+              if ! echo "$msg" | grep -qE '^\[.+\]|^(feat|fix|docs|style|refactor|test|chore):'; then
+                echo "❌ Bad commit: $msg"
+                echo "   Expected: [agent-name] action: description"
+                echo "   Or: feat|fix|docs|style|refactor|test|chore: description"
+                FAILED=1
+              else
+                echo "✅ $msg"
+              fi
+            fi
+          done <<< "$COMMITS"
+          exit $FAILED
