@@ -1,0 +1,124 @@
+# Industrial Gateway Configuration
+# Edit this file to configure your PLC connections
+
+gateway:
+  name: "FactoryLM Industrial Gateway"
+  log_level: INFO
+
+# Web interface settings
+web:
+  host: "0.0.0.0"
+  port: 8080
+
+# OPC UA server settings
+opcua:
+  enabled: true
+  endpoint: "opc.tcp://0.0.0.0:4840"
+  name: "IndustrialGateway"
+
+# Device connections
+# Uncomment and configure the devices you want to connect to
+devices:
+  # Example: Modbus TCP device
+  # - name: "modbus_device_1"
+  #   protocol: "modbus_tcp"
+  #   host: "192.168.1.100"
+  #   port: 502
+  #   unit_id: 1
+  #   scan_rate: 1.0  # seconds
+  #   tags:
+  #     - name: "tank_level"
+  #       address: 0
+  #       length: 1
+  #       register_type: "holding"
+  #       data_type: "int16"
+  #       scale: 0.1
+  #     - name: "pump_status"
+  #       address: 10
+  #       register_type: "coil"
+  #       data_type: "bool"
+  
+  # Example: Modbus RTU (Serial) device
+  # - name: "modbus_serial_1"
+  #   protocol: "modbus_rtu"
+  #   port: "/dev/ttyUSB0"
+  #   baudrate: 9600
+  #   parity: "N"
+  #   unit_id: 1
+  #   scan_rate: 1.0
+  #   tags:
+  #     - name: "temperature"
+  #       address: 100
+  #       data_type: "int16"
+  #       scale: 0.1
+  
+  # Example: Siemens S7 PLC
+  # - name: "siemens_plc"
+  #   protocol: "s7"
+  #   host: "192.168.1.50"
+  #   rack: 0
+  #   slot: 1  # Use slot 1 for S7-1200/1500, slot 2 for S7-300/400
+  #   scan_rate: 0.5
+  #   tags:
+  #     - name: "motor_speed"
+  #       area: "DB"
+  #       db_number: 1
+  #       offset: 0
+  #       data_type: "real"
+  #     - name: "start_button"
+  #       area: "I"
+  #       offset: 0
+  #       bit: 0
+  #       data_type: "bool"
+  #     - name: "output_valve"
+  #       area: "Q"
+  #       offset: 0
+  #       bit: 0
+  #       data_type: "bool"
+  
+  # Example: Allen-Bradley CompactLogix/ControlLogix
+  # - name: "allen_bradley"
+  #   protocol: "ethernetip"
+  #   host: "192.168.1.60"
+  #   slot: 0
+  #   plc_type: "logix"
+  #   scan_rate: 0.5
+  #   tags:
+  #     - name: "conveyor_speed"
+  #       plc_tag: "Conveyor_Speed"
+  #     - name: "alarm_active"
+  #       plc_tag: "Alarms.Active"
+  #     - name: "batch_count"
+  #       plc_tag: "Production.BatchCount"
+  
+  # Example: Mitsubishi MELSEC
+  # - name: "mitsubishi_plc"
+  #   protocol: "melsec"
+  #   host: "192.168.1.70"
+  #   port: 5007
+  #   plc_type: "Q"
+  #   scan_rate: 0.5
+  #   tags:
+  #     - name: "data_register"
+  #       device: "D"
+  #       address: 100
+  #       data_type: "word"
+  #     - name: "internal_relay"
+  #       device: "M"
+  #       address: 0
+  #       data_type: "bit"
+
+  # Demo device (uses simulated values for testing)
+  - name: "demo_simulator"
+    protocol: "modbus_tcp"
+    host: "127.0.0.1"
+    port: 5020
+    unit_id: 1
+    scan_rate: 1.0
+    tags:
+      - name: "demo_counter"
+        address: 0
+        data_type: "uint16"
+      - name: "demo_random"
+        address: 1
+        data_type: "uint16"
