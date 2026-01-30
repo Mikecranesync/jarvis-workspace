@@ -215,3 +215,4 @@ Let's build.
 - [Amendment III](./CONSTITUTION_AMENDMENT_3.md) — Proof of Work
 - [Amendment IV](./CONSTITUTION_AMENDMENT_4.md) — Proactive Next Steps
 - [Amendment V](./CONSTITUTION_AMENDMENT_5.md) — Voice-First Communication
+- [Amendment VI](./CONSTITUTION_AMENDMENT_6.md) — One Brand (FactoryLM)
