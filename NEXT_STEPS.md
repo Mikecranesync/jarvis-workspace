@@ -9,7 +9,7 @@
 
 | Task | Started | ETA | Notes |
 |------|---------|-----|-------|
-| Landing Page Research | 04:35 | +20min | Competitor analysis |
+| None | - | - | - |
 
 ---
 
@@ -59,6 +59,7 @@
 - [x] **YCB Video Test** — Manim + templates rendering ✅ *(03:35)*
 - [x] **Data Ingestion Pipeline** — Neon ingest tool created *(03:45)*
 - [x] **Agent Cards** — 5 agents documented *(04:32)*
+- [x] **Landing Page Research** — Competitor analysis done *(04:40)*
 
 ---
 
