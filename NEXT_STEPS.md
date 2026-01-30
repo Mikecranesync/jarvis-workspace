@@ -9,7 +9,7 @@
 
 | Task | Started | ETA | Notes |
 |------|---------|-----|-------|
-| None | - | - | - |
+| Landing Page Research | 04:35 | +20min | Competitor analysis |
 
 ---
 
@@ -32,11 +32,9 @@
   - Autonomy: 🔐 Needs Mike
   - Est: 1 hour
 
-- [ ] **Create Agent Cards** — A2A-style capability declarations for each agent
-  - Depends on: None
-  - Autonomy: 🤖 Autonomous
-  - Est: 30 min
-  - GitHub: #13
+- [x] **Create Agent Cards** — ✅ 5 agents documented in agents/cards/
+  - Completed: 04:32 UTC
+  - GitHub: #15
 
 ### Priority 3
 
@@ -60,6 +58,7 @@
 - [x] **Handoff Protocol** — HANDOFF_PROTOCOL.md created *(03:30)*
 - [x] **YCB Video Test** — Manim + templates rendering ✅ *(03:35)*
 - [x] **Data Ingestion Pipeline** — Neon ingest tool created *(03:45)*
+- [x] **Agent Cards** — 5 agents documented *(04:32)*
 
 ---
 
