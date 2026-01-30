@@ -1,0 +1,61 @@
+{
+  "name": "Code Agent",
+  "description": "Automated coding agent that handles GitHub issues, PRs, and code tasks.",
+  "url": "jarvis://agents/code",
+  "provider": {
+    "organization": "FactoryLM"
+  },
+  "version": "1.0.0",
+  "capabilities": {
+    "modalities": ["text", "code"],
+    "autonomy_level": "medium"
+  },
+  "skills": [
+    {
+      "id": "issue_processing",
+      "name": "Issue Processing",
+      "description": "Processes GitHub issues labeled 'code-agent'"
+    },
+    {
+      "id": "pr_creation",
+      "name": "PR Creation",
+      "description": "Creates pull requests with code changes"
+    },
+    {
+      "id": "code_review",
+      "name": "Code Review",
+      "description": "Reviews open PRs and suggests improvements"
+    },
+    {
+      "id": "bug_fixing",
+      "name": "Bug Fixing",
+      "description": "Analyzes and fixes bugs from error logs"
+    },
+    {
+      "id": "test_writing",
+      "name": "Test Writing",
+      "description": "Writes tests for new code"
+    }
+  ],
+  "triggers": {
+    "cron": "Every 30 minutes via CODE AGENT cron job",
+    "signals": "Task files in signals/inbox/"
+  },
+  "outputs": {
+    "artifacts": ["GitHub issues", "Pull requests", "signals/outbox/*.md"],
+    "notifications": ["telegram (PR ready for review)"]
+  },
+  "workflow": {
+    "1": "Check signals/inbox/ for task files",
+    "2": "Check gh issue list --label 'code-agent'",
+    "3": "Check gh pr list --state open",
+    "4": "Create branch per Engineering Commandments",
+    "5": "Implement fix/feature",
+    "6": "Create PR linked to issue",
+    "7": "Report to signals/outbox/"
+  },
+  "constraints": {
+    "requires_approval": ["PR merge", "production deploy"],
+    "autonomous": ["branch creation", "code writing", "PR creation"]
+  }
+}

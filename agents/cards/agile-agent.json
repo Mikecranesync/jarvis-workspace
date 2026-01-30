@@ -1,0 +1,61 @@
+{
+  "name": "Agile Agent",
+  "description": "Trello board management agent that tracks tasks, moves cards, and maintains backlog.",
+  "url": "jarvis://agents/agile",
+  "provider": {
+    "organization": "FactoryLM"
+  },
+  "version": "1.0.0",
+  "capabilities": {
+    "modalities": ["text"],
+    "autonomy_level": "high"
+  },
+  "skills": [
+    {
+      "id": "backlog_management",
+      "name": "Backlog Management",
+      "description": "Maintains and prioritizes Trello backlog"
+    },
+    {
+      "id": "card_movement",
+      "name": "Card Movement",
+      "description": "Moves cards through workflow (Backlog → In Progress → Done)"
+    },
+    {
+      "id": "task_assignment",
+      "name": "Task Assignment",
+      "description": "Assigns @jarvis tasks to appropriate agents"
+    },
+    {
+      "id": "stale_detection",
+      "name": "Stale Detection",
+      "description": "Identifies stuck tasks and escalates"
+    },
+    {
+      "id": "vision_tracking",
+      "name": "Vision Tracking",
+      "description": "Tracks progress on Vision cards (🎯)"
+    }
+  ],
+  "triggers": {
+    "cron": "Every 5 minutes via Trello check cron job"
+  },
+  "outputs": {
+    "artifacts": ["Trello card updates", "NEXT_STEPS.md updates"],
+    "notifications": ["telegram (@jarvis task found)"]
+  },
+  "board": {
+    "id": "3lxABXX4",
+    "url": "https://trello.com/b/3lxABXX4",
+    "lists": {
+      "backlog": "697b7de0ef5fdd2d4e402384",
+      "in_progress": "697929455129a02ee8f3483c",
+      "done": "6979294563c650cad02d8f08"
+    }
+  },
+  "patterns": {
+    "vision_card": "🎯 prefix",
+    "jarvis_task": "@jarvis or [JARVIS] in name",
+    "priority": "[P1], [P2], [P3] prefix"
+  }
+}
