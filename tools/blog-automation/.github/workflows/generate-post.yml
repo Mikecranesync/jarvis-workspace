@@ -1,0 +1,43 @@
+name: Generate Blog Post
+
+on:
+  schedule:
+    # Run every Monday and Thursday at 9 AM UTC
+    - cron: '0 9 * * 1,4'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Blog post topic'
+        required: true
+        default: 'Siemens S7-1200 Error Codes Complete Guide'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install requests
+      
+      - name: Generate blog post
+        env:
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          mkdir -p posts
+          python generate_post.py "${{ github.event.inputs.topic || 'AI in Industrial Maintenance' }}"
+      
+      - name: Commit and push
+        run: |
+          git config user.name "FactoryLM Bot"
+          git config user.email "bot@factorylm.com"
+          git add posts/
+          git commit -m "📝 New blog post: ${{ github.event.inputs.topic || 'Auto-generated' }}" || exit 0
+          git push
