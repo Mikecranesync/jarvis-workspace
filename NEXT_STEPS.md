@@ -9,7 +9,7 @@
 
 | Task | Started | ETA | Notes |
 |------|---------|-----|-------|
-| Phase 1 Hour 3: YCB Pipeline Test | 05:00 | 05:45 | Local LLM script generation |
+| Phase 2: LinkedIn Content | 05:00 | 06:30 | Post drafts + calendar |
 
 ---
 
@@ -60,6 +60,10 @@
 - [x] **Data Ingestion Pipeline** — Neon ingest tool created *(03:45)*
 - [x] **Agent Cards** — 5 agents documented *(04:32)*
 - [x] **Landing Page Research** — Competitor analysis done *(04:40)*
+- [x] **Competitor Tracking** — Factory AI profiled *(04:45)*
+- [x] **Content Strategy** — Patterns + calendar *(04:55)*
+- [x] **Landing Page Copy** — 3 hero options drafted *(05:00)*
+- [x] **YCB Assessment** — Pipeline viable with cloud LLM *(05:10)*
 
 ---
 
