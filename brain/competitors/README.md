@@ -32,9 +32,9 @@ What makes FactoryLM different:
 
 ## Competitor Profiles
 
+- [MaintainX](./maintainx.md) — Market leader, well-funded
+- [Fiix](./fiix.md) — Rockwell-owned, enterprise focus
 - [Factory AI](./factory-ai.md) — Direct competitor, similar stage
-- [MaintainX](./maintainx.md) — Market leader (TODO)
-- [Fiix](./fiix.md) — Rockwell-owned (TODO)
 
 ---
 
