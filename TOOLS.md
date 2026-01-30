@@ -2,34 +2,65 @@
 
 Skills define *how* tools work. This file is for *your* specifics — the stuff that's unique to your setup.
 
-## What Goes Here
+---
 
-Things like:
-- Camera names and locations
-- SSH hosts and aliases  
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+## Tailscale Network
 
-## Examples
+| Device | Tailscale IP | Name | Status |
+|--------|--------------|------|--------|
+| VPS (Jarvis) | 100.102.30.102 | srv1078052 | Always online |
+| Mike's Laptop | 100.83.251.23 | miguelomaniac | Check before connecting |
+| BeagleBone | TBD | TBD | Pending setup |
 
-```markdown
-### Cameras
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
-
-### SSH
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
+**To connect to Mike's laptop:**
+```bash
+ssh mike@100.83.251.23
 ```
 
-## Why Separate?
+---
 
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+## BeagleBone (Edge Adapter)
+
+| Property | Value |
+|----------|-------|
+| USB IP | 192.168.7.2 |
+| MAC | 64-70-60-ae-f2-07 |
+| WireGuard IP | 10.100.0.10 (pending) |
+| Status | Needs password reset (flash SD) |
+
+---
+
+## Email Accounts
+
+| Account | Purpose | Status |
+|---------|---------|--------|
+| jarvis@cranesync.com | Sending (SMTP) | ⚠️ Needs re-auth |
+| hharperson2000@yahoo.com | Mike's personal | ✅ App password set |
+| mike@cranesync.com | Mike's business | ✅ MailerLite verified |
+
+---
+
+## APIs
+
+| Service | Key Location | Notes |
+|---------|--------------|-------|
+| MailerLite | /root/.config/jarvis/mailerlite.env | Email marketing |
+| Perplexity | /root/.config/jarvis/perplexity.env | Research/search |
+| Trello | clawdbot.json env | Board automation |
+| SendGrid | clawdbot.json env | Backup email send |
+| Calendly | /root/.config/jarvis/calendly.env | Demo scheduling (mike@cranesync.com) |
+
+---
+
+## Cron Jobs Active
+
+- Monitor Agent (15 min)
+- Code Agent (30 min)
+- Trello Check (5 min)
+- Email Strategist (Monday 9am)
+- Email Manager (Friday 5pm)
+- LinkedIn Prep (Monday 9am)
+- Laptop Online Check (5 min)
 
 ---
 
