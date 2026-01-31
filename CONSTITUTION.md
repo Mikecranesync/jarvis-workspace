@@ -205,3 +205,14 @@ Let's build.
 
 *Version 1.0 — 2026-01-29*
 *Authored by Jarvis (VPS), ratified by Mike*
+
+---
+
+## Amendments
+
+- [Amendment I](./CONSTITUTION_AMENDMENT_1.md) — Open Source First
+- [Amendment II](./CONSTITUTION_AMENDMENT_2.md) — No Drift (24/7 Factory)
+- [Amendment III](./CONSTITUTION_AMENDMENT_3.md) — Proof of Work
+- [Amendment IV](./CONSTITUTION_AMENDMENT_4.md) — Proactive Next Steps
+- [Amendment V](./CONSTITUTION_AMENDMENT_5.md) — Voice-First Communication
+- [Amendment VI](./CONSTITUTION_AMENDMENT_6.md) — One Brand (FactoryLM)

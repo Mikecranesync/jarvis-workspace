@@ -1,0 +1,59 @@
+{
+  "name": "Monitor Agent",
+  "description": "System health monitoring agent that checks infrastructure status and alerts on issues.",
+  "url": "jarvis://agents/monitor",
+  "provider": {
+    "organization": "FactoryLM"
+  },
+  "version": "1.0.0",
+  "capabilities": {
+    "modalities": ["text"],
+    "autonomy_level": "high"
+  },
+  "skills": [
+    {
+      "id": "service_health",
+      "name": "Service Health Check",
+      "description": "Checks systemd services (plc-copilot, etc.)"
+    },
+    {
+      "id": "docker_health",
+      "name": "Docker Health Check",
+      "description": "Monitors Docker containers (CMMS, etc.)"
+    },
+    {
+      "id": "resource_monitoring",
+      "name": "Resource Monitoring",
+      "description": "Monitors CPU, memory, and disk usage"
+    },
+    {
+      "id": "log_analysis",
+      "name": "Log Analysis",
+      "description": "Tails error logs for critical issues"
+    },
+    {
+      "id": "alert_generation",
+      "name": "Alert Generation",
+      "description": "Writes alerts to signals/alerts/ when issues detected"
+    }
+  ],
+  "triggers": {
+    "cron": "Every 15 minutes via MONITOR AGENT cron job"
+  },
+  "outputs": {
+    "artifacts": ["signals/alerts/*.md"],
+    "notifications": ["telegram (critical only)"]
+  },
+  "checks": [
+    "systemctl status plc-copilot",
+    "docker ps | grep cmms",
+    "tail /var/log/plc-copilot/plc-copilot-errors.log",
+    "free -h",
+    "df -h /"
+  ],
+  "thresholds": {
+    "memory_critical": "90%",
+    "disk_critical": "90%",
+    "service_down": "immediate alert"
+  }
+}

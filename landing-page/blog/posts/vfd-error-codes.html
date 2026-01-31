@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Common VFD Error Codes and How to Fix Them Fast | FactoryLM</title>
+    <meta name="description" content="The 5 most common VFD faults explained: overcurrent, high bus voltage, undervoltage, ground fault, and input phase fault. Expert troubleshooting tips from 20 years in maintenance.">
+    <meta name="keywords" content="VFD error codes, VFD troubleshooting, variable frequency drive faults, overcurrent fault, ABB VFD, Siemens VFD, Allen-Bradley VFD">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: #1e293b; background: #fff; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        header { padding: 20px 0; border-bottom: 1px solid #e2e8f0; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 800; color: #1e293b; text-decoration: none; }
+        .logo span { color: #2563eb; }
+        nav a { margin-left: 24px; color: #64748b; text-decoration: none; }
+        nav a:hover { color: #2563eb; }
+        article { padding: 60px 0; }
+        .post-header { margin-bottom: 40px; }
+        .post-header h1 { font-size: 36px; line-height: 1.2; margin-bottom: 16px; }
+        .post-meta { color: #64748b; font-size: 14px; }
+        .post-content h2 { font-size: 24px; margin: 40px 0 16px; color: #1e293b; }
+        .post-content h3 { font-size: 20px; margin: 32px 0 12px; color: #334155; }
+        .post-content p { margin-bottom: 20px; color: #475569; }
+        .post-content ul, .post-content ol { margin: 20px 0; padding-left: 24px; color: #475569; }
+        .post-content li { margin-bottom: 8px; }
+        .post-content table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        .post-content th, .post-content td { border: 1px solid #e2e8f0; padding: 12px; text-align: left; }
+        .post-content th { background: #f8fafc; font-weight: 600; }
+        .post-content blockquote { border-left: 4px solid #2563eb; padding-left: 20px; margin: 24px 0; font-style: italic; color: #64748b; }
+        .post-content code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+        .cta-box { background: linear-gradient(135deg, #2563eb, #7c3aed); padding: 32px; border-radius: 12px; color: white; text-align: center; margin: 40px 0; }
+        .cta-box h3 { font-size: 24px; margin-bottom: 12px; }
+        .cta-box p { opacity: 0.9; margin-bottom: 20px; }
+        .cta-box a { display: inline-block; background: white; color: #2563eb; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .author-box { display: flex; align-items: center; gap: 16px; padding: 24px; background: #f8fafc; border-radius: 12px; margin-top: 40px; }
+        .author-box img { width: 64px; height: 64px; border-radius: 50%; background: #e2e8f0; }
+        .author-box h4 { margin-bottom: 4px; }
+        .author-box p { color: #64748b; font-size: 14px; }
+        footer { padding: 40px 0; text-align: center; color: #64748b; border-top: 1px solid #e2e8f0; margin-top: 60px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">Factory<span>LM</span></a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/blog/">Blog</a>
+                <a href="https://calendly.com/mike-cranesync/30min">Demo</a>
+            </nav>
+        </div>
+    </header>
+    
+    <article>
+        <div class="container">
+            <div class="post-header">
+                <h1>5 Common VFD Error Codes and How to Fix Them Fast</h1>
+                <p class="post-meta">January 30, 2026 • 10 min read • By Mike Harper</p>
+            </div>
+            
+            <div class="post-content">
+                <p>Variable Frequency Drives (VFDs) are the workhorses of modern manufacturing. They control motor speed, save energy, and enable precise process control. But when a VFD faults, production stops — and the cryptic error codes don't always make diagnosis easy.</p>
+                
+                <p>After 20 years in industrial maintenance, I've seen every VFD fault imaginable. Here are the 5 most common ones, why they happen, and how to fix them fast.</p>
+                
+                <h2>The Big 5: Most Common VFD Faults</h2>
+                
+                <table>
+                    <tr>
+                        <th>Fault Type</th>
+                        <th>Common Causes</th>
+                        <th>Typical Fix Time</th>
+                    </tr>
+                    <tr>
+                        <td>Overcurrent (OC)</td>
+                        <td>Mechanical overload, undersized drive</td>
+                        <td>15-60 min</td>
+                    </tr>
+                    <tr>
+                        <td>Overvoltage (OV)</td>
+                        <td>Regenerative loads, fast decel</td>
+                        <td>10-30 min</td>
+                    </tr>
+                    <tr>
+                        <td>Undervoltage (UV)</td>
+                        <td>Low line voltage, loose connections</td>
+                        <td>15-45 min</td>
+                    </tr>
+                    <tr>
+                        <td>Ground Fault (GF)</td>
+                        <td>Insulation failure, moisture</td>
+                        <td>30 min - 2 hrs</td>
+                    </tr>
+                    <tr>
+                        <td>Input Phase Loss</td>
+                        <td>Blown fuse, loose wiring</td>
+                        <td>10-30 min</td>
+                    </tr>
+                </table>
+                
+                <h2>1. Overcurrent Fault (OC)</h2>
+                
+                <p><strong>What it means:</strong> The drive detected current exceeding safe limits. This is the #1 most common VFD fault.</p>
+                
+                <h3>Common Causes</h3>
+                <ul>
+                    <li>Motor is mechanically overloaded or jammed</li>
+                    <li>Incorrect motor parameters programmed</li>
+                    <li>Drive is undersized for the application</li>
+                    <li>Acceleration ramp is too aggressive</li>
+                    <li>Short circuit in motor winding or cables</li>
+                </ul>
+                
+                <h3>How to Fix It</h3>
+                <ol>
+                    <li><strong>Check the load:</strong> Can the motor shaft turn freely by hand?</li>
+                    <li><strong>Verify motor parameters:</strong> FLA, voltage, and HP must match nameplate</li>
+                    <li><strong>Measure motor current:</strong> Is it exceeding the drive's rating?</li>
+                    <li><strong>Slow down acceleration:</strong> Increase accel time to reduce inrush</li>
+                    <li><strong>Check wiring:</strong> Megger test motor cables for shorts</li>
+                </ol>
+                
+                <blockquote>Pro tip: If overcurrent happens only at startup, increase your acceleration time by 50%. If it happens during running, check for mechanical binding.</blockquote>
+                
+                <h2>2. Overvoltage Fault (OV / High Bus Voltage)</h2>
+                
+                <p><strong>What it means:</strong> The DC bus voltage exceeded safe limits, usually during deceleration when the motor is generating power back into the drive.</p>
+                
+                <h3>Common Causes</h3>
+                <ul>
+                    <li>Deceleration ramp is too fast</li>
+                    <li>High-inertia load (flywheels, fans, conveyors)</li>
+                    <li>Incoming line voltage spike</li>
+                    <li>Missing or undersized braking resistor</li>
+                </ul>
+                
+                <h3>How to Fix It</h3>
+                <ol>
+                    <li><strong>Increase decel time:</strong> Let the load coast down more slowly</li>
+                    <li><strong>Check line voltage:</strong> Should be within ±10% of nominal</li>
+                    <li><strong>Add/size braking resistor:</strong> For high-inertia applications</li>
+                    <li><strong>Enable DC bus regulation:</strong> Some drives can auto-extend decel</li>
+                </ol>
+                
+                <h2>3. Undervoltage Fault (UV)</h2>
+                
+                <p><strong>What it means:</strong> Input voltage dropped below the drive's minimum threshold.</p>
+                
+                <h3>Common Causes</h3>
+                <ul>
+                    <li>Low utility voltage (brownout)</li>
+                    <li>Voltage drop under load (undersized wiring)</li>
+                    <li>Loose connections at input terminals</li>
+                    <li>Failing input rectifier</li>
+                </ul>
+                
+                <h3>How to Fix It</h3>
+                <ol>
+                    <li><strong>Measure incoming voltage:</strong> Should be within ±10% of nominal</li>
+                    <li><strong>Check during fault:</strong> Voltage may only sag under load</li>
+                    <li><strong>Tighten connections:</strong> Loose terminals cause resistance and voltage drop</li>
+                    <li><strong>Test input rectifier:</strong> Diode check each leg</li>
+                </ol>
+                
+                <h2>4. Ground Fault (GF)</h2>
+                
+                <p><strong>What it means:</strong> Current is leaking to ground, indicating insulation failure somewhere between the drive and motor.</p>
+                
+                <h3>Common Causes</h3>
+                <ul>
+                    <li>Motor winding insulation breakdown</li>
+                    <li>Damaged motor cable (pinched, cut, moisture)</li>
+                    <li>Contamination inside motor (dust, moisture, oil)</li>
+                    <li>VFD-induced bearing currents over time</li>
+                </ul>
+                
+                <h3>How to Fix It</h3>
+                <ol>
+                    <li><strong>Disconnect motor:</strong> Isolate to determine if fault is drive or motor side</li>
+                    <li><strong>Megger test:</strong> Motor windings to ground (should be >1 MΩ)</li>
+                    <li><strong>Inspect cables:</strong> Look for physical damage, moisture ingress</li>
+                    <li><strong>Check motor bearings:</strong> Pitting from shaft currents can ground through grease</li>
+                </ol>
+                
+                <blockquote>Pro tip: If megger reading is borderline, the motor may run fine when cold but fault when hot. Insulation resistance decreases with temperature.</blockquote>
+                
+                <h2>5. Input Phase Loss</h2>
+                
+                <p><strong>What it means:</strong> One of the three input phases is missing or severely unbalanced.</p>
+                
+                <h3>Common Causes</h3>
+                <ul>
+                    <li>Blown input fuse</li>
+                    <li>Loose wire at terminal or disconnect</li>
+                    <li>Upstream breaker issue</li>
+                    <li>Utility phase loss (rare but happens)</li>
+                </ul>
+                
+                <h3>How to Fix It</h3>
+                <ol>
+                    <li><strong>Check fuses:</strong> Visual and continuity check all three</li>
+                    <li><strong>Measure voltage:</strong> All three phases, L-L and L-N</li>
+                    <li><strong>Tighten terminals:</strong> Input power connections</li>
+                    <li><strong>Check upstream:</strong> Verify power at disconnect and breaker</li>
+                </ol>
+                
+                <h2>Quick Reference: Fault Code Cross-Reference</h2>
+                
+                <p>Different manufacturers use different codes for the same faults:</p>
+                
+                <table>
+                    <tr>
+                        <th>Fault</th>
+                        <th>ABB</th>
+                        <th>Siemens</th>
+                        <th>Allen-Bradley</th>
+                    </tr>
+                    <tr>
+                        <td>Overcurrent</td>
+                        <td>OC, 2310</td>
+                        <td>F0001</td>
+                        <td>F12, F13</td>
+                    </tr>
+                    <tr>
+                        <td>Overvoltage</td>
+                        <td>OV, 3210</td>
+                        <td>F0002</td>
+                        <td>F5, F6</td>
+                    </tr>
+                    <tr>
+                        <td>Undervoltage</td>
+                        <td>UV, 3220</td>
+                        <td>F0003</td>
+                        <td>F2, F3</td>
+                    </tr>
+                    <tr>
+                        <td>Ground Fault</td>
+                        <td>GF, 2330</td>
+                        <td>F0011</td>
+                        <td>F14</td>
+                    </tr>
+                    <tr>
+                        <td>Phase Loss</td>
+                        <td>PH, 3130</td>
+                        <td>F0022</td>
+                        <td>F4</td>
+                    </tr>
+                </table>
+                
+                <p><em>Note: Codes vary by model. Always check your specific drive's manual.</em></p>
+                
+                <h2>Faster Diagnostics with AI</h2>
+                
+                <p>Looking up fault codes in manuals takes time. What if you could just snap a photo of the error screen and get the answer in 60 seconds?</p>
+                
+                <p>That's what we built <strong>FactoryLM</strong> to do. Our AI is trained on 20 years of VFD, PLC, and industrial equipment troubleshooting. Photo any error, get the diagnosis and fix steps instantly.</p>
+                
+                <div class="cta-box">
+                    <h3>Stop digging through manuals</h3>
+                    <p>Photo any VFD error → Get the fix in 60 seconds</p>
+                    <a href="https://calendly.com/mike-cranesync/30min">Try FactoryLM Free</a>
+                </div>
+                
+                <h2>Key Takeaways</h2>
+                
+                <ul>
+                    <li><strong>Overcurrent:</strong> Check mechanical load first, then verify parameters</li>
+                    <li><strong>Overvoltage:</strong> Slow down deceleration or add braking resistor</li>
+                    <li><strong>Undervoltage:</strong> Check incoming power and connections</li>
+                    <li><strong>Ground fault:</strong> Megger test motor and cables</li>
+                    <li><strong>Phase loss:</strong> Check fuses and input wiring</li>
+                </ul>
+                
+                <p>The faster you can diagnose, the faster you're back in production. Master these 5 faults and you'll solve 80% of VFD problems.</p>
+                
+                <div class="author-box">
+                    <div style="width:64px;height:64px;background:#2563eb;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:24px;">MH</div>
+                    <div>
+                        <h4>Mike Harper</h4>
+                        <p>Founder of FactoryLM. 20 years in industrial maintenance, specializing in cranes and PLCs. Building AI to help every tech diagnose faster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <footer>
+        <div class="container">
+            <p><strong>FactoryLM</strong> — Industrial AI for Maintenance Teams</p>
+            <p style="margin-top: 8px;">© 2026 FactoryLM. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

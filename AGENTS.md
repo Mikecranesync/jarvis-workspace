@@ -186,6 +186,52 @@ Think of it like a human reviewing their journal and updating their mental model
 
 The goal: Be helpful without being annoying. Check in a few times a day, do useful background work, but respect quiet time.
 
+## 🎯 Vision-to-Trello: Global Operating Pattern
+
+**This applies to EVERYTHING.** All work flows through Trello as visions and steps.
+
+### The Pattern
+1. **Vision** = Big idea, goal, or project (purple label, "🎯 Visions" list)
+2. **Steps** = 5-7 executable tasks broken from vision (sky label, flow through board)
+3. **Autonomous execution** = Jarvis works through steps, moves cards, reports progress
+
+### Commands (via Telegram)
+| Command | Action |
+|---------|--------|
+| `BUILD: [vision]` | Create vision card, break into steps, start working |
+| `STATUS` | Show current vision progress |
+| `PAUSE` | Stop autonomous work |
+| `RESUME` | Continue from where paused |
+| `SKIP [N]` | Skip step N |
+| `COMPLETE VISION` | Mark done, archive |
+
+### Workflow
+```
+BUILD: [idea]
+    ↓
+🎯 Vision Card (tracks progress)
+    ↓
+📋 Step Cards in Backlog
+    ↓
+🏗️ In Progress (one at a time)
+    ↓
+✅ Done (when complete)
+    ↓
+📦 Shipped (vision complete)
+```
+
+### Rules
+- **Everything is a vision** — No ad-hoc work. If it's worth doing, it's worth tracking.
+- **Perplexity for context** — Research before building each step
+- **Approval gates** — Production/PLC/financial steps require Mike's OK
+- **Visible progress** — Board shows what's happening at a glance
+
+### Reference
+- Full implementation: `projects/VISION_TO_TRELLO.md`
+- Trello board: https://trello.com/b/3lxABXX4
+
+---
+
 ## Engineering Standards
 
 **Before writing any code, read and follow:** `ENGINEERING_COMMANDMENTS.md`

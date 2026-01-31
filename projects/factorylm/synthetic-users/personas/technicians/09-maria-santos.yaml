@@ -1,0 +1,68 @@
+id: tech-009
+name: Maria Santos
+role: Maintenance Technician
+experience_years: 4
+industry: Beverage Manufacturing
+company_size: large
+location: Georgia, USA
+language: en
+tech_comfort: high
+age: 29
+
+background: |
+  Maria maintains bottling and canning lines. Fast-paced environment with
+  high uptime requirements. Every minute of downtime costs money. She's
+  efficient and focused on speed.
+
+personality:
+  patience: low
+  detail_orientation: medium
+  tech_adoption: enthusiastic
+  communication_style: fast
+
+pain_points:
+  - "Every second counts when a line is down"
+  - "I need quick access to troubleshooting guides"
+  - "Can't waste time navigating menus"
+  - "Need to log downtime accurately"
+
+goals:
+  - Fastest possible work order completion
+  - Quick access to equipment docs
+  - Accurate downtime tracking
+  - One-tap common actions
+
+devices:
+  primary: iphone
+  secondary: none
+  
+typical_activities:
+  - emergency_work_orders
+  - downtime_logging
+  - quick_parts_lookup
+  - rapid_status_updates
+
+test_scenarios:
+  - name: "Emergency breakdown response"
+    steps:
+      - receive_alert
+      - open_app
+      - find_equipment
+      - view_troubleshooting
+      - log_downtime
+      - complete_repair
+    success_criteria:
+      - under_60_seconds_to_info
+      - downtime_tracked_accurately
+
+frustration_triggers:
+  - slow_loading
+  - too_many_steps
+  - buried_information
+  - mandatory_fields_during_emergency
+
+quotes:
+  - "The line is down, I don't have time for this"
+  - "Where's the quick action button?"
+  - "Can I favorite this equipment?"
+  - "Why does this take so many taps?"

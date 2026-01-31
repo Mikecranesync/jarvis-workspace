@@ -1,0 +1,28 @@
+{
+  "board_id": "69792944285b43a963e9b858",
+  "board_url": "https://trello.com/b/3lxABXX4",
+  "lists": {
+    "🎯 Visions": "697b7de0ef5fdd2d4e402384",
+    "📥 Inbox": "69792946ed623aff9c3288ec",
+    "🔬 Research": "69792946726ee75fbdaa8bc8",
+    "📋 Backlog": "697929460bc411801260b8f3",
+    "🏗️ In Progress": "697929459d88b2e1f87aceeb",
+    "👀 Review / Testing": "6979294559653c80b8f88837",
+    "✅ Done": "6979294563c650cad02d8f08",
+    "📦 Shipped": "697929455129a02ee8f3483c"
+  },
+  "labels": {
+    "Vision": "697b7de7b4c785ee1968e2cb",
+    "Step": "697b7de7a8685f7e58ecef1b",
+    "RideView": "697929461d490685eef46acb",
+    "Maint-NPC": "697929478d65759397931109",
+    "FactoryLM": "697929479ea92018fe396be5",
+    "Infrastructure": "697929471af0af55e841592f",
+    "Marketing": "69792947813d3a72c86b6df4",
+    "Revenue": "697929478108e5bbebb1a726",
+    "Research": "69792948b9d31d0482d3a684",
+    "Bug": "69792948ae6a61db54e9868d"
+  },
+  "key": "55029ab0628e6d7ddc1d15bfbe73222f",
+  "token_prefix": "ATTA21c913..."
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC Programming Best Practices for Maintenance-Friendly Code | FactoryLM</title>
+    <meta name="description" content="Write PLC code that your maintenance team won't curse at 2 AM. Best practices from 20 years of troubleshooting other people's programs.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;line-height:1.8;color:#1e293b}.container{max-width:800px;margin:0 auto;padding:0 24px}header{padding:20px 0;border-bottom:1px solid #e2e8f0}header .container{display:flex;justify-content:space-between;align-items:center}.logo{font-size:24px;font-weight:800;color:#1e293b;text-decoration:none}.logo span{color:#2563eb}nav a{margin-left:24px;color:#64748b;text-decoration:none}article{padding:60px 0}h1{font-size:36px;line-height:1.2;margin-bottom:16px}.post-meta{color:#64748b;font-size:14px;margin-bottom:40px}h2{font-size:24px;margin:40px 0 16px}p{margin-bottom:20px;color:#475569}ul{margin:20px 0;padding-left:24px;color:#475569}li{margin-bottom:8px}code{background:#f1f5f9;padding:2px 6px;border-radius:4px}.cta-box{background:linear-gradient(135deg,#2563eb,#7c3aed);padding:32px;border-radius:12px;color:white;text-align:center;margin:40px 0}.cta-box a{display:inline-block;background:white;color:#2563eb;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px}footer{padding:40px 0;text-align:center;color:#64748b;border-top:1px solid #e2e8f0}</style>
+</head>
+<body>
+    <header><div class="container"><a href="/" class="logo">Factory<span>LM</span></a><nav><a href="/">Home</a><a href="/blog/">Blog</a><a href="https://calendly.com/mike-cranesync/30min">Demo</a></nav></div></header>
+    <article><div class="container">
+        <h1>PLC Programming Best Practices for Maintenance-Friendly Code</h1>
+        <p class="post-meta">January 30, 2026 • 8 min read • By Mike Harper</p>
+        
+        <p>The worst programs I've troubleshot were written by people who never had to maintain them. Here's how to write code that your future self (or the night shift tech) won't curse at 2 AM.</p>
+        
+        <h2>Naming Conventions</h2>
+        <ul>
+            <li><strong>Use descriptive tag names:</strong> <code>Conveyor_1_Motor_Run</code> not <code>M001</code></li>
+            <li><strong>Include location:</strong> <code>Line3_Packer_Jam_Sensor</code></li>
+            <li><strong>Consistent format:</strong> Pick a style and stick to it</li>
+        </ul>
+        
+        <h2>Documentation</h2>
+        <ul>
+            <li><strong>Rung comments:</strong> Explain WHY, not just what</li>
+            <li><strong>Routine descriptions:</strong> What does this routine do?</li>
+            <li><strong>Version history:</strong> Who changed what, when, and why</li>
+        </ul>
+        
+        <h2>Structure</h2>
+        <ul>
+            <li><strong>Modular routines:</strong> One function per routine</li>
+            <li><strong>Consistent order:</strong> Inputs → Logic → Outputs</li>
+            <li><strong>Error handling:</strong> Add fault routines (OB121 in Siemens, fault routine in A-B)</li>
+        </ul>
+        
+        <h2>Maintenance Features</h2>
+        <ul>
+            <li><strong>Diagnostic messages:</strong> Push meaningful alarms to HMI</li>
+            <li><strong>Mode indicators:</strong> Show Auto/Manual/Fault status clearly</li>
+            <li><strong>Override capabilities:</strong> Allow safe manual control for testing</li>
+        </ul>
+        
+        <div class="cta-box">
+            <h3>When the code confuses you</h3>
+            <p>Photo the error → AI explains what's happening</p>
+            <a href="https://calendly.com/mike-cranesync/30min">Try FactoryLM Free</a>
+        </div>
+    </div></article>
+    <footer><div class="container"><p><strong>FactoryLM</strong> — Industrial AI for Maintenance Teams</p></div></footer>
+</body>
+</html>

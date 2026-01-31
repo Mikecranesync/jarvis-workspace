@@ -1,0 +1,370 @@
+{
+  "equipment": {
+    "conveyor": {
+      "sensors": [
+        "motor_speed",
+        "motor_current",
+        "belt_speed",
+        "temperature",
+        "vibration"
+      ],
+      "normal_ranges": {
+        "motor_speed": [
+          1400,
+          1600,
+          "RPM"
+        ],
+        "motor_current": [
+          3.5,
+          5.5,
+          "A"
+        ],
+        "belt_speed": [
+          75,
+          85,
+          "%"
+        ],
+        "temperature": [
+          40,
+          55,
+          "°C"
+        ],
+        "vibration": [
+          0.5,
+          2.0,
+          "mm/s"
+        ]
+      },
+      "faults": [
+        {
+          "name": "belt_jam",
+          "symptoms": {
+            "motor_current": "high",
+            "belt_speed": "low",
+            "motor_speed": "low"
+          },
+          "diagnosis": "Belt jam detected. High motor current with low belt speed indicates mechanical obstruction.",
+          "actions": [
+            "Stop conveyor immediately",
+            "Check for debris or product accumulation",
+            "Inspect belt tension",
+            "Clear obstruction before restart"
+          ]
+        },
+        {
+          "name": "motor_overload",
+          "symptoms": {
+            "motor_current": "high",
+            "temperature": "high"
+          },
+          "diagnosis": "Motor overload condition. Elevated current and temperature suggest excessive load or cooling issue.",
+          "actions": [
+            "Reduce load on conveyor",
+            "Check motor cooling fan",
+            "Verify belt tension is not too tight",
+            "Inspect motor bearings"
+          ]
+        },
+        {
+          "name": "belt_slip",
+          "symptoms": {
+            "motor_speed": "normal",
+            "belt_speed": "low"
+          },
+          "diagnosis": "Belt slippage detected. Motor running but belt not moving at expected speed.",
+          "actions": [
+            "Check belt tension",
+            "Inspect drive pulley for wear",
+            "Look for oil or debris on belt",
+            "Adjust tensioner"
+          ]
+        },
+        {
+          "name": "bearing_failure",
+          "symptoms": {
+            "vibration": "high",
+            "temperature": "high"
+          },
+          "diagnosis": "Possible bearing failure. High vibration and temperature indicate mechanical wear.",
+          "actions": [
+            "Schedule immediate bearing inspection",
+            "Check lubrication levels",
+            "Listen for unusual noise",
+            "Plan bearing replacement"
+          ]
+        }
+      ]
+    },
+    "pump": {
+      "sensors": [
+        "flow_rate",
+        "inlet_pressure",
+        "outlet_pressure",
+        "motor_current",
+        "temperature"
+      ],
+      "normal_ranges": {
+        "flow_rate": [
+          80,
+          120,
+          "GPM"
+        ],
+        "inlet_pressure": [
+          10,
+          20,
+          "PSI"
+        ],
+        "outlet_pressure": [
+          50,
+          80,
+          "PSI"
+        ],
+        "motor_current": [
+          15,
+          25,
+          "A"
+        ],
+        "temperature": [
+          35,
+          50,
+          "°C"
+        ]
+      },
+      "faults": [
+        {
+          "name": "cavitation",
+          "symptoms": {
+            "flow_rate": "low",
+            "inlet_pressure": "low",
+            "vibration": "high"
+          },
+          "diagnosis": "Pump cavitation detected. Low inlet pressure causing vapor bubbles.",
+          "actions": [
+            "Check suction line for blockage",
+            "Verify inlet valve is fully open",
+            "Check fluid level in supply tank",
+            "Inspect impeller for damage"
+          ]
+        },
+        {
+          "name": "seal_leak",
+          "symptoms": {
+            "flow_rate": "low",
+            "outlet_pressure": "low"
+          },
+          "diagnosis": "Possible mechanical seal leak. Pressure loss indicates fluid escaping.",
+          "actions": [
+            "Inspect seal area for leaks",
+            "Check seal faces for wear",
+            "Verify proper seal installation",
+            "Replace seal if damaged"
+          ]
+        }
+      ]
+    },
+    "compressor": {
+      "sensors": [
+        "discharge_pressure",
+        "suction_pressure",
+        "oil_pressure",
+        "temperature",
+        "motor_current"
+      ],
+      "normal_ranges": {
+        "discharge_pressure": [
+          100,
+          150,
+          "PSI"
+        ],
+        "suction_pressure": [
+          20,
+          40,
+          "PSI"
+        ],
+        "oil_pressure": [
+          40,
+          60,
+          "PSI"
+        ],
+        "temperature": [
+          60,
+          90,
+          "°C"
+        ],
+        "motor_current": [
+          30,
+          50,
+          "A"
+        ]
+      },
+      "faults": [
+        {
+          "name": "low_oil",
+          "symptoms": {
+            "oil_pressure": "low",
+            "temperature": "high"
+          },
+          "diagnosis": "Low oil pressure with elevated temperature. Risk of bearing damage.",
+          "actions": [
+            "Check oil level immediately",
+            "Inspect for oil leaks",
+            "Verify oil pump operation",
+            "Add oil if low"
+          ]
+        },
+        {
+          "name": "valve_failure",
+          "symptoms": {
+            "discharge_pressure": "low",
+            "suction_pressure": "high",
+            "temperature": "high"
+          },
+          "diagnosis": "Possible valve failure. Abnormal pressure differential indicates internal leakage.",
+          "actions": [
+            "Inspect discharge valves",
+            "Check suction valves",
+            "Look for valve plate damage",
+            "Plan valve replacement"
+          ]
+        }
+      ]
+    }
+  },
+  "general_knowledge": {
+    "safety_first": "Always follow lockout/tagout procedures before any maintenance.",
+    "documentation": "Log all maintenance activities in the CMMS.",
+    "escalation": "If unsure, escalate to senior technician or engineer."
+  },
+  "fault_patterns": [
+    {
+      "equipment": "conveyor",
+      "fault_name": "belt_jam",
+      "symptoms": {
+        "motor_current": "high",
+        "belt_speed": "low",
+        "motor_speed": "low"
+      },
+      "diagnosis": "Belt jam detected. High motor current with low belt speed indicates mechanical obstruction.",
+      "actions": [
+        "Stop conveyor immediately",
+        "Check for debris or product accumulation",
+        "Inspect belt tension",
+        "Clear obstruction before restart"
+      ]
+    },
+    {
+      "equipment": "conveyor",
+      "fault_name": "motor_overload",
+      "symptoms": {
+        "motor_current": "high",
+        "temperature": "high"
+      },
+      "diagnosis": "Motor overload condition. Elevated current and temperature suggest excessive load or cooling issue.",
+      "actions": [
+        "Reduce load on conveyor",
+        "Check motor cooling fan",
+        "Verify belt tension is not too tight",
+        "Inspect motor bearings"
+      ]
+    },
+    {
+      "equipment": "conveyor",
+      "fault_name": "belt_slip",
+      "symptoms": {
+        "motor_speed": "normal",
+        "belt_speed": "low"
+      },
+      "diagnosis": "Belt slippage detected. Motor running but belt not moving at expected speed.",
+      "actions": [
+        "Check belt tension",
+        "Inspect drive pulley for wear",
+        "Look for oil or debris on belt",
+        "Adjust tensioner"
+      ]
+    },
+    {
+      "equipment": "conveyor",
+      "fault_name": "bearing_failure",
+      "symptoms": {
+        "vibration": "high",
+        "temperature": "high"
+      },
+      "diagnosis": "Possible bearing failure. High vibration and temperature indicate mechanical wear.",
+      "actions": [
+        "Schedule immediate bearing inspection",
+        "Check lubrication levels",
+        "Listen for unusual noise",
+        "Plan bearing replacement"
+      ]
+    },
+    {
+      "equipment": "pump",
+      "fault_name": "cavitation",
+      "symptoms": {
+        "flow_rate": "low",
+        "inlet_pressure": "low",
+        "vibration": "high"
+      },
+      "diagnosis": "Pump cavitation detected. Low inlet pressure causing vapor bubbles.",
+      "actions": [
+        "Check suction line for blockage",
+        "Verify inlet valve is fully open",
+        "Check fluid level in supply tank",
+        "Inspect impeller for damage"
+      ]
+    },
+    {
+      "equipment": "pump",
+      "fault_name": "seal_leak",
+      "symptoms": {
+        "flow_rate": "low",
+        "outlet_pressure": "low"
+      },
+      "diagnosis": "Possible mechanical seal leak. Pressure loss indicates fluid escaping.",
+      "actions": [
+        "Inspect seal area for leaks",
+        "Check seal faces for wear",
+        "Verify proper seal installation",
+        "Replace seal if damaged"
+      ]
+    },
+    {
+      "equipment": "compressor",
+      "fault_name": "low_oil",
+      "symptoms": {
+        "oil_pressure": "low",
+        "temperature": "high"
+      },
+      "diagnosis": "Low oil pressure with elevated temperature. Risk of bearing damage.",
+      "actions": [
+        "Check oil level immediately",
+        "Inspect for oil leaks",
+        "Verify oil pump operation",
+        "Add oil if low"
+      ]
+    },
+    {
+      "equipment": "compressor",
+      "fault_name": "valve_failure",
+      "symptoms": {
+        "discharge_pressure": "low",
+        "suction_pressure": "high",
+        "temperature": "high"
+      },
+      "diagnosis": "Possible valve failure. Abnormal pressure differential indicates internal leakage.",
+      "actions": [
+        "Inspect discharge valves",
+        "Check suction valves",
+        "Look for valve plate damage",
+        "Plan valve replacement"
+      ]
+    }
+  ],
+  "best_practices": [
+    "Check oil levels weekly on rotating equipment",
+    "Inspect belts for wear monthly",
+    "Monitor vibration trends to predict bearing failure",
+    "Keep motor cooling fins clean",
+    "Document all repairs with photos when possible"
+  ]
+}

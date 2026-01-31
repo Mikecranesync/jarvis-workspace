@@ -1,0 +1,68 @@
+# QA Rubrics for LLM-as-Judge
+# Each agent type has specific criteria for artifact approval
+
+social-agent:
+  name: "Social Media Content"
+  criteria:
+    - "Content is relevant to industrial AI, maintenance, or FactoryLM mission"
+    - "Professional tone appropriate for LinkedIn/business audience"
+    - "Includes engagement hook or call-to-action"
+    - "No confidential or proprietary information exposed"
+    - "Correct spelling and grammar"
+    - "Appropriate length (not too long, not too short)"
+  pass_threshold: 5  # Must pass 5 of 6 criteria
+  
+outreach-agent:
+  name: "Sales Outreach"
+  criteria:
+    - "Personalized to recipient (mentions company/role)"
+    - "Clear value proposition stated"
+    - "Professional but human tone (not robotic)"
+    - "Appropriate length (under 150 words for cold outreach)"
+    - "Clear call-to-action or next step"
+    - "No pushy or spammy language"
+  pass_threshold: 5
+
+content-agent:
+  name: "Long-form Content"
+  criteria:
+    - "Accurate technical information"
+    - "Well-structured with clear sections/headers"
+    - "Actionable insights for reader"
+    - "Appropriate for target audience"
+    - "Sources cited where applicable"
+    - "No placeholder text or TODOs"
+    - "Compelling introduction and conclusion"
+  pass_threshold: 6
+
+pr-agent:
+  name: "PR/Media Outreach"
+  criteria:
+    - "Pitch is relevant to show/publication"
+    - "Clear hook or angle stated"
+    - "Credentials/expertise highlighted"
+    - "Appropriate length for pitch format"
+    - "Contact information included"
+    - "No exaggerated claims"
+  pass_threshold: 5
+
+code-agent:
+  name: "Code Changes"
+  criteria:
+    - "Code compiles/runs without errors"
+    - "Follows project style conventions"
+    - "Includes necessary tests or test updates"
+    - "Documentation updated if needed"
+    - "No hardcoded secrets or credentials"
+    - "Commit message follows convention"
+  pass_threshold: 5
+
+research-agent:
+  name: "Research Output"
+  criteria:
+    - "Sources are credible and recent"
+    - "Information is accurate and verifiable"
+    - "Relevant to FactoryLM mission"
+    - "Actionable insights included"
+    - "Well-organized and scannable"
+  pass_threshold: 4

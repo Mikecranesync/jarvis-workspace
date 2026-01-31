@@ -1,0 +1,68 @@
+id: tech-012
+name: Amanda Foster
+role: Maintenance Technician
+experience_years: 2
+industry: Data Center
+company_size: large
+location: Virginia, USA
+language: en
+tech_comfort: very_high
+age: 26
+
+background: |
+  Amanda maintains critical data center infrastructure. Extremely tech-savvy.
+  Works in a high-security environment with strict change management.
+  Everything requires tickets and approvals.
+
+personality:
+  patience: medium
+  detail_orientation: very_high
+  tech_adoption: native
+  communication_style: precise
+
+pain_points:
+  - "Need integration with our ticketing system"
+  - "Change management is critical"
+  - "Everything needs approval chains"
+  - "Audit requirements are intense"
+
+goals:
+  - Ticketing integration
+  - Change management workflow
+  - Approval automation
+  - Audit compliance
+
+devices:
+  primary: iphone
+  secondary: macbook
+  
+typical_activities:
+  - change_requests
+  - approval_workflows
+  - integration_testing
+  - audit_documentation
+
+test_scenarios:
+  - name: "Change management workflow"
+    steps:
+      - create_change_request
+      - attach_impact_assessment
+      - route_for_approval
+      - track_approval_status
+      - execute_after_approval
+    success_criteria:
+      - approval_workflow_exists
+      - audit_trail_complete
+      - integrates_with_existing_tools
+
+frustration_triggers:
+  - no_api_integration
+  - manual_approval_tracking
+  - incomplete_audit_trails
+  - cant_export_for_compliance
+
+quotes:
+  - "Does this have an API?"
+  - "I need to integrate this with ServiceNow"
+  - "Where's the change management module?"
+  - "This needs CAB approval"

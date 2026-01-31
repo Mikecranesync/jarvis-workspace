@@ -1,0 +1,38 @@
+id: eng-004
+name: Jennifer Wang
+role: Reliability Engineer
+experience_years: 6
+industry: Semiconductor
+company_size: large
+location: California, USA
+language: en
+tech_comfort: very_high
+age: 31
+
+background: |
+  Jennifer specializes in cleanroom equipment reliability. Statistical
+  process control. Six Sigma Black Belt. Yield correlation analysis.
+
+personality:
+  patience: high
+  detail_orientation: extreme
+  tech_adoption: native
+  communication_style: statistical
+
+typical_activities:
+  - spc_monitoring
+  - yield_correlation
+  - statistical_analysis
+  - process_improvement
+
+test_scenarios:
+  - name: "Yield correlation analysis"
+    steps:
+      - export_maintenance_data
+      - correlate_with_yield
+      - identify_improvement_areas
+      - track_improvements
+    success_criteria:
+      - data_export_works
+      - statistical_tools_available
+      - improvements_trackable

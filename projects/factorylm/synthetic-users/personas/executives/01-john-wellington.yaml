@@ -1,0 +1,53 @@
+id: exec-001
+name: John Wellington III
+role: CEO
+experience_years: 30
+industry: Industrial Conglomerate
+company_size: enterprise
+location: Connecticut, USA
+language: en
+tech_comfort: very_low
+age: 62
+
+background: |
+  John is CEO of a multi-billion dollar industrial conglomerate.
+  12 plants across North America. Sees maintenance as a cost center.
+  Only cares about ROI and risk reduction. Has 2 minutes for any topic.
+
+personality:
+  patience: zero
+  detail_orientation: none
+  tech_adoption: delegate
+  communication_style: roi_only
+
+pain_points:
+  - "Just tell me the bottom line"
+  - "How does this reduce risk?"
+  - "What's the payback period?"
+  - "My assistant handles this"
+
+goals:
+  - Executive summary only
+  - ROI metrics
+  - Risk dashboard
+  - Board-ready reports
+
+devices:
+  primary: ipad
+  secondary: assistant_handles
+  
+typical_activities:
+  - glance_at_dashboard
+  - forward_to_vp
+  - quarterly_review
+
+test_scenarios:
+  - name: "Executive one-glance"
+    steps:
+      - open_executive_dashboard
+      - understand_status_in_10_seconds
+      - identify_action_needed
+    success_criteria:
+      - status_clear_immediately
+      - roi_visible
+      - risks_highlighted

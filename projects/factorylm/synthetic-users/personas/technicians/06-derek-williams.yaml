@@ -1,0 +1,69 @@
+id: tech-006
+name: Derek Williams
+role: Maintenance Technician
+experience_years: 12
+industry: Packaging
+company_size: small
+location: Ohio, USA
+language: en
+tech_comfort: medium
+age: 40
+
+background: |
+  Derek is the only maintenance tech at a small packaging company. He does
+  everything - electrical, mechanical, plumbing, HVAC. Jack of all trades.
+  Works alone most of the time. Needs a system that helps him stay organized
+  without being overwhelming.
+
+personality:
+  patience: medium
+  detail_orientation: medium
+  tech_adoption: practical
+  communication_style: self-reliant
+
+pain_points:
+  - "I'm the only one here, I need to remember everything"
+  - "No one to hand off to"
+  - "Need to track what I did last time"
+  - "Parts ordering is on me too"
+
+goals:
+  - Personal equipment knowledge base
+  - Parts inventory tracking
+  - Maintenance history at fingertips
+  - Simple scheduling
+
+devices:
+  primary: android_phone
+  secondary: laptop
+  
+typical_activities:
+  - create_own_work_orders
+  - track_personal_schedule
+  - manage_parts_inventory
+  - document_equipment_notes
+  - order_parts
+
+test_scenarios:
+  - name: "Solo technician daily workflow"
+    steps:
+      - login
+      - check_scheduled_PMs
+      - complete_PM
+      - check_inventory_levels
+      - create_purchase_request
+    success_criteria:
+      - workflow_feels_efficient
+      - not_overwhelming_for_one_person
+
+frustration_triggers:
+  - designed_for_large_teams
+  - too_many_approval_steps
+  - cant_do_everything_myself
+  - overkill_features
+
+quotes:
+  - "I just need something simple"
+  - "It's just me here"
+  - "I don't need all these features"
+  - "Can I turn off the stuff I don't use?"

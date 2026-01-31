@@ -1,0 +1,65 @@
+{
+  "name": "Research Agent",
+  "description": "Research and intelligence gathering agent that investigates topics and documents findings.",
+  "url": "jarvis://agents/research",
+  "provider": {
+    "organization": "FactoryLM"
+  },
+  "version": "1.0.0",
+  "capabilities": {
+    "modalities": ["text"],
+    "autonomy_level": "high"
+  },
+  "skills": [
+    {
+      "id": "web_search",
+      "name": "Web Search",
+      "description": "Searches web via Brave API for information"
+    },
+    {
+      "id": "content_fetch",
+      "name": "Content Fetch",
+      "description": "Fetches and extracts content from URLs"
+    },
+    {
+      "id": "competitive_analysis",
+      "name": "Competitive Analysis",
+      "description": "Analyzes competitor products and strategies"
+    },
+    {
+      "id": "technology_research",
+      "name": "Technology Research",
+      "description": "Researches tools, frameworks, and best practices"
+    },
+    {
+      "id": "documentation",
+      "name": "Documentation",
+      "description": "Documents findings in brain/research/ folder"
+    },
+    {
+      "id": "knowledge_ingestion",
+      "name": "Knowledge Ingestion",
+      "description": "Ingests research into Neon vector database"
+    }
+  ],
+  "triggers": {
+    "cron": "Every 4 hours via Research Agent cron job",
+    "on_demand": "When Orchestrator delegates research task"
+  },
+  "outputs": {
+    "artifacts": ["brain/research/*.md", "Neon knowledge_atoms"],
+    "notifications": ["telegram (research complete)"]
+  },
+  "workflow": {
+    "1": "Receive research topic/question",
+    "2": "Search web (30+ min per Amendment I)",
+    "3": "Fetch and analyze top sources",
+    "4": "Document findings in markdown",
+    "5": "Ingest into Neon via neon_ingest.py",
+    "6": "Report summary to requester"
+  },
+  "constitutional_alignment": {
+    "primary": "Amendment I - Open Source First",
+    "requirement": "30+ minutes search before building"
+  }
+}

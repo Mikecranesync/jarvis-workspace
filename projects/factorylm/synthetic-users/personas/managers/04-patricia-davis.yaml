@@ -1,0 +1,56 @@
+id: mgr-004
+name: Patricia Davis
+role: Maintenance Manager
+experience_years: 8
+industry: Healthcare Facility
+company_size: medium
+location: Florida, USA
+language: en
+tech_comfort: high
+age: 39
+
+background: |
+  Patricia manages maintenance for a hospital. Life safety systems are
+  critical. Joint Commission compliance required. Balance between
+  patient care disruption and maintenance needs.
+
+personality:
+  patience: high
+  detail_orientation: extreme
+  tech_adoption: required
+  communication_style: careful
+
+pain_points:
+  - "Can't disrupt patient care"
+  - "Life safety inspections are complex"
+  - "Joint Commission requirements"
+  - "Emergency response tracking"
+
+goals:
+  - Life safety compliance
+  - Minimal disruption scheduling
+  - Emergency response logs
+  - Joint Commission readiness
+
+devices:
+  primary: laptop
+  secondary: iphone
+  
+typical_activities:
+  - life_safety_scheduling
+  - compliance_tracking
+  - emergency_response
+  - vendor_management
+  - inspection_coordination
+
+test_scenarios:
+  - name: "Joint Commission preparation"
+    steps:
+      - run_compliance_report
+      - verify_life_safety_tests
+      - review_documentation
+      - identify_gaps
+    success_criteria:
+      - compliance_status_clear
+      - gaps_identified
+      - documentation_complete

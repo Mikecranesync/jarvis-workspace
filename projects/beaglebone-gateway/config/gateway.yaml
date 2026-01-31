@@ -1,0 +1,116 @@
+# Industrial Protocol Gateway Configuration
+# BeagleBone Edge Deployment
+
+gateway:
+  name: FactoryLM Edge Gateway
+  log_level: INFO
+  version: "1.0.0"
+
+web:
+  host: "0.0.0.0"
+  port: 8080
+  
+opcua:
+  enabled: true
+  endpoint: "opc.tcp://0.0.0.0:4840"
+  name: "FactoryLMGateway"
+  namespace: "http://factorylm.com/gateway"
+
+# ShopTalk AI Integration
+shoptalk:
+  enabled: true
+  model_path: "/opt/factorylm/models/conveyor.json"
+  language: "es"  # Default to Spanish
+  voice_enabled: true
+  anomaly_cooldown: 30  # seconds between voice alerts
+
+# Device configurations
+devices:
+  # Factory I/O Simulation (Modbus TCP)
+  - name: factory_io
+    protocol: modbus_tcp
+    host: "192.168.1.100"  # Factory I/O PC
+    port: 502
+    scan_rate: 0.1  # 100ms polling
+    timeout: 3.0
+    tags:
+      - name: motor_speed
+        address: 0
+        register_type: input_register
+        scale: 0.1
+        unit: "RPM"
+      - name: motor_current
+        address: 1
+        register_type: input_register
+        scale: 0.01
+        unit: "A"
+      - name: conveyor_speed
+        address: 2
+        register_type: input_register
+        scale: 1.0
+        unit: "%"
+      - name: temperature
+        address: 3
+        register_type: input_register
+        scale: 0.1
+        unit: "°C"
+      - name: sensor_1
+        address: 0
+        register_type: discrete_input
+      - name: sensor_2
+        address: 1
+        register_type: discrete_input
+      - name: sensor_3
+        address: 2
+        register_type: discrete_input
+      - name: sensor_4
+        address: 3
+        register_type: discrete_input
+      - name: motor_run_cmd
+        address: 0
+        register_type: coil
+      - name: conveyor_run_cmd
+        address: 1
+        register_type: coil
+
+  # Allen-Bradley Micro820 (example config)
+  # - name: plc_micro820
+  #   protocol: ethernetip
+  #   host: "192.168.1.50"
+  #   slot: 0
+  #   scan_rate: 0.5
+  #   tags:
+  #     - name: MainMotor_Speed
+  #       address: "Program:MainProgram.MainMotor_Speed"
+  #       data_type: REAL
+
+  # Siemens S7-1200 (example config)
+  # - name: plc_s7_1200
+  #   protocol: s7
+  #   host: "192.168.1.60"
+  #   rack: 0
+  #   slot: 1
+  #   scan_rate: 0.5
+  #   tags:
+  #     - name: DB1_Motor_Speed
+  #       address: "DB1.DBD0"
+  #       data_type: REAL
+
+# Data logging configuration
+logging:
+  enabled: true
+  path: "/opt/factorylm/data"
+  format: "csv"  # csv or jsonl
+  rotate_size_mb: 100
+  retention_days: 30
+
+# Alerts configuration
+alerts:
+  enabled: true
+  email:
+    enabled: false
+  telegram:
+    enabled: false
+  webhook:
+    enabled: false
+    url: ""

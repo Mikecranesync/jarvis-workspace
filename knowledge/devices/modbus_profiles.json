@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "description": "Modbus device profiles for auto-discovery",
+  "profiles": {
+    "generic_vfd": {
+      "name": "Generic VFD",
+      "vendor": "Various",
+      "protocol": "modbus_tcp",
+      "default_port": 502,
+      "slave_ids": [1, 2, 3],
+      "registers": {
+        "40001": {"name": "output_frequency", "unit": "Hz", "type": "uint16", "scale": 0.1},
+        "40002": {"name": "output_current", "unit": "A", "type": "uint16", "scale": 0.1},
+        "40003": {"name": "output_voltage", "unit": "V", "type": "uint16", "scale": 0.1},
+        "40004": {"name": "motor_speed", "unit": "RPM", "type": "uint16", "scale": 1},
+        "40005": {"name": "dc_bus_voltage", "unit": "V", "type": "uint16", "scale": 0.1}
+      }
+    },
+    "schneider_m340": {
+      "name": "Schneider Modicon M340",
+      "vendor": "Schneider Electric",
+      "protocol": "modbus_tcp",
+      "default_port": 502,
+      "identification": {
+        "vendor_name": "Schneider Electric",
+        "product_code_pattern": "BMX.*"
+      },
+      "registers": {
+        "40001": {"name": "system_status", "type": "uint16"},
+        "40100": {"name": "analog_input_1", "type": "int16", "scale": 0.01},
+        "40101": {"name": "analog_input_2", "type": "int16", "scale": 0.01}
+      }
+    },
+    "allen_bradley_micro800": {
+      "name": "Allen-Bradley Micro800",
+      "vendor": "Rockwell Automation",
+      "protocol": "ethernet_ip",
+      "default_port": 44818,
+      "auto_discovery": true,
+      "notes": "Use pycomm3 for automatic tag enumeration"
+    },
+    "siemens_s7_1200": {
+      "name": "Siemens S7-1200",
+      "vendor": "Siemens",
+      "protocol": "opcua",
+      "default_port": 4840,
+      "auto_discovery": true,
+      "notes": "Enable OPC-UA server in TIA Portal"
+    },
+    "factory_io": {
+      "name": "Factory I/O Simulation",
+      "vendor": "Real Games",
+      "protocol": "modbus_tcp",
+      "default_port": 502,
+      "slave_ids": [1],
+      "registers": {
+        "0": {"name": "conveyor_running", "type": "coil"},
+        "1": {"name": "sensor_entry", "type": "coil"},
+        "2": {"name": "sensor_exit", "type": "coil"},
+        "40001": {"name": "conveyor_speed", "type": "uint16", "scale": 1},
+        "40002": {"name": "item_count", "type": "uint16"}
+      }
+    }
+  }
+}

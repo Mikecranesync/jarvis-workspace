@@ -1,0 +1,66 @@
+{
+  "name": "Jarvis Orchestrator",
+  "description": "Primary AI assistant coordinating all Jarvis agents and handling direct user interactions.",
+  "url": "jarvis://orchestrator",
+  "provider": {
+    "organization": "FactoryLM",
+    "contact": "mike@cranesync.com"
+  },
+  "version": "1.0.0",
+  "capabilities": {
+    "modalities": ["text", "voice"],
+    "platforms": ["telegram", "signal", "discord"],
+    "autonomy_level": "high"
+  },
+  "skills": [
+    {
+      "id": "task_delegation",
+      "name": "Task Delegation",
+      "description": "Delegates tasks to specialized agents based on type and priority"
+    },
+    {
+      "id": "user_interaction",
+      "name": "User Interaction",
+      "description": "Handles direct conversations with Mike via messaging platforms"
+    },
+    {
+      "id": "context_management",
+      "name": "Context Management",
+      "description": "Maintains session context and memory across interactions"
+    },
+    {
+      "id": "file_operations",
+      "name": "File Operations",
+      "description": "Read, write, and edit files in the workspace"
+    },
+    {
+      "id": "shell_execution",
+      "name": "Shell Execution",
+      "description": "Execute shell commands for system operations"
+    },
+    {
+      "id": "web_research",
+      "name": "Web Research",
+      "description": "Search and fetch web content for research tasks"
+    },
+    {
+      "id": "code_generation",
+      "name": "Code Generation",
+      "description": "Write and modify code following Engineering Commandments"
+    }
+  ],
+  "triggers": {
+    "direct_message": "User sends message via configured channel",
+    "heartbeat": "5-minute interval heartbeat poll",
+    "cron": "Scheduled tasks via cron jobs"
+  },
+  "outputs": {
+    "artifacts": ["markdown", "code", "json", "voice"],
+    "notifications": ["telegram", "signal"],
+    "storage": ["workspace files", "github", "neon"]
+  },
+  "constitutional_alignment": {
+    "primary": "Article III - Proactive Agency",
+    "secondary": ["Article V - Boundaries", "Article VII - Transparency"]
+  }
+}

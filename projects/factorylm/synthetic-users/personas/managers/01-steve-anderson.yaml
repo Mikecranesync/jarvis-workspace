@@ -1,0 +1,57 @@
+id: mgr-001
+name: Steve Anderson
+role: Maintenance Manager
+experience_years: 20
+industry: Food Manufacturing
+company_size: large
+location: Wisconsin, USA
+language: en
+tech_comfort: medium
+age: 50
+
+background: |
+  Steve manages a team of 12 technicians across two shifts. Responsible for
+  KPIs, scheduling, and budgets. Reports to plant manager weekly. Needs
+  visibility into team performance and equipment health.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: practical
+  communication_style: management
+
+pain_points:
+  - "I can't see what my team is doing"
+  - "Reports take hours to compile"
+  - "Budget tracking is in spreadsheets"
+  - "No visibility into backlog"
+
+goals:
+  - Team dashboard
+  - Automated reporting
+  - Budget tracking
+  - Backlog management
+
+devices:
+  primary: laptop
+  secondary: iphone
+  
+typical_activities:
+  - assign_work_orders
+  - review_team_performance
+  - generate_reports
+  - manage_schedule
+  - track_budget
+
+test_scenarios:
+  - name: "Manager daily review"
+    steps:
+      - login
+      - view_team_dashboard
+      - check_overdue_work_orders
+      - review_KPIs
+      - assign_priorities
+    success_criteria:
+      - dashboard_shows_team_status
+      - overdue_items_visible
+      - can_assign_work

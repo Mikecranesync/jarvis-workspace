@@ -1,0 +1,11 @@
+first_name,last_name,email,company,title,industry,website,processed
+John,Smith,jsmith@acmemfg.com,Acme Manufacturing,Maintenance Manager,Manufacturing,acmemfg.com,
+Sarah,Johnson,sjohnson@precisiontools.com,Precision Tools Inc,Plant Engineer,Tooling,precisiontools.com,
+Mike,Williams,mwilliams@steelworks.com,SteelWorks Corp,Reliability Engineer,Steel,steelworks.com,
+Lisa,Davis,ldavis@packagingsolutions.com,Packaging Solutions,Maintenance Supervisor,Packaging,packagingsolutions.com,
+Tom,Anderson,tanderson@foodprocessing.com,Food Processing LLC,Operations Manager,Food & Beverage,foodprocessing.com,
+Jennifer,Martinez,jmartinez@chemicalco.com,Chemical Co,Maintenance Lead,Chemicals,chemicalco.com,
+David,Brown,dbrown@automotiveparts.com,Automotive Parts Inc,Facilities Manager,Automotive,automotiveparts.com,
+Emily,Wilson,ewilson@papermill.com,Paper Mill Co,Plant Maintenance,Pulp & Paper,papermill.com,
+Robert,Taylor,rtaylor@metalfab.com,Metal Fabrication LLC,MRO Manager,Metal Fabrication,metalfab.com,
+Amanda,Garcia,agarcia@plasticsinc.com,Plastics Inc,Technical Services,Plastics,plasticsinc.com,

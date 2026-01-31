@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-01-31",
+  "description": "Unified knowledge base index for ShopTalk and all agents",
+  
+  "categories": {
+    "devices": {
+      "description": "PLC and industrial device profiles",
+      "path": "knowledge/devices/",
+      "files": [
+        "modbus_profiles.json"
+      ]
+    },
+    "auto_connect": {
+      "description": "Auto-discovery and connection procedures",
+      "path": "projects/shoptalk/autoconnect/",
+      "files": [
+        "scanner.py",
+        "service.py"
+      ],
+      "summary": "Three approaches: 1) Modbus TCP scan (port 502), 2) Device template matching, 3) Native protocol discovery (EtherNet/IP, OPC-UA)"
+    },
+    "faults": {
+      "description": "Equipment fault patterns and diagnostics",
+      "path": "projects/shoptalk/llm/data/",
+      "files": [
+        "knowledge_base.json"
+      ]
+    },
+    "training_data": {
+      "description": "LLM training data for equipment diagnostics",
+      "path": "projects/shoptalk/llm/data/merged/",
+      "stats": {
+        "total_samples": 2810,
+        "training_samples": 2529,
+        "validation_samples": 281,
+        "languages": ["en", "es"],
+        "equipment_types": 14
+      }
+    },
+    "research": {
+      "description": "Technical research and competitive intelligence",
+      "path": "brain/research/",
+      "key_files": [
+        "2026-01-31-plc-auto-connect.md",
+        "2026-01-31-0701-competitive-intel.md",
+        "edge-llm-2026-update.md"
+      ]
+    }
+  },
+  
+  "key_facts": {
+    "shoptalk_vision": "A $50 pocket-sized industrial AI expert that works offline, speaks Spanish, diagnoses equipment via WhatsApp",
+    "auto_connect_feasibility": "7/10 - Achievable with network scanning and device templates",
+    "recommended_edge_llm": "Qwen3-0.6B for ultra-small, Phi-4-mini for better reasoning",
+    "competitive_moat": "Device template library - largest industrial device profile database"
+  },
+  
+  "quick_reference": {
+    "modbus_default_port": 502,
+    "ethernet_ip_port": 44818,
+    "opcua_port": 4840,
+    "common_slave_ids": [1, 2, 3],
+    "pycomm3_for": "Allen-Bradley auto tag discovery",
+    "pymodbus_for": "Modbus TCP/RTU communication"
+  }
+}

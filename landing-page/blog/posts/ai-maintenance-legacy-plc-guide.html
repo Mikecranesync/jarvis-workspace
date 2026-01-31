@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Maintenance for Legacy PLCs: A Practical Guide | FactoryLM</title>
+    <meta name="description" content="How to implement AI-powered maintenance on older PLC systems including Modbus, Siemens S7, and Allen-Bradley. Practical guide for brownfield facilities.">
+    <meta name="keywords" content="legacy PLC, AI maintenance, Modbus, Siemens S7, Allen-Bradley, industrial automation, brownfield">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a1a; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        header { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; padding: 4rem 2rem; }
+        header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        header .meta { opacity: 0.8; font-size: 0.9rem; }
+        article { padding: 3rem 0; }
+        h2 { color: #2c3e50; margin: 2rem 0 1rem; font-size: 1.5rem; }
+        h3 { color: #34495e; margin: 1.5rem 0 0.75rem; font-size: 1.2rem; }
+        p { margin-bottom: 1.5rem; }
+        ul, ol { margin: 1rem 0 1.5rem 2rem; }
+        li { margin-bottom: 0.5rem; }
+        code { background: #f4f4f4; padding: 0.2rem 0.5rem; border-radius: 3px; font-family: monospace; }
+        pre { background: #2c3e50; color: #ecf0f1; padding: 1.5rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; }
+        pre code { background: none; padding: 0; }
+        .highlight { background: #e8f4f8; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid #3498db; }
+        .warning { background: #fef9e7; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid #f39c12; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { border: 1px solid #ddd; padding: 0.75rem; text-align: left; }
+        th { background: #f5f5f5; }
+        .cta { background: #2c3e50; color: white; padding: 2rem; border-radius: 8px; text-align: center; margin: 3rem 0; }
+        .cta h3 { color: white; margin-bottom: 1rem; }
+        .cta a { display: inline-block; background: #3498db; color: white; padding: 1rem 2rem; border-radius: 4px; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI Maintenance for Legacy PLCs: A Practical Guide</h1>
+            <p class="meta">January 30, 2026 • 12 min read • By FactoryLM Team</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <article>
+            <p><strong>The dream of Industry 4.0 assumes modern, connected equipment.</strong> The reality of most industrial facilities is decades-old PLCs running protocols that predate the internet. Modbus from 1979. Siemens S7 from the 1990s. Allen-Bradley systems that haven't been updated since they were installed.</p>
+            
+            <p>This guide shows how to implement AI-powered maintenance on legacy systems—without replacing them.</p>
+            
+            <h2>The Legacy PLC Landscape</h2>
+            
+            <p>Before diving into solutions, let's understand what we're working with:</p>
+            
+            <table>
+                <tr>
+                    <th>Protocol</th>
+                    <th>Era</th>
+                    <th>Still in Use?</th>
+                    <th>Connectivity</th>
+                </tr>
+                <tr>
+                    <td>Modbus RTU</td>
+                    <td>1979</td>
+                    <td>Extremely common</td>
+                    <td>Serial (RS-485/232)</td>
+                </tr>
+                <tr>
+                    <td>Modbus TCP</td>
+                    <td>1999</td>
+                    <td>Very common</td>
+                    <td>Ethernet</td>
+                </tr>
+                <tr>
+                    <td>Siemens S7 (MPI/Profibus)</td>
+                    <td>1990s</td>
+                    <td>Common in Europe/LatAm</td>
+                    <td>Proprietary → Ethernet</td>
+                </tr>
+                <tr>
+                    <td>Allen-Bradley DF1</td>
+                    <td>1980s</td>
+                    <td>Common in Americas</td>
+                    <td>Serial</td>
+                </tr>
+                <tr>
+                    <td>EtherNet/IP</td>
+                    <td>2001</td>
+                    <td>Growing</td>
+                    <td>Ethernet</td>
+                </tr>
+                <tr>
+                    <td>Mitsubishi MELSEC</td>
+                    <td>1990s</td>
+                    <td>Common in Asia</td>
+                    <td>Proprietary → Ethernet</td>
+                </tr>
+            </table>
+            
+            <p>If your facility was built before 2010, you're probably running some combination of these. And that's not a problem—these systems are proven, reliable, and well-understood. The challenge is getting data out of them for AI analysis.</p>
+            
+            <h2>Architecture: Bridging Legacy and AI</h2>
+            
+            <p>The key insight is that you don't need to replace legacy PLCs to add AI capabilities. You need to <em>bridge</em> them.</p>
+            
+            <pre><code>┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   Legacy PLC    │     │  Protocol       │     │   AI Platform   │
+│   (Modbus/S7)   │────▶│  Gateway        │────▶│   (FactoryLM)   │
+│                 │     │  (Edge Device)  │     │                 │
+└─────────────────┘     └─────────────────┘     └─────────────────┘
+        │                       │                       │
+        │                       │                       │
+   Existing                Raspberry Pi           Cloud or
+   Control                 BeagleBone             On-Premise
+   Logic                   Industrial PC</code></pre>
+            
+            <p>The gateway device:</p>
+            <ul>
+                <li>Speaks the PLC's native protocol</li>
+                <li>Translates to modern formats (MQTT, REST, OPC-UA)</li>
+                <li>Handles buffering and retry logic</li>
+                <li>Can operate offline if connectivity drops</li>
+            </ul>
+            
+            <h2>Protocol-Specific Implementation</h2>
+            
+            <h3>Modbus (TCP and RTU)</h3>
+            
+            <p>Modbus is the lingua franca of industrial automation. Nearly everything supports it.</p>
+            
+            <div class="highlight">
+                <strong>Key Concepts:</strong>
+                <ul>
+                    <li><strong>Coils:</strong> Single-bit read/write (discrete outputs)</li>
+                    <li><strong>Discrete Inputs:</strong> Single-bit read-only</li>
+                    <li><strong>Holding Registers:</strong> 16-bit read/write (most data lives here)</li>
+                    <li><strong>Input Registers:</strong> 16-bit read-only</li>
+                </ul>
+            </div>
+            
+            <p>Python example for reading Modbus TCP:</p>
+            
+            <pre><code>from pymodbus.client import ModbusTcpClient
+
+client = ModbusTcpClient('192.168.1.100', port=502)
+client.connect()
+
+# Read 10 holding registers starting at address 0
+result = client.read_holding_registers(0, 10, unit=1)
+
+if not result.isError():
+    values = result.registers
+    # values = [temp, pressure, flow, ...]
+    
+client.close()</code></pre>
+            
+            <h3>Siemens S7</h3>
+            
+            <p>S7 communication uses a proprietary protocol, but open-source libraries exist:</p>
+            
+            <pre><code>import snap7
+
+client = snap7.client.Client()
+client.connect('192.168.1.101', 0, 1)  # IP, rack, slot
+
+# Read 100 bytes from DB1
+data = client.db_read(1, 0, 100)
+
+# Parse the data according to your DB structure
+temperature = snap7.util.get_real(data, 0)
+pressure = snap7.util.get_real(data, 4)
+
+client.disconnect()</code></pre>
+            
+            <div class="warning">
+                <strong>Note:</strong> S7 communication requires knowing the PLC's IP, rack, and slot numbers, plus the data block structure. This information is often undocumented in brownfield facilities—another reason why knowledge capture matters.
+            </div>
+            
+            <h3>Allen-Bradley (EtherNet/IP)</h3>
+            
+            <p>Modern Allen-Bradley PLCs use EtherNet/IP with CIP:</p>
+            
+            <pre><code>from pycomm3 import LogixDriver
+
+with LogixDriver('192.168.1.102') as plc:
+    # Read tags by name
+    result = plc.read('Temperature', 'Pressure', 'FlowRate')
+    
+    for tag in result:
+        print(f"{tag.tag}: {tag.value}")</code></pre>
+            
+            <p>Older systems using DF1 require serial communication or protocol converters.</p>
+            
+            <h2>Data Strategy for AI</h2>
+            
+            <p>Getting data from PLCs is just the first step. For AI maintenance to work, you need the right data strategy:</p>
+            
+            <h3>1. Identify Critical Tags</h3>
+            <p>Don't try to collect everything. Focus on:</p>
+            <ul>
+                <li>Process variables (temperature, pressure, flow, level)</li>
+                <li>Equipment status (running, stopped, fault)</li>
+                <li>Alarm states</li>
+                <li>Setpoints and control outputs</li>
+            </ul>
+            
+            <h3>2. Set Appropriate Polling Rates</h3>
+            <table>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Typical Rate</th>
+                    <th>Reasoning</th>
+                </tr>
+                <tr>
+                    <td>Fast-changing process variables</td>
+                    <td>1-5 seconds</td>
+                    <td>Catch transients</td>
+                </tr>
+                <tr>
+                    <td>Slow process variables</td>
+                    <td>30-60 seconds</td>
+                    <td>Reduce load</td>
+                </tr>
+                <tr>
+                    <td>Equipment status</td>
+                    <td>On change</td>
+                    <td>Event-driven</td>
+                </tr>
+                <tr>
+                    <td>Alarms</td>
+                    <td>On change</td>
+                    <td>Event-driven</td>
+                </tr>
+            </table>
+            
+            <h3>3. Store Contextually</h3>
+            <p>Raw tag values aren't enough. Store:</p>
+            <ul>
+                <li>Timestamp (synchronized across devices)</li>
+                <li>Equipment identifier</li>
+                <li>Operating mode/context</li>
+                <li>Any associated events</li>
+            </ul>
+            
+            <h2>AI Applications on Legacy Data</h2>
+            
+            <p>Once data is flowing, AI can provide value even without real-time connectivity to PLCs:</p>
+            
+            <h3>Pattern Recognition</h3>
+            <p>AI identifies patterns humans might miss:</p>
+            <ul>
+                <li>"This motor draws 5% more current before it fails"</li>
+                <li>"Valve stiction increases after 6 months of operation"</li>
+                <li>"Temperature spikes correlate with upstream batch changes"</li>
+            </ul>
+            
+            <h3>Diagnostic Assistance</h3>
+            <p>When technicians report symptoms, AI surfaces relevant historical data:</p>
+            <ul>
+                <li>"Last time this pump cavitated, it was due to inlet valve position"</li>
+                <li>"Similar vibration signature was seen in Unit 3 last month—bearing issue"</li>
+            </ul>
+            
+            <h3>Predictive Maintenance</h3>
+            <p>With sufficient history, AI can predict failures:</p>
+            <ul>
+                <li>Remaining useful life estimation</li>
+                <li>Optimal maintenance scheduling</li>
+                <li>Early warning of degradation</li>
+            </ul>
+            
+            <h2>Implementation Checklist</h2>
+            
+            <ol>
+                <li><strong>Inventory your PLCs:</strong> Model, protocol, IP/serial settings</li>
+                <li><strong>Map critical tags:</strong> What data do you need? Where is it?</li>
+                <li><strong>Choose gateway hardware:</strong> Industrial PC, Raspberry Pi, or dedicated gateway</li>
+                <li><strong>Install protocol libraries:</strong> pymodbus, snap7, pycomm3, etc.</li>
+                <li><strong>Test connectivity:</strong> Verify you can read data reliably</li>
+                <li><strong>Set up data pipeline:</strong> Gateway → storage → AI platform</li>
+                <li><strong>Start collecting:</strong> Begin with critical equipment, expand over time</li>
+                <li><strong>Train AI models:</strong> Use historical data to establish baselines</li>
+            </ol>
+            
+            <div class="cta">
+                <h3>AI for Legacy Equipment</h3>
+                <p>FactoryLM connects to Modbus, S7, Allen-Bradley, and other legacy protocols. No equipment replacement required.</p>
+                <p style="margin-top: 1rem;"><a href="/contact">See How It Works →</a></p>
+            </div>
+            
+            <h2>Common Pitfalls</h2>
+            
+            <h3>1. Overloading the PLC</h3>
+            <p>Old PLCs have limited processing power. Polling too aggressively can impact control performance. Start slow and monitor.</p>
+            
+            <h3>2. Network Segmentation Issues</h3>
+            <p>Legacy systems often live on isolated networks for good reason. Plan connectivity carefully without compromising security.</p>
+            
+            <h3>3. Undocumented Tag Meanings</h3>
+            <p>Address 40001 holds... what exactly? If documentation is missing, you'll need to work with operators to reverse-engineer tag meanings.</p>
+            
+            <h3>4. Time Synchronization</h3>
+            <p>Old PLCs often don't have accurate clocks. Correlating events across systems requires careful timestamp management at the gateway level.</p>
+            
+            <hr style="margin: 3rem 0; border: none; border-top: 1px solid #ddd;">
+            
+            <p><em>FactoryLM provides AI-powered maintenance for industrial facilities, with native support for legacy protocols. Built for brownfield operations.</em></p>
+        </article>
+    </div>
+</body>
+</html>

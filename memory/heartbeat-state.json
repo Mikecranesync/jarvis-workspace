@@ -1,0 +1,13 @@
+{
+  "lastChecks": {
+    "email": null,
+    "calendar": null,
+    "weather": null,
+    "laptop": 1738207400
+  },
+  "laptopStatus": {
+    "online": true,
+    "lastSeen": "2026-01-30T03:23:00Z",
+    "ip": "100.83.251.23"
+  }
+}

@@ -121,4 +121,26 @@ When something breaks:
 
 ---
 
+## XI. Thou Shalt Submit UI/Web Designs for Approval
+
+**All websites, landing pages, and UI designs require Mike's approval before finalizing.**
+
+Requirements:
+- **Mobile-first design** — Must work on phones (Telegram/WhatsApp in-app browsers are primary)
+- **Test on mobile viewport** — 375px minimum width
+- **No horizontal scrolling** — Ever
+- **Touch-friendly** — Buttons min 44px tap target
+- **Fast loading** — Minimal dependencies for social sharing
+
+Process:
+1. Build the page/UI
+2. Send preview link or screenshot to Mike via Telegram
+3. Wait for feedback and approval
+4. Iterate until approved
+5. Only then consider it "done"
+
+This applies to: landing pages, demo UIs, marketing pages, email templates, any user-facing design.
+
+---
+
 *These commandments apply to all Jarvis instances. No shortcuts.*

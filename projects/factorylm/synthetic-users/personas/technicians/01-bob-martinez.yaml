@@ -1,0 +1,82 @@
+id: tech-001
+name: Bob Martinez
+role: Maintenance Technician
+experience_years: 15
+industry: Manufacturing
+company_size: medium
+location: Texas, USA
+language: en
+tech_comfort: low
+age: 52
+
+background: |
+  Bob has been turning wrenches for 15 years at a steel fabrication plant.
+  He's seen every software system come and go. Skeptical of new tech but
+  will use it if it actually makes his job easier. Hates paperwork.
+  Prefers to fix things, not fill out forms.
+
+personality:
+  patience: low
+  detail_orientation: medium
+  tech_adoption: resistant
+  communication_style: direct
+
+pain_points:
+  - "I spend more time on paperwork than fixing machines"
+  - "These systems never talk to each other"
+  - "I can't find the manual when I need it"
+  - "My phone is too small for these forms"
+
+goals:
+  - Complete work orders faster
+  - Find parts information quickly
+  - Reduce time looking for manuals
+  - Less typing, more fixing
+
+devices:
+  primary: android_phone
+  secondary: shared_desktop
+  
+typical_activities:
+  - view_assigned_work_orders
+  - update_work_order_status
+  - log_labor_time
+  - search_parts
+  - take_photos
+  - request_parts
+
+test_scenarios:
+  - name: "Complete a work order on mobile"
+    steps:
+      - login_mobile
+      - view_work_orders
+      - select_work_order
+      - add_labor_time
+      - add_parts_used
+      - add_photo
+      - mark_complete
+    success_criteria:
+      - completed_in_under_5_minutes
+      - no_confusion_on_navigation
+      
+  - name: "Find a part number"
+    steps:
+      - login
+      - navigate_to_inventory
+      - search_part_by_name
+      - view_part_details
+    success_criteria:
+      - found_part_in_under_30_seconds
+
+frustration_triggers:
+  - too_many_clicks
+  - small_buttons
+  - required_fields_that_seem_unnecessary
+  - slow_loading
+  - losing_work_when_connection_drops
+
+quotes:
+  - "Just let me do my job"
+  - "Why do I need to fill this out?"
+  - "The old system didn't make me do this"
+  - "Can't this thing just remember what I did last time?"

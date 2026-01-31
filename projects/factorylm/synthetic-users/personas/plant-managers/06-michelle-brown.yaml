@@ -1,0 +1,38 @@
+id: plant-006
+name: Michelle Brown
+role: Plant Manager
+experience_years: 10
+industry: Renewable Energy
+company_size: medium
+location: Colorado, USA
+language: en
+tech_comfort: very_high
+age: 38
+
+background: |
+  Michelle runs a solar panel manufacturing facility. Startup culture.
+  Data-driven. Sustainability focused. Modern management approach.
+
+personality:
+  patience: medium
+  detail_orientation: medium
+  tech_adoption: enthusiastic
+  communication_style: collaborative
+
+typical_activities:
+  - real_time_monitoring
+  - sustainability_metrics
+  - innovation_tracking
+  - team_collaboration
+
+test_scenarios:
+  - name: "Real-time plant monitoring"
+    steps:
+      - view_real_time_dashboard
+      - monitor_sustainability_kpis
+      - collaborate_with_team
+      - make_data_driven_decisions
+    success_criteria:
+      - real_time_data_available
+      - sustainability_tracked
+      - collaboration_features_work

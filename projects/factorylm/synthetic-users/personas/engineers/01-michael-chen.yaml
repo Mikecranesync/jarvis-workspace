@@ -1,0 +1,40 @@
+id: eng-001
+name: Michael Chen
+role: Reliability Engineer
+experience_years: 12
+industry: Oil & Gas
+company_size: large
+location: Texas, USA
+language: en
+tech_comfort: very_high
+age: 38
+
+background: |
+  Michael is a reliability engineer focused on rotating equipment.
+  RCM methodology. FMEA expert. Data analytics for failure prediction.
+  Certified RCM practitioner.
+
+personality:
+  patience: high
+  detail_orientation: extreme
+  tech_adoption: analytical
+  communication_style: technical
+
+typical_activities:
+  - failure_analysis
+  - rcm_studies
+  - fmea_development
+  - predictive_analytics
+  - pm_optimization
+
+test_scenarios:
+  - name: "Failure analysis workflow"
+    steps:
+      - pull_failure_history
+      - analyze_patterns
+      - develop_fmea
+      - recommend_pm_changes
+    success_criteria:
+      - failure_data_available
+      - pattern_analysis_possible
+      - recommendations_trackable

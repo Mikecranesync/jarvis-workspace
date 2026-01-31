@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactoryLM — AI-Powered Industrial Maintenance Software</title>
+    <meta name="description" content="AI that understands your equipment. FactoryLM combines CMMS, PLC diagnostics, and smart glasses for maintenance teams that want less downtime and faster repairs.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        accent: '#F97316',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-primary">Factory<span class="text-accent">LM</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#products" class="text-gray-600 hover:text-primary">Products</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary">How It Works</a>
+                    <a href="#" class="text-gray-600 hover:text-primary">Pricing</a>
+                    <a href="#waitlist" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Join Waitlist</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                AI That Actually Understands Your Equipment
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Stop fighting your CMMS. FactoryLM reads fault codes, suggests fixes, and learns from every repair.
+            </p>
+            <div class="max-w-md mx-auto mb-4">
+                <form id="hero-form" class="flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Enter your email" required
+                        class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent">
+                    <button type="submit" class="bg-accent hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+                        Join Waitlist
+                    </button>
+                </form>
+            </div>
+            <p class="text-blue-200 text-sm">
+                🎉 First 50 get <strong>Founding Member pricing</strong> — locked in forever
+            </p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                Why 70% of CMMS Implementations Fail
+            </h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+                You've tried the software. It didn't work. Here's why.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="text-4xl mb-4">😤</div>
+                    <h3 class="text-xl font-semibold mb-3">Technicians Don't Use It</h3>
+                    <p class="text-gray-600">Your team didn't buy the software. They don't want to learn another system. So they use clipboards instead.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="text-4xl mb-4">🔌</div>
+                    <h3 class="text-xl font-semibold mb-3">No Connection to Real Equipment</h3>
+                    <p class="text-gray-600">Your CMMS tracks work orders. Your PLCs track machine health. They never talk to each other.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-3">Data In, Nothing Out</h3>
+                    <p class="text-gray-600">You've got years of maintenance history. But when a pump fails at 2 AM, you're still Googling error codes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                One Platform. Three Superpowers.
+            </h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+                Everything your maintenance team needs, powered by AI that actually helps.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">📋</div>
+                    <h3 class="text-2xl font-semibold mb-3">CMMS</h3>
+                    <p class="text-lg text-primary font-medium mb-3">Work orders that write themselves</p>
+                    <p class="text-gray-600 mb-6">AI-assisted work order creation. Automatic parts suggestions. Mobile-first for technicians who hate computers.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">Learn More →</a>
+                </div>
+                <div class="border-2 border-primary rounded-xl p-8 shadow-lg relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-sm px-3 py-1 rounded-full">Most Popular</div>
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-2xl font-semibold mb-3">PLC Copilot</h3>
+                    <p class="text-lg text-primary font-medium mb-3">Fault diagnosis in plain English</p>
+                    <p class="text-gray-600 mb-6">Paste your fault code. Get a diagnosis, probable causes, and suggested fixes — in language anyone can understand.</p>
+                    <a href="#" class="text-primary font-medium hover:underline">Learn More →</a>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-8 hover:shadow-lg transition">
+                    <div class="text-4xl mb-4">👓</div>
+                    <h3 class="text-2xl font-semibold mb-3">Smart Glasses</h3>
+                    <p class="text-lg text-primary font-medium mb-3">Hands-free documentation</p>
+                    <p class="text-gray-600 mb-6">Pull up manuals, schematics, and work history without touching your phone. See what you need while you work.</p>
+                    <span class="inline-block bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                How It Works
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="w-16 h-16 bg-primary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-2">Connect</h3>
+                    <p class="text-gray-600">Hook up your PLC in minutes. No expensive integrators. No months of configuration.</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 bg-primary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-2">AI Learns</h3>
+                    <p class="text-gray-600">Every repair teaches the system. Every fault code builds the knowledge base. Your CMMS gets smarter.</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 bg-primary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-2">You Win</h3>
+                    <p class="text-gray-600">Less downtime. Faster repairs. Technicians who actually use the system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-20 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote class="text-2xl md:text-3xl font-medium text-gray-900 mb-6">
+                "Built by people who've actually turned wrenches."
+            </blockquote>
+            <div class="flex items-center justify-center gap-4">
+                <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-2xl">👷</div>
+                <div class="text-left">
+                    <div class="font-semibold">Mike Harper</div>
+                    <div class="text-gray-600">Founder, CraneSync</div>
+                    <div class="text-sm text-gray-500">20+ years in industrial maintenance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Everything You Need
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="flex items-center gap-3 bg-white p-4 rounded-lg">
+                    <span class="text-green-500 text-xl">✅</span>
+                    <span>Mobile-first design</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-4 rounded-lg">
+                    <span class="text-green-500 text-xl">✅</span>
+                    <span>Offline mode</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-4 rounded-lg">
+                    <span class="text-green-500 text-xl">✅</span>
+                    <span>PLC integration</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-4 rounded-lg">
+                    <span class="text-green-500 text-xl">✅</span>
+                    <span>AI diagnostics</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-4 rounded-lg">
+                    <span class="text-green-500 text-xl">✅</span>
+                    <span>Parts inventory</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-4 rounded-lg">
+                    <span class="text-green-500 text-xl">✅</span>
+                    <span>Preventive maintenance</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-4 rounded-lg">
+                    <span class="text-green-500 text-xl">✅</span>
+                    <span>Work orders</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-4 rounded-lg">
+                    <span class="text-green-500 text-xl">✅</span>
+                    <span>Asset tracking</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-4 rounded-lg">
+                    <span class="text-green-500 text-xl">✅</span>
+                    <span>Custom reports</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="waitlist" class="gradient-bg py-20 px-4">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Be One of the First 50
+            </h2>
+            <p class="text-blue-100 text-lg mb-8">
+                Lock in founding member pricing forever. Get early access to PLC Copilot and Smart Glasses before public launch.
+            </p>
+            <div class="max-w-md mx-auto mb-4">
+                <form id="cta-form" class="flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Enter your email" required
+                        class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent">
+                    <button type="submit" class="bg-accent hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition">
+                        Join Waitlist
+                    </button>
+                </form>
+            </div>
+            <p class="text-blue-200 text-sm">
+                <span id="spots-counter" class="font-semibold">47 spots remaining</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <span class="text-2xl font-bold text-white">Factory<span class="text-accent">LM</span></span>
+                    <p class="mt-4 text-sm">The maintenance platform that gets smarter with every repair.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Products</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">CMMS</a></li>
+                        <li><a href="#" class="hover:text-white">PLC Copilot</a></li>
+                        <li><a href="#" class="hover:text-white">Smart Glasses</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm">© 2026 FactoryLM. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Email capture with API integration
+        const API_URL = '/api/subscribe'; // Update with actual endpoint
+        
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const button = this.querySelector('button');
+                const email = emailInput.value;
+                
+                // Disable form during submission
+                button.disabled = true;
+                button.textContent = 'Joining...';
+                
+                try {
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        // Show success state
+                        button.textContent = '✓ You\'re In!';
+                        button.classList.remove('bg-accent', 'hover:bg-orange-600');
+                        button.classList.add('bg-green-500');
+                        emailInput.value = '';
+                        
+                        // Update spots counter
+                        const counter = document.getElementById('spots-counter');
+                        if (counter && data.spotsRemaining !== undefined) {
+                            counter.textContent = `${data.spotsRemaining} spots remaining`;
+                        }
+                        
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            button.textContent = 'Join Waitlist';
+                            button.classList.remove('bg-green-500');
+                            button.classList.add('bg-accent', 'hover:bg-orange-600');
+                            button.disabled = false;
+                        }, 3000);
+                    } else {
+                        throw new Error(data.error || 'Something went wrong');
+                    }
+                } catch (error) {
+                    alert('Error: ' + error.message);
+                    button.textContent = 'Join Waitlist';
+                    button.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

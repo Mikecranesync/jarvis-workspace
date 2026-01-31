@@ -1,0 +1,39 @@
+id: plant-005
+name: James Garcia
+role: Plant Manager
+experience_years: 15
+industry: Aerospace
+company_size: large
+location: Arizona, USA
+language: en
+tech_comfort: medium
+age: 46
+
+background: |
+  James runs an aerospace components plant. Defense contracts.
+  Security clearances required. Traceability is mandatory.
+  Long product lifecycles.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: compliance_driven
+  communication_style: formal
+
+typical_activities:
+  - contract_compliance
+  - traceability_reviews
+  - security_compliance
+  - long_term_planning
+
+test_scenarios:
+  - name: "Contract compliance review"
+    steps:
+      - view_contract_status
+      - verify_traceability
+      - check_security_compliance
+      - generate_contract_report
+    success_criteria:
+      - contract_tracking_works
+      - traceability_complete
+      - reports_available

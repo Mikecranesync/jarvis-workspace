@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allen-Bradley CompactLogix Troubleshooting: 7 Steps to Faster Diagnosis | FactoryLM</title>
+    <meta name="description" content="Systematic approach to troubleshooting Allen-Bradley CompactLogix PLCs. From LED indicators to fault codes, diagnose faster with these 7 steps.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;line-height:1.8;color:#1e293b}.container{max-width:800px;margin:0 auto;padding:0 24px}header{padding:20px 0;border-bottom:1px solid #e2e8f0}header .container{display:flex;justify-content:space-between;align-items:center}.logo{font-size:24px;font-weight:800;color:#1e293b;text-decoration:none}.logo span{color:#2563eb}nav a{margin-left:24px;color:#64748b;text-decoration:none}article{padding:60px 0}h1{font-size:36px;line-height:1.2;margin-bottom:16px}.post-meta{color:#64748b;font-size:14px;margin-bottom:40px}h2{font-size:24px;margin:40px 0 16px}h3{font-size:20px;margin:32px 0 12px}p{margin-bottom:20px;color:#475569}ul,ol{margin:20px 0;padding-left:24px;color:#475569}li{margin-bottom:8px}.cta-box{background:linear-gradient(135deg,#2563eb,#7c3aed);padding:32px;border-radius:12px;color:white;text-align:center;margin:40px 0}.cta-box a{display:inline-block;background:white;color:#2563eb;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin-top:16px}footer{padding:40px 0;text-align:center;color:#64748b;border-top:1px solid #e2e8f0}</style>
+</head>
+<body>
+    <header><div class="container"><a href="/" class="logo">Factory<span>LM</span></a><nav><a href="/">Home</a><a href="/blog/">Blog</a><a href="https://calendly.com/mike-cranesync/30min">Demo</a></nav></div></header>
+    <article><div class="container">
+        <h1>Allen-Bradley CompactLogix Troubleshooting: 7 Steps to Faster Diagnosis</h1>
+        <p class="post-meta">January 30, 2026 • 9 min read • By Mike Harper</p>
+        
+        <p>The CompactLogix is a workhorse in American manufacturing. But when it faults, you need a systematic approach to get back online fast. Here's my 7-step process refined over 20 years.</p>
+        
+        <h2>Step 1: Check the LEDs First</h2>
+        <p>Before touching Studio 5000, look at the controller LEDs:</p>
+        <ul>
+            <li><strong>RUN (Green solid):</strong> Normal operation</li>
+            <li><strong>RUN (Green flashing):</strong> Remote program or test mode</li>
+            <li><strong>I/O (Green solid):</strong> All I/O communicating</li>
+            <li><strong>I/O (Red):</strong> At least one I/O connection faulted</li>
+            <li><strong>FAULT (Red solid):</strong> Major fault — controller stopped</li>
+            <li><strong>FAULT (Red flashing):</strong> Minor fault — controller running</li>
+        </ul>
+        
+        <h2>Step 2: Connect and Go Online</h2>
+        <p>Open Studio 5000, browse to the controller, and go online. Note any banner messages at the top of the screen.</p>
+        
+        <h2>Step 3: Check Controller Properties</h2>
+        <p>Right-click the controller → Properties → General tab. Look at:</p>
+        <ul>
+            <li>Major Fault (if any) — the actual fault code</li>
+            <li>Minor Faults — less critical but worth noting</li>
+            <li>Last known good state timestamp</li>
+        </ul>
+        
+        <h2>Step 4: Review the Fault History</h2>
+        <p>Controller Properties → Major Faults tab shows recent history. Look for patterns — same fault recurring? Multiple faults in sequence?</p>
+        
+        <h2>Step 5: Check the I/O Tree</h2>
+        <p>Expand the I/O Configuration in the project tree. Any module with a red X has lost communication. Click it to see the specific fault.</p>
+        
+        <h2>Step 6: Verify Connections</h2>
+        <p>For communication faults:</p>
+        <ul>
+            <li>Physical: Check cables, RJ45 connections, switch port LEDs</li>
+            <li>Configuration: Verify IP addresses match hardware</li>
+            <li>Network: Ping the faulted device from your laptop</li>
+        </ul>
+        
+        <h2>Step 7: Clear and Test</h2>
+        <p>Once the issue is resolved:</p>
+        <ol>
+            <li>Clear the fault (Controller Properties → Clear Fault)</li>
+            <li>Change to Program mode</li>
+            <li>Verify I/O status</li>
+            <li>Return to Run mode</li>
+            <li>Monitor for fault recurrence</li>
+        </ol>
+        
+        <div class="cta-box">
+            <h3>Skip the manual lookup</h3>
+            <p>Photo Allen-Bradley faults → Get instant diagnosis</p>
+            <a href="https://calendly.com/mike-cranesync/30min">Try FactoryLM Free</a>
+        </div>
+        
+        <h2>Key Takeaways</h2>
+        <ul>
+            <li>Always check LEDs before connecting — they tell the story</li>
+            <li>The I/O tree red X shows you exactly which module faulted</li>
+            <li>Look at fault history for patterns</li>
+            <li>80% of communication faults are physical (cables, connections)</li>
+        </ul>
+    </div></article>
+    <footer><div class="container"><p><strong>FactoryLM</strong> — Industrial AI for Maintenance Teams</p></div></footer>
+</body>
+</html>

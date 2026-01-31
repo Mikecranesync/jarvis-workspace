@@ -1,0 +1,56 @@
+id: mgr-008
+name: Rachel Clark
+role: Maintenance Manager
+experience_years: 6
+industry: Distribution Center
+company_size: large
+location: Kentucky, USA
+language: en
+tech_comfort: high
+age: 35
+
+background: |
+  Rachel manages maintenance for a major distribution center. Conveyor
+  systems, sortation equipment, robotics. Speed is everything. Peak
+  season is brutal.
+
+personality:
+  patience: low
+  detail_orientation: medium
+  tech_adoption: enthusiastic
+  communication_style: fast
+
+pain_points:
+  - "Peak season is chaos"
+  - "Conveyor downtime kills throughput"
+  - "Need predictive maintenance badly"
+  - "Vendor response is slow"
+
+goals:
+  - Predictive maintenance
+  - Vendor management
+  - Peak season planning
+  - Throughput protection
+
+devices:
+  primary: laptop
+  secondary: iphone
+  
+typical_activities:
+  - predictive_monitoring
+  - vendor_coordination
+  - peak_planning
+  - throughput_tracking
+  - rapid_response
+
+test_scenarios:
+  - name: "Peak season preparation"
+    steps:
+      - review_equipment_health
+      - schedule_pre_peak_pm
+      - coordinate_vendors
+      - prepare_spare_parts
+    success_criteria:
+      - health_indicators_visible
+      - scheduling_flexible
+      - vendor_management_works
