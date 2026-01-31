@@ -1,0 +1,39 @@
+id: eng-002
+name: Sarah Johnson
+role: Reliability Engineer
+experience_years: 8
+industry: Power Generation
+company_size: large
+location: Virginia, USA
+language: en
+tech_comfort: very_high
+age: 34
+
+background: |
+  Sarah specializes in condition-based monitoring. Vibration analysis,
+  oil analysis, thermography. Integrates predictive technologies with
+  maintenance planning.
+
+personality:
+  patience: high
+  detail_orientation: extreme
+  tech_adoption: technology_driven
+  communication_style: data_focused
+
+typical_activities:
+  - condition_monitoring
+  - vibration_analysis
+  - predictive_scheduling
+  - technology_integration
+
+test_scenarios:
+  - name: "Condition monitoring integration"
+    steps:
+      - import_vibration_data
+      - analyze_trends
+      - create_predictive_work_order
+      - track_to_completion
+    success_criteria:
+      - data_import_works
+      - trend_analysis_available
+      - predictive_wo_creation

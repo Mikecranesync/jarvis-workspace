@@ -1,0 +1,31 @@
+{
+  "persona": "John Wellington III",
+  "role": "CEO",
+  "session_duration_seconds": 0.637597,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:55.434550",
+      "action": "session_start",
+      "details": {
+        "persona": "John Wellington III"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:56.072070",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Executive one-glance",
+        "persona": "John Wellington III",
+        "role": "CEO",
+        "tech_comfort": "very_low",
+        "steps_completed": 3,
+        "issues_found": [],
+        "time_taken_seconds": 0.6373722553253174,
+        "satisfaction_score": 97.45051097869873,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

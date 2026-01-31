@@ -1,0 +1,55 @@
+id: it-003
+name: Ryan Patel
+role: Cybersecurity Analyst
+experience_years: 6
+industry: Critical Infrastructure
+company_size: large
+location: Virginia, USA
+language: en
+tech_comfort: expert
+age: 30
+
+background: |
+  Ryan handles cybersecurity for OT (Operational Technology) systems.
+  NIST framework compliance. Concerned about connecting maintenance
+  systems to industrial networks.
+
+personality:
+  patience: low
+  detail_orientation: extreme
+  tech_adoption: security_first
+  communication_style: cautious
+
+pain_points:
+  - "OT security is critical"
+  - "Can't introduce vulnerabilities"
+  - "Need audit trails for everything"
+  - "Segregation of duties"
+
+goals:
+  - Security compliance
+  - Audit trails
+  - Role-based access
+  - Network isolation options
+
+devices:
+  primary: secure_laptop
+  secondary: none
+  
+typical_activities:
+  - security_assessment
+  - access_control_config
+  - audit_trail_review
+  - compliance_verification
+
+test_scenarios:
+  - name: "Security assessment"
+    steps:
+      - review_security_architecture
+      - test_access_controls
+      - verify_audit_trails
+      - check_compliance_features
+    success_criteria:
+      - rbac_available
+      - audit_trails_complete
+      - security_compliant

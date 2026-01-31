@@ -1,0 +1,31 @@
+{
+  "persona": "Patricia Davis",
+  "role": "Maintenance Manager",
+  "session_duration_seconds": 0.509427,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:34.878313",
+      "action": "session_start",
+      "details": {
+        "persona": "Patricia Davis"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:35.387645",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Joint Commission preparation",
+        "persona": "Patricia Davis",
+        "role": "Maintenance Manager",
+        "tech_comfort": "high",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.5092151165008545,
+        "satisfaction_score": 99.18525581359863,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

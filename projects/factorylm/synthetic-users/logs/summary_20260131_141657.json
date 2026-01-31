@@ -1,0 +1,34 @@
+{
+  "total_users": 46,
+  "total_scenarios": 48,
+  "average_satisfaction": 93.2,
+  "recommendation_rate": "100%",
+  "total_issues_found": 18,
+  "common_issues": [
+    "Confusion at step: track_approval_status",
+    "Confusion at step: view_part_details",
+    "Confusion at step: identify_top_losses",
+    "Confusion at step: navigate_to_inventory",
+    "Confusion at step: notify_next_shift",
+    "Confusion at step: outdoor_visibility",
+    "Confusion at step: select_work_order",
+    "Confusion at step: download_work_orders",
+    "Confusion at step: complete_work_offline",
+    "Confusion at step: submit_to_supervisor"
+  ],
+  "satisfaction_by_role": {
+    "Reliability Engineer": 99.43898011843363,
+    "Plant Manager": 94.75208359445844,
+    "Maintenance Manager": 97.40232261021931,
+    "Maintenance Technician": 87.96858547863208,
+    "ERP Integration Specialist": 99.45781302452087,
+    "IT Systems Administrator": 99.62235879898071,
+    "Data Analyst": 99.3084602355957,
+    "Cybersecurity Analyst": 99.68142652511597,
+    "CEO": 97.45051097869873,
+    "CFO": 84.02153062820435,
+    "VP of Operations": 84.06139945983887
+  },
+  "lowest_satisfaction_role": "CFO",
+  "highest_satisfaction_role": "Cybersecurity Analyst"
+}

@@ -1,0 +1,37 @@
+{
+  "started": "2026-01-31T16:16:19.342345",
+  "checks_run": 2,
+  "services": {
+    "manual_hunter": {
+      "service": "manual_hunter",
+      "timestamp": "2026-01-31T16:16:26.755535",
+      "healthy": true,
+      "latency_ms": 1.75,
+      "error": null
+    },
+    "alarm_triage": {
+      "service": "alarm_triage",
+      "timestamp": "2026-01-31T16:16:26.757371",
+      "healthy": true,
+      "latency_ms": 1.18,
+      "error": null
+    },
+    "workflow_tracker": {
+      "service": "workflow_tracker",
+      "timestamp": "2026-01-31T16:16:26.758621",
+      "healthy": true,
+      "latency_ms": 1.27,
+      "error": null
+    },
+    "the_weaver": {
+      "service": "the_weaver",
+      "timestamp": "2026-01-31T16:16:26.759963",
+      "healthy": true,
+      "latency_ms": 1.09,
+      "error": null
+    }
+  },
+  "daily_tokens": 0,
+  "daily_reset": "2026-01-31",
+  "alerts": []
+}

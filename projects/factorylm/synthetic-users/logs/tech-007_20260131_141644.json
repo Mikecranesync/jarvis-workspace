@@ -1,0 +1,33 @@
+{
+  "persona": "Tony Nguyen",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.758445,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:44.211389",
+      "action": "session_start",
+      "details": {
+        "persona": "Tony Nguyen"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:44.969743",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Advanced user workflow",
+        "persona": "Tony Nguyen",
+        "role": "Maintenance Technician",
+        "tech_comfort": "high",
+        "steps_completed": 5,
+        "issues_found": [
+          "Confusion at step: filter_and_sort"
+        ],
+        "time_taken_seconds": 0.7582135200500488,
+        "satisfaction_score": 83.78685836791992,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. The mobile app doesn't have this feature"
+      }
+    }
+  ]
+}

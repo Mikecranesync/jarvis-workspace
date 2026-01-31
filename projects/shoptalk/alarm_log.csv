@@ -1,0 +1,4 @@
+timestamp,alarm_code,equipment,operator_note,fault_description,page_number,manual_url,checklist_generated
+2026-01-31T15:30:39.058842,F0001,Siemens V20,drive wont start,Overcurrent,127,https://support.industry.siemens.com/cs/document/109779715,YES
+2026-01-31T15:54:14.824733,F0001,Siemens V20,Why did my machine stop?,Overcurrent,127,https://support.industry.siemens.com/cs/document/109779715,YES
+2026-01-31T16:16:26.821137,F0001,Siemens V20,Why did my machine stop?,Overcurrent,127,https://support.industry.siemens.com/cs/document/109779715,YES

@@ -1,0 +1,116 @@
+{
+  "workflows": [
+    {
+      "name": "Manual Hunter",
+      "version": "1.0.0",
+      "description": "Equipment manual lookup with page citations",
+      "created": "2026-01-31T15:40:58.640926",
+      "tokens_used": 8000,
+      "github_issue": "#20",
+      "github_pr": "#21",
+      "git_branch": "feature/20-manual-hunter",
+      "git_commit": "dac5010",
+      "compliance": {
+        "constitution": true,
+        "commandments": true,
+        "issues": []
+      },
+      "five_second_test": "PASSED",
+      "eleven_yo_verified": true,
+      "verified_at": "2026-01-31T15:41:10.708085"
+    },
+    {
+      "name": "Alarm Triage",
+      "version": "1.0.0",
+      "description": "PLC alarm to checklist generator",
+      "created": "2026-01-31T15:40:58.652821",
+      "tokens_used": 10000,
+      "github_issue": "",
+      "github_pr": "",
+      "git_branch": "feature/20-manual-hunter",
+      "git_commit": "dac5010",
+      "compliance": {
+        "constitution": true,
+        "commandments": true,
+        "issues": []
+      },
+      "five_second_test": "PASSED",
+      "eleven_yo_verified": true,
+      "verified_at": "2026-01-31T15:41:10.757425"
+    },
+    {
+      "name": "Workflow Tracker",
+      "version": "1.0.0",
+      "description": "Automaton self-monitoring system",
+      "created": "2026-01-31T15:41:10.804467",
+      "tokens_used": 9000,
+      "github_issue": "",
+      "github_pr": "",
+      "git_branch": "feature/20-manual-hunter",
+      "git_commit": "dac5010",
+      "compliance": {
+        "constitution": true,
+        "commandments": true,
+        "issues": []
+      },
+      "five_second_test": "PENDING",
+      "eleven_yo_verified": false
+    },
+    {
+      "name": "E2E Test",
+      "version": "1.0.0",
+      "description": "Test: Why did my machine stop?",
+      "created": "2026-01-31T15:54:14.826566",
+      "tokens_used": 500,
+      "github_issue": "",
+      "github_pr": "",
+      "git_branch": "feature/20-manual-hunter",
+      "git_commit": "dac5010",
+      "compliance": {
+        "constitution": true,
+        "commandments": true,
+        "issues": []
+      },
+      "five_second_test": "PENDING",
+      "eleven_yo_verified": false
+    },
+    {
+      "name": "E2E Test",
+      "version": "1.0.0",
+      "description": "Test: Why did my machine stop?",
+      "created": "2026-01-31T16:16:26.822712",
+      "tokens_used": 500,
+      "github_issue": "",
+      "github_pr": "",
+      "git_branch": "feature/20-manual-hunter",
+      "git_commit": "dac5010",
+      "compliance": {
+        "constitution": true,
+        "commandments": true,
+        "issues": []
+      },
+      "five_second_test": "PENDING",
+      "eleven_yo_verified": false
+    },
+    {
+      "name": "E2E Test",
+      "version": "1.0.0",
+      "description": "Test: What causes overcurrent?",
+      "created": "2026-01-31T16:16:26.836588",
+      "tokens_used": 500,
+      "github_issue": "",
+      "github_pr": "",
+      "git_branch": "feature/20-manual-hunter",
+      "git_commit": "dac5010",
+      "compliance": {
+        "constitution": true,
+        "commandments": true,
+        "issues": []
+      },
+      "five_second_test": "PENDING",
+      "eleven_yo_verified": false
+    }
+  ],
+  "total_tokens": 28500,
+  "automaton_version": "1.0.0"
+}

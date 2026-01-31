@@ -1,0 +1,31 @@
+{
+  "persona": "Marcus Johnson",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.656415,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:48.929094",
+      "action": "session_start",
+      "details": {
+        "persona": "Marcus Johnson"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:49.585414",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Complete work order offline",
+        "persona": "Marcus Johnson",
+        "role": "Maintenance Technician",
+        "tech_comfort": "medium",
+        "steps_completed": 6,
+        "issues_found": [],
+        "time_taken_seconds": 0.6562113761901855,
+        "satisfaction_score": 98.68757724761963,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. Who had this last shift?"
+      }
+    }
+  ]
+}

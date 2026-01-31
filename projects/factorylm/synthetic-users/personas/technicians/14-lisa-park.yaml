@@ -1,0 +1,67 @@
+id: tech-014
+name: Lisa Park
+role: Maintenance Technician
+experience_years: 9
+industry: Aerospace
+company_size: large
+location: Washington, USA
+language: en
+tech_comfort: high
+age: 37
+
+background: |
+  Lisa maintains aerospace manufacturing equipment. Extremely high standards
+  and regulatory requirements. AS9100 certified facility. Every action is
+  traceable. Zero tolerance for errors.
+
+personality:
+  patience: high
+  detail_orientation: extreme
+  tech_adoption: required
+  communication_style: precise
+
+pain_points:
+  - "Everything needs serial number tracking"
+  - "Non-conformance reports are complex"
+  - "Need full traceability"
+  - "Calibration tracking is critical"
+
+goals:
+  - Complete traceability
+  - Serial number tracking
+  - Calibration management
+  - Non-conformance handling
+
+devices:
+  primary: iphone
+  secondary: workstation
+  
+typical_activities:
+  - serial_number_logging
+  - calibration_tracking
+  - non_conformance_reports
+  - traceability_documentation
+
+test_scenarios:
+  - name: "Full traceability workflow"
+    steps:
+      - log_part_serial_numbers
+      - verify_calibration_status
+      - complete_work_with_tracking
+      - generate_traceability_report
+    success_criteria:
+      - serial_numbers_tracked
+      - calibration_verified
+      - full_traceability_report
+
+frustration_triggers:
+  - cant_track_serials
+  - no_calibration_management
+  - incomplete_traceability
+  - manual_report_generation
+
+quotes:
+  - "What's the serial number?"
+  - "Is this tool calibrated?"
+  - "I need full traceability"
+  - "This is an AS9100 requirement"

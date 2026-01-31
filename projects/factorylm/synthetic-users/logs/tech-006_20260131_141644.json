@@ -1,0 +1,31 @@
+{
+  "persona": "Derek Williams",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.512943,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:43.697222",
+      "action": "session_start",
+      "details": {
+        "persona": "Derek Williams"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:44.210079",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Solo technician daily workflow",
+        "persona": "Derek Williams",
+        "role": "Maintenance Technician",
+        "tech_comfort": "medium",
+        "steps_completed": 5,
+        "issues_found": [],
+        "time_taken_seconds": 0.5126605033874512,
+        "satisfaction_score": 98.9746789932251,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. Can I turn off the stuff I don't use?"
+      }
+    }
+  ]
+}

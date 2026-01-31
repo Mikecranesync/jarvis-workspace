@@ -1,0 +1,23 @@
+{
+  "tickets": [
+    {
+      "id": 1,
+      "title": "Workflow failed grounding test",
+      "severity": "HIGH",
+      "source": "The Watchman",
+      "status": "OPEN",
+      "created": "2026-01-31T16:16:26.845633",
+      "details": {
+        "test": {
+          "question": "What causes overcurrent?",
+          "context": "VFD drive"
+        },
+        "passed": false,
+        "score": "2/5",
+        "verdict": "POSSIBLY_HALLUCINATED"
+      },
+      "assigned_to": "Automaton 1 & 2"
+    }
+  ],
+  "next_id": 2
+}

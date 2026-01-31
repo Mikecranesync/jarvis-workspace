@@ -1,0 +1,55 @@
+id: it-004
+name: Nicole Zhang
+role: Data Analyst
+experience_years: 5
+industry: Manufacturing
+company_size: medium
+location: Texas, USA
+language: en
+tech_comfort: expert
+age: 28
+
+background: |
+  Nicole analyzes maintenance data for insights. Creates dashboards
+  and reports. Knows SQL, Python, Power BI. Wants raw data access
+  for custom analysis.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: data_driven
+  communication_style: analytical
+
+pain_points:
+  - "Need raw data access"
+  - "Built-in reports are limiting"
+  - "Want to use my own BI tools"
+  - "Data export formats matter"
+
+goals:
+  - Raw data export
+  - API data access
+  - Custom reporting
+  - BI tool integration
+
+devices:
+  primary: laptop
+  secondary: multiple_monitors
+  
+typical_activities:
+  - data_extraction
+  - custom_analysis
+  - dashboard_creation
+  - bi_integration
+
+test_scenarios:
+  - name: "Custom data analysis"
+    steps:
+      - export_raw_data
+      - import_to_power_bi
+      - create_custom_dashboard
+      - schedule_refresh
+    success_criteria:
+      - data_export_comprehensive
+      - formats_supported
+      - api_access_available

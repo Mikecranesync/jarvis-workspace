@@ -1,0 +1,34 @@
+{
+  "persona": "Richard Moore",
+  "role": "Plant Manager",
+  "session_duration_seconds": 0.657934,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:30.758325",
+      "action": "session_start",
+      "details": {
+        "persona": "Richard Moore"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:31.416163",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Weekly summary review",
+        "persona": "Richard Moore",
+        "role": "Plant Manager",
+        "tech_comfort": "low",
+        "steps_completed": 3,
+        "issues_found": [
+          "Confusion at step: receive_email_summary",
+          "Confusion at step: click_to_dashboard"
+        ],
+        "time_taken_seconds": 0.6577041149139404,
+        "satisfaction_score": 68.02688765525818,
+        "would_recommend": true,
+        "feedback": "It's okay but could be better. Issues: Confusion at step: receive_email_summary, Confusion at step: click_to_dashboard"
+      }
+    }
+  ]
+}

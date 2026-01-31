@@ -1,0 +1,31 @@
+{
+  "persona": "David Miller",
+  "role": "Reliability Engineer",
+  "session_duration_seconds": 0.441418,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:29.356345",
+      "action": "session_start",
+      "details": {
+        "persona": "David Miller"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:29.797696",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Rebuild vs replace analysis",
+        "persona": "David Miller",
+        "role": "Reliability Engineer",
+        "tech_comfort": "high",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.44126105308532715,
+        "satisfaction_score": 99.29398231506347,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "persona": "Rachel Clark",
+  "role": "Maintenance Manager",
+  "session_duration_seconds": 0.601364,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:36.513739",
+      "action": "session_start",
+      "details": {
+        "persona": "Rachel Clark"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:37.114977",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Peak season preparation",
+        "persona": "Rachel Clark",
+        "role": "Maintenance Manager",
+        "tech_comfort": "high",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.6011312007904053,
+        "satisfaction_score": 99.03819007873535,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

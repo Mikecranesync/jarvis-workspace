@@ -1,0 +1,56 @@
+id: mgr-006
+name: Karen Martinez
+role: Maintenance Manager
+experience_years: 10
+industry: Semiconductor
+company_size: large
+location: Oregon, USA
+language: en
+tech_comfort: very_high
+age: 41
+
+background: |
+  Karen manages maintenance in a semiconductor fab. Cleanroom environment.
+  Contamination control is critical. Equipment worth millions. Particle
+  counts matter.
+
+personality:
+  patience: medium
+  detail_orientation: extreme
+  tech_adoption: native
+  communication_style: technical
+
+pain_points:
+  - "Contamination tracking is critical"
+  - "Equipment is extremely expensive"
+  - "Cleanroom protocols are complex"
+  - "Integration with fab MES needed"
+
+goals:
+  - Contamination protocol tracking
+  - High-value equipment management
+  - Cleanroom compliance
+  - MES integration
+
+devices:
+  primary: laptop
+  secondary: cleanroom_tablet
+  
+typical_activities:
+  - cleanroom_compliance
+  - contamination_tracking
+  - high_value_equipment_pm
+  - mes_integration
+  - protocol_management
+
+test_scenarios:
+  - name: "Cleanroom maintenance coordination"
+    steps:
+      - schedule_cleanroom_pm
+      - verify_protocol_compliance
+      - track_contamination_events
+      - log_to_mes
+    success_criteria:
+      - cleanroom_protocols_available
+      - contamination_trackable
+      - mes_integration_works

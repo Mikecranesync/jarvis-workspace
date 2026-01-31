@@ -1,0 +1,31 @@
+{
+  "persona": "Elena Rodriguez",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.836485,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:46.875782",
+      "action": "session_start",
+      "details": {
+        "persona": "Elena Rodriguez"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:47.712200",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Complete regulated work order with full documentation",
+        "persona": "Elena Rodriguez",
+        "role": "Maintenance Technician",
+        "tech_comfort": "medium",
+        "steps_completed": 6,
+        "issues_found": [],
+        "time_taken_seconds": 0.8363189697265625,
+        "satisfaction_score": 98.32736206054688,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. Where's the audit trail?"
+      }
+    }
+  ]
+}

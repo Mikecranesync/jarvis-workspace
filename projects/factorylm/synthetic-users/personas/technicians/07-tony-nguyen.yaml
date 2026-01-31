@@ -1,0 +1,69 @@
+id: tech-007
+name: Tony Nguyen
+role: Maintenance Technician
+experience_years: 10
+industry: Electronics Manufacturing
+company_size: medium
+location: Arizona, USA
+language: en
+tech_comfort: high
+age: 38
+
+background: |
+  Tony maintains SMT lines and precision electronics equipment. Very
+  technically skilled and detail-oriented. Appreciates good software
+  design. Has opinions about UX. Will give detailed feedback if asked.
+
+personality:
+  patience: medium
+  detail_orientation: very_high
+  tech_adoption: enthusiastic
+  communication_style: technical
+
+pain_points:
+  - "The UI is inconsistent"
+  - "Why doesn't this export to Excel?"
+  - "Need more customization options"
+  - "API would be nice"
+
+goals:
+  - Clean, consistent interface
+  - Data export capabilities
+  - Customizable fields
+  - Integration possibilities
+
+devices:
+  primary: iphone
+  secondary: macbook
+  
+typical_activities:
+  - detailed_equipment_documentation
+  - custom_field_usage
+  - data_export
+  - report_generation
+  - meter_readings
+
+test_scenarios:
+  - name: "Advanced user workflow"
+    steps:
+      - login
+      - create_custom_report
+      - export_data
+      - filter_and_sort
+      - save_view
+    success_criteria:
+      - export_works
+      - custom_views_save
+      - data_is_accurate
+
+frustration_triggers:
+  - inconsistent_design
+  - cant_export_data
+  - no_customization
+  - poor_mobile_experience
+
+quotes:
+  - "This should be a dropdown, not a text field"
+  - "Why can't I filter by this?"
+  - "The mobile app doesn't have this feature"
+  - "I'll put in a feature request"

@@ -1,0 +1,55 @@
+id: latam-004
+name: Ana García
+role: Plant Manager
+experience_years: 18
+industry: Automotive
+company_size: large
+location: Querétaro, Mexico
+language: es
+tech_comfort: high
+age: 46
+
+background: |
+  Ana dirige una planta automotriz que exporta a EE.UU. Estándares
+  de calidad internacionales. IATF 16949 certified. Reporta a
+  Detroit en inglés.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: required
+  communication_style: executive
+
+pain_points:
+  - "Reportes para Detroit en inglés"
+  - "Equipo local en español"
+  - "IATF compliance tracking"
+  - "Multi-plant visibility"
+
+goals:
+  - Executive bilingual dashboards
+  - IATF compliance
+  - Multi-plant comparison
+  - International standards
+
+devices:
+  primary: laptop
+  secondary: ipad
+  
+typical_activities:
+  - executive_dashboards
+  - iatf_compliance
+  - corporate_reporting
+  - multi_plant_analysis
+
+test_scenarios:
+  - name: "Executive bilingual review"
+    steps:
+      - view_plant_dashboard_spanish
+      - switch_to_english
+      - generate_corporate_report
+      - compare_multi_plant
+    success_criteria:
+      - seamless_language_switch
+      - iatf_metrics_available
+      - multi_plant_works

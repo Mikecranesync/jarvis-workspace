@@ -1,0 +1,31 @@
+{
+  "persona": "James Taylor",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.634349,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:49.586404",
+      "action": "session_start",
+      "details": {
+        "persona": "James Taylor"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:50.220645",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Document solution for future reference",
+        "persona": "James Taylor",
+        "role": "Maintenance Technician",
+        "tech_comfort": "medium",
+        "steps_completed": 5,
+        "issues_found": [],
+        "time_taken_seconds": 0.6341040134429932,
+        "satisfaction_score": 98.73179197311401,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. Let me show you how I documented it"
+      }
+    }
+  ]
+}

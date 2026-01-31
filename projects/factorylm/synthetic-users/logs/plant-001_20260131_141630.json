@@ -1,0 +1,31 @@
+{
+  "persona": "William Jenkins",
+  "role": "Plant Manager",
+  "session_duration_seconds": 0.514122,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:30.243131",
+      "action": "session_start",
+      "details": {
+        "persona": "William Jenkins"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:30.757161",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Executive dashboard review",
+        "persona": "William Jenkins",
+        "role": "Plant Manager",
+        "tech_comfort": "medium",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.5139076709747314,
+        "satisfaction_score": 98.97218465805054,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

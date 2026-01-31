@@ -1,0 +1,31 @@
+{
+  "persona": "Steve Anderson",
+  "role": "Maintenance Manager",
+  "session_duration_seconds": 0.626212,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:35.886647",
+      "action": "session_start",
+      "details": {
+        "persona": "Steve Anderson"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:36.512779",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Manager daily review",
+        "persona": "Steve Anderson",
+        "role": "Maintenance Manager",
+        "tech_comfort": "medium",
+        "steps_completed": 5,
+        "issues_found": [],
+        "time_taken_seconds": 0.6260321140289307,
+        "satisfaction_score": 98.74793577194214,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

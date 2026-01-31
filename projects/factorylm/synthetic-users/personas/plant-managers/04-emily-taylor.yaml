@@ -1,0 +1,38 @@
+id: plant-004
+name: Emily Taylor
+role: Plant Manager
+experience_years: 12
+industry: Medical Devices
+company_size: medium
+location: Minnesota, USA
+language: en
+tech_comfort: high
+age: 42
+
+background: |
+  Emily runs a medical device manufacturing plant. FDA regulated.
+  Quality is paramount. Every decision documented. Risk-averse culture.
+
+personality:
+  patience: high
+  detail_orientation: high
+  tech_adoption: required
+  communication_style: precise
+
+typical_activities:
+  - quality_metrics
+  - fda_compliance_status
+  - risk_management
+  - audit_preparation
+
+test_scenarios:
+  - name: "FDA audit preparation"
+    steps:
+      - review_compliance_dashboard
+      - verify_documentation_complete
+      - check_training_status
+      - generate_audit_package
+    success_criteria:
+      - compliance_visible
+      - documentation_status_clear
+      - audit_package_exportable

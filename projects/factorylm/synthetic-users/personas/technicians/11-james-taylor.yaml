@@ -1,0 +1,68 @@
+id: tech-011
+name: James Taylor
+role: Maintenance Technician
+experience_years: 7
+industry: Plastics Manufacturing
+company_size: medium
+location: Indiana, USA
+language: en
+tech_comfort: medium
+age: 33
+
+background: |
+  James maintains injection molding machines. Technical work requiring
+  precision. He values good documentation and learning from past issues.
+  Mentors newer technicians.
+
+personality:
+  patience: high
+  detail_orientation: high
+  tech_adoption: accepting
+  communication_style: teaching
+
+pain_points:
+  - "New guys keep making the same mistakes"
+  - "Wish we had a knowledge base"
+  - "Need to see what worked last time"
+  - "Training takes forever"
+
+goals:
+  - Capture institutional knowledge
+  - Training documentation
+  - Failure pattern recognition
+  - Mentoring support
+
+devices:
+  primary: android_phone
+  secondary: tablet
+  
+typical_activities:
+  - document_solutions
+  - create_procedures
+  - review_history
+  - train_new_techs
+
+test_scenarios:
+  - name: "Document solution for future reference"
+    steps:
+      - complete_repair
+      - document_root_cause
+      - add_solution_steps
+      - attach_photos
+      - tag_for_training
+    success_criteria:
+      - easy_to_document
+      - searchable_later
+      - can_share_with_team
+
+frustration_triggers:
+  - cant_add_detailed_notes
+  - no_search_function
+  - cant_attach_media
+  - knowledge_gets_lost
+
+quotes:
+  - "The new guy needs to see this"
+  - "We fixed this same thing last year"
+  - "Let me show you how I documented it"
+  - "This should be in a training manual"

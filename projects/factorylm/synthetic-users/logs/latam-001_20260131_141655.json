@@ -1,0 +1,31 @@
+{
+  "persona": "Carlos Rodr\u00edguez",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.539136,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:54.894659",
+      "action": "session_start",
+      "details": {
+        "persona": "Carlos Rodr\u00edguez"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:55.433699",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Flujo completo en espa\u00f1ol",
+        "persona": "Carlos Rodr\u00edguez",
+        "role": "Maintenance Technician",
+        "tech_comfort": "medium",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.5389237403869629,
+        "satisfaction_score": 98.92215251922607,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

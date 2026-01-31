@@ -1,0 +1,55 @@
+id: latam-002
+name: María Fernández
+role: Maintenance Manager
+experience_years: 15
+industry: Food Processing
+company_size: medium
+location: Monterrey, Mexico
+language: es
+tech_comfort: high
+age: 42
+
+background: |
+  María gestiona mantenimiento para una planta de alimentos en México.
+  Equipo bilingüe. Necesita reportes en español para gerencia local
+  pero también en inglés para corporativo en EE.UU.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: practical
+  communication_style: professional
+
+pain_points:
+  - "Necesito reportes en dos idiomas"
+  - "Mi equipo solo habla español"
+  - "Corporativo quiere inglés"
+  - "Normas NOM mexicanas"
+
+goals:
+  - Bilingual interface switching
+  - Spanish reports for local
+  - English reports for corporate
+  - Mexican regulatory compliance
+
+devices:
+  primary: laptop
+  secondary: iphone
+  
+typical_activities:
+  - bilingual_reporting
+  - team_management_spanish
+  - corporate_reporting_english
+  - nom_compliance
+
+test_scenarios:
+  - name: "Bilingual reporting workflow"
+    steps:
+      - generate_spanish_report
+      - switch_language
+      - generate_english_report
+      - verify_both_accurate
+    success_criteria:
+      - language_switching_works
+      - reports_in_both_languages
+      - data_consistent

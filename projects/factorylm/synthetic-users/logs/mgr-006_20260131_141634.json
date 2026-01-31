@@ -1,0 +1,31 @@
+{
+  "persona": "Karen Martinez",
+  "role": "Maintenance Manager",
+  "session_duration_seconds": 0.533524,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:33.731068",
+      "action": "session_start",
+      "details": {
+        "persona": "Karen Martinez"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:34.264513",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Cleanroom maintenance coordination",
+        "persona": "Karen Martinez",
+        "role": "Maintenance Manager",
+        "tech_comfort": "very_high",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.5333387851715088,
+        "satisfaction_score": 99.35999345779419,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

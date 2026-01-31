@@ -1,0 +1,2093 @@
+{
+  "items": [
+    {
+      "project": "shoptalk",
+      "file": "workflow_tracker.py",
+      "lines": 254,
+      "functions": 7,
+      "is_service": true,
+      "priority_score": 260,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "demo_agent.py",
+      "lines": 159,
+      "functions": 2,
+      "is_service": true,
+      "priority_score": 260,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "alarm_triage.py",
+      "lines": 254,
+      "functions": 4,
+      "is_service": true,
+      "priority_score": 260,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "kb_harvester/seed_data.py",
+      "lines": 647,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "kb_harvester/vectorize.py",
+      "lines": 720,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/tools/research_executor.py",
+      "lines": 827,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/atlas/work_order_service.py",
+      "lines": 561,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/pipeline/autonomous_loop.py",
+      "lines": 733,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/fallback.py",
+      "lines": 815,
+      "functions": 9,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/workers/atom_creator.py",
+      "lines": 522,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/workers/weekly_kb_maintenance.py",
+      "lines": 540,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/llm/ralph_print_analyzer.py",
+      "lines": 526,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/models/enrichment.py",
+      "lines": 516,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/manual_indexing_service.py",
+      "lines": 502,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/manual_matcher_service.py",
+      "lines": 702,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/catalog_scraper.py",
+      "lines": 501,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/manual_conversation_service.py",
+      "lines": 539,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/manual_download_manager.py",
+      "lines": 830,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/kb_parse_service.py",
+      "lines": 700,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/manual_service.py",
+      "lines": 1161,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/kb_enrichment_repository.py",
+      "lines": 999,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "manual_hunter/services/manual_matcher_service.py",
+      "lines": 702,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "manual_hunter/services/manual_service.py",
+      "lines": 1161,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 200,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "create_manual_hunter_tables_v2.py",
+      "lines": 193,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "import_manual_hunter_enhanced.py",
+      "lines": 219,
+      "functions": 6,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "run_db_schema_update.py",
+      "lines": 77,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "inspect_execution.py",
+      "lines": 85,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "wire_manual_hunter_integration.py",
+      "lines": 374,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "fetch_manual_hunter.py",
+      "lines": 49,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "create_manual_hunter_tables.py",
+      "lines": 207,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "check_table_schema.py",
+      "lines": 65,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "check_cache_database.py",
+      "lines": 83,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "verify_workflow_config.py",
+      "lines": 80,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "check_manual_hunter_executions.py",
+      "lines": 65,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "activate_workflow_manual.py",
+      "lines": 45,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "check_human_queue.py",
+      "lines": 51,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet-pro/main.py",
+      "lines": 83,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "scripts/apply_migration.py",
+      "lines": 96,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "scripts/verify_manual_matching_setup.py",
+      "lines": 160,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "scripts/run_manual_gap_filler.py",
+      "lines": 73,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "kb_harvester/fault_code_harvester.py",
+      "lines": 451,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "kb_harvester/kb_harvester.py",
+      "lines": 426,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "kb_harvester/kb_database.py",
+      "lines": 350,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "bin/rivet-test.py",
+      "lines": 258,
+      "functions": 8,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/core/trace_logger.py",
+      "lines": 313,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/services/knowledge_service.py",
+      "lines": 496,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/services/embedding_service.py",
+      "lines": 372,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/integrations/vps_kb_client.py",
+      "lines": 421,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/rivet_pro/context_extractor.py",
+      "lines": 437,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "scripts/ralph-claude-code/convert-prd.py",
+      "lines": 178,
+      "functions": 3,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/example_navigator.py",
+      "lines": 258,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/workers/daily_kb_builder.py",
+      "lines": 459,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/workers/batch_embeddings.py",
+      "lines": 315,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/workers/url_scheduler.py",
+      "lines": 302,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/workers/manual_gap_filler.py",
+      "lines": 289,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/cli/manual_qa_cli.py",
+      "lines": 376,
+      "functions": 5,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/i18n/detector.py",
+      "lines": 231,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/models/search_report.py",
+      "lines": 172,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/utils/encoding.py",
+      "lines": 62,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/manual_rag_service.py",
+      "lines": 487,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/manual_vision_service.py",
+      "lines": 391,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/pipeline_integration.py",
+      "lines": 271,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/kb_download_service.py",
+      "lines": 451,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/manual_qa_service.py",
+      "lines": 439,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/semantic_search_service.py",
+      "lines": 373,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/kb_search_service.py",
+      "lines": 454,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/telegram/handlers/manual_qa_handler.py",
+      "lines": 413,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/routers/manual_qa.py",
+      "lines": 462,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "the_watchman.py",
+      "lines": 423,
+      "functions": 12,
+      "is_service": true,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "the_cartographer.py",
+      "lines": 460,
+      "functions": 9,
+      "is_service": true,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "manual_hunter/scripts/create_manual_hunter_tables_v2.py",
+      "lines": 193,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "manual_hunter/scripts/ingest_pdfs.py",
+      "lines": 116,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "manual_hunter/handlers/manual_qa_handler.py",
+      "lines": 413,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "manual_hunter/services/manual_rag_service.py",
+      "lines": 487,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "manual_hunter/services/pdf_chunker_service.py",
+      "lines": 480,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "factorylm-core",
+      "file": "src/factorylm/llm/flm_client.py",
+      "lines": 158,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 180,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "photo_to_cmms_bot.py",
+      "lines": 940,
+      "functions": 6,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "integrations/grashjs_client.py",
+      "lines": 579,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/core/database_manager.py",
+      "lines": 834,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/tools/unified_research_tool.py",
+      "lines": 581,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/memory/storage.py",
+      "lines": 952,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/services/sme_chat_service.py",
+      "lines": 715,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/integrations/telegram.py",
+      "lines": 1482,
+      "functions": 8,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/rivet_pro/confidence_scorer.py",
+      "lines": 536,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/rivet_pro/models.py",
+      "lines": 516,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/integrations/atlas/client.py",
+      "lines": 528,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/rendering/templates.py",
+      "lines": 946,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "scripts/ralph/ralph_api.py",
+      "lines": 508,
+      "functions": 9,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "tests/e2e/smoke_test.py",
+      "lines": 524,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/history.py",
+      "lines": 524,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/drafts.py",
+      "lines": 504,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/callback.py",
+      "lines": 511,
+      "functions": 10,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/utils/response_formatter.py",
+      "lines": 733,
+      "functions": 11,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/equipment_service.py",
+      "lines": 539,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/photo_service.py",
+      "lines": 536,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/claude_analyzer.py",
+      "lines": 540,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/photo_pipeline_service.py",
+      "lines": 717,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/feedback_service.py",
+      "lines": 646,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/electrical_print_processor.py",
+      "lines": 638,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/analytics_service.py",
+      "lines": 590,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/intelligence/response_templates.py",
+      "lines": 518,
+      "functions": 4,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/llm/router.py",
+      "lines": 664,
+      "functions": 3,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/telegram/print_handlers.py",
+      "lines": 528,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 120,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "run_bots.py",
+      "lines": 149,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "fix_llm_judge_workflow.py",
+      "lines": 96,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "restart_containers.py",
+      "lines": 103,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "try_activate_api.py",
+      "lines": 48,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/config.py",
+      "lines": 180,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet-n8n-workflow/n8n_auto_import.py",
+      "lines": 329,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "examples/keyboard_builder_usage.py",
+      "lines": 225,
+      "functions": 8,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "registration/user_db.py",
+      "lines": 473,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "registration/sms_service.py",
+      "lines": 291,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "registration/bot_patch.py",
+      "lines": 384,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "registration/registration_api.py",
+      "lines": 466,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "kb_harvester/reddit_harvester.py",
+      "lines": 359,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/main.py",
+      "lines": 134,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/utils/response_formatter.py",
+      "lines": 276,
+      "functions": 6,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/services/sme_rag_service.py",
+      "lines": 339,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/services/local_embedding_service.py",
+      "lines": 278,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/workflows/troubleshoot.py",
+      "lines": 351,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/workflows/general.py",
+      "lines": 237,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/integrations/telegram_rivet_bot.py",
+      "lines": 270,
+      "functions": 3,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/integrations/telegram_cmms_bot.py",
+      "lines": 225,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/integrations/llm.py",
+      "lines": 439,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/integrations/telegram_shared.py",
+      "lines": 329,
+      "functions": 4,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/integrations/atlas.py",
+      "lines": 413,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/atlas/equipment_matcher.py",
+      "lines": 457,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/atlas/models.py",
+      "lines": 275,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/atlas/machine_library.py",
+      "lines": 410,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/atlas/technician_service.py",
+      "lines": 447,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/rivet_pro/feedback_handler.py",
+      "lines": 299,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/prompts/sme/rockwell.py",
+      "lines": 195,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/prompts/sme/schneider.py",
+      "lines": 199,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/prompts/sme/generic.py",
+      "lines": 210,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/prompts/sme/siemens.py",
+      "lines": 196,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/prompts/sme/mitsubishi.py",
+      "lines": 197,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/prompts/sme/abb.py",
+      "lines": 189,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/prompts/sme/personalities.py",
+      "lines": 478,
+      "functions": 4,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/integrations/atlas/exceptions.py",
+      "lines": 154,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/pipeline/video_generator.py",
+      "lines": 462,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/pipeline/quality_iteration.py",
+      "lines": 491,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/rendering/manim_engine.py",
+      "lines": 477,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/services/voice_providers.py",
+      "lines": 329,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/services/image_providers.py",
+      "lines": 404,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/services/media_assets.py",
+      "lines": 321,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/services/quota_tracker.py",
+      "lines": 245,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/evaluation/video_judge.py",
+      "lines": 430,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "scripts/ralph-claude-code/notify.py",
+      "lines": 136,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/startup_validation.py",
+      "lines": 151,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/feature_flags.py",
+      "lines": 183,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/formatting.py",
+      "lines": 280,
+      "functions": 3,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/mermaid_parser.py",
+      "lines": 149,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/keyboard.py",
+      "lines": 330,
+      "functions": 5,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/navigator.py",
+      "lines": 352,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/example_integration.py",
+      "lines": 212,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/media_display.py",
+      "lines": 428,
+      "functions": 4,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/troubleshooting/commands.py",
+      "lines": 473,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/workers/enrichment_worker.py",
+      "lines": 357,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/i18n/translator.py",
+      "lines": 166,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/i18n/middleware.py",
+      "lines": 201,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/llm/ralph_orchestrator.py",
+      "lines": 405,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/models/extraction.py",
+      "lines": 120,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/models/screening.py",
+      "lines": 121,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/models/ocr.py",
+      "lines": 212,
+      "functions": 3,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/utils/mermaid_parser.py",
+      "lines": 493,
+      "functions": 9,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/usage_service.py",
+      "lines": 123,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/resilient_telegram_manager.py",
+      "lines": 329,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/multimodal_fusion_engine.py",
+      "lines": 400,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/product_family_discoverer.py",
+      "lines": 457,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/query_pattern_analyzer.py",
+      "lines": 445,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/llm_manager.py",
+      "lines": 350,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/workflow_state_machine.py",
+      "lines": 333,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/equipment_taxonomy.py",
+      "lines": 405,
+      "functions": 5,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/kb_enrichment_metrics.py",
+      "lines": 408,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/stripe_service.py",
+      "lines": 239,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/screening_service.py",
+      "lines": 332,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/alerting_service.py",
+      "lines": 347,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/enrichment_queue_service.py",
+      "lines": 430,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/sme_service.py",
+      "lines": 433,
+      "functions": 5,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/ocr_service.py",
+      "lines": 403,
+      "functions": 3,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/agent_executor.py",
+      "lines": 350,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/kb_enrichment_trigger.py",
+      "lines": 404,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/extraction_service.py",
+      "lines": 416,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/pdf_chunker_service.py",
+      "lines": 480,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/kb_enrichment_worker.py",
+      "lines": 437,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/work_order_service.py",
+      "lines": 479,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/kb_analytics_service.py",
+      "lines": 420,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/message_router.py",
+      "lines": 458,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/services/field_interaction_handler.py",
+      "lines": 418,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/intelligence/multi_signal_router.py",
+      "lines": 463,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/intelligence/voice_normalizer.py",
+      "lines": 362,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/intelligence/auto_research_trigger.py",
+      "lines": 379,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/intelligence/intent_classifier.py",
+      "lines": 416,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/intelligence/adaptive_commands.py",
+      "lines": 472,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/intelligence/context_retriever.py",
+      "lines": 455,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/prompts/sme/fanuc.py",
+      "lines": 133,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/prompts/sme/rockwell.py",
+      "lines": 135,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/prompts/sme/schneider.py",
+      "lines": 133,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/prompts/sme/generic.py",
+      "lines": 151,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/prompts/sme/siemens.py",
+      "lines": 136,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/prompts/sme/mitsubishi.py",
+      "lines": 134,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/core/prompts/sme/abb.py",
+      "lines": 133,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/whatsapp/twilio_client.py",
+      "lines": 276,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/whatsapp/handlers.py",
+      "lines": 430,
+      "functions": 3,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/whatsapp/twilio_webhook.py",
+      "lines": 260,
+      "functions": 3,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/whatsapp/client.py",
+      "lines": 205,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/telegram/__main__.py",
+      "lines": 50,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/dependencies.py",
+      "lines": 201,
+      "functions": 3,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/main.py",
+      "lines": 124,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/ralph/my_ralph_client.py",
+      "lines": 401,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/routers/enrichment.py",
+      "lines": 427,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/routers/version.py",
+      "lines": 37,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/routers/whatsapp.py",
+      "lines": 235,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/routers/auth.py",
+      "lines": 219,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/routers/pipeline.py",
+      "lines": 253,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/routers/equipment.py",
+      "lines": 313,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/web/routers/work_orders.py",
+      "lines": 277,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "factorylm-core",
+      "file": "setup.py",
+      "lines": 81,
+      "functions": 2,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "factorylm-core",
+      "file": "src/factorylm/llm/deepseek_client.py",
+      "lines": 282,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "factorylm-core",
+      "file": "src/factorylm/llm/groq_client.py",
+      "lines": 286,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "factorylm-core",
+      "file": "src/factorylm/llm/claude_client.py",
+      "lines": 316,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 100,
+      "status": "pending"
+    },
+    {
+      "project": "shoptalk",
+      "file": "the_weaver.py",
+      "lines": 388,
+      "functions": 8,
+      "is_service": true,
+      "priority_score": 80,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet/tools/response_gap_filler.py",
+      "lines": 875,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/composition/compositor.py",
+      "lines": 658,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/composition/post_processing.py",
+      "lines": 562,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/storyboard/generator.py",
+      "lines": 513,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/pipeline/video_generator_v3.py",
+      "lines": 595,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/audio/timing.py",
+      "lines": 563,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "ycb/cli/assets.py",
+      "lines": 552,
+      "functions": 9,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/infra/database.py",
+      "lines": 518,
+      "functions": 1,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/workers/kb_ingestion_worker.py",
+      "lines": 511,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    },
+    {
+      "project": "Rivet-PRO",
+      "file": "rivet_pro/adapters/telegram/bot.py",
+      "lines": 4052,
+      "functions": 0,
+      "is_service": false,
+      "priority_score": 20,
+      "status": "pending"
+    }
+  ],
+  "last_calculated": "2026-01-31T16:57:19.728201"
+}

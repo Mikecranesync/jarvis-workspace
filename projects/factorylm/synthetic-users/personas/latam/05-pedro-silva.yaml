@@ -1,0 +1,55 @@
+id: latam-005
+name: Pedro Silva
+role: Reliability Engineer
+experience_years: 12
+industry: Petrochemical
+company_size: large
+location: São Paulo, Brazil
+language: pt
+tech_comfort: very_high
+age: 40
+
+background: |
+  Pedro é engenheiro de confiabilidade em uma petroquímica brasileira.
+  Fala português nativo, espanhol e inglês. Usa metodologias RCM.
+  Busca soluções analíticas avançadas.
+
+personality:
+  patience: high
+  detail_orientation: extreme
+  tech_adoption: analytical
+  communication_style: technical
+
+pain_points:
+  - "Preciso de interface em português"
+  - "Integração com sistemas SAP"
+  - "Análise avançada de falhas"
+  - "Reportes multilingues"
+
+goals:
+  - Portuguese interface
+  - SAP integration
+  - Advanced failure analysis
+  - Multilingual reporting
+
+devices:
+  primary: laptop
+  secondary: android_phone
+  
+typical_activities:
+  - rcm_analysis
+  - failure_pattern_recognition
+  - sap_integration
+  - multilingual_documentation
+
+test_scenarios:
+  - name: "RCM analysis Portuguese"
+    steps:
+      - access_failure_data
+      - perform_rcm_analysis
+      - generate_report_portuguese
+      - export_to_sap
+    success_criteria:
+      - portuguese_interface
+      - rcm_tools_available
+      - sap_export_works

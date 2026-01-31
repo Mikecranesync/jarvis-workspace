@@ -1,0 +1,47 @@
+{
+  "persona": "Sarah Chen",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 1.215218,
+  "actions_logged": 3,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:47.712929",
+      "action": "session_start",
+      "details": {
+        "persona": "Sarah Chen"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:48.254632",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Document a new procedure",
+        "persona": "Sarah Chen",
+        "role": "Maintenance Technician",
+        "tech_comfort": "high",
+        "steps_completed": 5,
+        "issues_found": [],
+        "time_taken_seconds": 0.5415866374969482,
+        "satisfaction_score": 99.13346138000489,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. There has to be a better way"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:48.928053",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Check equipment maintenance history",
+        "persona": "Sarah Chen",
+        "role": "Maintenance Technician",
+        "tech_comfort": "high",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.6730148792266846,
+        "satisfaction_score": 98.92317619323731,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. Can I set up notifications for this?"
+      }
+    }
+  ]
+}
