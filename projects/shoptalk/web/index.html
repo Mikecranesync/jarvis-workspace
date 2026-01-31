@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopTalk - Industrial AI Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #888;
+            font-size: 1.2rem;
+        }
+        
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .panel {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .panel h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sensor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .sensor-card {
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .sensor-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .sensor-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .status-normal { color: #00ff88; }
+        .status-warning { color: #ffaa00; }
+        .status-critical { color: #ff4444; }
+        
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            max-width: 85%;
+        }
+        
+        .message.user {
+            background: #00d4ff;
+            color: #000;
+            margin-left: auto;
+        }
+        
+        .message.assistant {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        .chat-input input::placeholder {
+            color: #666;
+        }
+        
+        .chat-input button {
+            padding: 15px 30px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .chat-input button:hover {
+            transform: scale(1.05);
+        }
+        
+        .mic-btn {
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .mic-btn.recording {
+            background: #ff4444;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .quick-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .quick-btn {
+            padding: 10px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .quick-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #00d4ff;
+        }
+        
+        .alert-banner {
+            background: linear-gradient(90deg, #ff4444, #ff6b6b);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .alert-banner.active {
+            display: flex;
+        }
+        
+        .alert-icon {
+            font-size: 1.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .lang-btn.active {
+            background: #00d4ff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">🔧 ShopTalk</div>
+            <p class="tagline" id="tagline">Your AI-Powered Shop Floor Assistant</p>
+        </header>
+        
+        <div class="alert-banner" id="alertBanner">
+            <span class="alert-icon">⚠️</span>
+            <div>
+                <strong>ALERT:</strong> <span id="alertText">Conveyor belt jam detected on Line 2</span>
+            </div>
+            <button onclick="dismissAlert()" style="margin-left:auto;background:transparent;border:none;color:#fff;cursor:pointer;font-size:1.5rem;">×</button>
+        </div>
+        
+        <div class="main-grid">
+            <div class="panel">
+                <h2>📊 Live Sensor Data</h2>
+                <div class="sensor-grid">
+                    <div class="sensor-card">
+                        <div class="sensor-label">Motor Current</div>
+                        <div class="sensor-value status-normal" id="motorCurrent">4.5 A</div>
+                    </div>
+                    <div class="sensor-card">
+                        <div class="sensor-label">Motor Speed</div>
+                        <div class="sensor-value status-normal" id="motorSpeed">1500 RPM</div>
+                    </div>
+                    <div class="sensor-card">
+                        <div class="sensor-label">Temperature</div>
+                        <div class="sensor-value status-normal" id="temperature">45°C</div>
+                    </div>
+                    <div class="sensor-card">
+                        <div class="sensor-label">Belt Speed</div>
+                        <div class="sensor-value status-normal" id="beltSpeed">80%</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top:20px;">
+                    <h3 style="margin-bottom:10px;color:#888;">Simulate Fault:</h3>
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="simulateFault('jam')">🚫 Belt Jam</button>
+                        <button class="quick-btn" onclick="simulateFault('overload')">⚡ Overload</button>
+                        <button class="quick-btn" onclick="simulateFault('bearing')">🔩 Bearing Fail</button>
+                        <button class="quick-btn" onclick="simulateFault('normal')">✅ Normal</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <h2>💬 Ask ShopTalk</h2>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message assistant">
+                            👋 Hello! I'm ShopTalk, your AI shop floor assistant. Ask me about equipment diagnostics, maintenance procedures, or safety protocols.
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <button class="mic-btn" id="micBtn" onclick="toggleVoice()">🎤</button>
+                        <input type="text" id="userInput" placeholder="Ask about equipment issues..." onkeypress="handleKeyPress(event)">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="askQuestion('What does high motor current mean?')">High current?</button>
+                        <button class="quick-btn" onclick="askQuestion('How do I clear a belt jam?')">Clear jam</button>
+                        <button class="quick-btn" onclick="askQuestion('What are the safety procedures?')">Safety</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>ShopTalk by FactoryLM • Powered by Edge AI</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Sensor simulation
+        let currentState = 'normal';
+        
+        const states = {
+            normal: {
+                motorCurrent: { min: 4, max: 5, status: 'normal' },
+                motorSpeed: { min: 1450, max: 1550, status: 'normal' },
+                temperature: { min: 42, max: 52, status: 'normal' },
+                beltSpeed: { min: 75, max: 85, status: 'normal' }
+            },
+            jam: {
+                motorCurrent: { min: 8, max: 10, status: 'critical' },
+                motorSpeed: { min: 200, max: 500, status: 'critical' },
+                temperature: { min: 55, max: 65, status: 'warning' },
+                beltSpeed: { min: 5, max: 15, status: 'critical' }
+            },
+            overload: {
+                motorCurrent: { min: 7, max: 9, status: 'warning' },
+                motorSpeed: { min: 1300, max: 1400, status: 'warning' },
+                temperature: { min: 60, max: 70, status: 'critical' },
+                beltSpeed: { min: 60, max: 70, status: 'warning' }
+            },
+            bearing: {
+                motorCurrent: { min: 4.5, max: 5.5, status: 'normal' },
+                motorSpeed: { min: 1400, max: 1500, status: 'normal' },
+                temperature: { min: 65, max: 75, status: 'critical' },
+                beltSpeed: { min: 70, max: 80, status: 'normal' }
+            }
+        };
+        
+        function updateSensors() {
+            const state = states[currentState];
+            
+            for (const [sensor, config] of Object.entries(state)) {
+                const value = (Math.random() * (config.max - config.min) + config.min).toFixed(1);
+                const el = document.getElementById(sensor);
+                
+                let unit = '';
+                if (sensor === 'motorCurrent') unit = ' A';
+                if (sensor === 'motorSpeed') unit = ' RPM';
+                if (sensor === 'temperature') unit = '°C';
+                if (sensor === 'beltSpeed') unit = '%';
+                
+                el.textContent = value + unit;
+                el.className = 'sensor-value status-' + config.status;
+            }
+        }
+        
+        function simulateFault(fault) {
+            currentState = fault;
+            
+            if (fault !== 'normal') {
+                document.getElementById('alertBanner').classList.add('active');
+                const alerts = {
+                    jam: 'Belt jam detected! Motor current high, belt speed low.',
+                    overload: 'Motor overload warning! Temperature rising.',
+                    bearing: 'Bearing failure warning! High temperature detected.'
+                };
+                document.getElementById('alertText').textContent = alerts[fault];
+                
+                // Auto-add diagnostic message
+                addMessage('assistant', `⚠️ **FAULT DETECTED: ${fault.toUpperCase()}**\n\nI'm analyzing the sensor data now...`);
+            } else {
+                document.getElementById('alertBanner').classList.remove('active');
+                addMessage('assistant', '✅ System returned to normal operation.');
+            }
+        }
+        
+        function dismissAlert() {
+            document.getElementById('alertBanner').classList.remove('active');
+        }
+        
+        // Chat functionality
+        function addMessage(role, text) {
+            const messages = document.getElementById('chatMessages');
+            const div = document.createElement('div');
+            div.className = 'message ' + role;
+            div.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const text = input.value.trim();
+            if (!text) return;
+            
+            addMessage('user', text);
+            input.value = '';
+            
+            // Simulate AI response
+            setTimeout(() => {
+                const response = generateResponse(text);
+                addMessage('assistant', response);
+            }, 500);
+        }
+        
+        function askQuestion(q) {
+            document.getElementById('userInput').value = q;
+            sendMessage();
+        }
+        
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+        
+        function generateResponse(query) {
+            const q = query.toLowerCase();
+            
+            if (q.includes('current') || q.includes('amp')) {
+                return "**High Motor Current Analysis**\n\nElevated motor current typically indicates:\n• Mechanical overload (jam or obstruction)\n• Bearing friction\n• Belt tension too tight\n• Motor winding issues\n\n**Recommended Actions:**\n1. Check for obstructions\n2. Verify belt tension\n3. Listen for unusual sounds";
+            }
+            
+            if (q.includes('jam') || q.includes('clear')) {
+                return "**Belt Jam Clearing Procedure**\n\n⚠️ **SAFETY FIRST**\n1. Press E-STOP immediately\n2. Follow lockout/tagout procedure\n3. Wait for all motion to stop\n\n**Clearing Steps:**\n1. Identify obstruction location\n2. Remove debris carefully\n3. Inspect belt for damage\n4. Check rollers and pulleys\n5. Test at low speed before resuming";
+            }
+            
+            if (q.includes('safety') || q.includes('procedure')) {
+                return "**Safety Procedures**\n\n🔒 **Lockout/Tagout (LOTO)**\n1. Notify affected personnel\n2. Shut down equipment\n3. Isolate energy sources\n4. Apply locks and tags\n5. Verify zero energy state\n\n**PPE Required:**\n• Safety glasses\n• Steel-toe boots\n• Hearing protection\n• Gloves for mechanical work";
+            }
+            
+            if (q.includes('temperature') || q.includes('hot') || q.includes('heat')) {
+                return "**High Temperature Diagnosis**\n\nPossible causes:\n• Bearing wear/failure\n• Insufficient lubrication\n• Overload condition\n• Blocked cooling vents\n• Ambient temperature\n\n**Actions:**\n1. Check cooling fan operation\n2. Inspect oil/grease levels\n3. Reduce load if possible\n4. Monitor closely - shutdown if >70°C";
+            }
+            
+            return "I can help with:\n• Equipment diagnostics\n• Maintenance procedures\n• Safety protocols\n• Troubleshooting steps\n\nTry asking about specific issues like 'high motor current' or 'how to clear a belt jam'.";
+        }
+        
+        // Voice input (placeholder)
+        let isRecording = false;
+        function toggleVoice() {
+            const btn = document.getElementById('micBtn');
+            isRecording = !isRecording;
+            btn.classList.toggle('recording', isRecording);
+            
+            if (isRecording) {
+                addMessage('assistant', '🎤 Listening... (Voice input simulated in demo)');
+            }
+        }
+        
+        // Language toggle
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (lang === 'es') {
+                document.getElementById('tagline').textContent = 'Tu Asistente de IA para el Piso de Producción';
+                addMessage('assistant', '🇪🇸 ¡Hola! Ahora estoy hablando en español. ¿En qué puedo ayudarte?');
+            } else {
+                document.getElementById('tagline').textContent = 'Your AI-Powered Shop Floor Assistant';
+                addMessage('assistant', '🇺🇸 Switched to English. How can I help you?');
+            }
+        }
+        
+        // Update sensors every second
+        setInterval(updateSensors, 1000);
+        updateSensors();
+    </script>
+</body>
+</html>

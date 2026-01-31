@@ -1,0 +1,18 @@
+# ShopTalk Edge AI - Requirements
+
+# Core
+numpy>=1.20.0
+
+# Industrial protocols
+pymodbus>=3.0.0
+
+# API server
+fastapi>=0.100.0
+uvicorn>=0.22.0
+
+# Optional: Better TTS
+# edge-tts  # Microsoft Edge TTS (free, high quality)
+# piper-tts  # Fast local TTS
+
+# Optional: OPC-UA support
+# asyncua>=1.0.0

@@ -1,0 +1,28 @@
+[Unit]
+Description=ShopTalk Industrial AI Assistant
+Documentation=https://github.com/factorylm/shoptalk
+After=network.target ollama.service
+
+[Service]
+Type=simple
+User=shoptalk
+Group=shoptalk
+WorkingDirectory=/opt/shoptalk
+Environment=PYTHONPATH=/opt/shoptalk
+Environment=SHOPTALK_HOST=0.0.0.0
+Environment=SHOPTALK_PORT=8000
+ExecStart=/usr/bin/python3 /opt/shoptalk/main.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/shoptalk/data /opt/shoptalk/logs
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

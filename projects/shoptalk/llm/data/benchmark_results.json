@@ -1,0 +1,134 @@
+{
+  "total_cases": 8,
+  "passed": 5,
+  "failed": 3,
+  "pass_rate": 0.625,
+  "avg_keyword_score": 0.5833333333333334,
+  "results": [
+    {
+      "case_id": "conv_jam_01",
+      "keyword_score": 1.0,
+      "keywords_found": [
+        "jam",
+        "obstruction",
+        "stop",
+        "lockout"
+      ],
+      "keywords_missing": [],
+      "fault_detected_correctly": true,
+      "has_actionable_steps": true,
+      "mentions_safety": true,
+      "passed": true,
+      "response": "Diagnosis: Belt jam detected. Obstruction causing high current. Stop conveyor and perform lockout/tagout. Check for debris."
+    },
+    {
+      "case_id": "conv_jam_02_es",
+      "keyword_score": 1.0,
+      "keywords_found": [
+        "atasco",
+        "obstrucci\u00f3n",
+        "detener"
+      ],
+      "keywords_missing": [],
+      "fault_detected_correctly": true,
+      "has_actionable_steps": true,
+      "mentions_safety": false,
+      "passed": true,
+      "response": "Diagn\u00f3stico: Atasco de banda. Obstrucci\u00f3n detectada. Detener el transportador y verificar."
+    },
+    {
+      "case_id": "conv_bearing_01",
+      "keyword_score": 1.0,
+      "keywords_found": [
+        "bearing",
+        "vibration",
+        "inspect",
+        "lubrication"
+      ],
+      "keywords_missing": [],
+      "fault_detected_correctly": true,
+      "has_actionable_steps": true,
+      "mentions_safety": false,
+      "passed": true,
+      "response": "Diagnosis: Possible bearing failure. High vibration and temperature. Inspect bearings and check lubrication. Plan replacement."
+    },
+    {
+      "case_id": "conv_normal_01",
+      "keyword_score": 0.6666666666666666,
+      "keywords_found": [
+        "normal",
+        "operating"
+      ],
+      "keywords_missing": [
+        "good"
+      ],
+      "fault_detected_correctly": true,
+      "has_actionable_steps": false,
+      "mentions_safety": false,
+      "passed": true,
+      "response": "All systems operating normally. Readings within expected ranges."
+    },
+    {
+      "case_id": "pump_cavitation_01",
+      "keyword_score": 1.0,
+      "keywords_found": [
+        "cavitation",
+        "inlet",
+        "suction",
+        "pressure"
+      ],
+      "keywords_missing": [],
+      "fault_detected_correctly": true,
+      "has_actionable_steps": true,
+      "mentions_safety": false,
+      "passed": true,
+      "response": "Diagnosis: Pump cavitation. Low inlet pressure causing vapor bubbles. Check suction line and inlet valve."
+    },
+    {
+      "case_id": "pump_seal_01",
+      "keyword_score": 0.0,
+      "keywords_found": [],
+      "keywords_missing": [
+        "seal",
+        "leak",
+        "replace"
+      ],
+      "fault_detected_correctly": false,
+      "has_actionable_steps": false,
+      "mentions_safety": false,
+      "passed": false,
+      "response": "Unable to diagnose. Please provide more sensor data."
+    },
+    {
+      "case_id": "comp_oil_01",
+      "keyword_score": 0.0,
+      "keywords_found": [],
+      "keywords_missing": [
+        "oil",
+        "pressure",
+        "bearing",
+        "check level"
+      ],
+      "fault_detected_correctly": false,
+      "has_actionable_steps": false,
+      "mentions_safety": false,
+      "passed": false,
+      "response": "Unable to diagnose. Please provide more sensor data."
+    },
+    {
+      "case_id": "ambiguous_01",
+      "keyword_score": 0.0,
+      "keywords_found": [],
+      "keywords_missing": [
+        "monitor",
+        "watch",
+        "slight"
+      ],
+      "fault_detected_correctly": false,
+      "has_actionable_steps": false,
+      "mentions_safety": false,
+      "passed": false,
+      "response": "Unable to diagnose. Please provide more sensor data."
+    }
+  ]
+}

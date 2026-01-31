@@ -1,0 +1,16 @@
+# ShopTalk Edge Requirements
+# Minimal dependencies for edge deployment
+
+# Core
+numpy>=1.21.0
+pyyaml>=6.0
+
+# Modbus (optional - only if using real PLCs)
+pymodbus>=3.0.0
+
+# API Server (lightweight)
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# Note: LLM handled by Ollama (external)
+# Note: TTS optional - remove if not needed
