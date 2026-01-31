@@ -1,6 +1,23 @@
 # MEMORY.md — Jarvis Long-Term Memory
 
-*Last updated: 2026-01-30*
+*Last updated: 2026-01-31*
+
+## 🧠 Autonomy System (2026-01-31)
+
+Major milestone: Mike authorized full autonomy with Constitutional Amendment IV.
+
+**System Components:**
+- Learning Logger — tracks every task with outcomes, calculates success rates
+- Self-Evolution Engine — analyzes patterns, suggests improvements
+- Memory Index — 73 files indexed with semantic search
+- Procedure Library — documented successful approaches
+- Constitution — guiding principles + boundaries
+
+**Status:** Self-improving every hour. 4 experiences logged, 100% success rate.
+
+**Authorization:** "For Mike's best interest and the good of humanity."
+
+---
 
 ## Mike Harper — Key Context
 
@@ -88,5 +105,27 @@
 - Code Agent: Every 30 min (GitHub tasks)
 - Research Report: Every 4 hours
 
+## Knowledge Base
+
+### Unified Knowledge (knowledge/)
+- **Index:** knowledge/index.json
+- **Device Profiles:** knowledge/devices/modbus_profiles.json
+- **All agents should use `memory_search` to query before answering**
+
+### ShopTalk System (projects/shoptalk/)
+- **Edge AI:** World model, inference engine, voice interface, API server
+- **LLM Data:** 2,810 training samples, 14 equipment types, EN/ES
+- **Auto-Connect:** Network scanner, device templates, auto-discovery service
+- **Research:** brain/research/2026-01-31-plc-auto-connect.md
+
+### Key Technical Facts
+- **Modbus TCP port:** 502
+- **EtherNet/IP port:** 44818
+- **OPC-UA port:** 4840
+- **pycomm3:** Allen-Bradley auto tag discovery
+- **pymodbus:** Modbus TCP/RTU communication
+- **Recommended edge LLM:** Qwen3-0.6B or Phi-4-mini
+
 ## Important Dates
 - 2026-01-29: FactoryLM repo created, rebrand completed, Amendment I ratified, Halo glasses ordered
+- 2026-01-31: ShopTalk edge AI complete, auto-connect research done, WhatsApp bridge built
