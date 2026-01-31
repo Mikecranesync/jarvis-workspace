@@ -1,124 +1,116 @@
-# Industrial Gateway Configuration
-# Edit this file to configure your PLC connections
+# Industrial Protocol Gateway Configuration
+# BeagleBone Edge Deployment
 
 gateway:
-  name: "FactoryLM Industrial Gateway"
+  name: FactoryLM Edge Gateway
   log_level: INFO
+  version: "1.0.0"
 
-# Web interface settings
 web:
   host: "0.0.0.0"
   port: 8080
-
-# OPC UA server settings
+  
 opcua:
   enabled: true
   endpoint: "opc.tcp://0.0.0.0:4840"
-  name: "IndustrialGateway"
+  name: "FactoryLMGateway"
+  namespace: "http://factorylm.com/gateway"
 
-# Device connections
-# Uncomment and configure the devices you want to connect to
+# ShopTalk AI Integration
+shoptalk:
+  enabled: true
+  model_path: "/opt/factorylm/models/conveyor.json"
+  language: "es"  # Default to Spanish
+  voice_enabled: true
+  anomaly_cooldown: 30  # seconds between voice alerts
+
+# Device configurations
 devices:
-  # Example: Modbus TCP device
-  # - name: "modbus_device_1"
-  #   protocol: "modbus_tcp"
-  #   host: "192.168.1.100"
-  #   port: 502
-  #   unit_id: 1
-  #   scan_rate: 1.0  # seconds
-  #   tags:
-  #     - name: "tank_level"
-  #       address: 0
-  #       length: 1
-  #       register_type: "holding"
-  #       data_type: "int16"
-  #       scale: 0.1
-  #     - name: "pump_status"
-  #       address: 10
-  #       register_type: "coil"
-  #       data_type: "bool"
-  
-  # Example: Modbus RTU (Serial) device
-  # - name: "modbus_serial_1"
-  #   protocol: "modbus_rtu"
-  #   port: "/dev/ttyUSB0"
-  #   baudrate: 9600
-  #   parity: "N"
-  #   unit_id: 1
-  #   scan_rate: 1.0
-  #   tags:
-  #     - name: "temperature"
-  #       address: 100
-  #       data_type: "int16"
-  #       scale: 0.1
-  
-  # Example: Siemens S7 PLC
-  # - name: "siemens_plc"
-  #   protocol: "s7"
-  #   host: "192.168.1.50"
-  #   rack: 0
-  #   slot: 1  # Use slot 1 for S7-1200/1500, slot 2 for S7-300/400
-  #   scan_rate: 0.5
-  #   tags:
-  #     - name: "motor_speed"
-  #       area: "DB"
-  #       db_number: 1
-  #       offset: 0
-  #       data_type: "real"
-  #     - name: "start_button"
-  #       area: "I"
-  #       offset: 0
-  #       bit: 0
-  #       data_type: "bool"
-  #     - name: "output_valve"
-  #       area: "Q"
-  #       offset: 0
-  #       bit: 0
-  #       data_type: "bool"
-  
-  # Example: Allen-Bradley CompactLogix/ControlLogix
-  # - name: "allen_bradley"
-  #   protocol: "ethernetip"
-  #   host: "192.168.1.60"
-  #   slot: 0
-  #   plc_type: "logix"
-  #   scan_rate: 0.5
-  #   tags:
-  #     - name: "conveyor_speed"
-  #       plc_tag: "Conveyor_Speed"
-  #     - name: "alarm_active"
-  #       plc_tag: "Alarms.Active"
-  #     - name: "batch_count"
-  #       plc_tag: "Production.BatchCount"
-  
-  # Example: Mitsubishi MELSEC
-  # - name: "mitsubishi_plc"
-  #   protocol: "melsec"
-  #   host: "192.168.1.70"
-  #   port: 5007
-  #   plc_type: "Q"
-  #   scan_rate: 0.5
-  #   tags:
-  #     - name: "data_register"
-  #       device: "D"
-  #       address: 100
-  #       data_type: "word"
-  #     - name: "internal_relay"
-  #       device: "M"
-  #       address: 0
-  #       data_type: "bit"
-
-  # Demo device (uses simulated values for testing)
-  - name: "demo_simulator"
-    protocol: "modbus_tcp"
-    host: "127.0.0.1"
-    port: 5020
-    unit_id: 1
-    scan_rate: 1.0
+  # Factory I/O Simulation (Modbus TCP)
+  - name: factory_io
+    protocol: modbus_tcp
+    host: "192.168.1.100"  # Factory I/O PC
+    port: 502
+    scan_rate: 0.1  # 100ms polling
+    timeout: 3.0
     tags:
-      - name: "demo_counter"
+      - name: motor_speed
         address: 0
-        data_type: "uint16"
-      - name: "demo_random"
+        register_type: input_register
+        scale: 0.1
+        unit: "RPM"
+      - name: motor_current
         address: 1
-        data_type: "uint16"
+        register_type: input_register
+        scale: 0.01
+        unit: "A"
+      - name: conveyor_speed
+        address: 2
+        register_type: input_register
+        scale: 1.0
+        unit: "%"
+      - name: temperature
+        address: 3
+        register_type: input_register
+        scale: 0.1
+        unit: "°C"
+      - name: sensor_1
+        address: 0
+        register_type: discrete_input
+      - name: sensor_2
+        address: 1
+        register_type: discrete_input
+      - name: sensor_3
+        address: 2
+        register_type: discrete_input
+      - name: sensor_4
+        address: 3
+        register_type: discrete_input
+      - name: motor_run_cmd
+        address: 0
+        register_type: coil
+      - name: conveyor_run_cmd
+        address: 1
+        register_type: coil
+
+  # Allen-Bradley Micro820 (example config)
+  # - name: plc_micro820
+  #   protocol: ethernetip
+  #   host: "192.168.1.50"
+  #   slot: 0
+  #   scan_rate: 0.5
+  #   tags:
+  #     - name: MainMotor_Speed
+  #       address: "Program:MainProgram.MainMotor_Speed"
+  #       data_type: REAL
+
+  # Siemens S7-1200 (example config)
+  # - name: plc_s7_1200
+  #   protocol: s7
+  #   host: "192.168.1.60"
+  #   rack: 0
+  #   slot: 1
+  #   scan_rate: 0.5
+  #   tags:
+  #     - name: DB1_Motor_Speed
+  #       address: "DB1.DBD0"
+  #       data_type: REAL
+
+# Data logging configuration
+logging:
+  enabled: true
+  path: "/opt/factorylm/data"
+  format: "csv"  # csv or jsonl
+  rotate_size_mb: 100
+  retention_days: 30
+
+# Alerts configuration
+alerts:
+  enabled: true
+  email:
+    enabled: false
+  telegram:
+    enabled: false
+  webhook:
+    enabled: false
+    url: ""
