@@ -122,8 +122,8 @@ def cmd_train_info(args):
                 count = len(data)
                 total += count
                 print(f"  {json_file.name}: {count:,} samples")
-        except:
-            pass
+        except (json.JSONDecodeError, IOError, OSError) as e:
+            print(f"  {json_file.name}: (error reading: {type(e).__name__})")
     
     print(f"\n  Total: {total:,} samples")
     

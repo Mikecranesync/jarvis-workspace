@@ -60,3 +60,11 @@ except (WebSocketDisconnect, ConnectionError, RuntimeError) as e:
 ---
 
 *Auto-updated by Autonomous Code Improver*
+
+## 2026-01-31 13:22 UTC - Code Quality Fix
+
+**File:** projects/shoptalk/cli.py
+**Issue:** Bare except clause
+**Fix:** Changed to specific exceptions (json.JSONDecodeError, IOError, OSError)
+**Impact:** Better error visibility, follows Python best practices
+
