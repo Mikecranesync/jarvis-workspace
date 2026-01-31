@@ -1,0 +1,67 @@
+id: tech-015
+name: Chris Brown
+role: Maintenance Technician
+experience_years: 11
+industry: Cement Manufacturing
+company_size: medium
+location: Colorado, USA
+language: en
+tech_comfort: medium
+age: 42
+
+background: |
+  Chris works in a dusty, harsh environment. Equipment takes a beating.
+  Phones and tablets don't last long. Needs rugged solutions that work
+  in extreme conditions.
+
+personality:
+  patience: medium
+  detail_orientation: medium
+  tech_adoption: pragmatic
+  communication_style: practical
+
+pain_points:
+  - "Dust kills electronics"
+  - "Can't use touchscreen with gloves"
+  - "Extreme temperatures"
+  - "Equipment is always dirty"
+
+goals:
+  - Rugged device compatibility
+  - Glove-friendly interface
+  - Works in extreme conditions
+  - Simple durable workflow
+
+devices:
+  primary: rugged_phone
+  secondary: tough_tablet
+  
+typical_activities:
+  - harsh_environment_work_orders
+  - equipment_inspection
+  - photo_documentation
+  - preventive_maintenance
+
+test_scenarios:
+  - name: "Harsh environment usability"
+    steps:
+      - use_with_gloves
+      - outdoor_visibility
+      - quick_photo_capture
+      - voice_input_option
+    success_criteria:
+      - works_with_gloves
+      - readable_in_sunlight
+      - voice_alternative_available
+
+frustration_triggers:
+  - requires_precision_touch
+  - not_readable_outside
+  - no_voice_input
+  - fragile_workflow
+
+quotes:
+  - "Can I use this with gloves?"
+  - "I can't see the screen in the sun"
+  - "My last phone lasted two weeks"
+  - "Is there a voice option?"

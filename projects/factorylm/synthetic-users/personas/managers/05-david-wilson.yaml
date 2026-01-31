@@ -1,0 +1,56 @@
+id: mgr-005
+name: David Wilson
+role: Maintenance Manager
+experience_years: 18
+industry: Oil & Gas
+company_size: large
+location: Texas, USA
+language: en
+tech_comfort: medium
+age: 52
+
+background: |
+  David manages maintenance for a refinery. Safety incidents are career-ending.
+  PSM (Process Safety Management) compliance is mandatory. Turnarounds are
+  massive coordinated efforts.
+
+personality:
+  patience: medium
+  detail_orientation: extreme
+  tech_adoption: safety_driven
+  communication_style: safety_first
+
+pain_points:
+  - "PSM documentation is overwhelming"
+  - "Turnaround planning is chaotic"
+  - "Safety tracking across contractors"
+  - "MOC (Management of Change) process"
+
+goals:
+  - PSM compliance
+  - Turnaround coordination
+  - Contractor safety management
+  - MOC tracking
+
+devices:
+  primary: laptop
+  secondary: rugged_tablet
+  
+typical_activities:
+  - psm_compliance
+  - turnaround_planning
+  - contractor_management
+  - safety_documentation
+  - moc_tracking
+
+test_scenarios:
+  - name: "Turnaround preparation"
+    steps:
+      - create_turnaround_project
+      - assign_contractors
+      - track_safety_requirements
+      - manage_moc
+    success_criteria:
+      - project_management_capable
+      - contractor_tracking_works
+      - safety_integrated

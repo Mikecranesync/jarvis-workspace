@@ -1,0 +1,31 @@
+{
+  "persona": "Jessica Lee",
+  "role": "ERP Integration Specialist",
+  "session_duration_seconds": 0.542382,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:51.057222",
+      "action": "session_start",
+      "details": {
+        "persona": "Jessica Lee"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:51.599529",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "SAP integration setup",
+        "persona": "Jessica Lee",
+        "role": "ERP Integration Specialist",
+        "tech_comfort": "expert",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.542186975479126,
+        "satisfaction_score": 99.45781302452087,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

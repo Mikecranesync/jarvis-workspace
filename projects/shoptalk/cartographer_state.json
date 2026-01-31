@@ -1,0 +1,21 @@
+{
+  "initialized": "2026-01-31T16:34:33.726005",
+  "last_scan": "2026-01-31T16:57:39.754127",
+  "projects_mapped": [
+    "Rivet-PRO",
+    "voice-control",
+    "whatsapp-bridge",
+    "shoptalk",
+    "beaglebone-gateway",
+    "cmms",
+    "factorylm-core",
+    "factorylm-landing",
+    "factorylm",
+    "automaton"
+  ],
+  "total_files": 502,
+  "total_lines": 139599,
+  "total_functions": 587,
+  "sandbox_synced": true,
+  "last_sync": "2026-01-31T16:57:49.531728"
+}

@@ -1,0 +1,56 @@
+id: mgr-003
+name: Mike Thompson
+role: Maintenance Manager
+experience_years: 12
+industry: Automotive
+company_size: large
+location: Tennessee, USA
+language: en
+tech_comfort: medium
+age: 45
+
+background: |
+  Mike manages maintenance for an automotive assembly plant. TPM is the
+  methodology. OEE is the metric. Every minute of downtime is tracked
+  and analyzed. Continuous improvement focused.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: data_driven
+  communication_style: metrics_focused
+
+pain_points:
+  - "OEE tracking is fragmented"
+  - "Can't correlate maintenance to downtime"
+  - "TPM boards are manual"
+  - "No predictive insights"
+
+goals:
+  - OEE integration
+  - Downtime correlation
+  - TPM support
+  - Predictive analytics
+
+devices:
+  primary: laptop
+  secondary: android_tablet
+  
+typical_activities:
+  - oee_analysis
+  - downtime_review
+  - tpm_management
+  - continuous_improvement
+  - team_meetings
+
+test_scenarios:
+  - name: "TPM daily review"
+    steps:
+      - review_oee_metrics
+      - identify_top_losses
+      - assign_improvement_actions
+      - track_progress
+    success_criteria:
+      - oee_data_visible
+      - losses_categorized
+      - actions_trackable

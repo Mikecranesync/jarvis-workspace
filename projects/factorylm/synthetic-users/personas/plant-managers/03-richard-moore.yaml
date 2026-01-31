@@ -1,0 +1,37 @@
+id: plant-003
+name: Richard Moore
+role: Plant Manager
+experience_years: 22
+industry: Steel Manufacturing
+company_size: large
+location: Pennsylvania, USA
+language: en
+tech_comfort: low
+age: 58
+
+background: |
+  Richard runs a steel mill. Old school manager. Walks the floor daily.
+  Trusts his managers, wants summary reports. Approaching retirement.
+
+personality:
+  patience: low
+  detail_orientation: low
+  tech_adoption: minimal
+  communication_style: direct
+
+typical_activities:
+  - weekly_summary_review
+  - exception_reports
+  - budget_approvals
+  - safety_reviews
+
+test_scenarios:
+  - name: "Weekly summary review"
+    steps:
+      - receive_email_summary
+      - click_to_dashboard
+      - review_exceptions_only
+    success_criteria:
+      - email_summary_works
+      - exceptions_highlighted
+      - minimal_interaction_needed

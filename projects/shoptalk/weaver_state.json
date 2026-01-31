@@ -1,0 +1,33 @@
+{
+  "last_sync": "2026-01-31T15:54:08.628813",
+  "last_commit": "dac5010772f0362ac5f9e3caf24910433220dcd1",
+  "workflow_map": {
+    "workflow_tracker": {
+      "file": "projects/shoptalk/workflow_tracker.py",
+      "port": "8092",
+      "description": "Workflow Tracker - The Automaton's Self-Monitoring System",
+      "hash": "52e42e03"
+    },
+    "demo_agent": {
+      "file": "projects/shoptalk/demo_agent.py",
+      "port": "8090",
+      "description": "Demo Agent - Equipment Manual Q&A",
+      "hash": "5bc02d9b"
+    },
+    "the_weaver": {
+      "file": "projects/shoptalk/the_weaver.py",
+      "port": "8093",
+      "description": "THE WEAVER (Automaton 2)",
+      "hash": "c9ccac39"
+    },
+    "alarm_triage": {
+      "file": "projects/shoptalk/alarm_triage.py",
+      "port": "8091",
+      "description": "Alarm Triage & Operator Cheat-Sheet",
+      "hash": "67200c33"
+    }
+  },
+  "products": [],
+  "test_results": [],
+  "sync_count": 1
+}

@@ -1,0 +1,31 @@
+{
+  "persona": "Sarah Johnson",
+  "role": "Reliability Engineer",
+  "session_duration_seconds": 0.502813,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:28.852831",
+      "action": "session_start",
+      "details": {
+        "persona": "Sarah Johnson"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:29.355574",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Condition monitoring integration",
+        "persona": "Sarah Johnson",
+        "role": "Reliability Engineer",
+        "tech_comfort": "very_high",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.5026521682739258,
+        "satisfaction_score": 99.39681739807129,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

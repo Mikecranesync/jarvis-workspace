@@ -1,0 +1,69 @@
+id: tech-008
+name: Rashid Khan
+role: Maintenance Technician
+experience_years: 5
+industry: Water Treatment
+company_size: municipal
+location: Florida, USA
+language: en
+tech_comfort: medium
+age: 34
+
+background: |
+  Rashid works for a municipal water treatment facility. Government job,
+  union, lots of procedures. Everything requires documentation. Works
+  with aging infrastructure that requires constant attention.
+
+personality:
+  patience: high
+  detail_orientation: high
+  tech_adoption: compliant
+  communication_style: formal
+
+pain_points:
+  - "Everything needs three approvals"
+  - "The old equipment isn't in the system"
+  - "Need to track compliance certifications"
+  - "Reporting to multiple agencies"
+
+goals:
+  - Regulatory compliance tracking
+  - Equipment lifecycle management
+  - Multi-agency reporting
+  - Certification tracking
+
+devices:
+  primary: work_phone_android
+  secondary: desktop
+  
+typical_activities:
+  - compliance_work_orders
+  - regulatory_documentation
+  - certification_tracking
+  - agency_reporting
+  - equipment_lifecycle_updates
+
+test_scenarios:
+  - name: "Compliance documentation workflow"
+    steps:
+      - login
+      - open_regulatory_work_order
+      - complete_compliance_checklist
+      - attach_required_documents
+      - submit_to_supervisor
+    success_criteria:
+      - compliance_fields_available
+      - documents_attach_properly
+      - approval_workflow_works
+
+frustration_triggers:
+  - missing_compliance_fields
+  - cant_generate_required_reports
+  - no_approval_workflow
+  - cant_track_certifications
+
+quotes:
+  - "The state requires this documentation"
+  - "I need to generate a compliance report"
+  - "This has to go through three levels of approval"
+  - "Where do I track operator certifications?"

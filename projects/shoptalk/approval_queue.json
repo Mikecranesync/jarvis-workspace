@@ -1,0 +1,20 @@
+{
+  "pending": [
+    {
+      "id": "5b0c8fc8991c50ca",
+      "workflow_id": "shoptalk_workflow_tracker.py",
+      "project": "shoptalk",
+      "file": "workflow_tracker.py",
+      "priority_score": 260,
+      "created": "2026-01-31T16:42:07.979834",
+      "status": "PENDING",
+      "approval_url": "http://165.245.138.91:8096/approve/5b0c8fc8991c50ca",
+      "reject_url": "http://165.245.138.91:8096/reject/5b0c8fc8991c50ca",
+      "details_url": "http://165.245.138.91:8096/details/5b0c8fc8991c50ca",
+      "test_results": {},
+      "proof": "No proof provided"
+    }
+  ],
+  "approved": [],
+  "rejected": []
+}

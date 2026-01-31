@@ -1,0 +1,55 @@
+id: it-001
+name: Alex Kumar
+role: IT Systems Administrator
+experience_years: 10
+industry: Manufacturing
+company_size: large
+location: Illinois, USA
+language: en
+tech_comfort: expert
+age: 36
+
+background: |
+  Alex manages IT infrastructure for a manufacturing company. Responsible
+  for integrating maintenance systems with ERP, MES, and other enterprise
+  systems. API and integration focused.
+
+personality:
+  patience: medium
+  detail_orientation: extreme
+  tech_adoption: expert
+  communication_style: technical
+
+pain_points:
+  - "Every system needs custom integration"
+  - "No standard APIs"
+  - "Data silos everywhere"
+  - "Security compliance requirements"
+
+goals:
+  - REST API availability
+  - SSO integration
+  - Data export capabilities
+  - Security compliance
+
+devices:
+  primary: laptop
+  secondary: multiple_monitors
+  
+typical_activities:
+  - api_integration
+  - sso_configuration
+  - data_migration
+  - security_audit
+
+test_scenarios:
+  - name: "API integration setup"
+    steps:
+      - review_api_documentation
+      - configure_authentication
+      - test_endpoints
+      - setup_data_sync
+    success_criteria:
+      - api_docs_complete
+      - authentication_works
+      - endpoints_functional

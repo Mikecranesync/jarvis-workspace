@@ -1,0 +1,70 @@
+id: tech-003
+name: Marcus Johnson
+role: Maintenance Technician
+experience_years: 8
+industry: Automotive Manufacturing
+company_size: large
+location: Michigan, USA
+language: en
+tech_comfort: medium
+age: 35
+
+background: |
+  Marcus works at an automotive parts supplier. He's comfortable with
+  technology but doesn't have time for complicated systems. Works rotating
+  shifts and needs tools that work the same at 3 AM as they do at 3 PM.
+  Union member, follows procedures by the book.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: pragmatic
+  communication_style: professional
+
+pain_points:
+  - "Night shift never gets the same support"
+  - "I need offline access when WiFi is down"
+  - "Handoffs between shifts are a mess"
+  - "Can't find who to escalate to"
+
+goals:
+  - Smooth shift handoffs
+  - Offline capability
+  - Quick escalation paths
+  - Consistent mobile experience
+
+devices:
+  primary: android_phone
+  secondary: rugged_tablet
+  
+typical_activities:
+  - shift_handoff_notes
+  - escalate_work_orders
+  - offline_work_order_completion
+  - team_communication
+  - view_shift_schedule
+
+test_scenarios:
+  - name: "Complete work order offline"
+    steps:
+      - go_offline
+      - open_assigned_work_order
+      - update_status
+      - add_notes
+      - go_online
+      - verify_sync
+    success_criteria:
+      - data_syncs_correctly
+      - no_data_loss
+
+frustration_triggers:
+  - requires_internet
+  - no_shift_handoff_feature
+  - cant_see_other_shifts_work
+  - notifications_dont_work
+
+quotes:
+  - "Does this work offline?"
+  - "Who had this last shift?"
+  - "I need to hand this off properly"
+  - "The day shift guys need to see this"

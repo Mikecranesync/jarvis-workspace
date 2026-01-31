@@ -1,0 +1,33 @@
+{
+  "persona": "Sarah Mitchell",
+  "role": "CFO",
+  "session_duration_seconds": 0.48948,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:56.073055",
+      "action": "session_start",
+      "details": {
+        "persona": "Sarah Mitchell"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:56.562411",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Financial review",
+        "persona": "Sarah Mitchell",
+        "role": "CFO",
+        "tech_comfort": "medium",
+        "steps_completed": 4,
+        "issues_found": [
+          "Confusion at step: compare_budget_vs_actual"
+        ],
+        "time_taken_seconds": 0.48923468589782715,
+        "satisfaction_score": 84.02153062820435,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

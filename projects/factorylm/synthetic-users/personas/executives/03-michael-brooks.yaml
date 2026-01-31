@@ -1,0 +1,55 @@
+id: exec-003
+name: Michael Brooks
+role: VP of Operations
+experience_years: 25
+industry: Automotive
+company_size: large
+location: Michigan, USA
+language: en
+tech_comfort: medium
+age: 54
+
+background: |
+  Michael oversees operations including maintenance across 5 plants.
+  OEE focused. Continuous improvement culture. Needs to compare
+  plant performance and drive best practice sharing.
+
+personality:
+  patience: low
+  detail_orientation: medium
+  tech_adoption: results_driven
+  communication_style: operational
+
+pain_points:
+  - "Can't compare plants easily"
+  - "Best practices aren't shared"
+  - "Need standardized metrics"
+  - "Weekly ops review takes hours"
+
+goals:
+  - Multi-plant comparison
+  - Standardized KPIs
+  - Best practice identification
+  - Efficient reporting
+
+devices:
+  primary: laptop
+  secondary: ipad
+  
+typical_activities:
+  - multi_plant_review
+  - kpi_comparison
+  - best_practice_sharing
+  - ops_meeting_prep
+
+test_scenarios:
+  - name: "Multi-plant operations review"
+    steps:
+      - view_multi_plant_dashboard
+      - compare_kpis_across_plants
+      - identify_best_performer
+      - drill_into_practices
+    success_criteria:
+      - multi_plant_view_works
+      - kpis_standardized
+      - comparison_easy

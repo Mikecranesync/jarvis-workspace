@@ -1,0 +1,27 @@
+# Sandbox (digital twin working copies)
+sandbox/
+
+# Embedded git repos (external projects)
+clawdbot-search/
+factorylm-dev/
+halo-dev/
+rivet-pro-search/
+rivet-pro/
+projects/Rivet-PRO/
+projects/cmms/
+projects/factorylm-core/
+landing-page/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Logs
+*.log
+
+# IDE
+.idea/
+.vscode/

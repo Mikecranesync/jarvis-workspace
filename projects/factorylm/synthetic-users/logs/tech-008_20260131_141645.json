@@ -1,0 +1,33 @@
+{
+  "persona": "Rashid Khan",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.799682,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:44.970475",
+      "action": "session_start",
+      "details": {
+        "persona": "Rashid Khan"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:45.770099",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Compliance documentation workflow",
+        "persona": "Rashid Khan",
+        "role": "Maintenance Technician",
+        "tech_comfort": "medium",
+        "steps_completed": 5,
+        "issues_found": [
+          "Confusion at step: submit_to_supervisor"
+        ],
+        "time_taken_seconds": 0.7995340824127197,
+        "satisfaction_score": 83.40093183517456,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. The state requires this documentation"
+      }
+    }
+  ]
+}

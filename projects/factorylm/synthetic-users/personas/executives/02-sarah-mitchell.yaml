@@ -1,0 +1,55 @@
+id: exec-002
+name: Sarah Mitchell
+role: CFO
+experience_years: 22
+industry: Manufacturing
+company_size: large
+location: Georgia, USA
+language: en
+tech_comfort: medium
+age: 50
+
+background: |
+  Sarah is CFO and cares about maintenance costs, capital planning,
+  and asset lifecycle. Needs to justify maintenance budgets to the
+  board. Cost per unit, cost trends, capex vs opex decisions.
+
+personality:
+  patience: low
+  detail_orientation: financial
+  tech_adoption: numbers_focused
+  communication_style: financial
+
+pain_points:
+  - "I can't get maintenance cost per unit"
+  - "Budget vs actual is a mystery"
+  - "Capital planning is disconnected"
+  - "Need depreciation data"
+
+goals:
+  - Cost tracking
+  - Budget management
+  - Capital planning
+  - Financial reporting
+
+devices:
+  primary: laptop
+  secondary: iphone
+  
+typical_activities:
+  - cost_analysis
+  - budget_review
+  - capex_planning
+  - financial_reporting
+
+test_scenarios:
+  - name: "Financial review"
+    steps:
+      - view_cost_dashboard
+      - drill_into_cost_center
+      - compare_budget_vs_actual
+      - export_to_excel
+    success_criteria:
+      - cost_data_accurate
+      - budget_tracking_works
+      - excel_export_available

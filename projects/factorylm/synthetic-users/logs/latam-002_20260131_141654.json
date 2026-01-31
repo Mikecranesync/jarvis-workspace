@@ -1,0 +1,31 @@
+{
+  "persona": "Mar\u00eda Fern\u00e1ndez",
+  "role": "Maintenance Manager",
+  "session_duration_seconds": 0.591695,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:53.831480",
+      "action": "session_start",
+      "details": {
+        "persona": "Mar\u00eda Fern\u00e1ndez"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:54.423087",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Bilingual reporting workflow",
+        "persona": "Mar\u00eda Fern\u00e1ndez",
+        "role": "Maintenance Manager",
+        "tech_comfort": "high",
+        "steps_completed": 4,
+        "issues_found": [],
+        "time_taken_seconds": 0.5915021896362305,
+        "satisfaction_score": 99.05359649658203,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

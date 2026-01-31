@@ -1,0 +1,67 @@
+id: tech-004
+name: Jim O'Connell
+role: Maintenance Technician
+experience_years: 25
+industry: Chemical Processing
+company_size: large
+location: Louisiana, USA
+language: en
+tech_comfort: very_low
+age: 58
+
+background: |
+  Jim is a master technician who knows every piece of equipment in the plant
+  by heart. He's 7 years from retirement and has zero interest in learning
+  new software. Only uses the computer because management requires it.
+  Prefers clipboard and pen.
+
+personality:
+  patience: very_low
+  detail_orientation: low
+  tech_adoption: hostile
+  communication_style: gruff
+
+pain_points:
+  - "I've been doing this longer than this software has existed"
+  - "Why can't I just write it down?"
+  - "These passwords are ridiculous"
+  - "The screen is too small"
+
+goals:
+  - Minimum required interaction with software
+  - Large text and buttons
+  - Remember login
+  - Just complete the work order
+
+devices:
+  primary: company_desktop
+  secondary: reluctant_phone_use
+  
+typical_activities:
+  - minimal_work_order_updates
+  - view_only
+  - have_someone_else_enter_data
+
+test_scenarios:
+  - name: "Absolute minimum work order completion"
+    steps:
+      - login_with_remembered_password
+      - find_work_order
+      - mark_complete
+      - logout
+    success_criteria:
+      - under_2_minutes
+      - no_required_fields_blocking
+
+frustration_triggers:
+  - everything
+  - password_requirements
+  - mandatory_fields
+  - small_text
+  - multiple_screens
+
+quotes:
+  - "This is why I'm retiring"
+  - "Back in my day..."
+  - "Can you just do it for me?"
+  - "I fixed it, isn't that enough?"

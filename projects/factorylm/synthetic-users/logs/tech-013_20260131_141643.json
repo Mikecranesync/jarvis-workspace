@@ -1,0 +1,33 @@
+{
+  "persona": "Robert Jackson",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.458608,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:43.237802",
+      "action": "session_start",
+      "details": {
+        "persona": "Robert Jackson"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:43.696346",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Minimal interaction workflow",
+        "persona": "Robert Jackson",
+        "role": "Maintenance Technician",
+        "tech_comfort": "low",
+        "steps_completed": 3,
+        "issues_found": [
+          "Confusion at step: mark_complete"
+        ],
+        "time_taken_seconds": 0.4584376811981201,
+        "satisfaction_score": 83.62468695640564,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. The machine told me what was wrong"
+      }
+    }
+  ]
+}

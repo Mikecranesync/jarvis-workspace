@@ -1,0 +1,39 @@
+id: plant-001
+name: William Jenkins
+role: Plant Manager
+experience_years: 25
+industry: Chemical Manufacturing
+company_size: large
+location: Louisiana, USA
+language: en
+tech_comfort: medium
+age: 55
+
+background: |
+  William runs a chemical plant with 200 employees. P&L responsibility.
+  Safety and environmental compliance are top priorities. Reports to
+  corporate monthly. Needs high-level visibility, not details.
+
+personality:
+  patience: low
+  detail_orientation: low
+  tech_adoption: executive_summary
+  communication_style: brief
+
+typical_activities:
+  - executive_dashboard
+  - safety_metrics
+  - budget_review
+  - compliance_status
+
+test_scenarios:
+  - name: "Executive dashboard review"
+    steps:
+      - login
+      - view_executive_dashboard
+      - check_safety_status
+      - review_budget_variance
+    success_criteria:
+      - one_page_summary
+      - kpis_visible
+      - drill_down_available

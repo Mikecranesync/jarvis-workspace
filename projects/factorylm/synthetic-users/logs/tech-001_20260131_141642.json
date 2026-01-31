@@ -1,0 +1,52 @@
+{
+  "persona": "Bob Martinez",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 3.030577,
+  "actions_logged": 3,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:39.000500",
+      "action": "session_start",
+      "details": {
+        "persona": "Bob Martinez"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:41.255167",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Complete a work order on mobile",
+        "persona": "Bob Martinez",
+        "role": "Maintenance Technician",
+        "tech_comfort": "low",
+        "steps_completed": 7,
+        "issues_found": [
+          "Confusion at step: select_work_order"
+        ],
+        "time_taken_seconds": 2.2545249462127686,
+        "satisfaction_score": 78.2364251613617,
+        "would_recommend": true,
+        "feedback": "It's okay but could be better. Issues: Confusion at step: select_work_order"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:42.030975",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Find a part number",
+        "persona": "Bob Martinez",
+        "role": "Maintenance Technician",
+        "tech_comfort": "low",
+        "steps_completed": 4,
+        "issues_found": [
+          "Confusion at step: navigate_to_inventory",
+          "Confusion at step: view_part_details"
+        ],
+        "time_taken_seconds": 0.7754786014556885,
+        "satisfaction_score": 67.67356419563293,
+        "would_recommend": true,
+        "feedback": "It's okay but could be better. Issues: Confusion at step: navigate_to_inventory, Confusion at step: view_part_details"
+      }
+    }
+  ]
+}

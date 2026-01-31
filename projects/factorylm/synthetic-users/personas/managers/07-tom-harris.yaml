@@ -1,0 +1,56 @@
+id: mgr-007
+name: Tom Harris
+role: Maintenance Manager
+experience_years: 14
+industry: Utilities
+company_size: large
+location: Illinois, USA
+language: en
+tech_comfort: medium
+age: 47
+
+background: |
+  Tom manages maintenance for an electric utility. Critical infrastructure.
+  NERC CIP compliance required. Grid reliability is paramount. Public
+  safety responsibility.
+
+personality:
+  patience: high
+  detail_orientation: high
+  tech_adoption: compliance_driven
+  communication_style: formal
+
+pain_points:
+  - "NERC CIP compliance is complex"
+  - "Critical infrastructure tracking"
+  - "Outage coordination"
+  - "Public safety documentation"
+
+goals:
+  - NERC CIP compliance
+  - Critical asset management
+  - Outage management
+  - Regulatory reporting
+
+devices:
+  primary: laptop
+  secondary: work_phone
+  
+typical_activities:
+  - nerc_compliance
+  - critical_asset_tracking
+  - outage_management
+  - regulatory_reporting
+  - grid_reliability
+
+test_scenarios:
+  - name: "NERC CIP compliance review"
+    steps:
+      - run_compliance_report
+      - verify_critical_assets
+      - review_cyber_security_status
+      - generate_regulatory_report
+    success_criteria:
+      - nerc_fields_available
+      - critical_assets_tagged
+      - reports_exportable

@@ -1,0 +1,39 @@
+id: eng-005
+name: Robert Patel
+role: Reliability Engineer
+experience_years: 10
+industry: Automotive
+company_size: large
+location: Michigan, USA
+language: en
+tech_comfort: very_high
+age: 36
+
+background: |
+  Robert leads reliability improvement for robotic welding systems.
+  Machine learning for predictive maintenance. Industry 4.0 advocate.
+  Drives digital transformation initiatives.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: cutting_edge
+  communication_style: innovative
+
+typical_activities:
+  - ml_predictive_models
+  - industry_4_integration
+  - digital_transformation
+  - advanced_analytics
+
+test_scenarios:
+  - name: "ML predictive integration"
+    steps:
+      - connect_to_data_sources
+      - train_prediction_models
+      - integrate_predictions
+      - measure_effectiveness
+    success_criteria:
+      - api_available
+      - data_export_works
+      - predictions_actionable

@@ -1,0 +1,33 @@
+{
+  "persona": "Mike Thompson",
+  "role": "Maintenance Manager",
+  "session_duration_seconds": 0.611714,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:34.265614",
+      "action": "session_start",
+      "details": {
+        "persona": "Mike Thompson"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:34.877244",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "TPM daily review",
+        "persona": "Mike Thompson",
+        "role": "Maintenance Manager",
+        "tech_comfort": "medium",
+        "steps_completed": 4,
+        "issues_found": [
+          "Confusion at step: identify_top_losses"
+        ],
+        "time_taken_seconds": 0.6115176677703857,
+        "satisfaction_score": 83.77696466445923,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. "
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+id: latam-003
+name: José Martínez
+role: Maintenance Technician
+experience_years: 8
+industry: Mining
+company_size: large
+location: Santiago, Chile
+language: es
+tech_comfort: medium
+age: 35
+
+background: |
+  José trabaja en una mina de cobre en Chile. Turnos rotativos.
+  Equipos pesados CAT y Komatsu. Ambiente desafiante en altura.
+
+personality:
+  patience: medium
+  detail_orientation: medium
+  tech_adoption: practical
+  communication_style: direct
+
+pain_points:
+  - "Trabajamos en turnos de 7x7"
+  - "Altitud afecta el rendimiento"
+  - "Equipos masivos requieren documentación"
+  - "Comunicación entre turnos"
+
+goals:
+  - Shift handoff in Spanish
+  - Heavy equipment tracking
+  - Spanish documentation
+  - Mobile-first for field
+
+devices:
+  primary: rugged_android
+  secondary: none
+  
+typical_activities:
+  - heavy_equipment_maintenance
+  - shift_handoffs
+  - safety_documentation
+  - parts_tracking
+
+test_scenarios:
+  - name: "Handoff de turno minero"
+    steps:
+      - document_work_done
+      - create_handoff_notes
+      - assign_pending_items
+      - notify_next_shift
+    success_criteria:
+      - handoff_feature_works
+      - spanish_interface_complete
+      - notifications_work

@@ -1,0 +1,71 @@
+id: tech-005
+name: Elena Rodriguez
+role: Maintenance Technician
+experience_years: 6
+industry: Pharmaceutical
+company_size: medium
+location: New Jersey, USA
+language: en
+tech_comfort: medium
+age: 32
+
+background: |
+  Elena works in a highly regulated pharmaceutical manufacturing environment.
+  Documentation is critical - FDA audits happen regularly. She understands
+  why detailed records matter and is diligent about compliance. Bilingual
+  English/Spanish.
+
+personality:
+  patience: high
+  detail_orientation: very_high
+  tech_adoption: accepting
+  communication_style: precise
+
+pain_points:
+  - "I need audit trails for everything"
+  - "Signatures and approvals take forever"
+  - "Can't have any gaps in documentation"
+  - "Need to attach calibration certificates"
+
+goals:
+  - Complete audit trails
+  - Electronic signatures
+  - Document attachment
+  - Compliance reporting
+
+devices:
+  primary: iphone
+  secondary: desktop
+  
+typical_activities:
+  - detailed_work_order_documentation
+  - attach_calibration_records
+  - electronic_signatures
+  - compliance_checklists
+  - audit_trail_review
+
+test_scenarios:
+  - name: "Complete regulated work order with full documentation"
+    steps:
+      - login
+      - open_work_order
+      - complete_checklist
+      - attach_calibration_cert
+      - add_electronic_signature
+      - submit_for_approval
+    success_criteria:
+      - full_audit_trail_visible
+      - documents_attached_successfully
+      - signature_captured
+
+frustration_triggers:
+  - no_audit_trail
+  - cant_attach_documents
+  - no_electronic_signature
+  - missing_timestamp
+
+quotes:
+  - "The FDA will ask about this"
+  - "I need to document everything"
+  - "Where's the audit trail?"
+  - "This needs a signature"

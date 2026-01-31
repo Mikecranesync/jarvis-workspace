@@ -1,0 +1,55 @@
+id: it-002
+name: Jessica Lee
+role: ERP Integration Specialist
+experience_years: 8
+industry: Manufacturing
+company_size: large
+location: California, USA
+language: en
+tech_comfort: expert
+age: 33
+
+background: |
+  Jessica specializes in SAP integration. Connects maintenance systems
+  to SAP PM module. Data mapping expert. Understands both IT and
+  maintenance workflows.
+
+personality:
+  patience: high
+  detail_orientation: extreme
+  tech_adoption: expert
+  communication_style: bridging
+
+pain_points:
+  - "SAP integration is always complex"
+  - "Data mapping takes forever"
+  - "Different systems, different terminology"
+  - "Change management across systems"
+
+goals:
+  - SAP PM integration
+  - Data mapping tools
+  - Sync monitoring
+  - Error handling
+
+devices:
+  primary: laptop
+  secondary: none
+  
+typical_activities:
+  - sap_integration
+  - data_mapping
+  - sync_monitoring
+  - error_resolution
+
+test_scenarios:
+  - name: "SAP integration setup"
+    steps:
+      - configure_sap_connection
+      - map_data_fields
+      - test_sync
+      - verify_data_accuracy
+    success_criteria:
+      - sap_connector_available
+      - field_mapping_flexible
+      - sync_reliable

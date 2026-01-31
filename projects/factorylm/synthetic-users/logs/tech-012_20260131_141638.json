@@ -1,0 +1,33 @@
+{
+  "persona": "Amanda Foster",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.652043,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:37.517974",
+      "action": "session_start",
+      "details": {
+        "persona": "Amanda Foster"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:38.169926",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Change management workflow",
+        "persona": "Amanda Foster",
+        "role": "Maintenance Technician",
+        "tech_comfort": "very_high",
+        "steps_completed": 5,
+        "issues_found": [
+          "Confusion at step: track_approval_status"
+        ],
+        "time_taken_seconds": 0.6517972946166992,
+        "satisfaction_score": 84.21784324645996,
+        "would_recommend": true,
+        "feedback": "This works well for what I need. Does this have an API?"
+      }
+    }
+  ]
+}

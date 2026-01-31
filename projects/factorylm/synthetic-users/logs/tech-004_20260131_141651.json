@@ -1,0 +1,34 @@
+{
+  "persona": "Jim O'Connell",
+  "role": "Maintenance Technician",
+  "session_duration_seconds": 0.834744,
+  "actions_logged": 2,
+  "log": [
+    {
+      "timestamp": "2026-01-31T14:16:50.221710",
+      "action": "session_start",
+      "details": {
+        "persona": "Jim O'Connell"
+      }
+    },
+    {
+      "timestamp": "2026-01-31T14:16:51.056356",
+      "action": "scenario_complete",
+      "details": {
+        "scenario": "Absolute minimum work order completion",
+        "persona": "Jim O'Connell",
+        "role": "Maintenance Technician",
+        "tech_comfort": "very_low",
+        "steps_completed": 4,
+        "issues_found": [
+          "Confusion at step: find_work_order",
+          "Confusion at step: mark_complete"
+        ],
+        "time_taken_seconds": 0.834526538848877,
+        "satisfaction_score": 66.66189384460449,
+        "would_recommend": true,
+        "feedback": "It's okay but could be better. Issues: Confusion at step: find_work_order, Confusion at step: mark_complete"
+      }
+    }
+  ]
+}
