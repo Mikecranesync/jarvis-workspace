@@ -1,182 +1,236 @@
-# Agent Handoff System
+# Agent Handoff Protocol
 
-**Created:** 2026-01-29  
-**Status:** ACTIVE
-
-## The Rule
-
-> **Every agent, after completing ANY task, MUST:**
-> 1. Commit their work (artifact to repo)
-> 2. Create/update `NEXT_STEPS.md` in the artifact folder
-> 3. Tag the next responsible agent
-> 4. Send Telegram ping
+**Status:** IMPLEMENTED
+**Created:** 2026-01-30
+**Updated:** 2026-01-30
 
 ---
 
-## NEXT_STEPS.md Template
+## Overview
 
-Every artifact folder gets a `NEXT_STEPS.md`:
+This protocol ensures continuity when one agent completes a task and another needs to pick it up. Every task ends with a clear handoff document.
+
+---
+
+## The Handoff Document: NEXT_STEPS.md
+
+After completing any significant task, agents create/update a `NEXT_STEPS.md` file with:
 
 ```markdown
-# Next Steps
+# Next Steps for [Task/Project Name]
 
-**Last Updated:** {timestamp}
-**Last Agent:** {agent-name}
-**Artifact:** {path-to-artifact}
+## Status
+- **Last Action:** [What was just done]
+- **Completed By:** [Agent name/type]
+- **Timestamp:** [ISO 8601]
+- **Trello Card:** [Card ID if applicable]
 
-## Completed
-- [x] {what this agent did}
+## Handoff To
+**Next Agent:** [Agent type or @mike for human]
+**Priority:** [P0/P1/P2]
+**Deadline:** [If applicable]
 
-## Next Actions
-- [ ] {action 1} → **@{next-agent}**
-- [ ] {action 2} → **@{next-agent}**
+## Context
+[2-3 sentences of essential context for the next agent]
 
-## Blocked (if any)
-- {blocker} → **@mike** or **@jarvis**
+## Immediate Next Actions
+1. [First thing to do]
+2. [Second thing to do]
+3. [Third thing to do]
 
-## Context for Next Agent
-{Brief context the next agent needs to pick this up}
+## Blockers
+- [Any blockers or dependencies]
+
+## Files Modified
+- `path/to/file1.md`
+- `path/to/file2.py`
+
+## Notes for Next Agent
+[Any gotchas, warnings, or tips]
 ```
 
 ---
 
-## Agent Routing Rules
+## Agent Types
 
-### Social Agent → 
-| Output | Routes To |
-|--------|-----------|
-| Draft post | QA Judge |
-| Approved post | Mike (for publish) |
-| Rejected post | Social Agent (revision) |
-
-### Outreach Agent →
-| Output | Routes To |
-|--------|-----------|
-| Prospect list | Mike (review) |
-| Draft email | QA Judge |
-| Approved email | Mike (send) |
-
-### Content Agent →
-| Output | Routes To |
-|--------|-----------|
-| Blog draft | QA Judge |
-| Approved blog | Mike (publish) |
-
-### PR Agent →
-| Output | Routes To |
-|--------|-----------|
-| Podcast list | Mike (review) |
-| Pitch draft | QA Judge |
-| Approved pitch | Mike (send) |
-
-### QA Judge →
-| Output | Routes To |
-|--------|-----------|
-| PASS | Original agent → Mike |
-| FAIL | Original agent (revision) |
-
-### Code Agent →
-| Output | Routes To |
-|--------|-----------|
-| PR created | Mike (review) |
-| PR merged | Monitor Agent |
+| Agent | Responsibilities | Typical Handoffs |
+|-------|-----------------|------------------|
+| **Jarvis (Main)** | Orchestration, user communication | Any agent |
+| **Content Agent** | Blog posts, LinkedIn, documentation | QA Judge → Mike |
+| **Outreach Agent** | Cold emails, prospect lists | Mike (for approval) |
+| **PR Agent** | Podcasts, press, partnerships | Mike (for outreach) |
+| **Code Agent** | Development, PRs, debugging | QA Judge → Mike |
+| **Research Agent** | Web research, analysis | Requesting agent |
+| **QA Judge** | Review drafts, check quality | Mike or original agent |
 
 ---
 
-## Handoff Flow
+## Handoff Rules
 
+### Rule 1: Every Task Gets a Handoff
+Even if you think you're done, create the handoff. Future you (or another agent) will thank you.
+
+### Rule 2: Be Specific
+"Do more research" is bad. "Search for 3 competitor pricing pages and summarize in a table" is good.
+
+### Rule 3: Include Files
+Always list which files were created or modified. Agents can't read minds.
+
+### Rule 4: Tag the Next Agent
+Use clear tagging:
+- `@mike` - Needs human action
+- `@content-agent` - Content creation
+- `@code-agent` - Development task
+- `@qa-judge` - Needs review
+- `@anyone` - Any available agent can pick up
+
+### Rule 5: Escalate Blockers
+If something is blocked, say so clearly and tag Mike.
+
+---
+
+## Example Handoffs
+
+### Example 1: Content to QA
+
+```markdown
+# Next Steps for LinkedIn Post #1
+
+## Status
+- **Last Action:** Drafted LinkedIn post on CMMS failures
+- **Completed By:** Content Agent
+- **Timestamp:** 2026-01-30T17:21:00Z
+- **Trello Card:** 697b6d236e067fdd5074978a
+
+## Handoff To
+**Next Agent:** @qa-judge
+**Priority:** P1
+**Deadline:** Before Mike's review
+
+## Context
+First of 3 LinkedIn posts. 207 words, professional tone, backed by research.
+Topic: Why 50%+ of CMMS implementations fail.
+
+## Immediate Next Actions
+1. Review for tone consistency
+2. Check statistics are accurate
+3. Verify CTA is engaging
+
+## Blockers
+- None
+
+## Files Modified
+- `artifacts/drafts/social-agent/linkedin-post-1-cmms-failures.md`
+
+## Notes for Next Agent
+I used 3 sources (cited in the file). The 50% failure stat comes from tractian.com.
 ```
-Agent A starts task
-    ↓
-Agent A produces artifact
-    ↓
-Agent A commits to repo
-    ↓
-Agent A creates/updates NEXT_STEPS.md
-    ↓
-Agent A sends Telegram ping
-    ↓
-Agile Agent reads NEXT_STEPS.md
-    ↓
-Agile Agent routes to Agent B (or Mike)
-    ↓
-Agent B picks up, repeats cycle
+
+### Example 2: Code to Mike
+
+```markdown
+# Next Steps for Trello Webhook
+
+## Status
+- **Last Action:** Created PR #47 with webhook implementation
+- **Completed By:** Code Agent
+- **Timestamp:** 2026-01-30T15:00:00Z
+- **Trello Card:** N/A
+
+## Handoff To
+**Next Agent:** @mike
+**Priority:** P0
+**Deadline:** Before deployment
+
+## Context
+Webhook receives Trello card moves and triggers agent actions.
+PR is ready for review. CI passes.
+
+## Immediate Next Actions
+1. Review PR #47
+2. Test webhook locally
+3. Approve and merge
+4. Deploy to production
+
+## Blockers
+- Needs Mike's approval per Commandment V
+
+## Files Modified
+- `projects/trello_webhook/server.py`
+- `projects/trello_webhook/requirements.txt`
+- `README.md`
+
+## Notes for Next Agent
+Webhook secret is in .env file. Test URL: http://localhost:8000/trello-webhook
 ```
 
 ---
 
-## Example: Social Agent Handoff
+## Where to Store Handoffs
 
-**Social Agent completes LinkedIn post draft:**
+**Project-specific:**
+- `projects/[project-name]/NEXT_STEPS.md`
 
-1. **Commits:**
+**Agent-specific:**
+- `agents/[agent-name]/NEXT_STEPS.md`
+
+**Global (cross-project):**
+- `/root/jarvis-workspace/NEXT_STEPS.md`
+
+---
+
+## Automation
+
+The cron jobs should:
+1. Check for `NEXT_STEPS.md` files
+2. Route to appropriate agent based on `Handoff To` field
+3. Update Trello card status
+4. Clear handoff after pickup
+
+### Cron Check (Every 5 min)
+
 ```bash
-git add artifacts/drafts/social-agent/2026-01-29-linkedin-cmms.md
-git commit -m "[social-agent] draft: LinkedIn post on CMMS failures"
+# Pseudo-logic for handoff processing
+for file in $(find . -name "NEXT_STEPS.md"); do
+  next_agent=$(grep "Next Agent:" "$file" | cut -d: -f2)
+  if [ "$next_agent" == "@self" ]; then
+    # Pick up and execute
+    process_handoff "$file"
+  fi
+done
 ```
 
-2. **Creates NEXT_STEPS.md:**
+---
+
+## Templates
+
+### Quick Handoff (Simple Tasks)
+
 ```markdown
 # Next Steps
 
-**Last Updated:** 2026-01-29 14:30 UTC
-**Last Agent:** Social Agent
-**Artifact:** artifacts/drafts/social-agent/2026-01-29-linkedin-cmms.md
-
-## Completed
-- [x] Drafted LinkedIn post: "Why CMMS Implementations Fail"
-- [x] Added hashtags and CTA
-- [x] Validated against schema
-
-## Next Actions
-- [ ] QA validation against rubric → **@qa-judge**
-- [ ] If approved, route to Mike for publish → **@mike**
-
-## Context for Next Agent
-Post targets maintenance managers frustrated with failed CMMS rollouts.
-Key angle: Implementation is harder than buying software.
-CTA: "What's your biggest CMMS challenge?"
+**Done:** [What you did]
+**Next:** @[agent] — [What they should do]
+**Files:** [List of files]
 ```
 
-3. **Sends Ping:**
-```
-🤖 Social Agent → LinkedIn Draft: Why CMMS Fails — 📝 DRAFT → @qa-judge
-```
+### Full Handoff (Complex Tasks)
+
+Use the full template above.
 
 ---
 
-## Agile Agent Responsibilities
+## Commit Protocol
 
-The Agile Agent (every 5 min) must:
+After completing a task:
 
-1. Scan all `NEXT_STEPS.md` files in artifacts/
-2. Find any with pending actions
-3. Check if tagged agent can pick up
-4. If agent is available, trigger them
-5. If blocked, escalate to Mike
+1. Create/update NEXT_STEPS.md
+2. `git add .`
+3. `git commit -m "[agent]: Complete [task] - handoff to @[next]"`
+4. `git push`
 
----
-
-## Future: A2A Protocol Integration
-
-When we scale beyond simple file-based handoff:
-
-1. Each agent gets an **Agent Card** (capability manifest)
-2. Agents discover each other via A2A protocol
-3. Task passing via JSON-RPC
-4. Full observability and tracing
-5. No LangChain licensing costs (A2A is Apache 2.0)
-
-**For now:** File-based NEXT_STEPS.md is sufficient.
+This ensures continuity survives restarts.
 
 ---
 
-## Enforcement
-
-- No artifact without NEXT_STEPS.md update
-- Compliance Agent checks for orphaned tasks
-- Missing handoff = violation flagged
-
----
-
-*"A task without a next owner is a task that dies."*
+**Implementation Complete**
