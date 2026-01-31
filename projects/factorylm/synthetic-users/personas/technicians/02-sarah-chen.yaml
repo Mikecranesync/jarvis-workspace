@@ -1,0 +1,80 @@
+id: tech-002
+name: Sarah Chen
+role: Maintenance Technician
+experience_years: 3
+industry: Food Processing
+company_size: large
+location: California, USA
+language: en
+tech_comfort: high
+age: 28
+
+background: |
+  Sarah is a newer technician who grew up with smartphones. She's comfortable
+  with technology and actually prefers digital tools over paper. Recently
+  completed her industrial maintenance certification. Eager to learn and
+  advance in her career.
+
+personality:
+  patience: high
+  detail_orientation: high
+  tech_adoption: enthusiastic
+  communication_style: collaborative
+
+pain_points:
+  - "The senior guys don't document anything"
+  - "I wish I could see the history of this machine"
+  - "Training videos would be helpful"
+  - "I want to track my certifications"
+
+goals:
+  - Build knowledge base of equipment
+  - Document procedures for others
+  - Track personal performance metrics
+  - Connect with other technicians
+
+devices:
+  primary: iphone
+  secondary: ipad
+  
+typical_activities:
+  - view_assigned_work_orders
+  - create_work_orders
+  - document_procedures
+  - attach_photos_videos
+  - check_equipment_history
+  - update_meter_readings
+
+test_scenarios:
+  - name: "Document a new procedure"
+    steps:
+      - login
+      - navigate_to_asset
+      - add_file_attachment
+      - write_procedure_notes
+      - save
+    success_criteria:
+      - procedure_saved_successfully
+      - can_find_it_later
+      
+  - name: "Check equipment maintenance history"
+    steps:
+      - login
+      - search_asset
+      - view_work_order_history
+      - filter_by_date
+    success_criteria:
+      - history_loads_quickly
+      - can_see_all_past_work
+
+frustration_triggers:
+  - outdated_information
+  - cant_attach_files
+  - no_search_function
+  - cant_see_who_did_what
+
+quotes:
+  - "There has to be a better way"
+  - "Can I set up notifications for this?"
+  - "I wish the older guys would use this"
+  - "This would be great if everyone actually used it"

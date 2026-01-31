@@ -1,0 +1,68 @@
+id: tech-010
+name: Kevin Murphy
+role: Maintenance Technician
+experience_years: 20
+industry: Mining
+company_size: large
+location: Nevada, USA
+language: en
+tech_comfort: low
+age: 48
+
+background: |
+  Kevin works at a remote mining operation. Connectivity is spotty.
+  Equipment is massive and dangerous. Safety is paramount. He's seen
+  accidents and takes documentation seriously for safety reasons.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: reluctant
+  communication_style: safety_focused
+
+pain_points:
+  - "No cell signal half the time"
+  - "Need to document safety observations"
+  - "Equipment is spread across miles"
+  - "Can't always get back to the office"
+
+goals:
+  - Robust offline mode
+  - Safety documentation
+  - GPS/location tracking
+  - Large equipment handling
+
+devices:
+  primary: rugged_android
+  secondary: truck_laptop
+  
+typical_activities:
+  - safety_inspections
+  - offline_work_orders
+  - location_based_tasks
+  - heavy_equipment_maintenance
+
+test_scenarios:
+  - name: "Remote offline maintenance"
+    steps:
+      - download_work_orders
+      - go_to_remote_site
+      - complete_work_offline
+      - document_safety_items
+      - sync_when_back
+    success_criteria:
+      - full_offline_functionality
+      - safety_fields_available
+      - sync_works_reliably
+
+frustration_triggers:
+  - requires_connectivity
+  - no_safety_checklists
+  - cant_work_offline
+  - loses_data
+
+quotes:
+  - "I won't have signal out there"
+  - "Safety first, always"
+  - "This needs to work without internet"
+  - "Did my data sync?"

@@ -1,0 +1,38 @@
+id: eng-003
+name: David Miller
+role: Reliability Engineer
+experience_years: 15
+industry: Mining
+company_size: large
+location: Utah, USA
+language: en
+tech_comfort: high
+age: 45
+
+background: |
+  David focuses on heavy mobile equipment reliability. Haul trucks,
+  loaders, crushers. Life cycle costing. Rebuild vs replace decisions.
+
+personality:
+  patience: medium
+  detail_orientation: high
+  tech_adoption: practical
+  communication_style: cost_focused
+
+typical_activities:
+  - lifecycle_costing
+  - rebuild_analysis
+  - fleet_management
+  - component_tracking
+
+test_scenarios:
+  - name: "Rebuild vs replace analysis"
+    steps:
+      - pull_equipment_history
+      - calculate_lifecycle_costs
+      - compare_options
+      - generate_recommendation
+    success_criteria:
+      - cost_history_available
+      - calculation_possible
+      - report_generation

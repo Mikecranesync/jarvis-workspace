@@ -1,0 +1,56 @@
+id: mgr-002
+name: Jennifer Lee
+role: Maintenance Manager
+experience_years: 15
+industry: Pharmaceutical
+company_size: medium
+location: North Carolina, USA
+language: en
+tech_comfort: high
+age: 44
+
+background: |
+  Jennifer manages maintenance for a pharmaceutical plant. Compliance is
+  everything. She needs complete audit trails, approval workflows, and
+  detailed reporting for regulatory audits.
+
+personality:
+  patience: high
+  detail_orientation: extreme
+  tech_adoption: enthusiastic
+  communication_style: precise
+
+pain_points:
+  - "Audit prep takes weeks"
+  - "Need approval workflows for everything"
+  - "Compliance reporting is manual"
+  - "Can't prove what was done when"
+
+goals:
+  - Audit-ready reports
+  - Electronic approval workflows
+  - Complete compliance tracking
+  - FDA-ready documentation
+
+devices:
+  primary: laptop
+  secondary: ipad
+  
+typical_activities:
+  - approval_workflows
+  - compliance_reporting
+  - audit_preparation
+  - team_management
+  - regulatory_documentation
+
+test_scenarios:
+  - name: "Audit preparation workflow"
+    steps:
+      - generate_compliance_report
+      - review_audit_trail
+      - export_for_auditors
+      - verify_completeness
+    success_criteria:
+      - reports_generate_automatically
+      - audit_trails_complete
+      - export_in_required_format

@@ -1,0 +1,65 @@
+id: tech-013
+name: Robert Jackson
+role: Maintenance Technician
+experience_years: 18
+industry: Paper Mill
+company_size: large
+location: Maine, USA
+language: en
+tech_comfort: low
+age: 55
+
+background: |
+  Robert has been at the same paper mill his entire career. Knows every
+  machine intimately. Near retirement but still the go-to guy for complex
+  problems. Resistant to change but respected.
+
+personality:
+  patience: low
+  detail_orientation: medium
+  tech_adoption: minimal
+  communication_style: mentoring
+
+pain_points:
+  - "Been doing this 18 years without software"
+  - "My knowledge is in my head"
+  - "Young kids rely too much on computers"
+  - "Just tell me what's broken"
+
+goals:
+  - Minimal software interaction
+  - Voice input option
+  - Simple interface
+  - Respect for experience
+
+devices:
+  primary: flip_phone
+  secondary: shared_computer
+  
+typical_activities:
+  - occasional_work_order_view
+  - verbal_handoffs
+  - mentoring
+  - complex_troubleshooting
+
+test_scenarios:
+  - name: "Minimal interaction workflow"
+    steps:
+      - view_assigned_work
+      - mark_complete
+      - done
+    success_criteria:
+      - two_clicks_maximum
+      - large_clear_buttons
+
+frustration_triggers:
+  - complex_workflows
+  - small_text
+  - too_many_options
+  - forced_detail_entry
+
+quotes:
+  - "I'll tell the foreman what I did"
+  - "Back in my day..."
+  - "The machine told me what was wrong"
+  - "I don't need a computer for this"

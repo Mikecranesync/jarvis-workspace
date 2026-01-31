@@ -1,0 +1,55 @@
+id: latam-001
+name: Carlos Rodríguez
+role: Maintenance Technician
+experience_years: 10
+industry: Oil & Gas
+company_size: large
+location: Maracaibo, Venezuela
+language: es
+tech_comfort: medium
+age: 38
+
+background: |
+  Carlos trabaja en una refinería en Venezuela. Experiencia con equipos
+  rotativos. Ha visto el deterioro de la infraestructura petrolera.
+  Frustrado por la falta de repuestos. Busca herramientas modernas.
+
+personality:
+  patience: high
+  detail_orientation: high
+  tech_adoption: eager
+  communication_style: collaborative
+
+pain_points:
+  - "No hay repuestos disponibles"
+  - "El sistema actual está en inglés"
+  - "Necesito documentación en español"
+  - "La conexión a internet es mala"
+
+goals:
+  - Interface en español completo
+  - Modo offline robusto
+  - Documentación localizada
+  - Integración con WhatsApp
+
+devices:
+  primary: android_phone
+  secondary: none
+  
+typical_activities:
+  - work_orders_spanish
+  - whatsapp_integration
+  - offline_mode
+  - photo_documentation
+
+test_scenarios:
+  - name: "Flujo completo en español"
+    steps:
+      - login_spanish_interface
+      - view_work_orders_spanish
+      - complete_work_order
+      - use_whatsapp_features
+    success_criteria:
+      - full_spanish_translation
+      - works_offline
+      - whatsapp_integration_works

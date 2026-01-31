@@ -1,0 +1,39 @@
+id: plant-002
+name: Sandra White
+role: Plant Manager
+experience_years: 18
+industry: Consumer Goods
+company_size: large
+location: Ohio, USA
+language: en
+tech_comfort: high
+age: 48
+
+background: |
+  Sandra runs a consumer goods manufacturing plant. OEE focused.
+  Lean manufacturing culture. Data-driven decision making.
+  Competitive internal benchmarking.
+
+personality:
+  patience: medium
+  detail_orientation: medium
+  tech_adoption: data_driven
+  communication_style: analytical
+
+typical_activities:
+  - oee_monitoring
+  - lean_metrics
+  - competitive_benchmarking
+  - cost_analysis
+
+test_scenarios:
+  - name: "Plant performance review"
+    steps:
+      - view_oee_trends
+      - compare_to_targets
+      - identify_improvement_areas
+      - assign_actions
+    success_criteria:
+      - oee_visible
+      - trends_clear
+      - actionable_insights
