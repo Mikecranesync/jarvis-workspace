@@ -1,33 +1,33 @@
 {
   "started": "2026-01-31T16:16:19.342345",
-  "checks_run": 2,
+  "checks_run": 3,
   "services": {
     "manual_hunter": {
       "service": "manual_hunter",
-      "timestamp": "2026-01-31T16:16:26.755535",
+      "timestamp": "2026-01-31T17:08:57.847316",
       "healthy": true,
-      "latency_ms": 1.75,
+      "latency_ms": 1.45,
       "error": null
     },
     "alarm_triage": {
       "service": "alarm_triage",
-      "timestamp": "2026-01-31T16:16:26.757371",
+      "timestamp": "2026-01-31T17:08:57.848888",
       "healthy": true,
-      "latency_ms": 1.18,
+      "latency_ms": 1.32,
       "error": null
     },
     "workflow_tracker": {
       "service": "workflow_tracker",
-      "timestamp": "2026-01-31T16:16:26.758621",
+      "timestamp": "2026-01-31T17:08:57.850285",
       "healthy": true,
-      "latency_ms": 1.27,
+      "latency_ms": 1.16,
       "error": null
     },
     "the_weaver": {
       "service": "the_weaver",
-      "timestamp": "2026-01-31T16:16:26.759963",
+      "timestamp": "2026-01-31T17:08:57.851510",
       "healthy": true,
-      "latency_ms": 1.09,
+      "latency_ms": 1.1,
       "error": null
     }
   },
