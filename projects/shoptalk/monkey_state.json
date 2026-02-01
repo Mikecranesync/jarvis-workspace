@@ -1,0 +1,11 @@
+{
+  "started": "2026-01-31T17:16:16.414895",
+  "cranks_today": 20,
+  "tokens_used_today": 10000,
+  "daily_reset": "2026-01-31",
+  "last_health_check": "2026-01-31T17:19:56.367677",
+  "last_crank": "2026-01-31T17:19:49.511901",
+  "running": true,
+  "paused": false,
+  "pause_reason": null
+}

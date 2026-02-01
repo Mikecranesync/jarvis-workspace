@@ -109,8 +109,26 @@
       },
       "five_second_test": "PENDING",
       "eleven_yo_verified": false
+    },
+    {
+      "name": "E2E Test",
+      "version": "1.0.0",
+      "description": "Test: Why did my machine stop?",
+      "created": "2026-01-31T17:09:09.925067",
+      "tokens_used": 500,
+      "github_issue": "",
+      "github_pr": "",
+      "git_branch": "feature/20-manual-hunter",
+      "git_commit": "e2eea96",
+      "compliance": {
+        "constitution": true,
+        "commandments": true,
+        "issues": []
+      },
+      "five_second_test": "PENDING",
+      "eleven_yo_verified": false
     }
   ],
-  "total_tokens": 28500,
+  "total_tokens": 29000,
   "automaton_version": "1.0.0"
 }
