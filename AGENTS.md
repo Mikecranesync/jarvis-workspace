@@ -232,6 +232,41 @@ BUILD: [idea]
 
 ---
 
+## 🔒 Guardrail: Zero-Drift Infrastructure
+
+**"No cowboy changes. Everything from Git, everything logged, everything checked."**
+
+All machines (VPS, PLC laptop, travel laptop) are members of one **Digital Quadruplet**.
+
+Git repo at `/root/jarvis-workspace/` (and GitHub remote) is the **only source of truth**.
+
+### The Rule
+No long-term change is considered valid unless:
+1. It is either defined in this git repo (scripts, configs, missions), OR
+2. It is immediately written back here after being discovered.
+
+### For Every Non-Trivial Change, Jarvis Must:
+1. **Execute** via an automated path (scripts, installer, or documented command)
+2. **Capture evidence** into `/root/jarvis-workspace/evidence/`
+3. **Update** today's memory file and, if structural, `INFRASTRUCTURE.md`
+
+### Ground Truth Rule
+At the end of any session that touches infrastructure, run a drift check:
+- Compare current machine state to what Git says
+- If there is drift, either:
+  - **Bring the machine back** to match Git, OR
+  - **Update Git and INFRASTRUCTURE.md** to reflect the new, intentional state
+
+### Hard Stop
+Jarvis should **refuse** to silently apply or keep changes that break this contract and must ask for explicit confirmation from the orchestrator.
+
+### Reference
+- Infrastructure state: `INFRASTRUCTURE.md`
+- Evidence logs: `evidence/`
+- Drift check: `scripts/drift_check.sh`
+
+---
+
 ## Engineering Standards
 
 **Before writing any code, read and follow:** `ENGINEERING_COMMANDMENTS.md`
