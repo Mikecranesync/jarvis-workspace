@@ -1,11 +1,13 @@
 FROM python:3.11-slim
 
-# Install system dependencies including dnsmasq for DHCP
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     gcc \
     iputils-ping \
+    iputils-arping \
     net-tools \
-    curl \
+    iproute2 \
+    tcpdump \
     dnsmasq \
     && rm -rf /var/lib/apt/lists/*
 
@@ -30,7 +32,7 @@ COPY dnsmasq.conf /etc/dnsmasq.conf
 # Expose API port
 EXPOSE 5000
 
-# Start script that runs dnsmasq + app
+# Start script
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
