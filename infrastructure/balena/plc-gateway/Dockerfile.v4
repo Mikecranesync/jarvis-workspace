@@ -9,14 +9,12 @@ RUN pip install --no-cache-dir \
     pycomm3 \
     pydantic
 
-# Copy backend
-COPY app/api_v4.py /app/
+# Copy application
+COPY app/ /app/
 
-# Copy React dashboard
-COPY frontend/dist/ /app/static/
+# Copy React dashboard (will be built separately)
+# COPY static/ /app/static/
 
 EXPOSE 5000
-
-ENV PLC_IP=192.168.1.100
 
 CMD ["uvicorn", "api_v4:app", "--host", "0.0.0.0", "--port", "5000"]

@@ -1,40 +1,25 @@
-version: '2.1'
+version: "2.1"
 
 services:
   plc-gateway:
     build: .
-    container_name: plc-gateway
-    restart: always
-    network_mode: host
     privileged: true
-    ports:
-      - "5000:5000"
+    network_mode: host
+    restart: always
     environment:
       - PLC_IP=192.168.1.100
-      - MQTT_BROKER=100.68.120.99
-      - MQTT_PORT=1883
-      - MQTT_TOPIC_PREFIX=factorylm/edge
-      - DEVICE_ID=edge-pi-001
     labels:
-      io.balena.features.dbus: '1'
       io.balena.features.supervisor-api: '1'
+      io.balena.features.balena-api: '1'
 
-  tailscale:
-    image: tailscale/tailscale:latest
-    container_name: tailscale
-    hostname: factorylm-edge-pi
+  network-bridge:
+    build:
+      context: .
+      dockerfile: Dockerfile.network
     privileged: true
     network_mode: host
+    restart: always
     cap_add:
       - NET_ADMIN
-      - NET_RAW
-    volumes:
-      - tailscale-state:/var/lib/tailscale
-    environment:
-      - TS_AUTHKEY=${TS_AUTHKEY}
-      - TS_STATE_DIR=/var/lib/tailscale
-      - TS_EXTRA_ARGS=--accept-routes --ssh
-    restart: unless-stopped
-
-volumes:
-  tailscale-state:
+    labels:
+      io.balena.features.supervisor-api: '1'

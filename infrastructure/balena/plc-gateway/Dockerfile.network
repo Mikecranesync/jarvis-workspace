@@ -1,0 +1,8 @@
+FROM alpine:3.18
+
+RUN apk add --no-cache dhclient iproute2 bash nmap-nping
+
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]
