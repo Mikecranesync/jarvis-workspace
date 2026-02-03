@@ -161,3 +161,15 @@ Last Updated: 2026-02-03 02:16 UTC
 ---
 
 *This file is the source of truth for network topology. Update it whenever anything changes.*
+
+---
+
+## 🌊 Flowise (Added 2026-02-03)
+
+| Property | Value |
+|----------|-------|
+| Port | 3001 |
+| Container | flowise |
+| Status | ✅ Running |
+| Auth | Username/Password |
+

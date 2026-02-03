@@ -216,3 +216,16 @@ plane-plane-db-1
 ---
 
 *This file is the credential registry. Keep it updated.*
+
+---
+
+## 🌊 Flowise (Added 2026-02-03)
+
+| Property | Value |
+|----------|-------|
+| URL (internal) | http://localhost:3001 |
+| URL (external) | http://165.245.138.91:3001 |
+| Username | mike |
+| Password | CNI9EgSKBu6vm18t |
+| API Key | cd25ef26ae7e4ec9293ce8cdfbc80bcf8ed6ccd1c486922011c1fc9ad5f707ec |
+
