@@ -1,3 +1,18 @@
+## ⚠️ FACTORYLM VISION - READ FIRST
+
+Before any FactoryLM work, read the canonical architecture:
+**https://github.com/Mikecranesync/factorylm/blob/main/README.md**
+
+### Quick Reference
+- **Layer 0**: Code + KB (Plane, Wiseflow) — THE GOAL
+- **Layer 1**: Edge LLM (Pi)
+- **Layer 2**: Local GPU (air-gapped)
+- **Layer 3**: Cloud (optional)
+
+**Key Rule**: Intelligence flows DOWNWARD. Convert AI answers into code.
+
+---
+
 # AGENTS.md - Your Workspace
 
 This folder is home. Treat it that way.
