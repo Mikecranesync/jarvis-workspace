@@ -22,6 +22,16 @@ except ImportError:
     PYCOMM3_AVAILABLE = False
     print("⚠️ pycomm3 not available")
 
+
+# Configure ethernet for PLC subnet on startup
+import subprocess
+try:
+    subprocess.run(['ip', 'addr', 'add', '192.168.1.1/24', 'dev', 'eth0'], capture_output=True, timeout=5)
+    subprocess.run(['ip', 'link', 'set', 'eth0', 'up'], capture_output=True, timeout=5)
+    print("✅ Configured eth0 with 192.168.1.1/24 for PLC network")
+except Exception as e:
+    print(f"⚠️ Ethernet config: {e}")
+
 app = Flask(__name__)
 
 # Configuration from environment
@@ -227,3 +237,12 @@ if __name__ == '__main__':
     
     # Start Flask API
     app.run(host='0.0.0.0', port=5000, debug=False)
+
+# Configure ethernet on startup (runs at container start)
+import subprocess
+try:
+    subprocess.run(['ip', 'addr', 'add', '192.168.1.1/24', 'dev', 'eth0'], capture_output=True)
+    subprocess.run(['ip', 'link', 'set', 'eth0', 'up'], capture_output=True)
+    print("Configured eth0 with 192.168.1.1/24")
+except Exception as e:
+    print(f"Ethernet config: {e}")
