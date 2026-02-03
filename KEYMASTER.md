@@ -36,3 +36,9 @@
 ---
 
 *Last updated: 2026-02-03*
+
+## Balena Cloud
+- **Dashboard:** https://dashboard.balena-cloud.com/fleets/2332816
+- **Fleet:** factorylm-edge (ID: 2332816)
+- **API Token:** L63SH34mlImFPELbk43rKawwirHHW3lC
+- **Org:** g_mike_harper
