@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactoryLM | IA para la Industria Petrolera Venezolana</title>
+    <meta name="description" content="Plataforma de mantenimiento y capacitación con inteligencia artificial para activos industriales brownfield. Diseñado para Venezuela.">
+    <meta name="keywords" content="IA industrial, mantenimiento petrolero, PDVSA, Maracaibo, Venezuela, capacitación técnicos, diagnóstico fallas">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="FactoryLM | IA para la Industria Petrolera Venezolana">
+    <meta property="og:description" content="Plataforma de mantenimiento y capacitación con IA para la industria petrolera venezolana.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_VE">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1a1a1a; }
+        
+        /* Venezuela-inspired colors */
+        :root {
+            --yellow: #FFCC00;
+            --blue: #00247D;
+            --red: #CF142B;
+            --dark: #1a1a1a;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--blue);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { color: white; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .nav a { color: white; text-decoration: none; margin-left: 2rem; opacity: 0.9; }
+        .nav a:hover { opacity: 1; }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--blue) 0%, #003366 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        .hero-flag { font-size: 4rem; margin-bottom: 1rem; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
+        .hero-cta {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .hero-cta:hover { transform: scale(1.05); }
+        
+        /* Stats */
+        .stats {
+            background: var(--yellow);
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-number { font-size: 3rem; font-weight: bold; color: var(--blue); }
+        .stat-label { color: var(--dark); font-size: 0.9rem; }
+        
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Problem Section */
+        .problem {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+        .problem h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: var(--blue); }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .problem-card h3 { color: var(--red); margin-bottom: 1rem; }
+        
+        /* Solution Section */
+        .solution {
+            padding: 5rem 2rem;
+        }
+        .solution h2 { text-align: center; font-size: 2rem; margin-bottom: 1rem; color: var(--blue); }
+        .solution-subtitle { text-align: center; color: #666; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .solution-card {
+            padding: 2rem;
+            border: 2px solid var(--blue);
+            border-radius: 8px;
+        }
+        .solution-card h3 { color: var(--blue); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .solution-card ul { margin-left: 1.5rem; color: #555; }
+        .solution-card li { margin-bottom: 0.5rem; }
+        
+        /* Credibility */
+        .credibility {
+            background: var(--blue);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .credibility h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+        .credibility p { max-width: 700px; margin: 0 auto; font-size: 1.1rem; opacity: 0.9; }
+        .credibility-highlight {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Pilot Section */
+        .pilot {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+        .pilot h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: var(--blue); }
+        .pilot-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .pilot-content h3 { color: var(--blue); margin-bottom: 1rem; }
+        .pilot-content ul { margin: 1rem 0 1.5rem 1.5rem; }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .kpi {
+            background: var(--yellow);
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .kpi strong { display: block; color: var(--blue); font-size: 1.5rem; }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--blue) 0%, #003366 100%);
+            color: white;
+        }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-section p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
+        .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .cta-btn:hover { transform: scale(1.05); }
+        .cta-primary { background: var(--yellow); color: var(--dark); }
+        .cta-secondary { background: transparent; color: white; border: 2px solid white; }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .footer a { color: var(--yellow); }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .stats { gap: 2rem; }
+            .nav { display: none; }
+            .kpi-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">FactoryLM</a>
+        <nav class="nav">
+            <a href="#problema">El Problema</a>
+            <a href="#solucion">La Solución</a>
+            <a href="#piloto">Piloto</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-flag">🇻🇪</div>
+        <h1>IA para la Industria Petrolera Venezolana</h1>
+        <p>Plataforma de mantenimiento y capacitación con inteligencia artificial para activos brownfield. Diseñado para la reapertura de Venezuela.</p>
+        <a href="#contacto" class="hero-cta">Solicitar Demo →</a>
+    </section>
+    
+    <section class="stats">
+        <div class="stat">
+            <div class="stat-number">22,000+</div>
+            <div class="stat-label">Técnicos perdidos desde 2002</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">20-40</div>
+            <div class="stat-label">Años de los sistemas de control</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">$100B</div>
+            <div class="stat-label">Inversión planeada</div>
+        </div>
+    </section>
+    
+    <section class="problem" id="problema">
+        <div class="container">
+            <h2>El Problema: Capital Sin Capacidad</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>📉 Pérdida de Conocimiento</h3>
+                    <p>Más de 22,000 técnicos e ingenieros salieron de PDVSA desde 2002. El conocimiento institucional se fue con ellos.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>⚙️ Equipos Sin Documentación</h3>
+                    <p>Sistemas de control de 20-40 años con modificaciones no documentadas. Los manuales originales están perdidos o desactualizados.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>⏱️ Presión de Producción</h3>
+                    <p>Las nuevas reformas exigen aumentar producción rápidamente. No hay tiempo para capacitación tradicional de años.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="solution" id="solucion">
+        <div class="container">
+            <h2>La Solución: FactoryLM</h2>
+            <p class="solution-subtitle">Inteligencia artificial que diagnostica fallas, captura conocimiento y capacita técnicos — todo en español, desde el celular.</p>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h3>🔍 Diagnóstico con IA</h3>
+                    <ul>
+                        <li>Técnico describe síntomas en español</li>
+                        <li>IA sugiere causas probables y soluciones</li>
+                        <li>Funciona con PLCs viejos (Modbus, S7, Allen-Bradley)</li>
+                        <li>Disponible 24/7 en el campo</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h3>📚 Captura de Conocimiento</h3>
+                    <ul>
+                        <li>Cada reparación se documenta automáticamente</li>
+                        <li>Reconstruye el "conocimiento tribal" perdido</li>
+                        <li>Base de datos crece con cada intervención</li>
+                        <li>Nunca pierda conocimiento otra vez</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h3>🎓 Capacitación Acelerada</h3>
+                    <ul>
+                        <li>Técnicos nuevos aprenden de casos reales</li>
+                        <li>Meses a productividad, no años</li>
+                        <li>Entrenamiento en el trabajo, no en el aula</li>
+                        <li>Sin necesidad de supervisión constante</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="credibility">
+        <h2>Entendemos Venezuela</h2>
+        <p>La familia de nuestro fundador es de Maracaibo — el corazón del país petrolero venezolano. No somos consultores extranjeros descubriendo su industria. Entendemos los desafíos porque los vivimos.</p>
+        <div class="credibility-highlight">
+            <strong>"FactoryLM es como tener a su mejor técnico jubilado disponible las 24 horas — pero con la memoria de toda la organización."</strong>
+        </div>
+    </section>
+    
+    <section class="pilot" id="piloto">
+        <div class="container">
+            <h2>Propuesta de Piloto: Cuenca de Maracaibo</h2>
+            <div class="pilot-content">
+                <h3>📍 Alcance del Piloto</h3>
+                <ul>
+                    <li><strong>Ubicación:</strong> 1 campo o 1 planta en Zulia / Maracaibo</li>
+                    <li><strong>Usuarios:</strong> 10-20 técnicos de mantenimiento</li>
+                    <li><strong>Duración:</strong> 90 días</li>
+                </ul>
+                
+                <h3>📊 KPIs del Piloto</h3>
+                <div class="kpi-grid">
+                    <div class="kpi">
+                        <strong>-20%</strong>
+                        Tiempo medio de reparación
+                    </div>
+                    <div class="kpi">
+                        <strong>-30%</strong>
+                        Llamadas a expertos externos
+                    </div>
+                    <div class="kpi">
+                        <strong>-40%</strong>
+                        Tiempo de capacitación
+                    </div>
+                    <div class="kpi">
+                        <strong>100%</strong>
+                        Equipos críticos documentados
+                    </div>
+                </div>
+                
+                <h3>✅ Qué Incluye</h3>
+                <ul>
+                    <li>Licencia completa de FactoryLM durante el piloto</li>
+                    <li>Configuración inicial y carga de equipos</li>
+                    <li>Capacitación del equipo (virtual o presencial)</li>
+                    <li>Soporte técnico dedicado en español</li>
+                    <li>Informe de resultados y recomendaciones</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section" id="contacto">
+        <h2>¿Listos para la Reapertura?</h2>
+        <p>Hablemos sobre cómo FactoryLM puede ayudar a su operación en Venezuela.</p>
+        <div class="cta-buttons">
+            <a href="mailto:mike@cranesync.com?subject=FactoryLM Venezuela - Solicitud de Demo" class="cta-btn cta-primary">Solicitar Demo</a>
+            <a href="https://calendly.com/mike-cranesync" class="cta-btn cta-secondary">Agendar Llamada</a>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p><strong>FactoryLM</strong> — IA para Mantenimiento Industrial</p>
+        <p style="margin-top: 1rem; opacity: 0.7;">
+            <a href="mailto:mike@cranesync.com">mike@cranesync.com</a> • 
+            <a href="https://factorylm.com">factorylm.com</a>
+        </p>
+        <p style="margin-top: 2rem; opacity: 0.5; font-size: 0.9rem;">
+            © 2026 CraneSync / FactoryLM. Todos los derechos reservados.
+        </p>
+    </footer>
+</body>
+</html>

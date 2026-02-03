@@ -285,3 +285,17 @@ This applies to ALL code changes. No shortcuts, no exceptions.
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+
+## FactoryLM Diagnosis Agent (NEW - 2026-02-02)
+
+When users ask about factory/PLC/motor/conveyor/production status:
+
+1. Call: POST http://localhost:8200/diagnose
+2. Body: {"question": "<user message>"}  
+3. Reply with the "diagnosis" field from response
+
+Keywords: factory, plc, motor, conveyor, production, alarm, fault, sensor, diagnostic
+
+Test: curl http://localhost:8200/health
+

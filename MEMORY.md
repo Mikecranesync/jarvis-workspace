@@ -1,6 +1,6 @@
 # MEMORY.md — Jarvis Long-Term Memory
 
-*Last updated: 2026-01-29*
+*Last updated: 2026-01-30*
 
 ## Mike Harper — Key Context
 
@@ -26,6 +26,14 @@
 - **Repo:** https://github.com/Mikecranesync/factorylm
 - **Components:** CMMS, Portal, PLC Copilot, (planned: AI Assistant, Dashboard)
 - **Status:** Migration complete, rebrand done (Atlas → FactoryLM)
+- **Structure:** Turborepo monorepo (apps/, services/, packages/, adapters/, core/)
+
+### Rivet-PRO Code Treasury
+- **Location:** /root/jarvis-workspace/rivet-pro-search/rivet_pro/
+- **Value:** 502 Python files, ~4-5 months dev time already built
+- **Key extractions:** WhatsApp adapter, i18n (Spanish), OCR pipeline, equipment taxonomy
+- **Inventory:** brain/research/rivet-pro-code-inventory.md
+- **Status:** Awaiting extraction to factorylm/core/
 
 ### Smart Glasses Integration
 - **Hardware:** Brilliant Labs Halo (Order #911658, $349)
@@ -48,6 +56,12 @@
 - Search 30+ min before building anything new
 - If 60%+ exists, fork don't build
 - Ratified 2026-01-29
+
+### Amendment VI: One Brand (FactoryLM)
+- Everything consolidates under FactoryLM monorepo
+- Rivet-PRO, CMMS, PLC Copilot = features, not separate products
+- Archive old repos AFTER code extracted and verified
+- Ratified 2026-01-30
 
 ### Engineering Commandments
 - Create GitHub issue FIRST
