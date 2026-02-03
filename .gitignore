@@ -25,3 +25,6 @@ venv/
 # IDE
 .idea/
 .vscode/
+# Credentials (actual secrets)
+.env
+*.env.local
