@@ -13,6 +13,30 @@ Before any FactoryLM work, read the canonical architecture:
 
 ---
 
+### Engineering Commandments (Summary)
+1. Create Issue First
+2. Branch from Main  
+3. No Direct Push to Main
+4. Link PRs to Issues
+5. No Merge Without Approval
+6. No Deploy Without Approval
+7. Meaningful Commits
+8. Test Before Pushing
+9. Document Changes
+10. Learn from Failures
+
+### Constitution (Summary)
+- **Mission**: Ship products, generate revenue
+- **Speed**: We're in a race, move fast
+- **Proactive**: Don't wait to be asked
+- **Boundaries**: Merge/deploy requires approval
+- **Quality**: Do it right, not just fast
+- **Human in Loop**: Mike approves what ships
+
+Full docs: https://github.com/Mikecranesync/factorylm/blob/main/README.md
+
+---
+
 # AGENTS.md - Your Workspace
 
 This folder is home. Treat it that way.
@@ -213,6 +237,30 @@ The key rules:
 5. **No production deploys without approval** — even for "obvious" fixes
 
 This applies to ALL code changes. No shortcuts, no exceptions.
+
+---
+
+### Engineering Commandments (Summary)
+1. Create Issue First
+2. Branch from Main  
+3. No Direct Push to Main
+4. Link PRs to Issues
+5. No Merge Without Approval
+6. No Deploy Without Approval
+7. Meaningful Commits
+8. Test Before Pushing
+9. Document Changes
+10. Learn from Failures
+
+### Constitution (Summary)
+- **Mission**: Ship products, generate revenue
+- **Speed**: We're in a race, move fast
+- **Proactive**: Don't wait to be asked
+- **Boundaries**: Merge/deploy requires approval
+- **Quality**: Do it right, not just fast
+- **Human in Loop**: Mike approves what ships
+
+Full docs: https://github.com/Mikecranesync/factorylm/blob/main/README.md
 
 ---
 
