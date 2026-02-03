@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemoteMe - Control Your Computer From Anywhere</title>
+    <meta name="description" content="AI-powered remote computer control via Telegram. Tell your computer what to do in plain English.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d9ff;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #00d9ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            color: #a0aec0;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d9ff, #00ff88);
+            color: #1a1a2e;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+        
+        /* Demo */
+        .demo {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .demo-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .demo-header .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27c93f; }
+        
+        .demo-content {
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 1rem;
+            line-height: 2;
+        }
+        
+        .user-msg {
+            color: #00d9ff;
+        }
+        
+        .user-msg::before {
+            content: "You: ";
+            color: #666;
+        }
+        
+        .bot-msg {
+            color: #00ff88;
+        }
+        
+        .bot-msg::before {
+            content: "RemoteMe: ";
+            color: #666;
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 60px 0;
+        }
+        
+        .feature {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #00d9ff;
+        }
+        
+        .feature p {
+            color: #a0aec0;
+            line-height: 1.6;
+        }
+        
+        /* How it works */
+        .how-it-works {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            text-align: center;
+            max-width: 250px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00d9ff, #00ff88);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 10px;
+        }
+        
+        .step p {
+            color: #a0aec0;
+        }
+        
+        /* Pricing */
+        .pricing {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .pricing h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 400px;
+            margin: 40px auto;
+            border: 2px solid #00d9ff;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #00d9ff;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #a0aec0;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .pricing-features li::before {
+            content: "✓ ";
+            color: #00ff88;
+        }
+        
+        /* Coming Soon */
+        .coming-soon {
+            text-align: center;
+            padding: 80px 0;
+            background: rgba(0, 217, 255, 0.1);
+            margin: 60px 0;
+            border-radius: 20px;
+        }
+        
+        .coming-soon h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .email-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .email-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 20px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .email-form button {
+            background: linear-gradient(135deg, #00d9ff, #00ff88);
+            color: #1a1a2e;
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .email-form button:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+        }
+        
+        footer a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🤖 RemoteMe</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Control Your Computer<br>From Anywhere</h1>
+                <p>Tell your computer what to do in plain English. Open apps, run commands, automate tasks — all from Telegram.</p>
+                <a href="#waitlist" class="cta-button">Join the Waitlist</a>
+            </div>
+        </section>
+
+        <section class="demo">
+            <div class="container">
+                <div class="demo-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="demo-content">
+                    <p class="user-msg">"Take a screenshot of my desktop"</p>
+                    <p class="bot-msg">📸 Here's your screenshot [image attached]</p>
+                    <br>
+                    <p class="user-msg">"Open Chrome and go to my bank website"</p>
+                    <p class="bot-msg">✅ Opened Chrome and navigated to chase.com</p>
+                    <br>
+                    <p class="user-msg">"Run the backup script"</p>
+                    <p class="bot-msg">✅ Backup complete. 1,247 files backed up.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container" style="display: contents;">
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>Natural Language</h3>
+                    <p>No commands to memorize. Just describe what you want in plain English. AI understands context and intent.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure by Default</h3>
+                    <p>End-to-end encrypted. Your computer connects via Tailscale VPN. No public endpoints. No data leaves your network.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Telegram Native</h3>
+                    <p>Works where you already are. No app to install on your phone. Just message the bot.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎬</div>
+                    <h3>See What Happened</h3>
+                    <p>Get screenshots and screen recordings of every action. Visual proof that the task completed.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🖥️</div>
+                    <h3>Full Computer Control</h3>
+                    <p>Mouse, keyboard, apps, files, browser — everything. Like having a personal assistant at your desk.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Local AI on your computer means instant responses. No round-trip to cloud servers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Install Agent</h3>
+                        <p>One-click installer for Windows, Mac, or Linux. Takes 2 minutes.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Connect Telegram</h3>
+                        <p>Link your Telegram account to start messaging your computer.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Just Ask</h3>
+                        <p>Message what you want. Get it done. See the results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <div class="container">
+                <h2>Simple Pricing</h2>
+                <div class="pricing-card">
+                    <div class="price">$49<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>Unlimited commands</li>
+                        <li>Up to 3 computers</li>
+                        <li>Screen recordings included</li>
+                        <li>Local AI (no API costs)</li>
+                        <li>Priority support</li>
+                        <li>7-day free trial</li>
+                    </ul>
+                    <a href="#waitlist" class="cta-button">Start Free Trial</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="coming-soon" id="waitlist">
+            <div class="container">
+                <h2>🚀 Launching February 15, 2026</h2>
+                <p style="color: #a0aec0; margin-bottom: 30px;">Be first in line. Early adopters get 50% off for life.</p>
+                <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                    <button type="submit">Join Waitlist</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Built by <a href="https://factorylm.com">FactoryLM</a> • Coming February 2026</p>
+        </div>
+    </footer>
+</body>
+</html>

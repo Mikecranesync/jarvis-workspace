@@ -1,0 +1,73 @@
+=== ACTUAL STATE - 2026-02-02 10:09 UTC ===
+
+PLANE:
+fcd7a10937c8   artifacts.plane.so/makeplane/plane-admin:stable      "/docker-entrypoint.…"   24 minutes ago   Up 24 minutes (healthy)     80/tcp, 3000/tcp                                                                           plane-admin-1
+de9ad472a3cc   artifacts.plane.so/makeplane/plane-space:stable      "docker-entrypoint.s…"   24 minutes ago   Up 24 minutes (unhealthy)   3000/tcp                                                                                   plane-space-1
+98fe865c3d29   artifacts.plane.so/makeplane/plane-live:stable       "docker-entrypoint.s…"   24 minutes ago   Up 24 minutes               3000/tcp                                                                                   plane-live-1
+c6d42a748c49   artifacts.plane.so/makeplane/plane-frontend:stable   "/docker-entrypoint.…"   24 minutes ago   Up 24 minutes (healthy)     80/tcp, 0.0.0.0:8070->3000/tcp, [::]:8070->3000/tcp                                        plane-web-1
+1cfcecf120d5   artifacts.plane.so/makeplane/plane-backend:stable    "./bin/docker-entryp…"   24 minutes ago   Up 14 seconds               8000/tcp                                                                                   plane-beat-worker-1
+89db3ad00b67   artifacts.plane.so/makeplane/plane-backend:stable    "./bin/docker-entryp…"   24 minutes ago   Up 4 seconds                8000/tcp                                                                                   plane-worker-1
+ec5012681480   artifacts.plane.so/makeplane/plane-backend:stable    "./bin/docker-entryp…"   24 minutes ago   Up 10 seconds               8000/tcp                                                                                   plane-migrator-1
+2a51cb9c7dc4   artifacts.plane.so/makeplane/plane-backend:stable    "./bin/docker-entryp…"   24 minutes ago   Up 6 seconds                8000/tcp                                                                                   plane-api-1
+27493a5b9aef   valkey/valkey:7.2.11-alpine                          "docker-entrypoint.s…"   24 minutes ago   Up 24 minutes               6379/tcp                                                                                   plane-plane-redis-1
+02b8ba82d0f6   rabbitmq:3.13.6-management-alpine                    "docker-entrypoint.s…"   24 minutes ago   Up 24 minutes               4369/tcp, 5671-5672/tcp, 15671-15672/tcp, 15691-15692/tcp, 25672/tcp                       plane-plane-mq-1
+cfc5fecf9c0a   postgres:15.7-alpine                                 "docker-entrypoint.s…"   24 minutes ago   Up 24 minutes               5432/tcp                                                                                   plane-plane-db-1
+7b7b251332dd   minio/minio:latest                                   "/usr/bin/docker-ent…"   24 minutes ago   Up 24 minutes               9000/tcp                                                                                   plane-plane-minio-1
+
+GROUND TRUTH FILE:
+-rw-r--r-- 1 root root 11910 Feb  2 09:39 /opt/master_of_puppets/workers/ground_truth.py
+
+NGINX PLANE CONFIG:
+server {
+    listen 80;
+    server_name plane.factorylm.com;
+
+    client_max_body_size 50M;
+
+    location / {
+        proxy_pass http://127.0.0.1:8070;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+        proxy_read_timeout 300s;
+        proxy_connect_timeout 75s;
+    }
+}
+
+SERVICES:
+  clawdbot.service                                                              loaded active running Clawdbot Gateway (Jarvis - 24/7)
+  master-of-puppets-beat.service                                                loaded active running Master of Puppets - Celery Beat Scheduler
+  master-of-puppets.service                                                     loaded active running Master of Puppets - Celery Worker
+  remoteme.service                                                              loaded active running RemoteMe Backend - AI Remote Computer Control
+
+ALL DOCKER:
+NAMES                 STATUS
+plane-admin-1         Up 24 minutes (healthy)
+plane-space-1         Up 24 minutes (unhealthy)
+plane-live-1          Up 24 minutes
+plane-web-1           Up 24 minutes (healthy)
+plane-beat-worker-1   Up 14 seconds
+plane-worker-1        Up 4 seconds
+plane-migrator-1      Up 10 seconds
+plane-api-1           Up 6 seconds
+plane-plane-redis-1   Up 24 minutes
+plane-plane-mq-1      Up 24 minutes
+plane-plane-db-1      Up 24 minutes
+plane-plane-minio-1   Up 24 minutes
+cmms-frontend         Up 14 hours
+cmms-backend          Up About a minute
+cmms_minio            Up 14 hours
+cmms_db               Up 14 hours
+grafana               Up 32 hours
+influxdb              Up 32 hours
+flowise               Up 43 hours
+mautic                Up 2 days
+mautic_db             Up 2 days
+n8n                   Up 2 days
+infra_redis_1         Up 2 days (healthy)
+infra_postgres_1      Up 2 days (healthy)
