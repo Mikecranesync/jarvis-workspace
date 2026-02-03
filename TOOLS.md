@@ -74,3 +74,23 @@ scp root@100.68.120.99:/root/jarvis-workspace/installers/jarvis-node/install-tra
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+## Raspberry Pi Edge Device
+- **Tailscale IP:** 100.97.210.121
+- **Hostname:** factorylm-edge-pi
+- **OS:** balenaOS 6.10.24
+- **Balena Dashboard:** https://dashboard.balena-cloud.com/devices/9cc587cafd03a9fe57d2480bc0bff931
+- **SSH:** `ssh root@100.97.210.121`
+- **Purpose:** Micro820 PLC gateway
+
+### Quick Commands:
+```bash
+# SSH to Pi
+ssh root@100.97.210.121
+
+# Check Pi status via Balena
+balena device list --fleet factorylm-edge
+
+# Restart Pi
+balena device restart 9cc587cafd03
+```
