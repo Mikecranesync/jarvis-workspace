@@ -2,14 +2,10 @@
   "url": "http://localhost:3001",
   "external_url": "http://165.245.138.91:3001",
   "api_key": "wUYtnqmVJMcq3nenusi4WFFrI8bFsKo8B4w8dAaWfPg",
-  "ui_login": {
-    "username": "mike",
-    "password": "CNI9EgSKBu6vm18t"
-  },
   "credentials": {
     "anthropic": "f2cfe94f-1390-4bac-b1a9-2600bd02f74f"
   },
   "flows": {
-    "voice_to_code_logger": "060bc9e8-b739-4d6c-b4d7-8b90d44843ef"
+    "voice_to_code_logger": "3ff78832-d9a9-41bc-a2d4-598edbcf8387"
   }
 }
