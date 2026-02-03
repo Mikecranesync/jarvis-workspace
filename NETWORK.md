@@ -27,6 +27,15 @@
 - **Dashboard:** https://dashboard.balena-cloud.com/devices/9cc587cafd03a9fe57d2480bc0bff931
 - **Access:** SSH root@100.97.210.121
 - **Purpose:** Micro820 PLC gateway via Ethernet/IP
+- **PLC Gateway API:** http://100.97.210.121:5000
+- **API Endpoints:**
+  - `GET /` - Status
+  - `GET /health` - Health check
+  - `GET /plc/info` - PLC device info
+  - `GET /plc/read/<tag>` - Read tag
+  - `POST /plc/write` - Write tag
+  - `GET /plc/tags` - List tags
+- **PLC Config:** Expecting Micro820 at 192.168.1.10
 
 ### PLC Laptop (100.72.2.99)
 - **OS:** Windows
