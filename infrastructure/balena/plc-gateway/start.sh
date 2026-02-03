@@ -1,31 +1,27 @@
 #!/bin/bash
 echo "=================================================="
-echo "   FactoryLM Edge Gateway Starting"
+echo "   FactoryLM Edge Gateway v2.0.1"
 echo "=================================================="
 
-# Bring up eth0
 ip link set eth0 up
 
-# Run auto network detection
-echo ""
 echo "🔍 Running network auto-detection..."
 python3 /app/network_detect.py
 
-# Get the configured IP for PLC communication
-ETH_IP=$(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)
-echo ""
-echo "📍 eth0 configured: $ETH_IP"
+ETH_IP=$(ip addr show eth0 | grep 'inet ' | grep -v '127.0.0' | awk '{print $2}' | head -1)
+echo "📍 Detected config: $ETH_IP"
 
-# Only start DHCP server if we're in fallback mode (192.168.1.1)
-if [ "$ETH_IP" = "192.168.1.1" ]; then
-    echo "📡 Starting DHCP server..."
-    dnsmasq --keep-in-foreground --log-facility=- &
-    echo "✅ DHCP server running"
+# Start keepalive as background process (not subshell)
+if [ -n "$ETH_IP" ]; then
+    /app/keepalive.sh "$ETH_IP" &
+    KEEPALIVE_PID=$!
+    echo "🔒 Keepalive PID: $KEEPALIVE_PID"
 fi
 
-echo ""
-echo "🚀 Starting PLC Gateway..."
-echo "=================================================="
+# Fallback DHCP
+if [ "$ETH_IP" = "192.168.1.1/24" ]; then
+    dnsmasq --keep-in-foreground --log-facility=- &
+fi
 
-# Start the Python app
+echo "🚀 Starting PLC Gateway..."
 exec python /app/main.py

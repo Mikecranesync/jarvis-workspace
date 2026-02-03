@@ -10,7 +10,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - PLC_IP=192.168.1.10
+      - PLC_IP=192.168.1.100
       - MQTT_BROKER=100.68.120.99
       - MQTT_PORT=1883
       - MQTT_TOPIC_PREFIX=factorylm/edge

@@ -107,3 +107,39 @@ Every workflow MUST:
 - Always have serial console backup (USB-to-TTL adapter)
 - Custom images need SSH enabled before deployment
 - Document EVERYTHING - I forget between sessions
+
+---
+
+## FactoryLM Edge v2.0 - TRUE PLUG-AND-PLAY (2026-02-03)
+
+### What It Does
+Raspberry Pi that auto-detects ANY connected device's network and joins it.
+No manual IP configuration - just plug in ethernet cable.
+
+### How It Works
+1. network_detect.py scans via ARP/ping probing
+2. Detects connected device's IP (e.g., 192.168.137.1)
+3. Auto-configures Pi to same subnet (e.g., 192.168.137.2)
+4. IP keepalive daemon maintains config every 5 seconds
+5. Falls back to DHCP server if no device detected
+
+### Key Insight
+The Pi adapts to the DEVICE's network, not the other way around.
+This is how industrial gateways work - they join existing networks.
+
+### Micro820 PLC Notes
+- pycomm3 has PARTIAL Micro820 support (finicky)
+- Modbus TCP is PRIMARY protocol for Micro820
+- Micro820 defaults to DHCP - need BOOTP/CCW for static IP first
+- Test both port 502 (Modbus) and 44818 (EtherNet/IP)
+
+### Files
+- `/infrastructure/balena/plc-gateway/` - Container code
+- `/docs/factorylm-edge-v2-whitepaper.md` - Technical paper
+- GitHub: https://github.com/Mikecranesync/jarvis-workspace/releases/tag/v2.0.0
+
+### Validated
+- 50 second boot time
+- 0.37-0.54ms ping latency
+- 0% packet loss
+- Survives power cycles

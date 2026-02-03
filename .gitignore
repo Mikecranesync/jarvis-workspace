@@ -28,3 +28,11 @@ venv/
 # Credentials (actual secrets)
 .env
 *.env.local
+
+# Reference repos (cloned for research)
+factorylm-plc-client/
+llm4plc-reference/
+micro820-hmi-reference/
+micro820-test-reference/
+pycomm3-reference/
+
