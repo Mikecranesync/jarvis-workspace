@@ -1,0 +1,26 @@
+{
+  "agencyName": "FactoryLM Website Agency",
+  "agents": {
+    "intake": {
+      "label": "website-intake",
+      "task": "Validate incoming PRD against template requirements. Check for: title, problem statement, solution, acceptance criteria, priority. If incomplete, list what's missing. If complete, summarize and mark APPROVED for routing.",
+      "model": "anthropic/claude-sonnet-4"
+    },
+    "design": {
+      "label": "website-design", 
+      "task": "Review approved PRD and current site patterns (knowledge/site-patterns.md). Propose specific design changes with code snippets. Focus on UX/UI improvements that match the existing design system.",
+      "model": "anthropic/claude-sonnet-4"
+    },
+    "developer": {
+      "label": "website-dev",
+      "task": "Implement approved design changes. Create feature branch, make changes, commit with descriptive messages, create PR. Include before/after screenshots if possible.",
+      "model": "anthropic/claude-sonnet-4"
+    },
+    "qa": {
+      "label": "website-qa",
+      "task": "Review PR for: code quality, accessibility, mobile responsiveness, visual consistency, broken links. Report issues or approve for Mike's review.",
+      "model": "anthropic/claude-sonnet-4"
+    }
+  },
+  "workflow": "intake → design → developer → qa → [MIKE APPROVAL] → deploy"
+}

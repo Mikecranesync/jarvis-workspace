@@ -229,18 +229,64 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 
 **Before writing any code, read and follow:** `ENGINEERING_COMMANDMENTS.md`
 
-The key rules:
-1. **Create GitHub Issue first** — before touching code
-2. **Branch from main** — never commit directly
-3. **Create PR linked to issue** — document your changes
-4. **WAIT for Mike's approval** — no merging without verbal OK
-5. **No production deploys without approval** — even for "obvious" fixes
-
 This applies to ALL code changes. No shortcuts, no exceptions.
 
 ---
 
-### Engineering Commandments (Summary)
+## ⚖️ THE TEN COMMANDMENTS (Summary)
+
+1. **Spec First** — No spec = No work
+2. **No Quitting** — Attempt or escalate, never abandon
+3. **Judge From Spec** — Spec auto-generates judge criteria
+4. **Polish Before Judging** — 3x minimum polish loop
+5. **Submit To Hammurabi** — All artifacts pass quality gate
+6. **Record For Prometheus** — Every process is training data
+7. **Follow The Schedule** — Foreman (Celery Beat) enforces timing
+8. **Don't Disrupt The Loop** — Observatory is read-only
+9. **Use Prompt Templates** — Ad-hoc prompts forbidden in production
+10. **Commit To The Branch** — Git flow is law
+
+Full commandments: `ENGINEERING_COMMANDMENTS.md`
+
+---
+
+## 🔄 Spec-Driven Development Loop
+
+```
+SPEC → TEMPLATE → EXECUTE → POLISH (3x) → JUDGE → ARCHIVE
+  ↑                                                   │
+  └─────────────── LEARN (Evolution) ────────────────┘
+```
+
+**Key principle:** One spec generates:
+- Prompt template (how to ask)
+- Judge criteria (how to evaluate)
+- Pydantic model (how to validate)
+
+**Write once, use everywhere.**
+
+---
+
+## 🏛️ Worker Architecture (Archimedes)
+
+All workers follow this pattern:
+1. **Foreman** schedules work (Celery Beat)
+2. **Worker** executes using template
+3. **Polish** refines (3x minimum)
+4. **Hammurabi** judges against spec
+5. **Archive** to Mike's Brain (if pass)
+6. **Flag** for review (if fail)
+
+**Observatory** lets Mike watch without disrupting.
+
+Docs:
+- `mikes-brain/docs/ARCHIMEDES-LOGIC-MAP.md`
+- `mikes-brain/docs/PHARAOHS-OBSERVATORY.md`
+- `mikes-brain/docs/SPEC-DRIVEN-DEVELOPMENT.md`
+
+---
+
+### Git Commandments (Summary)
 1. Create Issue First
 2. Branch from Main  
 3. No Direct Push to Main

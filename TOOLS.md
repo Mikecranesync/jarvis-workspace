@@ -14,6 +14,9 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 ## Servers
 - **This VPS:** factorylm-prod (DigitalOcean Atlanta, 8GB RAM)
 - **PLC Laptop:** 100.72.2.99 (Tailscale), Quadro P620 GPU, runs Ollama
+  - Factory I/O (3D industrial simulation)
+  - CCW (Connected Components Workbench) for Allen-Bradley
+  - Connected to real Micro820 PLC
 - **Old VPS:** Unknown (4GB RAM, 91% disk) - still sending heartbeats, needs shutdown
 
 ## Key Services
@@ -93,4 +96,29 @@ balena device list --fleet factorylm-edge
 
 # Restart Pi
 balena device restart 9cc587cafd03
+```
+
+## FactoryLM Website Deployment
+- **Server:** 72.60.175.144 (srv1078052)
+- **SSH:** `ssh -i ~/.ssh/vps_deploy_key root@72.60.175.144`
+- **Web root:** `/var/www/factorylm/`
+- **Web server:** Caddy (auto-HTTPS)
+- **Live URL:** https://factorylm.com
+
+### Deploy Command
+```bash
+cd /root/jarvis-workspace/landing-page
+rsync -avz --delete \
+    -e "ssh -i ~/.ssh/vps_deploy_key" \
+    ./ root@72.60.175.144:/var/www/factorylm/ \
+    --exclude '.git' \
+    --exclude '.github' \
+    --exclude '*.md' \
+    --exclude 'node_modules'
+```
+
+### Note
+Server disk runs tight (~48GB). Clean journals if full:
+```bash
+journalctl --vacuum-time=1d
 ```
