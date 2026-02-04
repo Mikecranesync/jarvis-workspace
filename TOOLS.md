@@ -49,6 +49,7 @@ ssh mike@100.83.251.23
 | Trello | clawdbot.json env | Board automation |
 | SendGrid | clawdbot.json env | Backup email send |
 | Calendly | /root/.config/jarvis/calendly.env | Demo scheduling (mike@cranesync.com) |
+| Balena | /root/.config/jarvis/balena.env | IoT fleet management (FactoryLM Edge) |
 
 ---
 
