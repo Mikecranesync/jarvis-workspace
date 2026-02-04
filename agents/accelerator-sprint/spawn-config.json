@@ -1,0 +1,93 @@
+{
+  "agency": "accelerator-sprint",
+  "mission": "Get FactoryLM into Y Combinator Spring 2026",
+  "deadline": "2026-02-09T20:00:00-08:00",
+  "deadlineHuman": "February 9, 2026 @ 8:00 PM Pacific",
+  "daysRemaining": 5,
+  
+  "agents": [
+    {
+      "id": "application-writer",
+      "role": "Application Writer",
+      "model": "claude-sonnet-4-20250514",
+      "thinking": "low",
+      "focus": "YC application text, pitch narrative, founder story",
+      "deliverables": [
+        "One-liner (50 chars)",
+        "Company description",
+        "All YC form answers",
+        "Founder bio"
+      ]
+    },
+    {
+      "id": "video-producer",
+      "role": "Video Producer", 
+      "model": "claude-sonnet-4-20250514",
+      "thinking": "low",
+      "focus": "1-minute founder video",
+      "deliverables": [
+        "60-second script",
+        "Shot list",
+        "B-roll checklist",
+        "Filming tips"
+      ]
+    },
+    {
+      "id": "data-analyst",
+      "role": "Data Analyst",
+      "model": "claude-sonnet-4-20250514", 
+      "thinking": "low",
+      "focus": "Market research, competitive analysis",
+      "deliverables": [
+        "TAM/SAM/SOM",
+        "Competitor table",
+        "Industry stats",
+        "Growth projections"
+      ]
+    },
+    {
+      "id": "pitch-designer",
+      "role": "Pitch Designer",
+      "model": "claude-sonnet-4-20250514",
+      "thinking": "low",
+      "focus": "Visual materials",
+      "deliverables": [
+        "10-slide deck outline",
+        "Architecture diagram",
+        "Product mockups",
+        "Demo video outline"
+      ]
+    },
+    {
+      "id": "sprint-master",
+      "role": "Sprint Master",
+      "model": "claude-sonnet-4-20250514",
+      "thinking": "low", 
+      "focus": "Coordination, quality",
+      "deliverables": [
+        "Daily status",
+        "Blocker alerts",
+        "Final review checklist",
+        "Submit confirmation"
+      ]
+    }
+  ],
+  
+  "knowledgeBase": [
+    "accelerators/PORTFOLIO.md",
+    "book/BOOK.md",
+    "memory/2026-02-03.md",
+    "memory/2026-02-04.md",
+    "agents/accelerator-sprint/knowledge/mike-quotes.md",
+    "agents/accelerator-sprint/knowledge/market-data.md"
+  ],
+  
+  "schedule": {
+    "day1_feb4": "Setup + first draft application",
+    "day2_feb5": "Market research deep dive",
+    "day3_feb6": "Video script + shot planning",
+    "day4_feb7": "Mike records video",
+    "day5_feb8": "Polish + final review",
+    "day6_feb9": "SUBMIT BY 8PM PT"
+  }
+}
