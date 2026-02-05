@@ -1,0 +1,93 @@
+{
+  "name": "Mike Harpool",
+  "aliases": ["Mike H", "Mike", "Mikecranesync"],
+  "telegram_id": "8445149012",
+  "updated_at": "2026-02-05T02:33:00Z",
+  
+  "work": {
+    "employer": "Universal Epic Universe",
+    "role": "Maintenance Technician",
+    "specialty": "Stardust Racers roller coaster",
+    "schedule": {
+      "days": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      "shift": "overnight",
+      "clock_in": "22:00",
+      "clock_out": "08:30",
+      "timezone": "America/New_York"
+    },
+    "days_off": ["Saturday", "Sunday", "Monday"]
+  },
+  
+  "background": {
+    "years_experience": 15,
+    "domain": "Industrial maintenance",
+    "expertise": [
+      "PLCs (Allen-Bradley, Siemens)",
+      "Industrial automation",
+      "Equipment maintenance",
+      "Theme park rides"
+    ],
+    "self_taught": ["Python", "Machine Learning", "Web development"]
+  },
+  
+  "business": {
+    "company": "FactoryLM",
+    "type": "Industrial AI startup",
+    "product": "AI copilot for maintenance technicians",
+    "status": "Pre-seed, seeking accelerator",
+    "related_projects": [
+      "Rivet-PRO",
+      "PLC-Copilot",
+      "Clawdbot/Jarvis"
+    ]
+  },
+  
+  "current_priorities": [
+    {
+      "priority": 1,
+      "item": "Y Combinator X26 application",
+      "deadline": "2026-02-09T23:00:00-05:00",
+      "status": "in_progress"
+    },
+    {
+      "priority": 2,
+      "item": "NVIDIA Inception application",
+      "deadline": null,
+      "status": "pending"
+    },
+    {
+      "priority": 3,
+      "item": "Alchemist Accelerator application",
+      "deadline": null,
+      "status": "pending"
+    }
+  ],
+  
+  "preferences": {
+    "communication": {
+      "prefers_voice_messages": true,
+      "style": "direct, no-BS",
+      "appreciates_humor": true,
+      "works_overnight": true
+    },
+    "ai_behavior": {
+      "wants_proactive": true,
+      "wants_autonomous": true,
+      "wants_digital_clone": true,
+      "values_action_over_discussion": true
+    }
+  },
+  
+  "goals": {
+    "short_term": [
+      "Complete YC application by Feb 9",
+      "Build digital clone AI system",
+      "Apply to NVIDIA Inception"
+    ],
+    "long_term": [
+      "Build FactoryLM into successful startup",
+      "Create AI that understands industrial equipment",
+      "Build pre-trained LLM for maintenance domain"
+    ]
+  }
+}

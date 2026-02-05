@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactoryLM Predict - Predictive Maintenance AI</title>
+    <meta name="description" content="Know what will fail before it does. Component-level monitoring with predictive AI. Enterprise predictive maintenance platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066CC;
+            --primary-dark: #0052A3;
+            --secondary: #1A1A1A;
+            --accent: #00C853;
+            --background: #FFFFFF;
+            --gray-light: #F5F5F7;
+            --gray-text: #6E6E73;
+            --warning: #FF9500;
+            --predict-gradient: linear-gradient(135deg, #0066CC 0%, #00A3FF 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--secondary);
+            background: var(--background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 24px 100px;
+            background: linear-gradient(180deg, var(--background) 0%, var(--gray-light) 100%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text h1 span {
+            background: var(--predict-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: clamp(18px, 2vw, 22px);
+            color: var(--gray-text);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .hero-cta:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .gateway-device {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .gateway-device h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .device-image {
+            height: 120px;
+            background: var(--gray-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: var(--gray-text);
+        }
+
+        .device-specs {
+            font-size: 14px;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        .dashboard-preview {
+            background: var(--secondary);
+            border-radius: 20px;
+            padding: 24px;
+            color: white;
+        }
+
+        .dashboard-preview h4 {
+            font-size: 14px;
+            margin-bottom: 16px;
+            opacity: 0.8;
+        }
+
+        .prediction-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .prediction-item .status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .status.warning {
+            background: var(--warning);
+            color: white;
+        }
+
+        .status.success {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Hardware Section */
+        .hardware {
+            padding: 120px 24px;
+            background: white;
+        }
+
+        .hardware-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hardware h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hardware .subtitle {
+            font-size: 20px;
+            color: var(--gray-text);
+            margin-bottom: 60px;
+        }
+
+        .gateway-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .feature-item {
+            padding: 32px 24px;
+            border-radius: 16px;
+            background: var(--gray-light);
+        }
+
+        .feature-item .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .feature-item h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            color: var(--gray-text);
+            font-size: 14px;
+        }
+
+        .pricing-highlight {
+            background: var(--primary);
+            color: white;
+            padding: 24px;
+            border-radius: 16px;
+            display: inline-block;
+            margin-top: 32px;
+        }
+
+        .pricing-highlight .price {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .pricing-highlight .label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Capabilities Section */
+        .capabilities {
+            padding: 120px 24px;
+            background: var(--gray-light);
+        }
+
+        .capabilities-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .capabilities h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .timeline-comparison {
+            background: white;
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-section {
+            margin-bottom: 48px;
+        }
+
+        .timeline-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--secondary);
+        }
+
+        .timeline-section.traditional h3 {
+            color: #666;
+        }
+
+        .timeline-section.factorylm h3 {
+            background: var(--predict-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .timeline-steps {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .timeline-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--gray-light);
+            position: relative;
+        }
+
+        .factorylm .timeline-step {
+            background: rgba(0, 102, 204, 0.1);
+            border: 1px solid rgba(0, 102, 204, 0.2);
+        }
+
+        .timeline-step .day {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .timeline-step .event {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 8px 0 4px;
+        }
+
+        .timeline-step .detail {
+            font-size: 13px;
+            color: var(--gray-text);
+        }
+
+        .timeline-arrow {
+            font-size: 24px;
+            color: var(--gray-text);
+        }
+
+        .outcome {
+            background: var(--accent);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+
+        .traditional .outcome {
+            background: var(--warning);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 24px;
+            background: white;
+        }
+
+        .features-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            text-align: left;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid #E5E5E7;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 32px rgba(0, 102, 204, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        .feature-card .status-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-top: 12px;
+        }
+
+        .status-badge.available {
+            background: var(--accent);
+            color: white;
+        }
+
+        .status-badge.coming-soon {
+            background: var(--warning);
+            color: white;
+        }
+
+        .status-badge.roadmap {
+            background: #E5E5E7;
+            color: var(--gray-text);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 120px 24px;
+            background: var(--gray-light);
+        }
+
+        .pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .pricing-card.enterprise {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .billing {
+            color: var(--gray-text);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .pricing-card li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--gray-text);
+        }
+
+        .pricing-card li:before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .pricing-cta:hover {
+            background: #333;
+        }
+
+        .enterprise .pricing-cta {
+            background: var(--primary);
+        }
+
+        .enterprise .pricing-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 24px;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .gateway-features {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-steps {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .timeline-arrow {
+                transform: rotate(90deg);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-comparison {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-visual {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Factory<span>LM</span></a>
+            <ul class="nav-links">
+                <li><a href="/identify">Identify</a></li>
+                <li><a href="/connect">Connect</a></li>
+                <li><a href="/predict" class="active">Predict</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Contact Sales</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Know what will fail. <span>Before it does.</span></h1>
+                <p>Component-level monitoring with predictive AI. The future of maintenance is here.</p>
+                <a href="#contact" class="hero-cta">Contact Sales</a>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="gateway-device">
+                    <h3>FactoryLM Edge Gateway</h3>
+                    <div class="device-image">Industrial IoT Gateway<br/>DIN Rail Mount</div>
+                    <div class="device-specs">
+                        • 2x IO-Link master ports<br/>
+                        • Industrial enclosure<br/>
+                        • Pre-configured, plug & play<br/>
+                        • Edge AI processing
+                    </div>
+                </div>
+                
+                <div class="dashboard-preview">
+                    <h4>Live Predictive Dashboard</h4>
+                    <div class="prediction-item">
+                        Pump A2 - Bearing 6204 <span class="status warning">72H TO FAILURE</span>
+                    </div>
+                    <div class="prediction-item">
+                        Motor B1 - Vibration Normal <span class="status success">HEALTHY</span>
+                    </div>
+                    <div class="prediction-item">
+                        Conveyor C3 - Temperature Rising <span class="status warning">MONITOR</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardware Section -->
+    <section class="hardware">
+        <div class="hardware-content">
+            <h2>FactoryLM Edge Gateway</h2>
+            <p class="subtitle">Industrial-grade hardware with enterprise AI software</p>
+            
+            <div class="gateway-features">
+                <div class="feature-item">
+                    <div class="icon">🔗</div>
+                    <h4>IO-Link Masters</h4>
+                    <p>2 ports for any IO-Link smart sensor. Automatic discovery and configuration.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🏭</div>
+                    <h4>Industrial Grade</h4>
+                    <p>DIN rail mount, IP65 rating, -20°C to +60°C operating range.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚡</div>
+                    <h4>Edge Processing</h4>
+                    <p>Local AI inference, offline buffering, secure cloud sync.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🔧</div>
+                    <h4>Plug & Play</h4>
+                    <p>Pre-configured with your sensors. Install in under 10 minutes.</p>
+                </div>
+            </div>
+            
+            <div class="pricing-highlight">
+                <div class="price">$499</div>
+                <div class="label">one-time hardware cost</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="capabilities">
+        <div class="capabilities-content">
+            <h2>Traditional vs. Predictive Maintenance</h2>
+            
+            <div class="timeline-comparison">
+                <div class="timeline-section traditional">
+                    <h3>❌ Traditional Reactive Approach</h3>
+                    <div class="timeline-steps">
+                        <div class="timeline-step">
+                            <div class="day">Day 1</div>
+                            <div class="event">Equipment Fails</div>
+                            <div class="detail">Unexpected breakdown</div>
+                        </div>
+                        <div class="timeline-arrow">→</div>
+                        <div class="timeline-step">
+                            <div class="day">Day 1</div>
+                            <div class="event">Emergency Response</div>
+                            <div class="detail">Scramble for parts & techs</div>
+                        </div>
+                        <div class="timeline-arrow">→</div>
+                        <div class="timeline-step">
+                            <div class="day">Day 2</div>
+                            <div class="event">Production Stopped</div>
+                            <div class="detail">4-8 hours downtime</div>
+                        </div>
+                    </div>
+                    <div class="outcome">Result: $50K+ in lost production</div>
+                </div>
+                
+                <div class="timeline-section factorylm">
+                    <h3>✅ FactoryLM Predictive Approach</h3>
+                    <div class="timeline-steps">
+                        <div class="timeline-step">
+                            <div class="day">Day 1</div>
+                            <div class="event">Sensor Installed</div>
+                            <div class="detail">Gateway auto-configures</div>
+                        </div>
+                        <div class="timeline-arrow">→</div>
+                        <div class="timeline-step">
+                            <div class="day">Day 14</div>
+                            <div class="event">Baseline Set</div>
+                            <div class="detail">AI learns normal patterns</div>
+                        </div>
+                        <div class="timeline-arrow">→</div>
+                        <div class="timeline-step">
+                            <div class="day">Day 45</div>
+                            <div class="event">Anomaly Detected</div>
+                            <div class="detail">72hr failure prediction</div>
+                        </div>
+                        <div class="timeline-arrow">→</div>
+                        <div class="timeline-step">
+                            <div class="day">Day 46</div>
+                            <div class="event">Scheduled Fix</div>
+                            <div class="detail">During planned downtime</div>
+                        </div>
+                    </div>
+                    <div class="outcome">Result: Zero unplanned downtime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-content">
+            <h2>Enterprise Predictive Platform</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>IO-Link Smart Sensors</h3>
+                    <p>Seamless integration with any IO-Link compatible sensor. Vibration, temperature, pressure, flow — all supported out of the box.</p>
+                    <div class="status-badge available">Available Now</div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Vibration Analysis</h3>
+                    <p>Advanced FFT analysis and bearing fault detection. Identifies inner race, outer race, and cage defects before catastrophic failure.</p>
+                    <div class="status-badge available">Available Now</div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Temperature Trending</h3>
+                    <p>Thermal pattern recognition with ambient compensation. Detects gradual heating that indicates bearing wear or lubrication issues.</p>
+                    <div class="status-badge available">Available Now</div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Predictive Algorithms</h3>
+                    <p>Machine learning models trained on 10+ years of industrial maintenance data. Continuously improving accuracy with your data.</p>
+                    <div class="status-badge available">Available Now</div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Automatic Parts Ordering</h3>
+                    <p>Integration with your ERP system. When a prediction is made, parts are automatically ordered based on lead times and failure windows.</p>
+                    <div class="status-badge coming-soon">Coming Soon</div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Digital Twin Visualization</h3>
+                    <p>3D equipment models with real-time sensor overlay. Visualize exactly where problems are developing in your machinery.</p>
+                    <div class="status-badge roadmap">2026 Roadmap</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="pricing-content">
+            <h2>Enterprise Pricing</h2>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Hardware</h3>
+                    <div class="price">$499</div>
+                    <div class="billing">one-time purchase</div>
+                    <ul>
+                        <li>FactoryLM Edge Gateway</li>
+                        <li>2x IO-Link master ports</li>
+                        <li>DIN rail mounting</li>
+                        <li>Industrial certification</li>
+                        <li>3-year hardware warranty</li>
+                        <li>White glove installation</li>
+                    </ul>
+                    <a href="#contact" class="pricing-cta">Order Hardware</a>
+                </div>
+                
+                <div class="pricing-card enterprise">
+                    <h3>Service Platform</h3>
+                    <div class="price">$499</div>
+                    <div class="billing">per month, per facility</div>
+                    <ul>
+                        <li>Unlimited sensor connections</li>
+                        <li>Full predictive AI suite</li>
+                        <li>24/7 monitoring & alerts</li>
+                        <li>Quarterly strategy reviews</li>
+                        <li>Dedicated success manager</li>
+                        <li>Custom algorithm development</li>
+                    </ul>
+                    <a href="#contact" class="pricing-cta">Contact Sales</a>
+                </div>
+            </div>
+            
+            <p style="color: var(--gray-text); font-size: 14px; margin-top: 24px;">
+                Enterprise discounts available for multi-facility deployments. 
+                ROI guarantee: If you don't prevent at least one unplanned outage in the first 6 months, we'll refund your service fees.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FactoryLM. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-based animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections for animation
+        document.querySelectorAll('.feature-card, .pricing-card, .gateway-device, .timeline-section').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect - FactoryLM | Real-time PLC Monitoring & AI Insights</title>
+    <meta name="description" content="Real-time monitoring and AI insights from your existing PLCs. No sensor changes, just software. Supports Modbus, Ethernet/IP, OPC-UA and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066CC;
+            --primary-dark: #0052A3;
+            --secondary: #1A1A1A;
+            --accent: #00C853;
+            --background: #FFFFFF;
+            --gray-light: #F5F5F7;
+            --gray-text: #6E6E73;
+            --warning: #FF9500;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--secondary);
+            background: var(--background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 24px 100px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--background) 0%, var(--gray-light) 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary) 0%, #00A3FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 102, 204, 0.3);
+        }
+
+        .hero-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 102, 204, 0.4);
+        }
+
+        /* Dashboard Mockup */
+        .dashboard-mockup {
+            max-width: 1000px;
+            margin: 60px auto 0;
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dashboard-header .status-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .dashboard-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .dashboard-card {
+            background: var(--gray-light);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .dashboard-card .metric {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .dashboard-card .label {
+            font-size: 14px;
+            color: var(--gray-text);
+        }
+
+        /* Protocols Section */
+        .protocols {
+            padding: 120px 24px;
+            background: white;
+        }
+
+        .protocols-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .protocols h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .protocols-subtitle {
+            font-size: 18px;
+            color: var(--gray-text);
+            margin-bottom: 60px;
+        }
+
+        .protocols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .protocol-card {
+            background: var(--gray-light);
+            padding: 32px 24px;
+            border-radius: 16px;
+            text-align: left;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .protocol-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .protocol-card .checkmark {
+            background: var(--accent);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .protocol-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .protocol-card p {
+            font-size: 14px;
+            color: var(--gray-text);
+            line-height: 1.5;
+        }
+
+        .protocols-note {
+            background: var(--gray-light);
+            padding: 24px;
+            border-radius: 12px;
+            font-style: italic;
+            color: var(--gray-text);
+        }
+
+        /* Architecture Section */
+        .architecture {
+            padding: 120px 24px;
+            background: var(--gray-light);
+        }
+
+        .architecture-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .architecture h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+
+        .architecture-diagram {
+            background: white;
+            border-radius: 20px;
+            padding: 48px 32px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 48px;
+        }
+
+        .architecture-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .flow-item {
+            background: var(--gray-light);
+            padding: 24px;
+            border-radius: 12px;
+            min-width: 140px;
+            position: relative;
+        }
+
+        .flow-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .flow-item p {
+            font-size: 12px;
+            color: var(--gray-text);
+        }
+
+        .flow-arrow {
+            font-size: 20px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .architecture-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            text-align: left;
+        }
+
+        .architecture-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .architecture-feature .icon {
+            background: var(--accent);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .architecture-feature span {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 24px;
+            background: white;
+        }
+
+        .features-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            text-align: left;
+        }
+
+        .feature-item {
+            padding: 32px;
+            background: var(--gray-light);
+            border-radius: 16px;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .feature-item p {
+            color: var(--gray-text);
+            line-height: 1.5;
+        }
+
+        .feature-item .icon {
+            background: var(--primary);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 120px 24px;
+            background: var(--gray-light);
+        }
+
+        .pricing-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 48px 40px;
+            text-align: left;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .pricing-card .tier {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price span {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--gray-text);
+        }
+
+        .pricing-card .description {
+            color: var(--gray-text);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .pricing-card li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--secondary);
+            font-size: 15px;
+        }
+
+        .pricing-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .pricing-card .cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 16px 24px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .pricing-card .cta:hover {
+            background: #333;
+        }
+
+        .pricing-card.featured .cta {
+            background: var(--primary);
+        }
+
+        .pricing-card.featured .cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 24px;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .protocols-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .architecture-flow {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-mockup {
+                margin: 40px auto 0;
+                padding: 16px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Factory<span>LM</span></a>
+            <ul class="nav-links">
+                <li><a href="/identify">Identify</a></li>
+                <li><a href="/connect" class="active">Connect</a></li>
+                <li><a href="/predict">Predict</a></li>
+            </ul>
+            <a href="#demo" class="nav-cta">Request Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>See what your <span>PLCs already know.</span></h1>
+            <p>Real-time monitoring and AI insights — no sensor changes, just software.</p>
+            <a href="#demo" class="hero-cta">Request Demo</a>
+        </div>
+
+        <!-- Dashboard Mockup -->
+        <div class="dashboard-mockup">
+            <div class="dashboard-header">
+                <div class="status-dot"></div>
+                <h3>Factory Floor - Live Status</h3>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="metric">94%</div>
+                    <div class="label">System Efficiency</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="metric">12</div>
+                    <div class="label">Active PLCs</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="metric">2</div>
+                    <div class="label">Warnings</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="metric">0</div>
+                    <div class="label">Critical Alerts</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Protocols Section -->
+    <section class="protocols">
+        <div class="protocols-content">
+            <h2>Supported Protocols</h2>
+            <p class="protocols-subtitle">Works with the industrial communication protocols you're already using.</p>
+            
+            <div class="protocols-grid">
+                <div class="protocol-card">
+                    <div class="checkmark">✓</div>
+                    <h3>Modbus TCP/RTU</h3>
+                    <p>The most widely used industrial protocol. Full read/write support with automatic device discovery.</p>
+                </div>
+                
+                <div class="protocol-card">
+                    <div class="checkmark">✓</div>
+                    <h3>Ethernet/IP</h3>
+                    <p>Allen-Bradley's industrial Ethernet standard. Native CIP support for seamless integration.</p>
+                </div>
+                
+                <div class="protocol-card">
+                    <div class="checkmark">✓</div>
+                    <h3>PROFINET</h3>
+                    <p>Siemens' real-time Ethernet solution. Full compatibility with PROFINET RT and IRT.</p>
+                </div>
+                
+                <div class="protocol-card">
+                    <div class="checkmark">✓</div>
+                    <h3>OPC-UA</h3>
+                    <p>Modern, secure, and platform-independent. The future of industrial communication.</p>
+                </div>
+                
+                <div class="protocol-card">
+                    <div class="checkmark">✓</div>
+                    <h3>S7 Communication</h3>
+                    <p>Native Siemens S7 protocol support for Step 7 and TIA Portal systems.</p>
+                </div>
+                
+                <div class="protocol-card">
+                    <div class="checkmark">✓</div>
+                    <h3>BACnet</h3>
+                    <p>Building automation and HVAC systems. Full BACnet/IP and BACnet MS/TP support.</p>
+                </div>
+            </div>
+
+            <div class="protocols-note">
+                <p>Don't see your protocol? We're adding new ones monthly. <a href="#contact">Contact us</a> about your specific requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture">
+        <div class="architecture-content">
+            <h2>Simple, Secure Architecture</h2>
+            
+            <div class="architecture-diagram">
+                <div class="architecture-flow">
+                    <div class="flow-item">
+                        <h4>Your PLCs</h4>
+                        <p>Existing systems</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">
+                        <h4>Edge Agent</h4>
+                        <p>Software only</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">
+                        <h4>FactoryLM Cloud</h4>
+                        <p>AI analytics</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">
+                        <h4>Your Team</h4>
+                        <p>Insights & alerts</p>
+                    </div>
+                </div>
+
+                <div class="architecture-features">
+                    <div class="architecture-feature">
+                        <div class="icon">✓</div>
+                        <span>No inbound ports required</span>
+                    </div>
+                    <div class="architecture-feature">
+                        <div class="icon">✓</div>
+                        <span>Read-only by default</span>
+                    </div>
+                    <div class="architecture-feature">
+                        <div class="icon">✓</div>
+                        <span>TLS 1.3 encryption</span>
+                    </div>
+                    <div class="architecture-feature">
+                        <div class="icon">✓</div>
+                        <span>Offline buffering</span>
+                    </div>
+                    <div class="architecture-feature">
+                        <div class="icon">✓</div>
+                        <span>Runs on Linux/Windows</span>
+                    </div>
+                    <div class="architecture-feature">
+                        <div class="icon">✓</div>
+                        <span>5-minute installation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-content">
+            <h2>Everything you need. Nothing you don't.</h2>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">🔍</div>
+                    <h3>Auto-discover PLCs</h3>
+                    <p>Automatically finds and connects to PLCs on your network. No manual configuration required.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">⚡</div>
+                    <h3>Real-time Fault Codes</h3>
+                    <p>Instant interpretation of error codes with plain English explanations and recommended actions.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">📊</div>
+                    <h3>Process Value Trending</h3>
+                    <p>Historical data visualization with intelligent pattern recognition and anomaly detection.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">🧠</div>
+                    <h3>AI Root Cause Analysis</h3>
+                    <p>Machine learning algorithms identify the root cause of issues before they cascade.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">📷</div>
+                    <h3>Photo + Data Correlation</h3>
+                    <p>Combines visual inspections with PLC data for complete situational awareness.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="icon">🔔</div>
+                    <h3>Smart Notifications</h3>
+                    <p>Configurable alerts via SMS, email, or Telegram. Only get notified when it matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="pricing-content">
+            <h2>Simple, transparent pricing</h2>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card featured">
+                    <div class="tier">Most Popular</div>
+                    <h3>Base</h3>
+                    <div class="price">$199<span>/mo per facility</span></div>
+                    <p class="description">Perfect for single-location operations looking to modernize their maintenance approach.</p>
+                    
+                    <ul>
+                        <li>Up to 10 PLC connections</li>
+                        <li>Real-time monitoring dashboard</li>
+                        <li>AI fault code interpretation</li>
+                        <li>Basic trending and analytics</li>
+                        <li>Email and SMS alerts</li>
+                        <li>Standard support</li>
+                        <li>Additional PLCs: $19/mo each</li>
+                    </ul>
+                    
+                    <a href="#demo" class="cta">Request Demo</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="tier">Custom</div>
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom<span> pricing</span></div>
+                    <p class="description">For multi-site operations with advanced requirements and dedicated support needs.</p>
+                    
+                    <ul>
+                        <li>Unlimited PLC connections</li>
+                        <li>Multi-site dashboard</li>
+                        <li>Advanced AI analytics</li>
+                        <li>Custom integrations</li>
+                        <li>Dedicated account manager</li>
+                        <li>24/7 priority support</li>
+                        <li>On-site training included</li>
+                    </ul>
+                    
+                    <a href="#contact" class="cta">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FactoryLM. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactoryLM - AI That Speaks Maintenance</title>
+    <meta name="description" content="From photo identification to predictive analytics. Three products. One platform. Zero complexity.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066CC;
+            --primary-dark: #0052A3;
+            --secondary: #1A1A1A;
+            --accent: #00C853;
+            --background: #FFFFFF;
+            --gray-light: #F5F5F7;
+            --gray-text: #6E6E73;
+            --warning: #FF9500;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--secondary);
+            background: var(--background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 24px 100px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--background) 0%, var(--gray-light) 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary) 0%, #00A3FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        /* Product Cards */
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: left;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-card .tier {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .product-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .product-card .tagline {
+            color: var(--gray-text);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .product-card .price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .product-card .price span {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--gray-text);
+        }
+
+        .product-card .cta {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 14px 24px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-top: 24px;
+            transition: background 0.2s;
+        }
+
+        .product-card .cta:hover {
+            background: #333;
+        }
+
+        .product-card.featured {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .product-card.featured .cta {
+            background: var(--primary);
+        }
+
+        .product-card.featured .cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 120px 24px;
+            background: var(--gray-light);
+        }
+
+        .problem-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .problem h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .number {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat .label {
+            color: var(--gray-text);
+            font-size: 16px;
+        }
+
+        .problem-text {
+            font-size: 20px;
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Founder Section */
+        .founder {
+            padding: 120px 24px;
+            background: white;
+        }
+
+        .founder-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .founder h2 {
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .founder blockquote {
+            font-size: clamp(20px, 2.5vw, 28px);
+            font-style: italic;
+            color: var(--secondary);
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        .founder cite {
+            display: block;
+            font-style: normal;
+            color: var(--gray-text);
+        }
+
+        .founder cite strong {
+            color: var(--secondary);
+            display: block;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 24px;
+            background: var(--primary);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons a {
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .cta-buttons a:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-buttons .primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta-buttons .secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 24px;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .product-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons a {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Factory<span>LM</span></a>
+            <ul class="nav-links">
+                <li><a href="/identify">Identify</a></li>
+                <li><a href="/connect">Connect</a></li>
+                <li><a href="/predict">Predict</a></li>
+            </ul>
+            <a href="#try-free" class="nav-cta">Try Free</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AI that speaks <span>maintenance.</span></h1>
+            <p>From photo identification to predictive analytics. Three products. One platform. Zero complexity.</p>
+        </div>
+
+        <!-- Product Cards -->
+        <div class="product-cards">
+            <div class="product-card">
+                <div class="tier">Tier 1</div>
+                <h3>Identify</h3>
+                <p class="tagline">Photo → Answer</p>
+                <div class="price">$49<span>/mo</span></div>
+                <a href="/identify" class="cta">Learn More</a>
+            </div>
+
+            <div class="product-card featured">
+                <div class="tier">Tier 2</div>
+                <h3>Connect</h3>
+                <p class="tagline">PLC → Insights</p>
+                <div class="price">$199<span>/mo</span></div>
+                <a href="/connect" class="cta">Learn More</a>
+            </div>
+
+            <div class="product-card">
+                <div class="tier">Tier 3</div>
+                <h3>Predict</h3>
+                <p class="tagline">Sensor → Foresight</p>
+                <div class="price">$499<span>/mo</span></div>
+                <a href="/predict" class="cta">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="problem-content">
+            <h2>Manufacturing loses $50B annually to downtime.</h2>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="number">600K</div>
+                    <div class="label">unfilled maintenance jobs</div>
+                </div>
+                <div class="stat">
+                    <div class="number">55</div>
+                    <div class="label">average technician age</div>
+                </div>
+                <div class="stat">
+                    <div class="number">90%</div>
+                    <div class="label">of industrial IoT data unused</div>
+                </div>
+            </div>
+
+            <p class="problem-text">The knowledge is walking out the door. FactoryLM captures it before it's gone.</p>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder">
+        <div class="founder-content">
+            <h2>Built by a maintenance tech. For maintenance techs.</h2>
+            
+            <blockquote>
+                "I spent 15 years debugging PLCs at 2 AM with paper manuals. I built the tool I wished I had."
+            </blockquote>
+            
+            <cite>
+                <strong>Mike Harpool, Founder</strong>
+                15 years industrial maintenance
+            </cite>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Start with a photo. Scale to predictive.</h2>
+        <div class="cta-buttons">
+            <a href="https://t.me/RivetPROBot" class="primary">Try Free — Identify</a>
+            <a href="#demo" class="secondary">Request Demo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FactoryLM. All rights reserved.</p>
+    </footer>
+</body>
+</html>
