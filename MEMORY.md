@@ -143,3 +143,31 @@ This is how industrial gateways work - they join existing networks.
 - 0.37-0.54ms ping latency
 - 0% packet loss
 - Survives power cycles
+
+---
+
+## 2026-02-05 Sprint Learnings
+
+### Product Strategy Insight
+Photo identification is the HOOK, not the product. The moat is:
+- Workflow integration (CMMS, work orders)
+- Organizational memory (equipment history across team)
+- Artifact delivery (QR codes, checklists, voice walkthroughs)
+- Upsell path to Connect/Predict tiers
+
+### LLM Cascade Architecture
+Mike's preferred cascade: Grok → DeepSeek → cheap model (until own LLM trained)
+Infrastructure exists in Rivet-PRO's llm_manager.py (Claude → GPT-4 → Cache)
+
+### Rivet-PRO is Production Code
+48+ service files including photo_service.py, stripe_service.py, llm_manager.py
+Knowledge base services, equipment services - monetizable infrastructure
+
+### Voice Output = The Crack Moment
+Instead of text results, speak to the user. "This is a Baldor 5HP motor..."
+Hands-free while working on equipment. Nobody else does this.
+
+### Three-Tier Product Strategy
+1. Identify - Photo only, FREE tier, $49/mo pro
+2. Connect - PLC integration via Edge Agent, $199/mo
+3. Predict - IO-Link hardware + predictive AI, $499/mo
