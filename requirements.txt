@@ -1,0 +1,20 @@
+# YC Keyboard Robot Demo Dependencies
+
+# PLC Communication
+pymodbus>=3.0.0
+
+# Telegram Bot
+pydantic>=2.0.0
+python-telegram-bot>=20.0
+
+# Services 
+pyyaml>=6.0
+fastapi>=0.100.0
+websockets>=11.0
+
+# Database (optional)
+psycopg2-binary>=2.9.0
+
+# General
+aiofiles>=23.0.0
+python-dotenv>=1.0.0
