@@ -1,0 +1,268 @@
+[
+  {
+    "id": 1,
+    "name": "Siemens Circuit Breaker 3RV20111CA20",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 2,
+    "name": "Siemens SIMATIC ET 200SP",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 3,
+    "name": "Fuji Electric VFD FRN0004C2S4AU",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 4,
+    "name": "Dold Safety Relay UH6937",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 5,
+    "name": "Nextys Power Supply NPST96148",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 6,
+    "name": "Reliance Motor E54H",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 7,
+    "name": "Nord Gearmotor SK11411000DB",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 8,
+    "name": "Nord Gearbox GVE20L",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 9,
+    "name": "Siemens SINAMICS Drive",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 10,
+    "name": "Maytag Dishwasher MDB949SDM2",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 79,
+    "name": "Stardust Racers",
+    "customId": "A000001",
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 80,
+    "name": "Siemens G120C",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 81,
+    "name": "Siemens SIMATIC S7-1500",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 82,
+    "name": "Siemens SIMATIC HMI KTP400",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 83,
+    "name": "siemens SIMATICET200SP",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 84,
+    "name": "fuji_electric FRN0004C2S4AU",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 85,
+    "name": "dold UH6937",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 86,
+    "name": "nextys NPST96148",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 87,
+    "name": "reliance E54H",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 88,
+    "name": "getriebebau_nord SK11411000DB",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 89,
+    "name": "nord GVE20L",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 90,
+    "name": "siemens SINAMICS",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 91,
+    "name": "maytag MDB949SDM2",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 92,
+    "name": "Unknown",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 93,
+    "name": "siemens 3RV20111CA20",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 94,
+    "name": "bihl",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 95,
+    "name": "siemens",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 96,
+    "name": "Unknown",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 97,
+    "name": "Unknown",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 98,
+    "name": "Unknown",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 99,
+    "name": "Unknown",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 100,
+    "name": "Unknown",
+    "customId": null,
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 147,
+    "name": "AB Micro820 PLC (2080-LC20-20QBB)",
+    "customId": "A000002",
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 149,
+    "name": "AB Micro820 PLC - 2080-LC20-20QBB",
+    "customId": "A000003",
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 150,
+    "name": "NEXTYS NPST961-48 PSU",
+    "customId": "A000004",
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 153,
+    "name": "Temp Sensor - [Process/Location]",
+    "customId": "A000005",
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 156,
+    "name": "Stardust Racers Control System HMI",
+    "customId": "A000006",
+    "parentId": null,
+    "locationId": null
+  },
+  {
+    "id": 158,
+    "name": "WONDOM Audio Amp Board AA-JA32172",
+    "customId": "A000007",
+    "parentId": null,
+    "locationId": null
+  }
+]

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify - Photo-Based Equipment Identification | FactoryLM</title>
+    <meta name="description" content="Snap a photo of equipment and get instant identification, troubleshooting steps, and parts info. No installation required.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066CC;
+            --primary-dark: #0052A3;
+            --secondary: #1A1A1A;
+            --accent: #00C853;
+            --background: #FFFFFF;
+            --gray-light: #F5F5F7;
+            --gray-text: #6E6E73;
+            --warning: #FF9500;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--secondary);
+            background: var(--background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 24px 100px;
+            background: linear-gradient(180deg, var(--background) 0%, var(--gray-light) 100%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--primary) 0%, #00A3FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: var(--gray-text);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 102, 204, 0.3);
+        }
+
+        .hero-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 102, 204, 0.4);
+        }
+
+        /* Phone Mockup */
+        .phone-mockup {
+            position: relative;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .phone {
+            background: #000;
+            border-radius: 35px;
+            padding: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .screen {
+            background: white;
+            border-radius: 27px;
+            padding: 20px 16px;
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .telegram-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .bot-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), #00A3FF);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .bot-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .bot-info p {
+            font-size: 12px;
+            color: var(--gray-text);
+        }
+
+        .chat-messages {
+            padding-top: 20px;
+            height: 460px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message.user {
+            align-items: flex-end;
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .message.user .message-bubble {
+            background: var(--primary);
+            color: white;
+            border-bottom-right-radius: 6px;
+        }
+
+        .message.bot .message-bubble {
+            background: #f1f1f1;
+            color: var(--secondary);
+            border-bottom-left-radius: 6px;
+        }
+
+        .equipment-photo {
+            width: 200px;
+            height: 150px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgZmlsbD0iI2Y4ZjlmYSIvPgogIDxyZWN0IHg9IjIwIiB5PSI0MCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSI3MCIgZmlsbD0iIzMzNCIvPgogIDx0ZXh0IHg9IjEwMCIgeT0iODAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiI+VkZEPC90ZXh0Pgo8L3N2Zz4=') center/cover;
+            border-radius: 12px;
+            margin: 8px 0;
+        }
+
+        .ai-response {
+            background: var(--gray-light);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
+            font-size: 12px;
+        }
+
+        .ai-response strong {
+            color: var(--primary);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 120px 24px;
+            background: white;
+        }
+
+        .how-it-works-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 80px;
+            line-height: 1.2;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+            margin: 0 auto 24px;
+        }
+
+        .step h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .step p {
+            color: var(--gray-text);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features {
+            padding: 120px 24px;
+            background: var(--gray-light);
+        }
+
+        .features-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .feature-icon::after {
+            content: "✓";
+            color: white;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .feature-text h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .feature-text p {
+            color: var(--gray-text);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 120px 24px;
+            background: white;
+        }
+
+        .pricing-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #eee;
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 12px 40px rgba(0, 102, 204, 0.15);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price span {
+            font-size: 18px;
+            color: var(--gray-text);
+        }
+
+        .pricing-card .period {
+            color: var(--gray-text);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            background: var(--accent);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 16px 24px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+
+        .pricing-cta:hover {
+            background: #333;
+        }
+
+        .pricing-card.featured .pricing-cta {
+            background: var(--primary);
+        }
+
+        .pricing-card.featured .pricing-cta:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 24px;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Factory<span>LM</span></a>
+            <ul class="nav-links">
+                <li><a href="/identify" class="active">Identify</a></li>
+                <li><a href="/connect">Connect</a></li>
+                <li><a href="/predict">Predict</a></li>
+            </ul>
+            <a href="https://t.me/RivetPROBot" class="nav-cta">Start Free</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Snap a photo. <span>Get answers.</span></h1>
+                <p>Equipment identification, troubleshooting steps, and parts info — no installation required.</p>
+                <a href="https://t.me/RivetPROBot" class="hero-cta">Start Free</a>
+            </div>
+
+            <div class="phone-mockup">
+                <div class="phone">
+                    <div class="screen">
+                        <div class="telegram-header">
+                            <div class="bot-avatar">FL</div>
+                            <div class="bot-info">
+                                <h3>FactoryLM Bot</h3>
+                                <p>online</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-messages">
+                            <div class="message user">
+                                <div class="message-bubble">
+                                    <div class="equipment-photo"></div>
+                                    What is this?
+                                </div>
+                            </div>
+                            
+                            <div class="message bot">
+                                <div class="message-bubble">
+                                    <div class="ai-response">
+                                        <strong>Identified:</strong> Allen-Bradley PowerFlex 525 VFD<br><br>
+                                        <strong>Model:</strong> 25B-D010N114<br>
+                                        <strong>Power:</strong> 4kW / 5HP<br>
+                                        <strong>Input:</strong> 480V 3-phase<br><br>
+                                        <strong>Common Issues:</strong><br>
+                                        • F001: Motor overload<br>
+                                        • F002: AC bus overvoltage<br>
+                                        • F072: Power loss<br><br>
+                                        <strong>Manual:</strong> 📄 PowerFlex 525 User Guide
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="message user">
+                                <div class="message-bubble">F001 fault. Motor keeps tripping</div>
+                            </div>
+
+                            <div class="message bot">
+                                <div class="message-bubble">
+                                    F001 = Motor overload protection<br><br>
+                                    Check:<br>
+                                    1. Motor amp draw vs nameplate<br>
+                                    2. Parameter P024 (overload class)<br>
+                                    3. Mechanical binding<br>
+                                    4. Check motor connections<br><br>
+                                    Need the motor nameplate photo?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="how-it-works-content">
+            <h2>How it works</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Take a Photo</h3>
+                    <p>Nameplate, wiring, components — capture what you see. Our AI works with worn labels and partial views.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Identifies</h3>
+                    <p>Manufacturer, model, specifications, age, and cross-reference data. Powered by industrial equipment training.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Guidance</h3>
+                    <p>Troubleshooting steps, parts lists, procedures, and maintenance history. Like having a senior tech on call.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="features-content">
+            <h2>Everything you need to identify equipment</h2>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <div class="feature-text">
+                        <h3>Nameplate OCR</h3>
+                        <p>Reads worn, dirty, or partially obscured equipment labels that human eyes struggle with.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <div class="feature-text">
+                        <h3>Component Recognition</h3>
+                        <p>Identifies motors, VFDs, sensors, switches, and other industrial components from photos.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <div class="feature-text">
+                        <h3>Cross-Reference Parts</h3>
+                        <p>Find compatible parts across manufacturers, with pricing and availability information.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <div class="feature-text">
+                        <h3>Maintenance History</h3>
+                        <p>Log and track equipment queries, building an institutional knowledge base.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <div class="feature-text">
+                        <h3>Works via Telegram</h3>
+                        <p>No app to install. Just message our bot. Works on any phone, tablet, or computer.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon"></div>
+                    <div class="feature-text">
+                        <h3>Instant Access</h3>
+                        <p>Get answers in seconds, not hours. Perfect for urgent troubleshooting scenarios.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="pricing-content">
+            <h2>Simple, transparent pricing</h2>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0</div>
+                    <div class="period">Get started</div>
+                    
+                    <ul class="pricing-features">
+                        <li>10 queries per month</li>
+                        <li>Basic equipment identification</li>
+                        <li>Telegram bot access</li>
+                        <li>Community support</li>
+                    </ul>
+                    
+                    <a href="https://t.me/RivetPROBot" class="pricing-cta">Start Free</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Pro</h3>
+                    <div class="price">$49<span>/mo</span></div>
+                    <div class="period">Per user</div>
+                    
+                    <ul class="pricing-features">
+                        <li>Unlimited queries</li>
+                        <li>Full equipment history</li>
+                        <li>Parts cross-referencing</li>
+                        <li>Priority support</li>
+                        <li>Export data</li>
+                        <li>Advanced OCR</li>
+                    </ul>
+                    
+                    <a href="https://t.me/RivetPROBot" class="pricing-cta">Subscribe</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Team</h3>
+                    <div class="price">$99<span>/mo</span></div>
+                    <div class="period">5 users included</div>
+                    
+                    <ul class="pricing-features">
+                        <li>Everything in Pro</li>
+                        <li>Shared team history</li>
+                        <li>Admin dashboard</li>
+                        <li>User management</li>
+                        <li>API access</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                    
+                    <a href="mailto:sales@factorylm.com" class="pricing-cta">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 FactoryLM. All rights reserved.</p>
+    </footer>
+</body>
+</html>
