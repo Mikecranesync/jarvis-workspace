@@ -171,3 +171,18 @@ Hands-free while working on equipment. Nobody else does this.
 1. Identify - Photo only, FREE tier, $49/mo pro
 2. Connect - PLC integration via Edge Agent, $199/mo
 3. Predict - IO-Link hardware + predictive AI, $499/mo
+
+### YC Demo: Keyboard Robot (2026-02-05)
+The showstopper demo: YC reviewer controls a REAL pneumatic keyboard-playing robot from their phone.
+- Micro820 PLC + 5 Bimba cylinders + Casio keyboard
+- QR code scan → Telegram bot → VIP treatment → pick a song → LIVE performance
+- IO display code at: `infrastructure/balena/plc-gateway/app/api_v4.py`
+- Branch: `yc-demo-keyboard-robot`, Tag: `v2.0.0-yc-demo-base`
+- 4-day build deadline
+
+### Spec Watcher System
+Running on Groq free inference. Extracts requirements from Mike's conversations.
+- Detects features, workflows, architecture decisions
+- Generates acceptance criteria and test cases
+- Saves to database + markdown at `brain/specs/`
+- Code at: `/opt/jarvis/spec-watcher/spec_watcher.py`
