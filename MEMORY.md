@@ -186,3 +186,42 @@ Running on Groq free inference. Extracts requirements from Mike's conversations.
 - Generates acceptance criteria and test cases
 - Saves to database + markdown at `brain/specs/`
 - Code at: `/opt/jarvis/spec-watcher/spec_watcher.py`
+
+---
+
+## 2026-02-06 Session Learnings
+
+### New Infrastructure
+- **Hetzner VPS added:** 178.156.173.186 / Tailscale 100.67.25.53
+  - 8GB RAM, 4 AMD vCPU, $16/mo
+  - SSH: `ssh -i ~/.ssh/hetzner_key root@178.156.173.186`
+- **Oracle Free Tier:** Don't bother - always out of capacity in Ashburn
+
+### Windows SSH for Admin Users - CRITICAL
+Windows admin users need SSH keys in DIFFERENT location:
+- Regular users: `C:\Users\<name>\.ssh\authorized_keys`
+- Admin users: `C:\ProgramData\ssh\administrators_authorized_keys`
+- Fix: `icacls <file> /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"`
+
+### PLC Laptop Username
+- Username is `hharp` NOT `mike`!
+
+### Best Remote Laptop Control Solution
+**computer_use_ootb** - https://github.com/showlab/computer_use_ootb
+- No Docker, works on Windows
+- Gradio web interface for remote control
+- Supports Claude API or local models
+
+### YC Demo Strategy (CORRECT VERSION)
+**VFD + Conveyor** (NOT keyboard robot!)
+- Mike ordered VFD + motor
+- Building real conveyor with Micro820 PLC
+- Factory I/O digital twin
+- Docs: `brain/strategy/DEMO-BUILD-GUIDE.md`, `brain/strategy/DEMO-CONVEYOR-BOM.md`
+- **Deadline: Feb 9, 2026**
+
+### Context Management
+When context gets long and I start forgetting things:
+1. Update memory files
+2. Ask for context reset
+3. New session reads MEMORY.md fresh
