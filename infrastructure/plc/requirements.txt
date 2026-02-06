@@ -1,0 +1,2 @@
+# PLC Communication Dependencies
+pymodbus>=3.0.0
