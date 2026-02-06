@@ -12,7 +12,12 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 - **Skill:** `/root/jarvis-workspace/skills/factorylm-website/SKILL.md`
 
 ## Servers
-- **This VPS:** factorylm-prod (DigitalOcean Atlanta, 8GB RAM)
+- **This VPS:** factorylm-prod (DigitalOcean Atlanta, 4GB RAM) - 100.68.120.99
+- **Hetzner VPS:** factorylm-hetzner (Ashburn VA, 8GB RAM, 4 AMD vCPU, 160GB SSD) - 100.67.25.53 / 178.156.173.186
+  - Cost: ~€15/mo (~$16)
+  - SSH: `ssh -i ~/.ssh/hetzner_key root@178.156.173.186`
+  - Docker + Tailscale installed
+  - Use for heavy workloads, AI inference, etc.
 - **PLC Laptop:** 100.72.2.99 (Tailscale), Quadro P620 GPU, runs Ollama
   - Factory I/O (3D industrial simulation)
   - CCW (Connected Components Workbench) for Allen-Bradley
@@ -122,3 +127,29 @@ Server disk runs tight (~48GB). Clean journals if full:
 ```bash
 journalctl --vacuum-time=1d
 ```
+
+## Remote Laptop Access (SSH)
+Jarvis can SSH into Windows laptops via Tailscale.
+
+**Setup (run ONCE on each laptop as Admin):**
+```powershell
+irm https://raw.githubusercontent.com/Mikecranesync/jarvis-workspace/main/infrastructure/remote-access/setup-windows-laptop.ps1 | iex
+```
+
+**Or manually copy/paste the script from:**
+`/root/jarvis-workspace/infrastructure/remote-access/setup-windows-laptop.ps1`
+
+**SSH Key:** `/root/.ssh/jarvis_laptop_key`
+**Helper Script:** `source /opt/jarvis/remote-laptop.sh`
+
+### Quick Commands from VPS:
+```bash
+# Travel laptop
+ssh -i ~/.ssh/jarvis_laptop_key mike@100.83.251.23 "hostname"
+
+# PLC laptop
+ssh -i ~/.ssh/jarvis_laptop_key mike@100.72.2.99 "hostname"
+```
+
+### Architecture Doc:
+`/root/jarvis-workspace/infrastructure/remote-access/ARCHITECTURE.md`
