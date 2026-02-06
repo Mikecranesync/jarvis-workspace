@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  hbbs:
+    container_name: rustdesk-hbbs
+    image: rustdesk/rustdesk-server:latest
+    command: hbbs -r factorylm.com:21117
+    volumes:
+      - ./data:/root
+    network_mode: host
+    restart: unless-stopped
+    depends_on:
+      - hbbr
+
+  hbbr:
+    container_name: rustdesk-hbbr
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr
+    volumes:
+      - ./data:/root
+    network_mode: host
+    restart: unless-stopped
