@@ -1,0 +1,14 @@
+# VFD Simulator Requirements
+# No external dependencies for core functionality!
+# Python 3.8+ built-in asyncio is all that's needed.
+
+# Optional: For production deployment with proper WebSocket support
+# websockets>=10.0
+# aiohttp>=3.8.0
+
+# Optional: For enhanced Modbus functionality  
+# pymodbus>=3.0.0
+
+# Optional: For REST API
+# fastapi>=0.100.0
+# uvicorn>=0.22.0

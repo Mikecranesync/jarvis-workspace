@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-02-05T17:07:00.317385+00:00",
+  "total_tests": 4,
+  "passed": 2,
+  "failed": 2,
+  "errors": 0,
+  "results": [
+    {
+      "timestamp": "2026-02-05T17:06:59.804617+00:00",
+      "test": "API Health Check",
+      "status": "PASS",
+      "details": "API healthy, 38 assets"
+    },
+    {
+      "timestamp": "2026-02-05T17:07:00.045632+00:00",
+      "test": "Asset List Retrieval",
+      "status": "PASS",
+      "details": "Retrieved 38 assets"
+    },
+    {
+      "timestamp": "2026-02-05T17:07:00.221484+00:00",
+      "test": "Work Order List",
+      "status": "FAIL",
+      "details": "Status 405"
+    },
+    {
+      "timestamp": "2026-02-05T17:07:00.317266+00:00",
+      "test": "Work Order Creation",
+      "status": "FAIL",
+      "details": "Status 405"
+    }
+  ]
+}
