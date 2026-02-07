@@ -1,0 +1,244 @@
+direction: down
+
+vars: {
+  d2-config: {
+    layout-engine: elk
+    theme-id: 200
+  }
+}
+
+title: {
+  label: "FactoryLM Intelligence Stack"
+  style: {
+    font-size: 32
+    bold: true
+  }
+}
+
+# Layer 3 - Cloud
+layer3: "LAYER 3: CLOUD" {
+  style: {
+    fill: "#E8F4FD"
+    stroke: "#1976D2"
+    border-radius: 10
+  }
+  
+  claude: "Claude API\n(Complex Reasoning)" {
+    shape: cloud
+    style.fill: "#BBDEFB"
+  }
+  
+  neon: "Neon Postgres\n(Cloud DB)" {
+    shape: cylinder
+    style.fill: "#BBDEFB"
+  }
+  
+  hetzner: "Hetzner VPS\n8GB • 160GB SSD" {
+    shape: rectangle
+    style.fill: "#BBDEFB"
+  }
+  
+  note3: |md
+    **When Edge Can't Handle It**
+    - Long context reasoning
+    - Model training
+    - Multi-tenant hosting
+  | {
+    style.fill: transparent
+    style.stroke: transparent
+  }
+}
+
+# Layer 2 - Local GPU
+layer2: "LAYER 2: LOCAL GPU" {
+  style: {
+    fill: "#FFF3E0"
+    stroke: "#F57C00"
+    border-radius: 10
+  }
+  
+  plc_laptop: "PLC Laptop" {
+    style.fill: "#FFE0B2"
+    
+    quadro: "Quadro P620\n(2GB VRAM)" {
+      shape: hexagon
+    }
+    
+    ollama: "Ollama\nLlama 3 • Mistral" {
+      shape: parallelogram
+    }
+    
+    factoryio: "Factory I/O\n(3D Simulation)" {
+      shape: rectangle
+    }
+    
+    ccw: "CCW + Micro820\n(Real PLC)" {
+      shape: rectangle
+    }
+  }
+  
+  note2: |md
+    **Air-Gapped Capable**
+    - Local inference
+    - PLC programming
+    - Digital twin
+  | {
+    style.fill: transparent
+    style.stroke: transparent
+  }
+}
+
+# Layer 1 - Edge
+layer1: "LAYER 1: EDGE INTELLIGENCE" {
+  style: {
+    fill: "#F3E5F5"
+    stroke: "#7B1FA2"
+    border-radius: 10
+  }
+  
+  pi: "Raspberry Pi Gateway" {
+    style.fill: "#E1BEE7"
+    
+    balena: "BalenaOS\n(Container Runtime)" {
+      shape: rectangle
+    }
+    
+    modbus: "Modbus/TCP\n(100ms polling)" {
+      shape: parallelogram
+    }
+    
+    rules: "Rule Engine\n(Local Decisions)" {
+      shape: diamond
+    }
+    
+    tinyllm: "Tiny LLM\n(Phi-3 mini)" {
+      shape: hexagon
+      style.stroke-dash: 3
+    }
+  }
+  
+  note1: |md
+    **Millisecond Response**
+    - Threshold alerts
+    - Pattern matching
+    - No cloud required
+  | {
+    style.fill: transparent
+    style.stroke: transparent
+  }
+}
+
+# Layer 0 - Foundation
+layer0: "LAYER 0: FOUNDATION (POKA-YOKE)" {
+  style: {
+    fill: "#E8F5E9"
+    stroke: "#388E3C"
+    border-radius: 10
+  }
+  
+  cmms: "Atlas CMMS" {
+    style.fill: "#C8E6C9"
+    
+    input_gate: "Input Gate\n(Validate All)" {
+      shape: diamond
+    }
+    
+    schema: "Schema Lock\n(Required Fields)" {
+      shape: rectangle
+    }
+    
+    postgres: "PostgreSQL\n(ACID + Audit)" {
+      shape: cylinder
+    }
+  }
+  
+  infra: "Core Infrastructure" {
+    style.fill: "#C8E6C9"
+    
+    redis: "Redis\n(Cache)" {
+      shape: cylinder
+    }
+    
+    pg: "Postgres\n(pgvector)" {
+      shape: cylinder
+    }
+    
+    queue: "Message Queue\n(Telegram)" {
+      shape: queue
+    }
+  }
+  
+  automation: "Automation Layer" {
+    style.fill: "#C8E6C9"
+    
+    n8n: "n8n\n(Workflows)" {
+      shape: rectangle
+    }
+    
+    copilot: "PLC Copilot\n(Photo → Asset)" {
+      shape: rectangle
+    }
+    
+    mautic: "Mautic\n(Marketing)" {
+      shape: rectangle
+    }
+  }
+  
+  note0: |md
+    **NO AI REQUIRED**
+    Works without cloud.
+    Data integrity guaranteed.
+    The unbreakable foundation.
+  | {
+    style.fill: "#A5D6A7"
+    style.stroke: "#388E3C"
+    style.font-size: 14
+    style.bold: true
+  }
+}
+
+# Connections - Intelligence flows DOWN
+layer3 -> layer2: "Push models" {
+  style.stroke: "#1976D2"
+  style.stroke-dash: 5
+}
+layer2 -> layer1: "Push rules" {
+  style.stroke: "#F57C00"
+  style.stroke-dash: 5
+}
+layer1 -> layer0: "Harden logic" {
+  style.stroke: "#7B1FA2"
+  style.stroke-dash: 5
+}
+
+# Connections - Data flows UP
+layer0 -> layer1: "Clean data" {
+  style.stroke: "#388E3C"
+  style.stroke-width: 3
+}
+layer1 -> layer2: "Enriched data" {
+  style.stroke: "#388E3C"
+  style.stroke-width: 3
+}
+layer2 -> layer3: "Training data" {
+  style.stroke: "#388E3C"
+  style.stroke-width: 3
+}
+
+# Key insight box
+insight: |md
+  ## The FactoryLM Principle
+  
+  **Data flows UP ⬆️** — Clean data feeds intelligence
+  
+  **Intelligence flows DOWN ⬇️** — AI insights become code
+  
+  **Goal:** Reduce AI dependency over time as Layer 0 gets smarter
+| {
+  style: {
+    fill: "#FFF9C4"
+    stroke: "#F9A825"
+    border-radius: 8
+    font-size: 14
+  }
+}

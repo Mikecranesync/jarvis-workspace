@@ -1,0 +1,115 @@
+# FRAME ASSEMBLY - TOP VIEW
+# Professional Engineering Drawing - YC Demo Conveyor
+# Job: 2026-0206-001 | Scale: 1:1 | Sheet 1 of 5
+
+title: FRAME ASSEMBLY - TOP VIEW {
+  near: top-center
+  style.font-size: 20
+  style.bold: true
+}
+
+# Main frame outer rectangle (48" x 14" inside dimensions)
+frame_outer: {
+  style.fill: transparent
+  style.stroke: "#000"
+  style.stroke-width: 3
+  
+  # Side rails (2x4 lumber - 48" long)
+  top_rail: {
+    shape: rectangle
+    width: 960  # 48" * 20 units per inch
+    height: 70  # 2x4 actual is 1.5" x 3.5" 
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  bottom_rail: {
+    shape: rectangle
+    width: 960
+    height: 70
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  # Cross braces (2x4 lumber - 14" long)
+  left_brace: {
+    shape: rectangle
+    width: 70
+    height: 280  # 14" * 20 units per inch
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  right_brace: {
+    shape: rectangle
+    width: 70
+    height: 280
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  # Middle support braces
+  mid_left: {
+    shape: rectangle
+    width: 70
+    height: 280
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  mid_right: {
+    shape: rectangle
+    width: 70
+    height: 280
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+}
+
+# Screw locations (marked with circles)
+screw1: {shape: circle; style.fill: "#000"; width: 10; height: 10}
+screw2: {shape: circle; style.fill: "#000"; width: 10; height: 10}
+screw3: {shape: circle; style.fill: "#000"; width: 10; height: 10}
+screw4: {shape: circle; style.fill: "#000"; width: 10; height: 10}
+screw5: {shape: circle; style.fill: "#000"; width: 10; height: 10}
+screw6: {shape: circle; style.fill: "#000"; width: 10; height: 10}
+screw7: {shape: circle; style.fill: "#000"; width: 10; height: 10}
+screw8: {shape: circle; style.fill: "#000"; width: 10; height: 10}
+
+# Dimension lines and labels
+dim_48: "48.0\"" {
+  near: top-left
+  style.font-size: 16
+  style.bold: true
+}
+
+dim_14: "14.0\"" {
+  near: left-center
+  style.font-size: 16
+  style.bold: true
+}
+
+# Material callouts
+material_note: "FRAME MATERIAL: 2x4 SPF LUMBER" {
+  near: bottom-left
+  style.font-size: 12
+  style.italic: true
+}
+
+# Drawing info block
+drawing_info: "Sheet 1 of 5 | Scale 1:12 | JOB-2026-0206-001" {
+  near: bottom-right
+  style.font-size: 10
+}
+
+# Assembly notes
+notes: "ASSEMBLY NOTES:\n• Pre-drill all holes\n• Use 2.5\" deck screws\n• Check square before final tightening" {
+  near: bottom-center
+  style.font-size: 11
+}

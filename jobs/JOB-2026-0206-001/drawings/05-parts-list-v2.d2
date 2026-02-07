@@ -1,0 +1,161 @@
+# PARTS LIST - BILL OF MATERIALS  
+# Professional Engineering Drawing - YC Demo Conveyor
+
+title: {
+  label: "CONVEYOR PARTS LIST - BILL OF MATERIALS"
+  near: top-center
+  style.font-size: 20
+  style.bold: true
+}
+
+# Parts table as connected boxes
+part_001: {
+  label: "001 | QTY: 2\nSIDE RAILS\n48\" x 3.5\" x 1.5\"\n2x4 SPF Lumber\nHome Depot"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.fill: "#F9F9F9"
+  width: 200
+  height: 80
+}
+
+part_002: {
+  label: "002 | QTY: 4\nCROSS BRACES\n14\" x 3.5\" x 1.5\"\n2x4 SPF Lumber\nHome Depot"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.fill: "#FFFFFF"
+  width: 200
+  height: 80
+}
+
+part_003: {
+  label: "003 | QTY: 4\nLEGS\n30\" x 3.5\" x 1.5\"\n2x4 SPF Lumber\nHome Depot"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.fill: "#F9F9F9"
+  width: 200
+  height: 80
+}
+
+part_004: {
+  label: "004 | QTY: 2\nROLLER PIPES\n14\" L x 3\" Dia\nPVC Pipe\nHome Depot"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.fill: "#FFFFFF"
+  width: 200
+  height: 80
+}
+
+part_005: {
+  label: "005 | QTY: 2\nROLLER SHAFTS\n16\" L x 1\" Dia\nHardwood Dowel\nHome Depot"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.fill: "#F9F9F9"
+  width: 200
+  height: 80
+}
+
+part_006: {
+  label: "006 | QTY: 1\nMOTOR MOUNT\n12\" x 12\" x 0.75\"\nPlywood\nHome Depot"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.fill: "#FFFFFF"
+  width: 200
+  height: 80
+}
+
+part_007: {
+  label: "007 | QTY: 1\nBELT MATERIAL\n6\" W x 120\" L\nRubber Mat\nAmazon"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.fill: "#F9F9F9"
+  width: 200
+  height: 80
+}
+
+part_008: {
+  label: "008 | QTY: 24\nDECK SCREWS\n#8 x 2.5\" Phillips\nGalvanized Steel\nHome Depot"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.fill: "#FFFFFF"
+  width: 200
+  height: 80
+}
+
+part_009: {
+  label: "009 | QTY: 2\nROLLER SCREWS\n#8 x 1\" Wood Screw\nSteel\nHome Depot"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.fill: "#F9F9F9"
+  width: 200
+  height: 80
+}
+
+# Summary information
+lumber_summary: {
+  label: "LUMBER SUMMARY:\n• (3) 2x4 x 8ft SPF Studs\n• (1) 2x4 x 10ft SPF Stud\n• (1) 12\"x12\" Plywood Sheet"
+  near: bottom-left
+  style.font-size: 12
+  style.bold: true
+  style.fill: "#E6FFE6"
+  style.stroke: "#000"
+  width: 180
+  height: 80
+}
+
+cost_estimate: {
+  label: "COST ESTIMATE:\n• Lumber: $25\n• Hardware: $15\n• PVC/Dowels: $20\n• Belt Material: $30\n\nTOTAL: ~$90"
+  near: bottom-center
+  style.font-size: 12
+  style.bold: true
+  style.fill: "#FFE6E6"
+  style.stroke: "#000"
+  width: 180
+  height: 80
+}
+
+build_time: {
+  label: "BUILD TIME:\n• Cut lumber: 30 min\n• Frame assembly: 45 min\n• Roller install: 30 min\n• Belt install: 15 min\n\nTOTAL: ~2 hours"
+  near: bottom-right
+  style.font-size: 12
+  style.bold: true
+  style.fill: "#E6E6FF"
+  style.stroke: "#000"
+  width: 180
+  height: 80
+}
+
+# Tools required
+tools_required: {
+  label: "TOOLS NEEDED:\n• Drill with bits\n• Circular saw\n• Measuring tape\n• Level\n• Screwdriver\n• Clamps"
+  near: top-left
+  style.font-size: 11
+  style.fill: "#FFFEE6"
+  style.stroke: "#000"
+  width: 150
+  height: 80
+}
+
+# Project information
+project_info: {
+  label: "PROJECT: YC Demo Conveyor Build\nCUSTOMER: FactoryLM (Internal)\nENGINEER: Jarvis AI\nDATE: February 2026"
+  near: top-right
+  style.font-size: 10
+  style.italic: true
+  style.fill: "#F0F0F0"
+  style.stroke: "#000"
+  width: 150
+  height: 80
+}
+
+# Drawing information
+drawing_info: {
+  label: "SHEET 5 of 5 | PARTS LIST | JOB-2026-0206-001"
+  near: center-right
+  style.font-size: 10
+}
+
+# Connect parts to show relationships
+part_001 -> part_002: {style.stroke-dash: 3}
+part_002 -> part_003: {style.stroke-dash: 3}
+part_004 -> part_005: {style.stroke-dash: 3}
+part_008 -> part_009: {style.stroke-dash: 3}

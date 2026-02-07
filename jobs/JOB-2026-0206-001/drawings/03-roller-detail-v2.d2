@@ -1,0 +1,148 @@
+# ROLLER DETAIL DRAWING
+# Professional Engineering Drawing - YC Demo Conveyor
+
+title: {
+  label: "ROLLER ASSEMBLY - DETAIL VIEW"
+  near: top-center
+  style.font-size: 20
+  style.bold: true
+}
+
+# Main roller assembly
+center_shaft: {
+  shape: rectangle
+  label: "16\" DOWEL SHAFT (1\" DIA)"
+  style.fill: "#8B4513"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 320
+  height: 20
+}
+
+pvc_pipe: {
+  shape: rectangle
+  label: "14\" PVC PIPE (3\" DIA)"
+  style.fill: "#F5F5F5"
+  style.stroke: "#000"
+  style.stroke-width: 3
+  width: 280
+  height: 60
+}
+
+left_overhang: {
+  shape: rectangle
+  label: "1\" OVERHANG"
+  style.fill: "#8B4513"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 20
+  height: 20
+}
+
+right_overhang: {
+  shape: rectangle
+  label: "1\" OVERHANG"
+  style.fill: "#8B4513"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 20
+  height: 20
+}
+
+# Frame mounting detail
+left_notch: {
+  shape: rectangle
+  label: "U-NOTCH IN FRAME"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.stroke-dash: 5
+  width: 50
+  height: 25
+}
+
+right_notch: {
+  shape: rectangle
+  label: "U-NOTCH IN FRAME"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  style.stroke-dash: 5
+  width: 50
+  height: 25
+}
+
+# Fastening screw
+fastener_screw: {
+  shape: circle
+  label: "#8 SCREW"
+  style.fill: "#000"
+  style.stroke: "#666"
+  style.stroke-width: 2
+  width: 10
+  height: 10
+}
+
+# Dimensions
+total_length: {
+  label: "16.0\" TOTAL SHAFT LENGTH"
+  near: bottom-center
+  style.font-size: 14
+  style.bold: true
+}
+
+pvc_length: {
+  label: "14.0\" PVC PIPE LENGTH"
+  near: top-center
+  style.font-size: 12
+  style.bold: true
+}
+
+overhang_dim: {
+  label: "1.0\" OVERHANG (BOTH ENDS)"
+  near: bottom-left
+  style.font-size: 10
+}
+
+# Assembly instructions
+assembly_steps: {
+  label: "ASSEMBLY STEPS:\n1. Drill 1\" hole through PVC center\n2. Insert dowel through PVC\n3. Center PVC (1\" overhang each end)\n4. Drill pilot hole through PVC into dowel\n5. Install #8 x 1\" wood screw"
+  near: top-left
+  style.font-size: 11
+}
+
+# Mounting details
+mounting_info: {
+  label: "MOUNTING DETAIL:\n• Cut U-notch in cross-brace\n• Notch depth: 0.5\"\n• Notch width: 1.25\"\n• Add retention blocks"
+  near: top-right
+  style.font-size: 11
+}
+
+# Material specs
+materials: {
+  label: "MATERIALS:\n• Shaft: 1\" Hardwood Dowel\n• Pipe: 3\" PVC Pipe\n• Fastener: #8 Wood Screw"
+  near: center-left
+  style.font-size: 11
+}
+
+# Critical note
+critical_note: {
+  label: "⚠️ CRITICAL: Ensure rollers spin freely"
+  near: center-right
+  style.font-size: 12
+  style.bold: true
+  style.fill: "#FF0000"
+}
+
+# Drawing info
+drawing_info: {
+  label: "SHEET 3 of 5 | SCALE 1:2 | JOB-2026-0206-001"
+  near: bottom-right
+  style.font-size: 10
+}
+
+# Connections to show relationships
+center_shaft -> pvc_pipe: {style.stroke-dash: 3}
+pvc_pipe -> fastener_screw: {style.stroke-dash: 3}
+left_overhang -> left_notch: {style.stroke-dash: 3}
+right_overhang -> right_notch: {style.stroke-dash: 3}

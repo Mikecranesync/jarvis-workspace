@@ -1,4 +1,0 @@
-name: factorylm-edge
-type: sw.application
-description: FactoryLM Edge Device with Tailscale
-version: "1.0.0"

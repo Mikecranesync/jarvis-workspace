@@ -225,3 +225,17 @@ When context gets long and I start forgetting things:
 1. Update memory files
 2. Ask for context reset
 3. New session reads MEMORY.md fresh
+
+## 🔑 CRITICAL: SSH Credentials (NEVER FORGET)
+
+**Windows Laptops SSH Username: `hharp`** (NOT mike!)
+
+```bash
+# Travel Laptop
+ssh hharp@100.83.251.23
+
+# PLC Laptop
+ssh hharp@100.72.2.99
+```
+
+This has been set up 4+ times. Username is hharp. Do not use 'mike'.

@@ -1,0 +1,247 @@
+# EXPLODED VIEW - ALL COMPONENTS
+# Professional Engineering Drawing - YC Demo Conveyor
+# Job: 2026-0206-001 | Scale: 1:1 | Sheet 4 of 5
+
+title: CONVEYOR EXPLODED VIEW - ALL PARTS {
+  near: top-center
+  style.font-size: 20
+  style.bold: true
+}
+
+# Frame components (separated)
+frame_parts: {
+  # Side rails (2x pieces)
+  side_rail_1: {
+    shape: rectangle
+    width: 200  # Scaled down for exploded view
+    height: 30
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  side_rail_2: {
+    shape: rectangle
+    width: 200
+    height: 30
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  # Cross braces (4x pieces)
+  cross_brace_1: {
+    shape: rectangle
+    width: 30
+    height: 60
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  cross_brace_2: {
+    shape: rectangle
+    width: 30
+    height: 60
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  cross_brace_3: {
+    shape: rectangle
+    width: 30
+    height: 60
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  cross_brace_4: {
+    shape: rectangle
+    width: 30
+    height: 60
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+}
+
+# Legs (4x pieces)
+legs: {
+  leg_1: {
+    shape: rectangle
+    width: 30
+    height: 120  # Scaled down
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  leg_2: {
+    shape: rectangle
+    width: 30
+    height: 120
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  leg_3: {
+    shape: rectangle
+    width: 30
+    height: 120
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  leg_4: {
+    shape: rectangle
+    width: 30
+    height: 120
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+}
+
+# Roller components
+roller_parts: {
+  # PVC pipes (2x)
+  pvc_1: {
+    shape: cylinder
+    width: 80
+    height: 25
+    style.fill: "#F5F5F5"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  pvc_2: {
+    shape: cylinder
+    width: 80
+    height: 25
+    style.fill: "#F5F5F5"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  # Dowel shafts (2x)
+  dowel_1: {
+    shape: rectangle
+    width: 90
+    height: 8
+    style.fill: "#8B4513"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  dowel_2: {
+    shape: rectangle
+    width: 90
+    height: 8
+    style.fill: "#8B4513"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+}
+
+# Motor mount platform
+motor_mount: {
+  shape: rectangle
+  width: 80
+  height: 80
+  style.fill: "#DEB887"
+  style.stroke: "#000"
+  style.stroke-width: 2
+}
+
+# Belt material
+belt: {
+  shape: rectangle
+  width: 180
+  height: 20
+  style.fill: "#404040"
+  style.stroke: "#000"
+  style.stroke-width: 2
+}
+
+# Hardware callouts
+hardware: {
+  screws: "SCREWS (24x)" {
+    style.font-size: 10
+    style.bold: true
+  }
+  
+  washers: "WASHERS (24x)" {
+    style.font-size: 10
+    style.bold: true
+  }
+}
+
+# Part labels with leader lines
+labels: {
+  label_1: "SIDE RAILS (2x)\n48\" x 3.5\" x 1.5\"" {
+    near: left-center
+    style.font-size: 10
+    style.bold: true
+  }
+  
+  label_2: "CROSS BRACES (4x)\n14\" x 3.5\" x 1.5\"" {
+    near: top-left
+    style.font-size: 10
+    style.bold: true
+  }
+  
+  label_3: "LEGS (4x)\n30\" x 3.5\" x 1.5\"" {
+    near: bottom-left
+    style.font-size: 10
+    style.bold: true
+  }
+  
+  label_4: "PVC ROLLERS (2x)\n14\" Long x 3\" Dia" {
+    near: right-center
+    style.font-size: 10
+    style.bold: true
+  }
+  
+  label_5: "DOWEL SHAFTS (2x)\n16\" Long x 1\" Dia" {
+    near: center-right
+    style.font-size: 10
+    style.bold: true
+  }
+  
+  label_6: "MOTOR MOUNT\n12\" x 12\" x 0.75\"" {
+    near: top-right
+    style.font-size: 10
+    style.bold: true
+  }
+  
+  label_7: "BELT MATERIAL\n6\" x 120\" Rubber" {
+    near: bottom-right
+    style.font-size: 10
+    style.bold: true
+  }
+}
+
+# Assembly sequence
+sequence: "ASSEMBLY SEQUENCE:\n1. Build frame rectangle\n2. Attach legs\n3. Install roller assemblies\n4. Mount motor platform\n5. Install belt" {
+  near: bottom-center
+  style.font-size: 11
+  style.bold: true
+}
+
+# Drawing information
+drawing_info: "Sheet 4 of 5 | Scale 1:24 | JOB-2026-0206-001" {
+  near: bottom-right
+  style.font-size: 10
+}
+
+# Safety note
+safety: "⚠️ SAFETY: Pre-drill all holes to prevent splitting" {
+  near: top-center
+  style.font-size: 12
+  style.bold: true
+  style.fill: "#FF6600"
+}

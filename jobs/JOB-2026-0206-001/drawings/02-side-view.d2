@@ -1,0 +1,141 @@
+# SIDE VIEW - CONVEYOR ELEVATION
+# Professional Engineering Drawing - YC Demo Conveyor  
+# Job: 2026-0206-001 | Scale: 1:1 | Sheet 2 of 5
+
+title: CONVEYOR SIDE VIEW - ELEVATION {
+  near: top-center
+  style.font-size: 20
+  style.bold: true
+}
+
+# Main frame structure
+conveyor_frame: {
+  # Top frame rail
+  top_frame: {
+    shape: rectangle
+    width: 960  # 48"
+    height: 70   # 3.5" (2x4 actual height)
+    style.fill: "#D2B48C"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  # Legs (30" tall)
+  left_leg: {
+    shape: rectangle
+    width: 70   # 3.5" 
+    height: 600 # 30"
+    style.fill: "#D2B48C" 
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  right_leg: {
+    shape: rectangle
+    width: 70
+    height: 600
+    style.fill: "#D2B48C"
+    style.stroke: "#000" 
+    style.stroke-width: 2
+  }
+}
+
+# Rollers and belt system
+roller_system: {
+  # Drive roller (left side)
+  drive_roller: {
+    shape: cylinder
+    width: 40
+    height: 280  # 14" wide
+    style.fill: "#C0C0C0"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  # Idler roller (right side)  
+  idler_roller: {
+    shape: cylinder
+    width: 40
+    height: 280
+    style.fill: "#C0C0C0"
+    style.stroke: "#000"
+    style.stroke-width: 2
+  }
+  
+  # Belt path (6" wide belt)
+  belt_top: {
+    shape: rectangle
+    width: 880  # Spans between rollers
+    height: 15   # Belt thickness
+    style.fill: "#404040"
+    style.stroke: "#000"
+    style.stroke-width: 1
+  }
+  
+  belt_return: {
+    shape: rectangle
+    width: 880
+    height: 15
+    style.fill: "#404040"
+    style.stroke: "#000"
+    style.stroke-width: 1
+  }
+}
+
+# Motor mount platform
+motor_mount: {
+  shape: rectangle
+  width: 240  # 12"
+  height: 240 # 12" 
+  style.fill: "#DEB887"
+  style.stroke: "#000"
+  style.stroke-width: 2
+}
+
+# Motor (simplified representation)
+motor: {
+  shape: rectangle
+  width: 160  # 8" typical 1/2HP motor length
+  height: 120 # 6" typical motor diameter
+  style.fill: "#2F4F4F"
+  style.stroke: "#000"
+  style.stroke-width: 2
+}
+
+# Dimension lines
+height_dim: "30.0\"" {
+  near: left-center
+  style.font-size: 16
+  style.bold: true
+}
+
+length_dim: "48.0\"" {
+  near: bottom-center
+  style.font-size: 16  
+  style.bold: true
+}
+
+working_height: "36.0\" WORKING HEIGHT" {
+  near: center-left
+  style.font-size: 14
+  style.bold: true
+}
+
+# Material specifications
+materials: "MATERIALS:\n• Frame: 2x4 SPF Lumber\n• Legs: 2x4 SPF @ 30\" Long\n• Rollers: 14\" PVC on 16\" Dowels\n• Mount: 12\"x12\" Plywood" {
+  near: top-right
+  style.font-size: 11
+}
+
+# Drawing information
+drawing_info: "Sheet 2 of 5 | Scale 1:16 | JOB-2026-0206-001" {
+  near: bottom-right
+  style.font-size: 10
+}
+
+# Direction arrow for belt travel
+belt_direction: "← BELT DIRECTION" {
+  near: center
+  style.font-size: 12
+  style.bold: true
+}

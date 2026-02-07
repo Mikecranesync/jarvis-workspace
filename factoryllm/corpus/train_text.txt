@@ -1,0 +1,2639 @@
+=== INSTRUCTION ===
+are you healthy?
+
+
+---
+
+=== RESPONSE ===
+🦞 Clawdbot 2026.1.24-3 (885167d)
+🕒 Time: Tuesday, February 3rd, 2026 — 11:49 AM (UTC)
+🧠 Model: anthropic/claude-opus-4-5 · 🔑 oauth (anthropic:claude-cli)
+🧮 Tokens: 10 in / 166 out
+📚 Context: 122k/200k (61%) · 🧹 Compactions: 0
+🧵 Session: agent:main:main • updated just now
+⚙️ Runtime: direct · Think: off · elevated
+🪢 Queue: collect (depth 0)
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 08:01 AM
+
+=== RESPONSE ===
+**Jarvis:** Mem:           7.8Gi       2.2Gi       369Mi        54Mi       5.5Gi       5.6Gi
+root      256053  0.3  1.3 11825564 111748 ?     Sl   07:53   0:01 node bridge.cjs
+
+---
+
+**Mike H:** Okay I want you to have the auto connect software ready for the first trial of the beagle box but I also need to have all this captured in the knowledge base and reference continuously by by all the agents, do we have the knowledge base working correctly for all those whole systems?
+[message_id: 1897]
+
+---
+
+**Jarvis:** === ShopTalk Knowledge Base ===
+-rw-r--r-- 1 root root 10034 Jan 31 06:14 /root/jarvis-workspace/projects/shoptalk/llm/data/knowledge_base.json
+EXISTS
+
+=== Brain Research Files ===
+2026-01-29-a2a-framework.md
+2026-01-29-autonomous-agent-full-guide.md
+2026-01-29-autonomous-agent-pattern.md
+2026-01-29-clawdbot-output-control.md
+2026-01-29-landing-page-competitive-analysis.md
+2026-01-29-linkedin-content-research.md
+2026-01-29-moltbot-skills-strategy.md
+2026-01-29-smart-glasses.md
+2026-01-29-stealth-network-tap.md
+2026-01-30-a2a-protocol-research.md
+
+=== Memory Files ===
+2026-01-29-session-summary.md
+2026-01-29.md
+2026-01-30.md
+2026-01-31.md
+heartbeat-state.json
+
+=== MEMORY.md ===
+# MEMORY.md — Jarvis Long-Term Memory
+
+*Last updated: 2026-01-30*
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Quick Lookup Table
+
+=== RESPONSE ===
+| If Question Contains... | Routes To | Example |
+|------------------------|-----------|---------|
+| `s7-1200`, `tia portal` | Siemens | "S7-1200 won't communicate" |
+| `controllogix`, `1756-` | Rockwell | "ControlLogix fault 0x123" |
+| `acs880`, `irb` | ABB | "ACS880 drive E03 error" |
+| `modicon`, `altivar` | Schneider | "Modicon M340 error" |
+| `melsec`, `fx3u` | Mitsubishi | "FX3U PLC not responding" |
+| `fanuc cnc`, `0i-` | FANUC | "FANUC 0i alarm 410" |
+| No brand keywords | Generic | "Motor making noise" |
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Before KB-003
+
+=== RESPONSE ===
+```
+User sends "Allen Bradley 2080-LC20" photo
+→ OCR (2s) → Tavily search (3s) → Response (5s total)
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+How quickly you forget
+
+
+---
+
+
+### 12:00 PM
+
+=== RESPONSE ===
+{
+  "status": "error",
+  "tool": "read",
+  "error": "ENOENT: no such file or directory, access '/root/jarvis-workspace/MEMORY.md'"
+}
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 🎯 Suggested Focus Today
+
+=== RESPONSE ===
+1. **Merge PR #16** (priority fix) — I can do this with your approval
+2. **Review critical PR #3** (LLM Judge bug)
+3. **Test CMMS mobile fi
+
+*[Message truncated for brevity]*
+
+---
+
+**Mike H:** https://youtu.be/b-l9sGh1-UY?si=B9OxFmuY58aPntRf watch this video or read the transcript and see how closely aligned we are
+[message_id: 216]
+
+---
+
+**Jarvis:** {
+  "url": "https://www.youtube.com/watch?v=b-l9sGh1-UY",
+  "finalUrl": "https://www.youtube.com/watch?v=b-l9sGh1-UY",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "title": "- YouTube",
+  "extractMode": "markdown",
+  "extractor": "readability",
+  "truncated": false,
+  "length": 771,
+  "fetchedAt": "2026-01-29T07:37:29.146Z",
+  "tookMs": 1040,
+  "text": "- YouTube\n\n//\n\n[About](https://www.youtube.com/about/)[Press](https://www.youtube.com/about/press/)[Copyright](https://www.youtube.com/about/copyright/)[Contact us](/t/contact_us/)[Creators](https://www.youtube.com/creators/)[Advertise](https://www.youtube.com/ads/)[Developers](https://developers.google.com/youtube)[Terms](/t/terms)[Privacy](/t/privacy)[Policy & Safety](https://www.youtube.com/about/policies/)[How YouTube works](https://www.youtube.com/howyoutubeworks?utm_campaign=ytgen&utm_source=ythp&utm_medium=LeftNav&utm_content=txt&u=https%3A%2F%2Fwww.youtube.com%2Fhowyoutubeworks%3Futm_source%3Dythp%26utm_medium%3DLeftNav%26utm_campaign%3Dytgen)[Test new features](/new)[NFL Sunday Ticket](https://tv.youtube.com/learn/nflsundayticket)&copy; 2026 Google LLC"
+}
+
+---
+
+**Jarvis:** {
+  "query": "youtube b-l9sGh1-UY transcript",
+  "provider": "brave",
+  "count": 5,
+  "tookMs": 759,
+  "results": [
+    {
+      "title": "Free Youtube Transcript Generator by Tactiq.io",
+      "url": "https://tactiq.io/tools/youtube-transcript",
+      "description": "<strong>Copy the URL from the address bar of your web browser or right-click the video and select “Copy Video URL”</strong> ... Instantly view, copy and download the YouTube video&#x27;s transcript text with
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain The Smoking Gun
+
+=== RESPONSE ===
+**rivet-worker.service has crashed and restarted 14,535 times**
+
+```
+Scheduled restart job, restart counter is at 14535
+```
+
+This service is in a perpetual crash loop, consuming resources every 10 seconds:
+1. Starts → 2. Begins ingestion → 3. Crashes → 4. Restarts → Repeat
+
+Each restart spikes CPU, creating cascading failures across all services.
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 🖥️ New Server Status
+
+=== RESPONSE ===
+DigitalOcean server running strong:
+- **Uptime:** 6+ hours
+- **All 7 Docker containers:** Healthy ✅
+- **Load:** 0.15 (idle)
+
+**Ready for cutover whenever you say go.**
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain End-to-End Tests
+
+=== RESPONSE ===
+- [ ] **Test 4**: Send photo of common equipment (e.g., Siemens S7-1200)
+  - Expected: Tier 1 finds manual in < 10 seconds
+  - Response should include: "Download Manual" link
+  - Check execution: Only Tier 1 executed, Tier 2 & 3 skipped
+
+- [ ] **Test 5**: Send photo of uncommon equipment
+  - Expected: Tier 2 finds manual in 15-25 seconds
+  - Response should include: "Manual Found (Deep Search)"
+  - Check execution: Tier 1 failed, Tier 2 succeeded, Tier 3 skipped
+
+- [ ] **Test 6**: Send photo of rare/discontinued equipment
+  - Expected: Tier 3 finds manual in 25-40 seconds
+  - Response should include: "Manual Found (AI Search)" with confidence score
+  - Check execution: Tiers 1 & 2 failed, Tier 3 succeeded
+
+- [ ] **Test 7**: Send photo of proprietary/custom equipment
+  - Expected: All tiers fail gracefully, "Manual Not Found" message
+  - Check execution: All 3 tiers executed, all returned no results
+
+- [ ] **Test 8**: Send blurry/unclear photo
+  - Expected: OCR confidence < 70%, bot asks for clearer photo
+  - Response should include: partial extracted data + request to resend
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain System Health (2x daily)
+
+=== RESPONSE ===
+- Check Docker containers: `docker ps --format '{{.Names}}: {{.Status}}'`
+- Check disk space: `df -h /`
+- Check memory: `free -h`
+
+
+---
+
+**Jarvis:** [2026-02-03 18:08:41 UTC] Pi-Edge (100.97.210.121) is OFFLINE
+
+---
+
+**Jarvis:** [2026-02-03 18:08:41 UTC] Pi-Edge (100.97.210.121) is OFFLINE
+
+---
+
+**Jarvis:** === Scanning for code issues ===
+--- TODOs/FIXMEs ---
+
+--- Potential secrets ---
+
+---
+
+**Jarvis:** Script not found
+
+---
+
+**Jarvis:** === Docker Containers ===
+flowise: Up 3 hours
+cmms-frontend: Up 46 hours
+cmms-backend: Up 7 seconds
+cmms_minio: Up 46 hours
+cmms_db: Up 46 hours
+grafana: Up 2 days
+influxdb: Up 2 days
+mautic: Up 4 days
+mautic_db: Up 4 days
+n8n: Up 3 hours
+
+=== Disk Space ===
+/dev/vda1       154G   33G  122G  22% /
+
+=== Memory ===
+Mem:           7.8Gi       3.6Gi       1.3Gi       102Mi       3.3Gi       4.1Gi
+
+---
+
+**Jarvis:** Logged to improvements-log.md
+
+---
+
+**Mike H:** so were at version 4?
+[message_id: 5776]
+
+---
+
+**Jarvis:** -rw-r--r-- 1 root root  5491 Feb  2 01:55 capturing-tribal-knowledge.html
+
+=== Blog post titles ===
+    <title>Capturing Tribal Knowledge Before Your Best Tech Retires | FactoryLM</title>
+
+---
+
+**Jarvis:** * feature/edge-configurator
+  main
+  press-releases-v2-v3
+
+=== Recent commits ===
+0370f56 feat: FactoryLM Edge product page with 3D orbit and configurator
+e09e34b Apply new logo globally to all pages
+58c7c8c Add industrial logo icon, smash FactoryLM together
+52a23bb Redesign: Clean NotebookLM-style minimal UI
+f55b368 Add cursor:pointer to logo for better UX
+3b9426f 🔗 Fix logo link to return to homepage
+9d2f455 🔒 Scrub author names from blog posts
+095e90d 🔒 Scrub personal info - make anonymous
+8669785 📝 Published 10 blog posts
+9c42017 📝 New blog post: 5 Common VFD Error Codes
+
+=== Check for version mentions ===
+
+---
+
+**Jarvis:** Good question! Here's where we are:
+
+**FactoryLM Edge Version History:**
+
+| Version | What It Added |
+|---------|---------------|
+| **v1** | Initial concept (Pi + PLC) |
+| **v2** | First product
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Side-by-Side Comparison
+
+=== RESPONSE ===
+| Aspect | factorylm.com/ | factorylm.com/edge/ | Winner |
+|--------|----------------|---------------------|--------|
+| Theme | Light (white bg) | Dark (near-black) | /edge/ |
+| Visual Polish | Basic cards | Modern glassmorphism | /edge/ |
+| Interactivity | Static | Drag-drop configurator | /edge/ |
+| Typography | Standard | Bold headlines | /edge/ |
+| CTA Clarity | "Try Free" → Calendly | "Request Quote" | Tie |
+| Navigation | Minimal | Better nav structure | /edge/ |
+| Blog | Has blog | No blog link | Homepage |
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Phase 1 Cards (Your Focus):
+
+=== RESPONSE ===
+1. 🔴 Get Pi + PLC Demo Working ← **IN PROGRESS**
+2. 🔴 Record Demo Video (2-3 min)
+3. 🔴 Build Pricing Page
+4. 🔴 Create Sales Deck (10 slides)
+5. 🔴 Outreach: 10 Maintenance Managers
+6. 🎯 GOAL: 2 Pilots @ $50k each
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Flowise Installed
+
+=== RESPONSE ===
+- Docker container running: `docker run -d -p 3001:3000 --name flowise f
+
+*[Message truncated for brevity]*
+
+---
+
+**Jarvis:** #!/usr/bin/env python3
+"""
+Synthetic User Simulator for FactoryLM
+
+Runs a synthetic user persona through test scenarios using browser automation.
+Semi-autonomous - executes activities and reports results.
+"""
+
+import yaml
+import json
+import logging
+from pathlib import Path
+from datetime import datetime
+from typing import Dict, List, Optional
+import argparse
+import random
+import time
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+BASE_DIR = Path(__file__).parent.parent
+PERSONAS_DIR = BASE_DIR / "personas"
+LOGS_DIR = BASE_DIR / "logs"
+ACTIVITIES_DIR = BASE_DIR / "activities"
+
+class SyntheticUser:
+    """A synthetic user that can execute activities autonomously."""
+    
+    def __init__(self, persona_path: str):
+        self.persona_path = Path(persona_path)
+        self.persona = self._load_persona()
+        self.session_log = []
+        self.start_time = None
+        
+    def _load_persona(self) -> Dict:
+        """Load persona from YAML file."""
+        with open(self.persona_path) as f:
+            return yaml.safe_load(f)
+    
+    @property
+    def name(self) -> str:
+        return self.persona.get('name', 'Unknown')
+    
+    @property
+    def role(self) -> str:
+        return self.persona.get('role', 'Unknown')
+    
+    @property
+    def language(self) -> str:
+        return self.persona.get('language', 'en')
+    
+    @property
+    def tech_comfort(self) -> str:
+        return self.persona.get('tech_comfort', 'medium')
+    
+    def start_session(self):
+        """Start a new testing session."""
+        self.start_time = datetime.utcnow()
+        self.session_log = []
+        logger.info(f"Starting session for {self.name} ({self.role})")
+        self._log_action("session_start", {"persona": self.name})
+    
+    def _log_action(self, actio
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Option A: Manual Fixes in n8n UI
+
+=== RESPONSE ===
+1. Open n8n cloud instance
+2. Follow fix instructions in issue docs
+3. Test each workflow after fix
+4. Document results
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Python (core/)
+
+=== RESPONSE ===
+- Python 3.11+
+- Type hints on all functions
+- Use pydantic for data models
+- async/await for I/O operations
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Full Test (With Photo)
+
+=== RESPONSE ===
+1. Take a clear photo of equipment nameplate (e.g., Siemens PLC)
+2. Send photo to bot
+
+**Expected workflow**:
+1. Bot receives photo
+2. Gemini OCR extracts manufacturer + model
+3. **Tier 1**: Tavily quick search (5 results, 2-5 sec)
+   - If PDF found → Send manual link ✅
+   - If not found → Continue to Tier 2
+4. **Tier 2**: Tavily deep search (manufacturer site, 10-20 sec)
+   - If PDF found → Send manual link ✅
+   - If not found → Continue to Tier 3
+5. **Tier 3**: Groq AI search (LLM synthesis, 5-15 sec)
+   - If PDF found → Send manual link ✅
+   - If not found → Send "Manual Not Found" message
+
+**Expected response (if manual found)**:
+```
+📋 Manual Found!
+
+Equipment: Siemens S7-1200
+Serial: 6ES7214-1AG40-0XB0
+
+📥 [Download Manual](https://support.siemens.com/...)
+
+✅ Asset saved to CMMS
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain `generate_enhanced_proposals() -> Dict`
+
+=== RESPONSE ===
+Generate improvement proposals based on print interaction analysis.
+
+**Returns:**
+```python
+{
+    "proposals": [
+        {
+            "type": "knowledge_gap",
+            "description": "Add troubleshooting guide for F001 error",
+            "confidence": 0.9,
+            "evidence": "F001 queries have 40% success rate"
+        }
+    ],
+    "analysis_summary": "Found 2 improvement opportunities"
+}
+```
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 1. ShowUI: One Vision-Language-Action Model for GUI Visual Agent
+
+=== RESPONSE ===
+- **arXiv:** https://arxiv.org/abs/2411.17465
+- **Date:** November 2024
+- **Authors:** Kevin Qinghong Lin et al.
+- **Why it matters:** This is the 2B parameter model in computer_use_ootb that runs locally for FREE. 200x cheaper than Claude API.
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Remote node host (system.run)
+
+=== RESPONSE ===
+Use a **node host** when your Gateway runs on one machine and you want commands
+to execute on another. The model still talks to the **gateway**; the gateway
+forwards `exec` calls t
+
+*[Message truncated for brevity]*
+
+---
+
+**Jarvis:** **Clawdbot Node already exists and does exactly this!**
+
+---
+
+**Jarvis:** ---
+summary: "Camera capture (iOS node + macOS app) for agent use: photos (jpg) and short video clips (mp4)"
+read_when:
+  - Adding or modifying camera capture on iOS nodes or macOS
+  - Extending agent-accessible MEDIA temp-file workflows
+---
+
+# Camera capture (agent)
+
+Clawdbot supports **camera capture** for agent workflows:
+
+- **iOS node** (paired via Gateway): capture a **photo** (`jpg`) or **short video clip** (`mp4`, with optional audio) via `node.invoke`.
+- **Android node** (paired via Gateway): capture a **photo** (`jpg`) or **short video clip** (`mp4`, with optional audio) via `node.invoke`.
+- **macOS app** (node via Gateway): capture a **photo** (`jpg`) or **short video clip** (`mp4`, with optional audio) via `node.invoke`.
+
+All camera access is gated behind **user-controlled settings**.
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Created: `integrations/telegram_cmms_example.py` (~400 lines)
+
+=== RESPONSE ===
+**Full working Telegram bot with:**
+
+**Commands**
+- `/start` - Main menu with interactive buttons
+- `/login <email> <password>` - Authenticate with CMMS
+- `/assets` - List all assets
+- `/asset <search>` - Search for assets
+- `/newasset` - Create new asset (conversation flow)
+- `/workorders` - List open work orders
+- `/wo <title>` - Create work order
+- `/parts` - List parts inventory
+- `/pmlist` - List PM schedules
+
+**Features**
+- Session management per user
+- Interactive inline keyboards
+- Conversation handlers for multi-step flows
+- Error handling and user feedback
+- Direct API integration via grashjs_client
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Issue: "Manual search failed"
+
+=== RESPONSE ===
+**Check 1: n8n webhook URL is correct**
+```bash
+# From VPS
+curl http://localhost:5678/webhook/manual-hunter
+
+# Should NOT return 404
+```
+
+**Check 2: n8n workflow is active**
+- Open n8n UI
+- Manual Hunter workflow should show "Active" status
+- If inactive, click "Activate" button
+
+**Check 3: Tavily API key is valid**
+- Test directly: https://tavily.com/dashboard
+- Check n8n credential is saved correctly
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 📊 Current System State
+
+=== RESPONSE ===
+**Git Status:**
+- Main branch: `main`
+- Last commit: `7683941` - "Add Telegram bot commands for CMMS management"
+- Changes pushed to GitHub: ✅
+
+**Database:**
+- Connection: Neon PostgreSQL (async via asyncpg)
+- Migrations: 1-6 applied on VPS, 7 pending deployment
+- Equipment records: 10+ existing (from prior testing)
+
+**Services Running on VPS:**
+- Telegram Bot: ✅ Running (polling mode)
+- Web API: ❌ Not deployed yet
+
+**Known Working Features:**
+- ✅ Photo OCR → Equipment creation
+- ✅ Equipment fuzzy matching (85% similarity threshold)
+- ✅ Text messages → SME routing
+- ✅ Equipment service CRUD operations
+- ✅ Multi-provider LLM fallback chain
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Your Task
+
+=== RESPONSE ===
+1. Understand what the technician needs
+2. Detect their vibe (rushed/need-answer-now vs exploring/learning)
+3. Respond appropriately:
+   - If they need a quick answer, be direct
+   - If they're exploring, offer options
+   - If you're uncertain, ask ONE clarifying question
+4. Decide if buttons would help or get in the way
+
+Respond with:
+- message: Your response text
+- buttons: List of button labels (empty if not needed)
+- vibe: detected user vibe
+- confidence: your confidence in understanding their need
+"""
+```
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 🤖 Claude Code Integration (`workflows/claude.yml`)
+
+=== RESPONSE ===
+Enables AI-powered code assistance in PRs and issues.
+
+**Usage:** Comment `@claude` followed by your request in any PR or issue.
+
+**Examples:**
+- `@claude fix the bug in the Manual Hunter workflow`
+- `@claude add unit tests for this function`
+- `@claude review this PR for security issues`
+
+**Setup:** See [CLAUDE_SETUP.md](CLAUDE_SETUP.md) for complete instructions.
+
+**Test:** Run the "Test Claude Code Setup" workflow manually from the Actions tab.
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Solution 4: Add Response Validation
+
+=== RESPONSE ===
+Before parsing, validate the LLM response structure:
+
+```javascript
+function validateGeminiResponse(response) {
+  // Check if response exists
+  if (!response) {
+    return { valid: false, error: 'Empty response' };
+  }
+
+  // Check Gemini structure
+  if (response.candidates && Array.isArray(response.candidates)) {
+    const candidate = response.candidates[0];
+    if (candidate?.content?.parts?.[0]?.text) {
+      return { valid: true, content: candidate.content.parts[0].text };
+    }
+  }
+
+  // Check OpenAI structure
+  if (response.choices && Array.isArray(response.choices)) {
+    const choice = response.choices[0];
+    if (choice?.message?.content) {
+      return { valid: true, content: choice.message.content };
+    }
+  }
+
+  return { valid: false, error: 'Unknown response format', raw: response };
+}
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Agent Computer Use Configuration
+
+=== RESPONSE ===
+**Open Interpreter Setup (agent/executor.py):**
+
+```python
+# agent/executor.py
+"""
+Open Interpreter wrapper for RemoteMe
+Executes natural language commands on customer's computer
+"""
+
+from interpreter import interpreter
+from langfuse.decorators import observe
+import os
+import logging
+
+class RemoteMeExecutor:
+    """Wraps Open Interpreter for safe, tracked execution"""
+    
+    def __init__(self, user_id: str):
+        self.user_id = user_id
+        self.setup_interpreter()
+    
+    def setup_interpreter(self):
+        """Configure Open Interpreter for RemoteMe use"""
+        
+        # Use local Ollama (no API costs)
+        interpreter.llm.model = "ollama/llama3.2:latest"
+        interpreter.llm.api_base = "http://localhost:11434"
+        
+        # Safety settings
+        interpreter.auto_run = False  # Always ask for confirmation first
+        interpreter.safe_mode = "ask"  # Confirm destructive operations
+        
+        # OS integration
+        interpreter.computer.import_computer_api = True
+        
+        # Display settings (headless mode)
+        interpreter.computer.display.enabled = True
+        interpreter.computer.display.width = 1920
+        interpreter.computer.display.height = 1
+
+*[Message truncated for brevity]*
+
+---
+
+**Jarvis:** **Got it.** Adding Open Interpreter spec to the Prime Directive now:
+
+---
+
+**Jarvis:** Successfully replaced text in /root/jarvis-workspace/missions/REMOTEME_PRIME_DIRECTIVE.md.
+
+---
+
+**Jarvis:** #!/usr/bin/env python3
+"""
+Jarvis Node - Remote control agent for FactoryLM Windows laptops
+Lean FastAPI server accessible via Tailscale
+"""
+
+import os
+import sys
+import json
+import base64
+import subprocess
+import socket
+from datetime import datetime
+from pathlib import Path
+from typing import Optional
+
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
+import mss
+import mss.tools
+
+# Optional imports - graceful degradation
+try:
+    import pyautogui
+    HAS_PYAUTOGUI
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Nodes + transports
+
+=== RESPONSE ===
+- [Nodes overview](/nodes)
+- [Bridge protocol (legacy nodes)](/gateway/bridge-protocol)
+- [Node runbook: iOS](/platforms/ios)
+- [Node runbook: Android](/platforms/android)
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain TASK 3: CREATE DATABASE MANAGER SCRIPT
+
+=== RESPONSE ===
+Create /root/ralph/scripts/db_manager.sh:
+
+```bash
+#!/bin/bash
+# Database connection manager with fallback support
+# Usage: 
+#   source db_manager.sh
+#   db_query "SELECT * FROM stories"
+#   db_execute "UPDATE stories SET status='done' WHERE id=1"
+
+CONFIG_DIR="/root/ralph/config"
+DATABASES_CONF="$CONFIG_DIR/databases.conf"
+PRIMARY_CONF="$CONFIG_DIR/primary.conf"
+
+# Load primary database
+load_primary() {
+  if [ ! -f "$PRIMARY_CONF" ]; then
+    echo "ERROR: No primary database configured. Run detect_databases.sh first."
+    return 1
+  fi
+  
+  IFS='|' read -r DB_PROVIDER DB_VARNAME DB_URL < "$PRIMARY_CONF"
+  export DATABASE_URL="$DB_URL"
+  export DB_PROVIDER
+  export DB_VARNAME
+}
+
+# Get all database URLs as array
+get_all_databases() {
+  local -a dbs=()
+  while IFS='|' read -r provider varname url priority status; do
+    [[ "$provider" =~ ^#.*$ ]] && continue
+    [[ -z "$provider" ]] && continue
+    [[ "$status" == "active" ]] && dbs+=("$provider|$url")
+  done < "$DATABASES_CONF"
+  echo "${dbs[@]}"
+}
+
+# Test if a database is reachable
+test_db() {
+  local url=$1
+  timeout 3 psql "$url" -c "SELECT 1;" > /dev/null 2>&1
+}
+
+# Execute query with fallback
+db_query() {
+  local query=$1
+  local result=""
+  
+  # Try primary first
+  load_primary
+  if test_db "$DATABASE_URL"; then
+    result=$(psql "$DATABASE_URL" -t -A -F $'\t' -c "$query" 2>/dev/null)
+    if [ $? -eq 0 ]; then
+      echo "$result"
+      return 0
+    fi
+  fi
+  
+  # Primary failed, try fallbacks
+  echo "WARNING: Primary database failed, trying fallbacks..." >&2
+  
+  while IFS='|' read -r provider varname url priority status; do
+    [[ "$provider" =~ ^#.*$ ]] && continue
+    [[ -z "$provider" ]] && continue
+    [[ "$url" == "$DATABASE_URL" ]] && continue  # Skip primary
+    
+    if test_db "$url"; then
+      result=$(psql "$url" -t -A -F $'\t' -c "$query" 2>/dev/null)
+      if [ $? -eq 0 ]; then
+        echo "SUCCESS: Using fallback $provider" >&2
+        echo "$result"
+        return 0
+      fi
+    fi
+  done < "$DA
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 🎯 Action Items
+
+=== RESPONSE ===
+1. **Consider Clawdbot update** - v2026.2.3 has cron improvements we might want
+2. **Watch claudes-c-compiler** - impressive capability demonstration
+3. **GLM-OCR** - could be useful for FactoryLM equipment photo analysis
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Recommendation: Hybrid
+
+=== RESPONSE ===
+| Task | Route To | Cost |
+|------|----------|------|
+| Trello, monitoring | Local (TinyLlama) | Free |
+| Simple Q&A | Gemini Flash | ~Free |
+| Complex coding | Claude Sonnet | $$ |
+| Critical work | Claude Opus | $$$ |
+
+**Savings: 60-80%**
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+[Forwarded from JarvisVPS (@JarvisMIO_bot) at 2026-01-30T08:25:01.000Z] 💓 VPS Heartbeat ⏱ up 10 weeks, 4 days, 40 minutes 🖥 CPU: 0.50 | RAM: 2.0Gi/3.8Gi | Disk: 92% Services: ✅ Clawdbot ✅ Ollama ✅ Caddy ✅ CMMS ✅ PLC Copilot 2026-01-30 08:25:01 UTC
+
+
+---
+
+=== RESPONSE ===
+Command still running (session tender-haven, pid 640459). Use process (list/poll/log/write/kill/clear/remove) for follow-up.
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 1. Generate and Inspect Code
+
+=== RESPONSE ===
+```python
+from ycb.rendering.templates import MyTemplate
+
+template = MyTemplate(title="Test")
+code = template.generate_code()
+print(code)  # Inspect the generated code
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Round 5: Vendor Keywords → sme_router.py
+
+=== RESPONSE ===
+**Expected Harvest:** Keyword lists for vendor detection
+
+**Current State:** `rivet/workflows/sme_router.py` has `VENDOR_PATTERNS` dict with keywords
+
+**Integration Strategy:**
+- **COMPARE** harvested keywords with existing `VENDOR_PATTERNS`
+- **MERGE** any missing keywords into existing patterns
+- **VALIDATE** detection accuracy improves
+- **TEST** against known equipment queries
+
+**Target Location:** `rivet/workflows/sme_router.py:VENDOR_PATTERNS`
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Current Mandatory Routines (from injected files)
+
+=== RESPONSE ===
+1. Read SOUL.md, USER.md, memory files at session start
+2. Voice + text for every reply
+3. Complete responses, no truncation
+4. Log tasks to TASK_QUEUE.md
+5. Follow Constitution + Commandments
+6. Check HEARTBEAT.md on heartbeat polls
+
+---
+
+**Want to add a new routine? Tell me what it is and I'll add it to the right file.**
+
+---
+
+**Jarvis:** {
+  "ok": true,
+  "messageId": "2210",
+  "chatId": "8445149012"
+}
+
+---
+
+**Mike H:** Give me a prompt for perplexity desktop so that it can research exactly. What would be the best thing based on your research? Make it fit whatever perplexity is context, window or input boxes
+[message_id: 2212]
+
+---
+
+**Jarvis:** 📋 **Perplexity Prompt — Voice Control Research**
+
+Copy this:
+
+---
+
+I have a Claude-based AI assistant (Jarvis) running on a VPS that I control via Telegram. I want hands-free voice control. My setup:
+
+- AI runs on DigitalOcean VPS via Clawdbot (Telegram bot framework)
+- I message it from my phone (Telegram) or desktop
+- I have Brilliant Labs Halo smart glasses arriving (with Noa AI)
+- I want wake word detection ("Hey Jarvis") for always-listening
+- I need speech-to-text (Whisper preferred) that routes commands to Telegram or direct API
+- I want text-to-speech responses back
+
+Research the best 2026 solution for:
+
+1. Wake word detection: Compare Picovoice Porcupine vs openWakeWord vs Rhasspy. Which is easiest to set up with custom wake words?
+
+2. Speech-to-text: Local Whisper vs Whisper API vs Deepgram vs AssemblyAI. Best accuracy + speed tradeoff?
+
+3. Integration options: How to route transcribed voice to a Telegram bot? Can I use n8n workflows? What about direct API calls?
+
+4. Smart glasses: Can Brilliant Labs Halo/Noa route voice commands to external APIs or webhooks?
+
+5. Full stack recommendation: What's the simplest end-to-end setup for "Hey Jarvis" → speak command → AI processes → voice response back?
+
+Include GitHub repos, setup complexity ratings, and cost estimates. Prioritize solutions that work on Mac, have good d
+
+================================================================================
+
+=== INSTRUCTION ===
+Can you just go ahead and set it up for me? Programmatically
+
+
+---
+
+=== RESPONSE ===
+{
+  "status": "error",
+  "tool": "exec",
+  "error": "=== Getting workspaces ===\njq: error (at <stdin>:0): Cannot index string with string \"slug\"\n\nCommand exited with code 5"
+}
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Telegram Bot Integration: `rivet/integrations/telegram.py`
+
+=== RESPONSE ===
+**1. Added Import:**
+```python
+from rivet.workflows.print_analyzer import PrintAnalyzer
+```
+
+**2. Created Schematic Detection:**
+```python
+def is_schematic_photo(caption: Optional[str]) -> bool:
+    """
+    Detect if photo is a technical schematic based on caption.
+
+    Keywords: schematic, diagram, wiring, ladder, print,
+              drawing, blueprint, P&ID, electrical, circuit,
+              panel, layout, dwg
+    """
+```
+
+**3. Updated Photo Handler:**
+- Checks caption for schematic keywords
+- Routes to PrintAnalyzer if detected
+- Otherwise routes to OCR workflow (equipment nameplates)
+- Different response formatting for each type
+
+**Photo Routing Logic:**
+```
+Photo received
+    ↓
+Check caption for keywords
+    ↓
+┌─────────────────┴──────────────────┐
+│                                    │
+Schematic keywords found?       No keywords
+│                                    │
+↓                                    ↓
+PrintAnalyzer                   OCR Workflow
+- analyze()                     - analyze_image()
+- Schematic response            - Equipment response
+```
+
+**4. Created Schematic Response Formatter:**
+```python
+def format_schematic_response(analysis: str, caption: Optional[str]) -> str:
+    """Format schematic analysis for Telegram display."""
+```
+
+**5. Updated Help Messages:**
+- `/start` welcome message mentions schematic analysis
+- `/help` command explains caption-based routing
+- Example captions provided
+
+================================================================================
+
+=== INSTRUCTION ===
+Give me a prompt for perplexity desktop so that it can research exactly. What would be the best thing based on your research? Make it fit whatever perplexity is context, window or input boxes
+
+
+---
+
+=== RESPONSE ===
+📋 **Perplexity Prompt — Voice Control Research**
+
+Copy this:
+
+---
+
+I have a Claude-based AI assistant (Jarvis) running on a VPS that I control via Telegram. I want hands-free voice control. My setup:
+
+- AI runs on DigitalOcean VPS via Clawdbot (Telegram bot framework)
+- I message it from my phone (Telegram) or desktop
+- I have Brilliant Labs Halo smart glasses arriving (with Noa AI)
+- I want wake word detection ("Hey Jarvis") for always-listening
+- I need speech-to-text (Whisper preferred) that routes commands to Telegram or direct API
+- I want text-to-speech responses back
+
+Research the best 2026 solution for:
+
+1. Wake word detection: Compare Picovoice Porcupine vs openWakeWord vs Rhasspy. Which is easiest to set up with custom wake words?
+
+2. Speech-to-text: Local Whisper vs Whisper API vs Deepgram vs AssemblyAI. Best accuracy + speed tradeoff?
+
+3. Integration options: How to route transcribed voice to a Telegram bot? Can I use n8n workflows? What about direct API calls?
+
+4. Smart glasses: Can Brilliant Labs Halo/Noa route voice commands to external APIs or webhooks?
+
+5. Full stack recommendation: What's the simplest end-to-end setup for "Hey Jarvis" → speak command → AI processes → voice response back?
+
+Include GitHub repos, setup complexity ratings, and cost estimates. Prioritize solutions that work on Mac, have good documentation, and can run 24/7.
+
+---
+
+👆 Paste that into Perplexity Pro
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Required Variables
+
+=== RESPONSE ===
+```bash
+# Authentication
+JWT_SECRET=your-secret-key-at-least-32-characters
+JWT_EXPIRATION=86400
+
+# Database
+DATABASE_URL=postgresql://user:pass@host:5432/dbname
+# OR
+MONGO_URI=mongodb://user:pass@host:27017/dbname
+
+# CORS
+CORS_ORIGIN=https://cmms.rivet.com
+# OR
+ALLOWED_ORIGINS=https://cmms.rivet.com,http://localhost:3000
+
+# Frontend
+REACT_APP_API_URL=https://api.cmms.rivet.com
+# OR
+NEXT_PUBLIC_API_URL=https://api.cmms.rivet.com
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 04:03 AM
+
+=== RESPONSE ===
+**User:** System: [2026-01-29 03:33:16 UTC] Check Trello backlog for @jarvis tasks. Do the work directly.
+
+[Telegram Mike H id:8445149012 +36m 2026-01-29 04:03 UTC] I'mOkay, Mike, here's the situation: The gh command is now found, which means the installation was likely successful! However, it's asking me to log in: To get started with GitHub CLI, please run: gh auth login This confirms that while the gh CLI is installed, it's not authenticated for your GitHub account (mikecranesync). To proceed with acce...
+
+---
+
+**Jarvis:** Let me try the device code authentication flow. This will give you a code that you can enter on any device (phone or computer) to authorize my access without needing a browser directly on the VPS.
+
+---
+
+**Jarvis:** Command still running (session nova-comet, pid 99830). Use process (list/poll/log/write/kill/clear/remove) for follow-up.
+
+---
+
+**Jarvis:** 
+! First copy your one-time code: C907-5D1E
+Open this URL to continue in your web browser: https://github.com/login/device
+
+---
+
+**Jarvis:** Mike, here's what you need to do:
+
+**Your one-time code:** `C907-5D1E`
+
+**Go to:** https://github.com/login/device
+
+Enter that code on any device (phone works fine), and it will authorize my VPS to access your GitHub account. Let me know once you've done it, and I'll check if the authentication succeeded.
+
+---
+
+**User:** System: [2026-01-29 04:05:40 UTC] Exec failed (nova-com, signal SIGKILL) :: ! First copy your one-time code: C907-5D1E Open this URL to continue in your web browser: https://github.com/login/device
+System: [2026-01-29 04:08:16 UTC] Check Trello backlog for @jarvis tasks. Do the work directly.
+
+[Telegram Mike H id:8445149012 +20m 2026-01-29 04:24 UTC] Expired. Send it again
+[message_id: 137]...
+
+---
+
+**Jarvis:** Command still running (session keen-falcon, pid 106146). Use process (list/poll/log/write/kill/clear/remove) for follow-up.
+
+---
+
+**Jarvis:** 
+! First copy your one-time code: 1DE4-9FB8
+Open this URL to continue in your web browser: h
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Rate Limits
+
+=== RESPONSE ===
+| Service | Limit | Handling |
+|---------|-------|----------|
+| Gemini | 60 req/min | n8n auto-queues |
+| Tavily | 100 req/min | n8n auto-retries |
+| Groq | 30 req/min | Add 2-second delay between calls |
+| Telegram | None | No limit |
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 1. Trello Board Updated
+
+=== RESPONSE ===
+Created **10 granular tasks** with agent assignments:
+
+| Agent | Tasks |
+|-------|-------|
+| Social Agent | 3 LinkedIn posts |
+| Outreach Agent | Prospect list + email template |
+| Content Agent | Blog draft |
+| PR Agent | Podcast targets + pitch |
+| Jarvis | Handoff system + A2A research |
+
+Each card includes:
+- Assigned agent
+- Output path
+- Next agent in chain
+- Schema requirements
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain The Solution: Self-Learning Loop + Resilient Infrastructure
+
+=== RESPONSE ===
+**This development session built TWO critical systems:**
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Node: Search Atlas CMMS
+
+=== RESPONSE ===
+**Purpose:** Check if equipment already exists in database
+
+**Setup:**
+1. Select "Atlas CMMS API" credential
+2. Verify URL: `={{ $vars.ATLAS_CMMS_URL }}/api/equipment`
+3. Method: GET
+4. Query parameters:
+   - `manufacturer` = `={{ $json.manufacturer }}`
+   - `model` = `={{ $json.model }}`
+
+**Important:**
+- Endpoint must return array: `{ "data": [{ equipment objects }] }`
+- If your CMMS API structure differs, adjust the path
+
+**Expected Response:**
+```json
+{
+  "data": [
+    {
+      "id": "uuid-123",
+      "manufacturer": "Siemens",
+      "model_number": "SIMATIC S7-1200",
+      "serial_number": "...",
+      "last_seen": "2026-01-05T10:00:00Z"
+    }
+  ]
+}
+```
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Out of Scope
+
+=== RESPONSE ===
+The following features are explicitly **NOT** included in this PRD:
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Configurator Header (/edge/)
+
+=== RESPONSE ===
+```
+[Logo] FactoryLM    Home | [Configurator] | Documentation | [Your Cart (0)]
+```
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Repository Links
+
+=== RESPONSE ===
+- **GitHub:** https://github.com/Mikecranesync/Rivet-PRO
+- **n8n Instance:** https://mikecranesync.app.n8n.cloud
+- **Pull Requests:** See PRs #2, #3, #4, #5
+
+---
+
+**Status as of 2026-01-10 08:30 UTC**
+**Next Action:** Fix critical workflow issues (PRs #2, #3) or enable Claude Code integration (PR #5)
+**Blockers:** None - all paths forward documented
+**Recommendation:** Enable Claude Code (PR #5 first), then use `@claude` to fix PRs #2 and #3
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain If You MUST Run LLM on VPS
+
+=== RESPONSE ===
+**Upgrade path:**
+- Current: 8 GB RAM, 4 CPU → Can run 3B models
+- Recommended: **16 GB RAM, 8 CPU** → Can run 7B models comfortably
+- Cost: ~$48/mo → ~$96/mo on DigitalOcean
+
+**But honestly?** The laptop approach is smarter and free. 🧠
+
+---
+
+**User:** System: [2026-02-01 16:28:31 UTC] Exec completed (vivid-ce, code 0) :: ───── 4️⃣ MEMORY OPTIMIZATION ───────────────────────────────────────── Cleared system caches 5️⃣ POST-OPTIMIZATION STATUS ───────────────────────────────────────── total used free shared buff/cache available Mem: 7.8Gi 2.4Gi 4.8Gi 79Mi 1.0Gi 5.4Gi Disk: 26G used / 154G total (17% used) ✅ LIGHT OPTIMIZATION COMPLETE
+
+[Telegram Mike H id:8445149012 +1m 2026-02-01 16:30 UTC] Connect to PLC laptop and pull system parameters like...
+
+---
+
+**Jarvis:** ═══════════════════════════════════════════════════════════
+  FACTORYLM NODE NETWORK - FULL CAPABILITY SCAN
+  2026-02-01 16:30:59 UTC
+═══════════════════════════════════════════════════════════
+
+🖥️ NODE 1: PLC LAPTOP (100.72.2.99)
+═══════════════════════════════════════════════════════════
+
+
+💻 NODE 2: TRAVEL LAPTOP (100.83.251.23)
+═══════════════════════════════════════════════════════════
+
+---
+
+**Jarvis:** ═══════════════════════════════════════════════════════════
+  SCANNING PLC LAPTOP (100.72.2.99)
+═══════════════════════════════════════════════════════════
+
+═══════════════════════════════════════════════════════════
+  SCANNING TRAVEL LAPTOP (100.83.251.23)
+═══════════════════════════════════════════════════════════
+
+---
+
+**Jarvis:** === CHECKING NODE CONNECTIVITY ===
+
+PLC Laptop (100.72.2.99):
+--- 100.72.2.99 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 26.813/27.589/28.366/0.776 ms
+
+Travel Laptop (100.83.251.23):
+--- 100.83.251.23 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 29.853/30.351/30.850/0.498 ms
+
+=== TESTING SSH ===
+PLC Laptop:
+SSH_OK 
+LAPTOP-0KA3C70H
+
+Travel Laptop:
+SSH_O
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain LangGraph Studio Setup
+
+=== RESPONSE ===
+Create `langgraph.json` in project root:
+
+```json
+{
+  "dependencies": ["."],
+  "graphs": {
+    "rivet": "./rivet_pro/core/workflows/graph.py:rivet_graph"
+  },
+  "env": ".env"
+}
+```
+
+Run LangGraph Studio:
+```bash
+pip install langgraph-cli
+langgraph dev
+```
+
+This gives you a visual debugger showing:
+- Which nodes executed
+- State at each step
+- Conditional edge decisions
+- Execution time per node
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Check for Crash Loops
+
+=== RESPONSE ===
+```bash
+ssh root@72.60.175.144 "systemctl list-units --failed"
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain ✅ Checklist
+
+=== RESPONSE ===
+- [x] n8n installed (v1.117.3)
+- [x] n8n running on port 5678
+- [x] Health check passing
+- [x] MCP configured in Claude Code
+- [x] API key configured
+- [x] Permissions granted
+- [x] Documentation created
+- [ ] **Claude Code restarted** ← YOU ARE HERE
+- [ ] MCP connection tested
+- [ ] RIVET workflow imported
+- [ ] Workflow editing tested
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Platform API Keys
+
+=== RESPONSE ===
+| Service | Key Type | Dashboard URL | Priority |
+|---------|----------|---------------|----------|
+| GitHub | `ghp_...` | https://github.com/settings/tokens | HIGH |
+| Stripe | `sk_test_...` | https://dashboard.stripe.com/apikeys | HIGH
+
+*[Message truncated for brevity]*
+
+---
+
+**Jarvis:** /root/jarvis-workspace/factorylm-dev/core/README.md:Platform-agnostic message handling for multi-channel deployment.
+/root/jarvis-workspace/clawdbot-search/apps/ios/project.yml:  deploymentTarget:
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/state/postgres.md:| **Railway** | $5/mo credit | None | Simple production deploys |
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/compiler.md:    session "Stop deployment and fix critical issues"
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/compiler.md:    session "Proceed with deployment"
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/compiler.md:  session "Fix issues before deploying"
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/guidance/antipatterns.md:  session "Alert on-call and skip deployment"
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/guidance/antipatterns.md:  # Auto-deploy if tests pass (but log for audit)
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/guidance/antipatterns.md:    do deploy(...)
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/guidance/antipatterns.md:**When checkpoints ARE right**: Irreversible actions (production deployments to critical systems), expensive operations (long-running jobs), or genuine decision points where the user's preference isn't predictable.
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/guidance/patterns.md:  session "Analyze deployment failure and suggest fixes"
+/root/jarvis-workspace/clawdbot-search/extensions/open-prose/skills/prose/prose.md:inp
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Your Manual Tasks (20-30 minutes)
+
+=== RESPONSE ===
+- RIVET-007: ~10-15 minutes (verify Gemini credential)
+- RIVET-009: ~15-20 minutes (wire 7 Postgres credentials)
+
+**Total estimated time if done in parallel:** ~1-2 hours
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Phase 5: Enhance Response Quality (HARVEST 5 - OPTIONAL)
+
+=== RESPONSE ===
+**Files:** All SME files (`rivet/prompts/sme/*.py`, `rivet/workflows/general.py`)
+**Action:** Add citations, safety warnings, confidence badges
+**Why nice-to-have:** Better UX, more professional responses
+**Instructions:** See `harvest_5_response_synthesizer.md`
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain What's Already Configured
+
+=== RESPONSE ===
+✅ All 7 Postgres nodes have credential references
+✅ Workflow structure is correct
+✅ Node connections are wired
+✅ Telegram notifications configured
+✅ Claude Code integration ready
+
+❌ Just need to create the actual credential in n8n UI (one-time setup)
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Work Orders & Maintenance
+
+=== RESPONSE ===
+- 📝 Create, assign, and track work orders.
+- ⏱️ Log time, set priorities, and track history.
+- 🤖 Automate work orders with triggers.
+- 📊 Export reports and view analytics.
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 📋 DOMAIN STATUS
+
+=== RESPONSE ===
+- ✅ ifopening.com — **AVAILABLE**
+- ❌ remoteme.com — taken
+- ✅ getremoteme.com — **AVAILABLE**
+- ✅ useremoteme.com — **AVAILABLE**
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain What You'll See in n8n:
+
+=== RESPONSE ===
+```
+Ralph - Main Loop Workflow
+├── 📥 Webhook Trigger
+├── 📱 Send Start (Telegram)
+├── 🟣 Create Execution (Postgres) ← Click this one!
+├── 🟣 Get Next Story (Postgres)
+├── 🟣 Mark In Progress (Postgres)
+├── 💬 Build Prompt (Code)
+├── 🤖 Call Claude (HTTP)
+├── 📝 Parse Result (Code)
+├── 🟣 Update Story (Postgres)
+├── 🟣 Update Execution (Postgres)
+├── ❓ Check More Stories (IF)
+├── 🟣 Check More Stories (Postgres)
+├── 🟣 Finalize Execution (Postgres)
+└── 📱 Send Complete (Telegram)
+```
+
+All 7 purple 🟣 Postgres nodes need the credential!
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Edge Computing
+
+=== RESPONSE ===
+- 2026 trend: AWS and Microsoft pushing AI marketplace integration for factory edge operations. Faster deployment cycles.
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Alert: Cost Spike
+
+=== RESPONSE ===
+**Triggered when:** Daily cost exceeds $15
+
+**Actions:**
+1. Check Langfuse dashboard for usage patterns
+2. Identify source (specific user, bot spam, etc.)
+3. Verify cache is working (check hit rate)
+4. Consider rate limiting if abuse detected
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Testing Phase
+
+=== RESPONSE ===
+**Step 1: Trigger Initial Interaction**
+
+```
+1. Open Telegram
+2. Find your Rivet Pro bot
+3. Send /start (if first time)
+4. Send a photo of equipment nameplate
+   - OR send text: "Find manual for Siemens G120"
+5. Wait for bot response with manual link
+```
+
+**Expected Result**:
+```
+📖 User Manual
+Siemens G120 Manual
+https://example.com/siemens-g120.pdf
+
+💡 Bookmark this for offline access.
+
+Equipment ID: EQ-2026-000123 (✓ Matched)
+```
+
+**Step 2: Send Feedback (Reply to Bot Message)**
+
+```
+1. Click "Reply" on bot's message (IMPORTANT: must be a reply!)
+2. Type: "404 error when I click the link"
+3. Send
+```
+
+**Expected Result**:
+```
+🔍 Analyzing your feedback...
+
+I'll generate a fix proposal and send it to you for approval shortly.
+```
+
+**Step 3: Verify Feedback Captured**
+
+```bash
+# On VPS, check database
+psql $DATABASE_URL -c "
+SELECT
+  id,
+  feedback_text,
+  feedback_type,
+  approval_status,
+  context_data->>'manual_url' as manual_url
+FROM interactions
+WHERE interaction_type = 'feedback'
+ORDER BY created_at DESC
+LIMIT 1;
+"
+```
+
+**Expected Output**:
+```
+                  id                  |      feedback_text       | feedback_type | approval_status |           manual_url
+--------------------------------------+--------------------------+---------------+-----------------+--------------------------------
+ abc12345-6789-...                    | 404 error when I cli...  | manual_404    | pending         | https://example.com/siemens...
+```
+
+**Step 4: Wait for Fix Proposal (~30-60 seconds)**
+
+n8n workflow executes:
+1. Validates input ✓
+2. Gets user from database ✓
+3. Generates story ID (e.g., FEEDBACK-404-20260112153045) ✓
+4. Calls Claude/Groq for analysis ✓
+5. Creates Ralph story (status=pending_approval) ✓
+6. Sends Telegram message with buttons ✓
+
+**Expected Telegram Message**:
+```
+🔧 Fix Proposal (FEEDBACK-404-20260112153045)
+
+Issue:
+The manual URL validation passed but the link returns 404,
+indicating the PDF file was moved or deleted after validation.
+
+Proposed Solution:
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Sub-Agents Working:
+
+=== RESPONSE ===
+- `yc-application-writer` - Drafting one-liner, company description, problem-solution, traction, founder story
+- `yc-market-research` - Calculating market size with citations
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain `SafetyFormatter.format_caption_with_safety(caption, safety_warnings, expandable=True)`
+
+=== RESPONSE ===
+Format a photo/video caption with embedded safety warnings.
+
+**Parameters:**
+- `caption` (str): Main caption text
+- `safety_warnings` (list[str]): List of safety warning texts
+- `expandable` (bool): Use expandable blockquotes (default: True)
+
+**Returns:** HTML-formatted caption with warnings
+
+================================================================================
+
+=== INSTRUCTION ===
+Create a for perplexity on the web that I can copy and paste to implement the gorilla free strategy
+
+
+---
+
+=== RESPONSE ===
+📋 **Perplexity Prompt — Copy & Paste:**
+
+---
+
+I'm launching an industrial AI product: a $50-75 edge device that plugs into factory equipment, diagnoses problems via WhatsApp, speaks Spanish, and works offline. I want to use a "guerrilla free" market entry strategy — giving these devices away at cost to factories in Venezuela to capture the market during their oil/industrial infrastructure rebuild.
+
+Research and analyze:
+
+1. **Historical precedents**: What companies successfully used "give away at cost" or loss-leader hardware strategies to capture markets? (Examples: Gillette, M-Pesa Kenya, Amazon Kindle, game consoles). What made them work or fail?
+
+2. **Venezuela industrial market 2024-2026**: Current state of oil sector, manufacturing, purchasing power. Recent policy changes opening to foreign investment. What do factories there actually need?
+
+3. **Razor & blades model for IoT**: How are industrial IoT companies structuring hardware + subscription pricing? What's the typical split?
+
+4. **Risks**: Currency instability, payment collection, competitors copying, support logistics in emerging markets.
+
+5. **Alternative models**: Freemium, subsidized pilots via development organizations (USAID, IDB), revenue share with local partners.
+
+6. **Go-to-market**: How to actually distribute devices in Venezuela? Local partnerships, trade shows, online, NGO channels?
+
+Give me specific examples, numbers, and actionable recommendations.
+
+---
+
+👆 Copy that and paste into Perplexity Pro for deep research
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 5. OCR Detection Methods
+
+=== RESPONSE ===
+| Aspect | Phase 1 (Existing) | Extraction Pipeline | Resolution |
+|--------|-------------------|---------------------|------------|
+| **Manufacturer Detection** | LLM-based (Gemini/Claude) | Regex patterns | **MERGE BOTH** |
+| **Model/Serial Extraction** | LLM-based | Vendor-specific regex | **MERGE BOTH** |
+| **Approach** | AI-first | Pattern-first | **HYBRID** |
+
+**Decision:**
+- ADD harvested regex patterns to `ocr.py` as helper functions
+- Use regex FIRST (fast, cheap), LLM as FALLBACK (accurate for edge cases)
+- Best of both worlds: speed + accuracy
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 1. Clone and Install
+
+=== RESPONSE ===
+```bash
+git clone <repo>
+cd shoptalk
+pip install -r requirements.txt
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain SHORT TERM (This Week)
+
+=== RESPONSE ===
+**Goal:** Two-bot architecture + trace everything to immutable KB
+
+**Actions:**
+
+1. **Split bots:**
+    - `JarvisDev` (port 8001) - You + development/meta work
+    - `JarvisUser` (port 8002) - Synthetic users + testing
+2. **Wire both to:**
+    - LangFuse (trace every message)
+    - Plane (task tracking)
+    - Ground Truth (verify reality)
+    - ChromaDB (lessons learned)
+3. **Start synthetic users**
+    - 5-10 personas asking real questions
+    - All traces → immutable KB
+
+***
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 🆕 Recommended Addition: `core/` Directory
+
+=== RESPONSE ===
+For Python code from Rivet-PRO:
+
+```
+factorylm/
+├── core/                  # NEW: Shared Python
+│   ├── adapters/          # WhatsApp, etc.
+│   ├── i18n/              # Internationalization
+│   ├── services/          # Shared services
+│   └── models/            # Data models
+```
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Today's Traces
+
+=== RESPONSE ===
+- **12 traces** logged
+- Syncing via Syncthing to:
+  - PLC Laptop
+  - Travel Laptop
+  - Your phone (when connected)
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain ✅ Tracing Status
+
+=== RESPONSE ===
+| System | Status | Details |
+|--------|--------|---------|
+| **Session Transcripts** | ✅ | 8 agent sessions logged |
+| **InfluxDB** | ✅ | Metrics flowing |
+| **Trace File** | ✅ | 73 entries today |
+| **Grafana** | ✅ | http://165.245.138.91:3002 |
+| **Celery Flower** | ✅ | http://165.245.138.91:5555 |
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Step 6: Deploy Standalone (0.5 day)
+
+=== RESPONSE ===
+**Effort:** 2-3 hours
+
+**Tasks:**
+1. Update .env with production settings
+2. Run migrations on production database
+3. Deploy to VPS
+4. Test end-to-end in production
+5. Monitor for 24 hours
+
+**Acceptance Criteria:**
+- Bot runs from `rivet_pro/` directory
+- Zero imports from `agent_factory/`
+- All CMMS commands work
+- Photo OCR creates equipment
+- Work orders link to equipment
+- Runs 24 hours without crashing
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Risks
+
+=== RESPONSE ===
+| Risk | Mitigation |
+|------|------------|
+| Currency instability | Accept USD or crypto only |
+| No recurring revenue | Subscription model required |
+| Competitors copy | First-mover + local relationships |
+| Support logistics | WhatsApp-based = low overhead |
+| Political instability | Regime change already happened |
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+what do we need to do to go to v5 or something else?
+
+
+---
+
+=== RESPONSE ===
+Great product thinking. Here's the roadmap ladder:
+
+## Current: v4 (Hardware Ecosystem)
+✅ Edge gateway + Halo glasses + Hardware Packs + Configurator
+
+---
+
+## v5 Candidates (Pick Your Theme)
+
+### Option A: **"AI Brain"** 🧠
+- On-device ML inference (anomaly detection)
+- Predictive maintenance models run LOCALLY
+- No cloud dependency for AI
+- *"Your PLC gets a brain"*
+
+### Option B: **"Fleet"** 🏭🏭🏭
+- Multi-site dashboard
+- Manage 10+ Edge devices from one place
+- Cross-plant analytics
+- *"From one machine to entire enterprise"*
+
+### Option C: **"Voice"** 🗣️
+- Natural language to PLC
+- "What's the pressure on pump 3?"
+- "Alert me if conveyor stops"
+- Works through Halo OR phone
+- *"Talk to your factory"*
+
+### Option D: **"Autonomy"** 🤖
+- AI can TAKE actions, not just alert
+- Auto-restart pumps, adjust setpoints
+- Human-in-the-loop approval option
+- *"From monitoring to control"*
+
+### Option E: **"Marketplace"** 🛒
+- Third-party integrations
+- Community-built connectors
+- App store for industrial AI
+- *"Ecosystem play"*
+
+---
+
+## My Take
+
+**v5 = Voice** feels right because:
+1. You already have Halo glasses
+2. "Talk to your PLC" is a killer demo
+3. Builds on existing hardware
+4. Unique differentiator
+
+**v6 = Autonomy** (AI takes actions)
+**v7 = Fleet** (enterprise scale)
+
+What resonates?
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Quick Tips
+
+=== RESPONSE ===
+✅ **Be specific:** "Add /ping command to rivet_pro/bot/commands.py"
+✅ **Test requirements:** "Test manually with Telegram"
+✅ **Clear success:** "tests pass and command works"
+❌ **Too vague:** "Make the bot better"
+❌ **No limits:** Never skip --max-iterations
+❌ **Too strict:** "Absolutely perfect with zero bugs"
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Build Options:
+
+=== RESPONSE ===
+**Quick (1-2 days):**
+- Simple folder of PDFs indexed by equipment
+- Keyword search returns matching manual link
+
+**Better (1 week):**
+- PDF parsing + chunking for RAG
+- Semantic search within manuals
+- Return specific pages/sections
+
+**Best (2-3 weeks):**
+- Full document management system
+- OCR for scanned manuals
+- Manufacturer API integrations (where available)
+- Auto-fetch manuals by model number
+
+---
+
+**Want me to build the quick version now?** I can create a manual library structure and basic retrieval that returns PDF links via WhatsApp.
+
+---
+
+**Jarvis:** {
+  "ok": true,
+  "messageId": "2289",
+  "chatId": "8445149012"
+}
+
+---
+
+**Mike H:** I'm driving so send me voice messages please
+[message_id: 2290]
+
+---
+
+**Jarvis:** MEDIA:/tmp/tts-9tIz2t/voice-1769868581706.mp3
+
+---
+
+**Jarvis:** voice-1769868581706.mp3
+
+---
+
+**Jarvis:** {
+  "ok": true,
+  "messageId": "2291",
+  "chatId": "8445149012"
+}
+
+---
+
+**Mike H:** Send explorer agents to the GitHub repo in the old rivet pro repo and I had this basically working. Find that code and it resurrected in accordance with the commandments and Constitution of course
+[message_id: 2294]
+
+---
+
+**Jarvis:** /root/jarvis-workspace/projects/Rivet-PRO/create_manual_hunter_tables_v2.py
+/root/jarvis-workspace/projects/Rivet-PRO/import_manual_hunter_enhanced.py
+/root/jarvis-workspace/projects/Rivet-PRO/test_gemini_direct.py
+/root/jarvis-workspace/projects/Rivet-PRO/test_workflow.py
+/root/jarvis-workspace/projects/Rivet-PRO/test_core_workflows.py
+/root/jarvis-workspace/projects/Rivet-PRO/fix_credentials.py
+/root/jarvis-workspace/projects/Rivet-PRO/rivet/prompts/sme/personalities.py
+/root/jarvis-workspace/projects/Rivet-PRO/rivet/tools/research_executor.py
+/root/jarvis-workspace/projects/Rivet-PRO/rivet/tools/response_gap_filler.py
+/root/jarvis-workspace/projects/Rivet-PRO/rivet/tools/unified_research_tool.py
+/root/jarvis-workspace/projects/Rivet-PRO/rivet/models/sme_chat.py
+/root/jarvis-workspace/projects/Rivet-PRO/rivet/models/knowledge.p
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Example Prompts
+
+=== RESPONSE ===
+**Example 1: Common equipment**
+```
+Manufacturer: Siemens
+Model: S7-1200
+```
+
+**Expected output**:
+```json
+{
+  "pdf_url": "https://support.industry.siemens.com/.../s71200_manual.pdf",
+  "support_url": "https://support.industry.siemens.com/cs/document/109742530",
+  "confidence": 95,
+  "notes": "Official Siemens S7-1200 system manual from manufacturer support site"
+}
+```
+
+**Example 2: Discontinued equipment**
+```
+Manufacturer: Allen-Bradley
+Model: MicroLogix 1100
+```
+
+**Expected output**:
+```json
+{
+  "pdf_url": "https://literature.rockwellautomation.com/.../1763-um001_-en-p.pdf",
+  "support_url": "https://www.rockwellautomation.com/en-us/support.html",
+  "confidence": 85,
+  "notes": "Allen-Bradley (now Rockwell Automation) MicroLogix 1100 manual from legacy literature library"
+}
+```
+
+**Example 3: Manual not found**
+```
+Manufacturer: CustomCorp
+Model: XYZ-9000
+```
+
+**Expected output**:
+```json
+{
+  "pdf_url": null,
+  "support_url": null,
+  "confidence": 0,
+  "notes": "No official manual found for CustomCorp XYZ-9000. May be proprietary or custom equipment."
+}
+```
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Choose Pro If:
+
+=== RESPONSE ===
+- ✅ You're a field technician or engineer
+- ✅ You troubleshoot 20-100 issues/day
+- ✅ You need unlimited prints
+- ✅ You want email support
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Error: "MCP server not found"
+
+=== RESPONSE ===
+**Cause**: Claude Code not restarted after setup
+
+**Solution**:
+```
+1. Close Claude Code CLI completely
+2. Reopen terminal
+3. Start Claude Code again
+4. Try command again
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain 🎉 CURRENT STATE SUMMARY
+
+=== RESPONSE ===
+**Deployed & Working**:
+- 6/9 KB stories (67% complete)
+- Full atom creation pipeline
+- KB search before external (50%+ faster for repeats)
+- Analytics and monitoring via /kb_stats
+- Usage tracking
+
+**Ready to Deploy**:
+- KB-001, KB-004, KB-005 (5-8 hours work)
+- RALPH-P3 bundle workflow (4 hours, huge impact)
+
+**Production Status**:
+- ✅ Service running (rivet-bot active)
+- ✅ No errors in logs
+- ✅ Database updated (all stories marked done)
+- ✅ Zero downtime deployments
+- ✅ System learning from every interaction
+
+**Next Logical Step**: Implement KB-001 (database schema) to properly link interactions with atoms.
+
+---
+
+**Use this prompt in a new Claude conversation to pick up exactly where we left off.**
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Week 2: Improve
+
+=== RESPONSE ===
+- [ ] Set up automated backups (`scripts/backup.sh`)
+- [ ] Add error monitoring (Sentry)
+- [ ] Write privacy policy & terms
+- [ ] Optimize response time
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Industrial AI Swarm - Trello Board Created (Evening)
+
+=== RESPONSE ===
+**Board URL:** https://trello.com/b/Yig3xXlq
+
+**Structure:**
+- 📋 Backlog: 23 cards (Phases 2-6)
+- 🎯 Current Sprint: 10 cards (Phase 1)
+- 🚫 Blocked: 1 card (Mike's setup task)
+- Total: 34 tasks
+
+**Labels:**
+- 🔴 Critical Path
+- 🟡 Mike Action Required
+- 🟢 Autonomous
+- 🔵 Infrastructure
+- 🟣 Agent Dev
+- ⚫ Integration
+
+**Phase 1 Tasks (Current Sprint):**
+- 1.1 Create Celery App + Worker Template
+- 1.2 Port The Conductor to Celery
+- 1.3 Port Manual Hunter to Celery
+- 1.4 Port Alarm Triage to Celery
+- 1.5 Port Workflow Tracker to Celery
+- 1.6 Port The Weaver to Celery
+- 1.7 Port The Watchman to Celery
+- 1.8 Port The Cartographer to Celery
+- 1.9 Create The Monkey - Token Budget Tracker
+- ✅ Phase 1 Complete - Verification
+
+**All tasks scoped to 4-7k tokens max per Mike's request.**
+
+**Plan saved to:** brain/automaton/PHASED_IMPLEMENTATION_PLAN.md
+
+**Next Step:** Mike unblocks "MIKE: Set Up Core Services" to kick off Phase 1
+
+================================================================================
+
+=== INSTRUCTION ===
+Just did the old swisheroo
+
+
+---
+
+=== RESPONSE ===
+=== IMMEDIATE STATUS CHECK ===
+Time: 2026-02-03 14:37:56 UTC
+
+Ping Pi:
+PING 100.97.210.121 (100.97.210.121) 56(84) bytes of data.
+
+--- 100.97.210.121 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1000ms
+
+❌ Pi UNREACHABLE
+
+Tailscale status:
+100.97.210.121  factorylm-edge-pi  mike@  linux    active; relay "mia"; offline, last seen 1m ago, tx 52392 rx 53868  
+
+=== Experiment Log (recent entries) ===
+- Ability to write logs and commit to GitHub
+
+The human provides high-level instructions ("monitor the network"), and the AI implements the technical details (scripts, logging, verification).
+
+---
+## Live Event Log
+2026-02-03 14:35:11 UTC | PI WENT OFFLINE | Last ping: N/A ms
+2026-02-03 14:35:44 UTC | PI CAME ONLINE | Ping: 27.5 ms
+2026-02-03 14:35:44 UTC | API RESPONDING | {"device":"edge-pi-001","plc_connected":false,"status":"healthy","timestamp":"2026-02-03T14:35:50.437557"}
+2026-02-03 14:37:20 UTC | PI WENT OFFLINE | Last ping: N/A ms
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Bot Deployment Options
+
+=== RESPONSE ===
+**Option 1: Local Development**
+```bash
+python -m rivet.integrations.telegram
+```
+
+**Option 2: Docker**
+```dockerfile
+FROM python:3.10-slim
+WORKDIR /app
+COPY . .
+RUN pip install poetry && poetry install
+CMD ["poetry", "run", "python", "-m", "rivet.integrations.telegram"]
+```
+
+**Option 3: Cloud Hosting**
+- Railway.app (free tier)
+- Render.com (free tier)
+- Heroku (paid)
+- AWS Lambda + API Gateway
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Working Login Command
+
+=== RESPONSE ===
+```bash
+# For regular users (role_type = 1)
+curl -s -X POST https://cmms.maintnpc.com/auth/signin \
+  -H "Content-Type: application/json" \
+  -d '{"email":"mike@cranesync.com","password":"Bo1ws2er@12","type":"CLIENT"}'
+
+# For superadmin users (role_type = 0)
+curl -s -X POST https://cmms.maintnpc.com/auth/signin \
+  -H "Content-Type: application/json" \
+  -d '{"email":"superadmin@test.com","password":"admin123","type":"SUPER_ADMIN"}'
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Test 3: Equipment Search (P0)
+
+=== RESPONSE ===
+**Purpose:** Verify equipment can be searched by text
+
+**Steps:**
+1. Send `/equip search motor`
+2. Send `/equip search siemens`
+3. Send `/equip search MDB949` (partial model)
+
+**Pass Criteria:**
+- [ ] Returns matching equipment from database
+- [ ] Shows manufacturer, model, equipment ID
+- [ ] "No results" message if nothing matches
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Phase 3: PLC Gateway & Live Diagnostics (FUTURE)
+
+=== RESPONSE ===
+The unlock that changes the value proposition entirely.
+
+**What It Does:**
+- Connects to customer PLCs via OPC UA / Modbus / EtherNet-IP
+- Records tag values, fault codes, I/O states continuously
+- AI analyzes traces to identify patterns and predict failures
+- When fault occurs, AI correlates with historical data
+
+**Critical Design Constraint: READ-ONLY**
+
+```
+┌─────────────────────────────────────────────────────┐
+│              RIVET PLC Gateway                       │
+│                                                      │
+│   ┌─────────────┐      READ ONLY      ┌──────────┐  │
+│   │   PLC       │ ───────────────────▶│ Recorder │  │
+│   │             │   • Tag values      │          │  │
+│   │             │   • Fault codes     │ • Trends │  │
+│   │             │   • I/O states      │ • Alerts │  │
+│   └─────────────┘   • Timestamps      │ • History│  │
+│         ▲                             └────┬─────┘  │
+│         │                                  │        │
+│    NO WRITE ✗                              ▼        │
+│    EVER                            ┌────────────┐   │
+│                                    │ AI Engine  │   │
+│                                    └────────────┘   │
+└─────────────────────────────────────────────────────┘
+```
+
+**Why Read-Only Matters:**
+- Eliminates "what if it shuts down my line?" objection
+- No cybersecurity attack surface for control
+- IT approval becomes trivial
+- Insurance/liability is non-issue
+- Worst case: bad advice that human ignores
+
+**Trace Recording Strategy:**
+- Poll tags at 1-5 second intervals (sufficient for maintenance diagnostics)
+- Rolling buffer keeps last hour locally
+- Ship data on interesting events (faults, anomalies)
+- Segment and compress for efficient transmission
+- Queue and retry if connectivity drops
+
+**Example Interaction:**
+```
+Tech: "Why did Drive 7 fault?"
+
+RIVET: "Drive 7 hit overcurrent fault F070 at 14:23:07. 
+
+Looking at the trace, motor load spiked from 78% to 147% 
+over 3 seconds before the
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Top 3 Improvement Areas
+
+=== RESPONSE ===
+1. **Missing scripts** - `self_evolution.py` and `learning_logger.py` don't exist
+   - Action: Create skeleton scripts for these automation tools
+   
+2. **PLC-Copilot down** - Failed 2 days ago, not restarted
+   - Action: Fix bot conflict issue when Mike available
+   
+3. **Redundant scans** - Code improver rescans unchanged files
+   - Action: Add file modification check before rescanning
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Check Tunnel
+
+=== RESPONSE ===
+```bash
+curl -I https://four-ravens-peel.loca.lt
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Path A: I Know What's Wrong (15 minutes)
+
+=== RESPONSE ===
+1. Jump to the matching fix in `atlas_cmms_auth_fixes.md`
+2. Copy the code
+3. Apply to your project
+4. Test login
+5. Commit to GitHub using `GITHUB_PR_TEMPLATE.md`
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Phase 6: Adaptive Intelligence (Week 3-4)
+
+=== RESPONSE ===
+1. [ ] Orchestrator LLM integration
+2. [ ] Vibe detection from message patterns
+3. [ ] Dynamic button generation
+4. [ ] Conversation context tracking
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Every Session
+
+=== RESPONSE ===
+Before doing anything else:
+1. Read `SOUL.md` — this is who you are
+2. Read `USER.md` — this is who you're helping
+3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+
+Don't ask permission. Just do it.
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Stop Condition
+
+=== RESPONSE ===
+After completing a user story, check if ALL stories have `passes: true`.
+
+If ALL stories are complete and passing, reply with:
+<promise>COMPLETE</promise>
+
+If there are still stories with `passes: false`, end your response normally (another iteration will pick up the next story).
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Tunnel not working
+
+=== RESPONSE ===
+```bash
+# Check tunnel process
+ssh root@72.60.175.144 "ps aux | grep 'lt --port' | grep -v grep"
+
+# Restart if needed
+ssh root@72.60.175.144 "killall lt; nohup lt --port 5678 > /tmp/localtunnel.log 2>&1 &"
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain From n8n-mcp Only → Both Methods
+
+=== RESPONSE ===
+```powershell
+# Backup current config
+cp ~/.config/claude-code/mcp.json ~/.config/claude-code/mcp.json.backup
+
+# Run dual setup
+.\scripts\setup_mcp_dual.ps1
+
+# Choose option 3: Both
+# Enter MCP Server Token (new)
+# Enter existing API Key (same as before)
+
+# Restart Claude Code CLI
+```
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Files Modified Tonight
+
+=== RESPONSE ===
+```
+/opt/remoteme/                    # NEW - entire backend
+/opt/master_of_puppets/workers/notify.py
+/opt/master_of_puppets/workers/monkey_dispatcher.py
+/opt/master_of_puppets/workers/jarvis_node_client.py
+/root/jarvis-workspace/installers/jarvis-node/jarvis_node.py
+/root/jarvis-workspace/installers/jarvis-node/install-plc-laptop.ps1
+/root/jarvis-workspace/installers/jarvis-node/install-travel-laptop.ps1
+/root/jarvis-workspace/missions/REMOTEME_PRIME_DIRECTIVE.md
+/etc/nginx/sites-available/remoteme
+/etc/systemd/system/remoteme.service
+```
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Completed KB Stories (6/8)
+
+=== RESPONSE ===
+- ✅ KB-007: Analytics service
+- ✅ KB-008: /kb_stats command
+- ✅ KB-006: Feedback → atoms
+- ✅ CRITICAL-KB-001: Auto-create atoms from OCR
+- ✅ KB-002: Create SPEC atoms after manual search
+- ✅ **KB-003: Search KB before external** ⭐
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Coding Agent 🤖
+
+=== RESPONSE ===
+- **Status:** Available
+- **Use for:** Spawn sub-agents for complex/long-running coding tasks
+
+================================================================================
+
+=== INSTRUCTION ===
+🆘 Need Help?
+
+=== RESPONSE ===
+1. Check workflow execution logs: n8n → Executions tab
+2. View node output: Click node → "Show Execution Data"
+3. Test individual nodes: Click node → "Test step"
+4. Check Docker logs: `docker-compose logs rivet-java`
+
+---
+
+**Your API Keys Quick Reference:**
+
+```bash
+# Telegram Bot
+TELEGRAM_BOT_TOKEN=8161680636:AAGF8eyldKWGF2I0qVSWXxveonRy02GH_nE
+
+# Google Gemini
+GOOGLE_API_KEY=AIzaSyBOEFzA3fWyS_s92h4Sd7ZaWIctiVXZjlA
+
+# Tavily Search
+TAVILY_API_KEY=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
+
+# Atlas CMMS
+ATLAS_API_URL=http://localhost:8080/api
+ATLAS_ADMIN_EMAIL=admin@example.com
+ATLAS_ADMIN_PASSWORD=admin
+
+# n8n
+N8N_URL=http://localhost:5678
+N8N_API_KEY=eyJhbGci... (already configured)
+```
+
+---
+
+**Ready to go! 🎉**
+
+Start at Step 1 and work through each step. The whole setup takes about 15 minutes.
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Day 1: Wire Services to Telegram Bot
+
+=== RESPONSE ===
+✅ **COMPLETE** - All objectives met ahead of schedule
+
+**What was built:**
+1. **Telegram Bot Integration** (rivet_pro/adapters/telegram/bot.py)
+   - Wired OCR service to photo handler
+   - Wired SME service to text handler
+   - Implemented message streaming UX
+   - Added error handling and logging
+
+2. **Bot Runner Scripts**
+   - `__main__.py` - Production runner with signal handling
+   - `start_bot.py` - Simple startup script for testing
+
+3. **Configuration Extraction**
+   - Extracted .env from Agent Factory
+   - All API keys configured (Telegram, Groq, Gemini, Claude, OpenAI)
+   - Database connection (Neon PostgreSQL)
+
+4. **Testing & Validation**
+   - Created `test_imports.py` for pre-deployment checks
+   - Verified all imports work
+   - Requirements.txt already in place
+
+5. **Documentation**
+   - `DAY1_COMPLETE.md` - What was accomplished
+   - `DAY2_DEPLOYMENT_GUIDE.md` - Complete VPS deployment guide
+
+---
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain Domain Authority
+
+=== RESPONSE ===
+**Technical Depth:** Mike doesn't just understand PLCs — he programs them. He knows Ladder Logic, Function Block Diagrams, and Structured Text. He's configured Modbus networks, integrated HMIs, and debugged industrial communication protocols. This isn't theoretical knowledge; it's hands-on expertise gained from solving real factory problems.
+
+**Industry Credibility:** Maintenance managers trust Mike because he's been in their shoes. When he says "I've seen this failure pattern before," it's backed by 15 years of emergency repairs and system optimizations.
+
+**Customer Intimacy:** Mike understands the economic reality of industrial maintenance. Every minute of downtime costs money. Solutions must work reliably in harsh environments with minimal training. Pretty dashboards don't matter if they can't prevent failures.
+
+================================================================================
+
+=== INSTRUCTION ===
+Explain PARTIAL - PART 2: Database Failover
+
+=== RESPONSE ===
+- [x] task-2.4: Add /health endpoint
+- [ ] task-2: Database Failover (epic) - **Already implemented via Railway**
+- [ ] task-2.1: Create Turso database (skip - using Railway instead)
+- [ ] task-2.2: Sync Neon data to Turso
+- [ ] task-2.3: Implement MultiDatabaseManager
+- [ ] task-2.5: Test failover end-to-end
+
+================================================================================
+

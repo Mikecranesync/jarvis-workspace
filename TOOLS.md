@@ -144,11 +144,14 @@ irm https://raw.githubusercontent.com/Mikecranesync/jarvis-workspace/main/infras
 
 ### Quick Commands from VPS:
 ```bash
-# Travel laptop
-ssh -i ~/.ssh/jarvis_laptop_key mike@100.83.251.23 "hostname"
+# Travel laptop (CORRECT - username is hharp)
+ssh hharp@100.83.251.23 "hostname"
 
-# PLC laptop
-ssh -i ~/.ssh/jarvis_laptop_key mike@100.72.2.99 "hostname"
+# PLC laptop (CORRECT - username is hharp)
+ssh hharp@100.72.2.99 "hostname"
+
+# For PowerShell commands:
+ssh hharp@100.83.251.23 'powershell -Command "Your-Command"'
 ```
 
 ### Architecture Doc:

@@ -1,0 +1,155 @@
+# SIDE VIEW - CONVEYOR ELEVATION
+# Professional Engineering Drawing - YC Demo Conveyor
+
+title: {
+  label: "CONVEYOR SIDE VIEW - ELEVATION"
+  near: top-center
+  style.font-size: 20
+  style.bold: true
+}
+
+# Frame structure
+top_frame: {
+  shape: rectangle
+  label: "48\" FRAME RAIL"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 3
+  width: 480
+  height: 35
+}
+
+left_leg: {
+  shape: rectangle
+  label: "30\" LEG"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 35
+  height: 300
+}
+
+right_leg: {
+  shape: rectangle
+  label: "30\" LEG" 
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 35
+  height: 300
+}
+
+# Roller system
+drive_roller: {
+  shape: circle
+  label: "DRIVE ROLLER\n14\" PVC"
+  style.fill: "#C0C0C0"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 50
+  height: 50
+}
+
+idler_roller: {
+  shape: circle
+  label: "IDLER ROLLER\n14\" PVC"
+  style.fill: "#C0C0C0"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 50
+  height: 50
+}
+
+# Belt path
+belt_top: {
+  shape: rectangle
+  label: "6\" RUBBER BELT"
+  style.fill: "#404040"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 380
+  height: 15
+}
+
+belt_return: {
+  shape: rectangle
+  label: "RETURN PATH"
+  style.fill: "#404040"
+  style.stroke: "#000"
+  style.stroke-width: 1
+  width: 380
+  height: 10
+}
+
+# Motor mount
+motor_mount: {
+  shape: rectangle
+  label: "12\"x12\" MOTOR MOUNT"
+  style.fill: "#DEB887"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 120
+  height: 120
+}
+
+# Motor representation
+motor: {
+  shape: rectangle
+  label: "1/2 HP MOTOR"
+  style.fill: "#2F4F4F"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 80
+  height: 60
+}
+
+# Dimensions
+height_dimension: {
+  label: "30.0\" LEG HEIGHT"
+  near: center-left
+  style.font-size: 14
+  style.bold: true
+}
+
+length_dimension: {
+  label: "48.0\" OVERALL LENGTH"
+  near: bottom-center
+  style.font-size: 14
+  style.bold: true
+}
+
+working_height: {
+  label: "36.0\" WORKING HEIGHT"
+  near: top-left
+  style.font-size: 12
+  style.bold: true
+}
+
+# Belt direction
+direction_arrow: {
+  label: "← BELT DIRECTION OF TRAVEL"
+  near: center-right
+  style.font-size: 12
+  style.bold: true
+}
+
+# Material notes
+materials: {
+  label: "MATERIALS:\n• Frame: 2x4 SPF Lumber\n• Rollers: 14\" PVC + 16\" Dowels\n• Belt: 6\" Rubber Mat\n• Mount: 12\" Plywood"
+  near: top-right
+  style.font-size: 11
+}
+
+# Drawing information
+drawing_info: {
+  label: "SHEET 2 of 5 | SCALE 1:16 | JOB-2026-0206-001"
+  near: bottom-right
+  style.font-size: 10
+}
+
+# Connections
+top_frame -> left_leg: {style.stroke-dash: 3}
+top_frame -> right_leg: {style.stroke-dash: 3}
+drive_roller -> motor: {style.stroke-dash: 3}
+belt_top -> drive_roller: {style.stroke-dash: 3}
+belt_top -> idler_roller: {style.stroke-dash: 3}

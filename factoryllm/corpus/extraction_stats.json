@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-02-07T08:20:04.838648",
+  "sources": {
+    "book_chapters": 2875,
+    "rivet_pro": 5186,
+    "mikes_brain": 177,
+    "brain": 399,
+    "memory": 127,
+    "agents_sprint": 87
+  },
+  "total_raw": 8851,
+  "total_unique": 7170
+}

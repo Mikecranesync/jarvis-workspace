@@ -1,9 +1,0 @@
-name: factorylm-plc-gateway
-type: sw.application
-description: FactoryLM Edge PLC Gateway - Allen-Bradley Micro820 via Ethernet/IP
-version: "1.0.0"
-assets:
-  repository:
-    type: blob.asset
-    data:
-      url: 'https://github.com/Mikecranesync/jarvis-workspace'

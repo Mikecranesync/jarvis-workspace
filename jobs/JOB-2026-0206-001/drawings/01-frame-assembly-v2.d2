@@ -1,0 +1,111 @@
+# FRAME ASSEMBLY - TOP VIEW
+# Professional Engineering Drawing - YC Demo Conveyor
+
+title: {
+  label: "FRAME ASSEMBLY - TOP VIEW"
+  near: top-center
+  style.font-size: 20
+  style.bold: true
+}
+
+# Main frame components
+side_rail_top: {
+  shape: rectangle
+  label: "48\" SIDE RAIL"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 3
+  width: 480
+  height: 35
+}
+
+side_rail_bottom: {
+  shape: rectangle  
+  label: "48\" SIDE RAIL"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 3
+  width: 480
+  height: 35
+}
+
+cross_brace_left: {
+  shape: rectangle
+  label: "14\" CROSS BRACE"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 35
+  height: 140
+}
+
+cross_brace_right: {
+  shape: rectangle
+  label: "14\" CROSS BRACE"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 35
+  height: 140
+}
+
+cross_brace_mid1: {
+  shape: rectangle
+  label: "14\" SUPPORT"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 35
+  height: 140
+}
+
+cross_brace_mid2: {
+  shape: rectangle
+  label: "14\" SUPPORT"
+  style.fill: "#D2B48C"
+  style.stroke: "#000"
+  style.stroke-width: 2
+  width: 35
+  height: 140
+}
+
+# Screw locations
+screw1: {shape: circle; style.fill: "#000"; width: 8; height: 8; label: "SCREW"}
+screw2: {shape: circle; style.fill: "#000"; width: 8; height: 8; label: "SCREW"}
+screw3: {shape: circle; style.fill: "#000"; width: 8; height: 8; label: "SCREW"}
+screw4: {shape: circle; style.fill: "#000"; width: 8; height: 8; label: "SCREW"}
+
+# Dimension labels
+dim_length: {
+  label: "48.0\" OVERALL LENGTH"
+  near: bottom-center
+  style.font-size: 16
+  style.bold: true
+}
+
+dim_width: {
+  label: "14.0\" INSIDE WIDTH"
+  near: center-left
+  style.font-size: 16
+  style.bold: true
+}
+
+# Material specification
+material_spec: {
+  label: "MATERIAL: 2x4 SPF LUMBER\nFASTENERS: #8 x 2.5\" DECK SCREWS\nPRE-DRILL ALL HOLES"
+  near: top-left
+  style.font-size: 12
+}
+
+# Drawing info
+drawing_info: {
+  label: "SHEET 1 of 5 | SCALE 1:12 | JOB-2026-0206-001"
+  near: bottom-right
+  style.font-size: 10
+}
+
+# Connect components with hidden lines to show relationships
+side_rail_top -> cross_brace_left: {style.opacity: 0}
+side_rail_top -> cross_brace_right: {style.opacity: 0}
+side_rail_bottom -> cross_brace_left: {style.opacity: 0}
+side_rail_bottom -> cross_brace_right: {style.opacity: 0}

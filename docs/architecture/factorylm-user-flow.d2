@@ -1,0 +1,175 @@
+direction: down
+
+vars: {
+  d2-config: {
+    layout-engine: elk
+    theme-id: 200
+  }
+}
+
+title: "FactoryLM Intelligence Routing" {
+  style.font-size: 28
+  style.bold: true
+}
+
+# User Input
+user: "👤 USER" {
+  shape: person
+  style.fill: "#E3F2FD"
+}
+
+input: "User Input\n(Photo, Text, Voice)" {
+  shape: parallelogram
+  style.fill: "#BBDEFB"
+}
+
+user -> input: "sends"
+
+# LAYER 0: Pure Logic (NO LLM)
+layer0: "LAYER 0: PURE LOGIC (NO LLM)" {
+  style.fill: "#E8F5E9"
+  style.stroke: "#2E7D32"
+  style.border-radius: 12
+  
+  validate: "POKA-YOKE\nVALIDATION" {
+    shape: diamond
+    style.fill: "#C8E6C9"
+  }
+  
+  valid_path: "✓ Valid Input" {
+    style.fill: "#A5D6A7"
+  }
+  
+  invalid_path: "✗ Invalid\n(Ask to fix)" {
+    style.fill: "#FFCDD2"
+  }
+  
+  intent: "INTENT\nDETECTION\n(Pattern Match)" {
+    shape: diamond
+    style.fill: "#C8E6C9"
+  }
+  
+  known: "Known Intent\n(show assets,\ncreate WO, etc)" {
+    style.fill: "#A5D6A7"
+  }
+  
+  unknown: "Unknown Intent\n(needs reasoning)" {
+    style.fill: "#FFF9C4"
+  }
+  
+  direct: "DIRECT ACTION\n(No LLM needed)\n\nDB Query/Update" {
+    style.fill: "#81C784"
+  }
+  
+  validate -> valid_path: "pass"
+  validate -> invalid_path: "fail"
+  valid_path -> intent
+  intent -> known: "matched"
+  intent -> unknown: "no match"
+  known -> direct
+}
+
+input -> layer0.validate
+
+# Return invalid to user
+layer0.invalid_path -> user: "retry"
+
+# LAYER 1: Edge Intelligence
+layer1: "LAYER 1: EDGE REASONING" {
+  style.fill: "#F3E5F5"
+  style.stroke: "#7B1FA2"
+  style.border-radius: 12
+  
+  local: "LOCAL\nKNOWLEDGE\nBASE" {
+    shape: diamond
+    style.fill: "#E1BEE7"
+  }
+  
+  found: "✓ Found in KB\n(Cached/Similar)" {
+    style.fill: "#CE93D8"
+  }
+  
+  notfound: "✗ Not in KB" {
+    style.fill: "#FFF9C4"
+  }
+  
+  local -> found: "match"
+  local -> notfound: "no match"
+}
+
+layer0.unknown -> layer1.local: "escalate"
+
+# LAYER 2: Local LLM
+layer2: "LAYER 2: LOCAL LLM (Ollama)" {
+  style.fill: "#FFF3E0"
+  style.stroke: "#EF6C00"
+  style.border-radius: 12
+  
+  ollama: "Mistral 7B\nLlama 3 8B\n(Free, Private)" {
+    shape: hexagon
+    style.fill: "#FFE0B2"
+  }
+  
+  confident: "✓ Confident\nAnswer" {
+    style.fill: "#FFCC80"
+  }
+  
+  uncertain: "✗ Uncertain\n(needs more)" {
+    style.fill: "#FFF9C4"
+  }
+  
+  ollama -> confident: "high conf"
+  ollama -> uncertain: "low conf"
+}
+
+layer1.notfound -> layer2.ollama: "escalate"
+
+# LAYER 3: Cloud LLM
+layer3: "LAYER 3: CLOUD LLM (Claude)" {
+  style.fill: "#E3F2FD"
+  style.stroke: "#1565C0"
+  style.border-radius: 12
+  
+  claude: "Claude API\n(Complex reasoning\nVision, Long context)" {
+    shape: cloud
+    style.fill: "#90CAF9"
+  }
+  
+  answer: "Answer" {
+    style.fill: "#64B5F6"
+  }
+  
+  claude -> answer
+}
+
+layer2.uncertain -> layer3.claude: "escalate\n(LAST RESORT)"
+
+# Response back to user
+response: "📤 RESPONSE" {
+  shape: parallelogram
+  style.fill: "#C8E6C9"
+}
+
+layer0.direct -> response: "70% instant FREE"
+layer1.found -> response: "20% FREE"
+layer2.confident -> response: "8% FREE"
+layer3.answer -> response: "2% PAID"
+
+response -> user: "delivers"
+
+# Learning loop
+learning: "🔄 LEARNING\n\nCloud answers become\nlocal rules over time" {
+  style.fill: "#FFECB3"
+  style.stroke: "#FF8F00"
+  style.border-radius: 8
+}
+
+layer3.answer -> learning: "learns" {
+  style.stroke-dash: 5
+  style.stroke: "#FF8F00"
+}
+
+learning -> layer0: "hardens" {
+  style.stroke-dash: 5
+  style.stroke: "#FF8F00"
+}

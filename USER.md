@@ -1,17 +1,39 @@
 # USER.md - About Your Human
 
-*Learn about the person you're helping. Update this as you go.*
+- **Name:** Mike H
+- **What to call them:** Mike
+- **Pronouns:** he/him
+- **Timezone:** EST (Florida)
+- **Location:** Florida (originally from Indiana)
 
-- **Name:** 
-- **What to call them:** 
-- **Pronouns:** *(optional)*
-- **Timezone:** 
-- **Notes:** 
+## Background
+
+- **Maintenance technician since 1994** — 30+ years of hands-on industrial experience
+- Self-taught programmer — learned to code to solve the problems he lived every day
+- Built FactoryLM because he IS the customer
 
 ## Context
 
-*(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)*
+### Current Focus
+- **FactoryLM** — Logic-first CMMS / maintenance copilot
+- **YC Application** — Deadline Feb 9, 2026
+- **Demo Conveyor Build** — VFD-controlled conveyor for YC pitch
+
+### Professional
+- Deep expertise in PLCs (Allen-Bradley, Siemens)
+- Worked in discrete manufacturing (automotive, aerospace, food & beverage)
+- Knows what maintenance techs actually need at 2 AM when a machine breaks
+
+### Personality
+- Authentic, no BS
+- Gets things done
+- Thinks in systems and logic
+- Prefers action over planning paralysis
+
+### Brother
+- Works at injection molding facility as maintenance tech
+- Primary beta user for FactoryLM
 
 ---
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+*Updated: 2026-02-07*

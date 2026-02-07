@@ -1,0 +1,223 @@
+direction: down
+
+vars: {
+  d2-config: {
+    layout-engine: elk
+    theme-id: 200
+    dark-theme-id: 200
+  }
+}
+
+title: "FactoryLM Intelligence Routing" {
+  style.font-size: 28
+  style.bold: true
+  style.font-color: "#FFFFFF"
+}
+
+# User Input
+user: "👤 USER" {
+  shape: person
+  style.fill: "#000000"
+  style.stroke: "#FFFFFF"
+  style.font-color: "#FFFFFF"
+}
+
+input: "User Input\n(Photo, Text, Voice)" {
+  shape: parallelogram
+  style.fill: "#000000"
+  style.stroke: "#FFFFFF"
+  style.font-color: "#FFFFFF"
+}
+
+user -> input: "sends" {
+  style.stroke: "#FFFFFF"
+  style.font-color: "#FFFFFF"
+}
+
+# LAYER 0: Pure Logic (NO LLM)
+layer0: "LAYER 0: PURE LOGIC (NO LLM)" {
+  style.fill: "#1a1a1a"
+  style.stroke: "#FFFFFF"
+  style.border-radius: 12
+  style.font-color: "#FFFFFF"
+  
+  validate: "POKA-YOKE\nVALIDATION" {
+    shape: diamond
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  valid_path: "✓ Valid Input" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  invalid_path: "✗ Invalid\n(Ask to fix)" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  intent: "INTENT\nDETECTION\n(Pattern Match)" {
+    shape: diamond
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  known: "Known Intent\n(show assets,\ncreate WO, etc)" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  unknown: "Unknown Intent\n(needs reasoning)" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  direct: "DIRECT ACTION\n(No LLM needed)\n\nDB Query/Update" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  validate -> valid_path: "pass" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+  validate -> invalid_path: "fail" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+  valid_path -> intent {style.stroke: "#FFFFFF"}
+  intent -> known: "matched" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+  intent -> unknown: "no match" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+  known -> direct {style.stroke: "#FFFFFF"}
+}
+
+input -> layer0.validate {style.stroke: "#FFFFFF"}
+
+# Return invalid to user
+layer0.invalid_path -> user: "retry" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+
+# LAYER 1: Edge Intelligence
+layer1: "LAYER 1: EDGE REASONING" {
+  style.fill: "#1a1a1a"
+  style.stroke: "#FFFFFF"
+  style.border-radius: 12
+  style.font-color: "#FFFFFF"
+  
+  local: "LOCAL\nKNOWLEDGE\nBASE" {
+    shape: diamond
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  found: "✓ Found in KB\n(Cached/Similar)" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  notfound: "✗ Not in KB" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  local -> found: "match" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+  local -> notfound: "no match" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+}
+
+layer0.unknown -> layer1.local: "escalate" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+
+# LAYER 2: Local LLM
+layer2: "LAYER 2: LOCAL LLM (Ollama)" {
+  style.fill: "#1a1a1a"
+  style.stroke: "#FFFFFF"
+  style.border-radius: 12
+  style.font-color: "#FFFFFF"
+  
+  ollama: "Mistral 7B\nLlama 3 8B\n(Free, Private)" {
+    shape: hexagon
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  confident: "✓ Confident\nAnswer" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  uncertain: "✗ Uncertain\n(needs more)" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  ollama -> confident: "high conf" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+  ollama -> uncertain: "low conf" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+}
+
+layer1.notfound -> layer2.ollama: "escalate" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+
+# LAYER 3: Cloud LLM
+layer3: "LAYER 3: CLOUD LLM (Claude)" {
+  style.fill: "#1a1a1a"
+  style.stroke: "#FFFFFF"
+  style.border-radius: 12
+  style.font-color: "#FFFFFF"
+  
+  claude: "Claude API\n(Complex reasoning\nVision, Long context)" {
+    shape: cloud
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  answer: "Answer" {
+    style.fill: "#000000"
+    style.stroke: "#FFFFFF"
+    style.font-color: "#FFFFFF"
+  }
+  
+  claude -> answer {style.stroke: "#FFFFFF"}
+}
+
+layer2.uncertain -> layer3.claude: "escalate\n(LAST RESORT)" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+
+# Response back to user
+response: "📤 RESPONSE" {
+  shape: parallelogram
+  style.fill: "#000000"
+  style.stroke: "#FFFFFF"
+  style.font-color: "#FFFFFF"
+}
+
+layer0.direct -> response: "70% instant FREE" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+layer1.found -> response: "20% FREE" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+layer2.confident -> response: "8% FREE" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+layer3.answer -> response: "2% PAID" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+
+response -> user: "delivers" {style.stroke: "#FFFFFF"; style.font-color: "#FFFFFF"}
+
+# Learning loop
+learning: "🔄 LEARNING\n\nCloud answers become\nlocal rules over time" {
+  style.fill: "#1a1a1a"
+  style.stroke: "#FFFFFF"
+  style.border-radius: 8
+  style.font-color: "#FFFFFF"
+}
+
+layer3.answer -> learning: "learns" {
+  style.stroke-dash: 5
+  style.stroke: "#FFFFFF"
+  style.font-color: "#FFFFFF"
+}
+
+learning -> layer0: "hardens" {
+  style.stroke-dash: 5
+  style.stroke: "#FFFFFF"
+  style.font-color: "#FFFFFF"
+}
