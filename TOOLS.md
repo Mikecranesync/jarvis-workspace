@@ -11,13 +11,20 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 - **Hosting:** Unknown server (72.60.175.144) - TODO: find deploy method
 - **Skill:** `/root/jarvis-workspace/skills/factorylm-website/SKILL.md`
 
-## Servers
-- **This VPS:** factorylm-prod (DigitalOcean Atlanta, 8GB RAM)
+## Servers (Tailscale Network)
+| Name | Tailscale IP | Specs | Clawdbot | Notes |
+|------|-------------|-------|----------|-------|
+| **factorylm-prod** | 100.68.120.99 | 4 CPU, 8GB RAM, 100GB | ✅ Primary | This VPS |
+| **srv1078052** | 100.102.30.102 | 4GB RAM, 7.5GB free | ✅ Running | Website host, FactoryLLM corpus synced |
+| **factorylm-hetzner** | 100.67.25.53 | Unknown | ❌ No SSH key | Need to add SSH key |
+| **factorylm-edge-pi** | 100.97.210.121 | balenaOS, ARM | N/A | Edge device, offline 3d |
+
+## Laptops (Windows)
 - **PLC Laptop:** 100.72.2.99 (Tailscale), Quadro P620 GPU, runs Ollama
   - Factory I/O (3D industrial simulation)
   - CCW (Connected Components Workbench) for Allen-Bradley
   - Connected to real Micro820 PLC
-- **Old VPS:** Unknown (4GB RAM, 91% disk) - still sending heartbeats, needs shutdown
+- **Travel Laptop:** 100.83.251.23
 
 ## Key Services
 - **Master of Puppets:** `/opt/master_of_puppets/` - Celery swarm (22 agents)
@@ -122,3 +129,19 @@ Server disk runs tight (~48GB). Clean journals if full:
 ```bash
 journalctl --vacuum-time=1d
 ```
+
+## ShowUI Computer Use (Visual Control)
+- **Travel Laptop URL:** https://a5f0c2094e874e1cee.gradio.live (expires ~Feb 10)
+- **PLC Laptop URL:** TBD (after setup)
+- **Installer:** `/root/jarvis-workspace/installers/showui-setup/install-showui-plc-laptop.ps1`
+
+### Quick Setup (either laptop)
+```powershell
+# Download and run installer
+irm https://raw.githubusercontent.com/mikecranesync/factorylm/main/installers/showui-setup/install-showui-plc-laptop.ps1 | iex
+```
+
+### Architecture
+- Planner (Claude/GPT-4) → decides WHAT to do
+- Actor (ShowUI) → finds WHERE to click (free, local)
+- pyautogui → executes mouse/keyboard

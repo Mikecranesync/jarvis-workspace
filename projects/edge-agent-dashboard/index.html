@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactoryLM Edge Agent Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'factory': {
+                            'bg': '#0f172a',
+                            'card': '#1e293b',
+                            'accent': '#3b82f6',
+                            'success': '#10b981',
+                            'warning': '#f59e0b',
+                            'danger': '#ef4444',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-factory-bg text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-factory-card border-b border-gray-700 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <div class="flex items-center">
+                    <i class="fas fa-microchip text-factory-accent text-2xl mr-3"></i>
+                    <h1 class="text-2xl font-bold">FactoryLM Edge Agent Dashboard</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-sm text-gray-400">
+                        <span id="lastUpdate">Last updated: --</span>
+                    </div>
+                    <button onclick="refreshDevices()" class="bg-factory-accent hover:bg-blue-600 px-4 py-2 rounded-lg transition-colors">
+                        <i class="fas fa-sync-alt mr-2"></i>Refresh
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Status Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-factory-card p-6 rounded-lg border border-gray-700">
+                <div class="flex items-center">
+                    <i class="fas fa-devices text-factory-accent text-2xl mr-4"></i>
+                    <div>
+                        <p class="text-sm text-gray-400">Total Devices</p>
+                        <p class="text-2xl font-bold" id="totalDevices">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-factory-card p-6 rounded-lg border border-gray-700">
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-factory-success text-2xl mr-4"></i>
+                    <div>
+                        <p class="text-sm text-gray-400">Online</p>
+                        <p class="text-2xl font-bold" id="onlineDevices">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-factory-card p-6 rounded-lg border border-gray-700">
+                <div class="flex items-center">
+                    <i class="fas fa-exclamation-triangle text-factory-warning text-2xl mr-4"></i>
+                    <div>
+                        <p class="text-sm text-gray-400">Offline</p>
+                        <p class="text-2xl font-bold" id="offlineDevices">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-factory-card p-6 rounded-lg border border-gray-700">
+                <div class="flex items-center">
+                    <i class="fas fa-clock text-gray-400 text-2xl mr-4"></i>
+                    <div>
+                        <p class="text-sm text-gray-400">Last Heartbeat</p>
+                        <p class="text-sm font-medium" id="lastHeartbeat">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Device List -->
+        <div class="bg-factory-card rounded-lg border border-gray-700 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-700">
+                <h2 class="text-xl font-semibold flex items-center">
+                    <i class="fas fa-list mr-2 text-factory-accent"></i>
+                    Edge Devices
+                </h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-factory-bg">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Hostname</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">IP Address</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Last Seen</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="deviceList" class="divide-y divide-gray-700">
+                        <!-- Devices will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Device Configuration Modal -->
+    <div id="configModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-factory-card rounded-lg border border-gray-700 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="px-6 py-4 border-b border-gray-700">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-semibold" id="modalTitle">Device Configuration</h3>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <form id="configForm">
+                    <div class="space-y-6">
+                        <!-- Device Info (Read-only) -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Device ID</label>
+                                <input type="text" id="deviceId" readonly class="w-full px-3 py-2 bg-factory-bg border border-gray-600 rounded-lg text-gray-400">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Hostname</label>
+                                <input type="text" id="hostname" readonly class="w-full px-3 py-2 bg-factory-bg border border-gray-600 rounded-lg text-gray-400">
+                            </div>
+                        </div>
+
+                        <!-- Power Management -->
+                        <div class="border border-gray-600 rounded-lg p-4">
+                            <h4 class="text-lg font-medium text-factory-accent mb-4">Power Management</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Lid Close Action</label>
+                                    <select id="lidCloseAction" class="w-full px-3 py-2 bg-factory-bg border border-gray-600 rounded-lg text-white">
+                                        <option value="do_nothing">Do Nothing</option>
+                                        <option value="sleep">Sleep</option>
+                                        <option value="hibernate">Hibernate</option>
+                                        <option value="shutdown">Shutdown</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Sleep Timeout (AC Power)</label>
+                                    <select id="sleepTimeoutAc" class="w-full px-3 py-2 bg-factory-bg border border-gray-600 rounded-lg text-white">
+                                        <option value="0">Never</option>
+                                        <option value="300">5 minutes</option>
+                                        <option value="900">15 minutes</option>
+                                        <option value="1800">30 minutes</option>
+                                        <option value="3600">1 hour</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="hibernateEnabled" class="mr-2 text-factory-accent">
+                                    <label for="hibernateEnabled" class="text-sm text-gray-300">Enable Hibernate</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Network -->
+                        <div class="border border-gray-600 rounded-lg p-4">
+                            <h4 class="text-lg font-medium text-factory-accent mb-4">Network</h4>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="tailscaleEnabled" class="mr-2 text-factory-accent">
+                                <label for="tailscaleEnabled" class="text-sm text-gray-300">Enable Tailscale VPN</label>
+                            </div>
+                        </div>
+
+                        <!-- Monitoring -->
+                        <div class="border border-gray-600 rounded-lg p-4">
+                            <h4 class="text-lg font-medium text-factory-accent mb-4">Monitoring</h4>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Monitoring Interval (seconds)</label>
+                                <input type="number" id="monitoringInterval" min="30" max="300" class="w-full px-3 py-2 bg-factory-bg border border-gray-600 rounded-lg text-white">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-700 flex justify-end space-x-4">
+                <button onclick="closeModal()" class="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-500 transition-colors">
+                    Cancel
+                </button>
+                <button onclick="saveConfig()" class="px-4 py-2 bg-factory-accent text-white rounded-lg hover:bg-blue-600 transition-colors">
+                    <i class="fas fa-save mr-2"></i>Save Changes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden items-center justify-center">
+        <div class="bg-factory-card p-8 rounded-lg border border-gray-700 text-center">
+            <i class="fas fa-spinner fa-spin text-4xl text-factory-accent mb-4"></i>
+            <p class="text-lg">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        let devices = [];
+        let currentDeviceId = null;
+
+        // API Base URL
+        const API_BASE = 'http://localhost:8090/api';
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            refreshDevices();
+            // Auto-refresh every 30 seconds
+            setInterval(refreshDevices, 30000);
+        });
+
+        // Fetch devices from API
+        async function fetchDevices() {
+            try {
+                const response = await fetch(`${API_BASE}/devices`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching devices:', error);
+                showNotification('Error connecting to server', 'error');
+                return [];
+            }
+        }
+
+        // Check if device is online (last heartbeat within 5 minutes)
+        function isDeviceOnline(lastHeartbeat) {
+            if (!lastHeartbeat) return false;
+            const now = new Date();
+            const heartbeat = new Date(lastHeartbeat);
+            const diffMinutes = (now - heartbeat) / (1000 * 60);
+            return diffMinutes <= 5;
+        }
+
+        // Format date for display
+        function formatDate(dateString) {
+            if (!dateString) return 'Never';
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffMinutes = (now - date) / (1000 * 60);
+            
+            if (diffMinutes < 1) return 'Just now';
+            if (diffMinutes < 60) return `${Math.floor(diffMinutes)}m ago`;
+            if (diffMinutes < 1440) return `${Math.floor(diffMinutes / 60)}h ago`;
+            return `${Math.floor(diffMinutes / 1440)}d ago`;
+        }
+
+        // Refresh device list
+        async function refreshDevices() {
+            showLoading(true);
+            devices = await fetchDevices();
+            showLoading(false);
+            
+            renderDevices();
+            updateStatistics();
+            updateLastUpdateTime();
+        }
+
+        // Render devices table
+        function renderDevices() {
+            const deviceList = document.getElementById('deviceList');
+            
+            if (devices.length === 0) {
+                deviceList.innerHTML = `
+                    <tr>
+                        <td colspan="5" class="px-6 py-8 text-center text-gray-400">
+                            <i class="fas fa-exclamation-circle text-2xl mb-2"></i>
+                            <p>No devices found</p>
+                            <p class="text-sm">Devices will appear here once they register</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            deviceList.innerHTML = devices.map(device => {
+                const online = isDeviceOnline(device.last_heartbeat);
+                const statusClass = online ? 'text-factory-success' : 'text-factory-danger';
+                const statusIcon = online ? 'fa-circle' : 'fa-circle';
+                const statusText = online ? 'Online' : 'Offline';
+
+                return `
+                    <tr class="hover:bg-factory-bg transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="flex items-center">
+                                <i class="fas ${statusIcon} ${statusClass} mr-2"></i>
+                                <span class="text-sm font-medium ${statusClass}">${statusText}</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="text-sm font-medium">${device.hostname || 'Unknown'}</div>
+                            <div class="text-sm text-gray-400">${device.device_id.substring(0, 8)}...</div>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-300">${device.ip_address || 'N/A'}</td>
+                        <td class="px-6 py-4 text-sm text-gray-300">${formatDate(device.last_heartbeat)}</td>
+                        <td class="px-6 py-4">
+                            <button onclick="openDeviceConfig('${device.device_id}')" 
+                                    class="bg-factory-accent hover:bg-blue-600 text-white px-3 py-1 rounded text-sm transition-colors">
+                                <i class="fas fa-cog mr-1"></i>Configure
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Update statistics
+        function updateStatistics() {
+            const total = devices.length;
+            const online = devices.filter(device => isDeviceOnline(device.last_heartbeat)).length;
+            const offline = total - online;
+            
+            document.getElementById('totalDevices').textContent = total;
+            document.getElementById('onlineDevices').textContent = online;
+            document.getElementById('offlineDevices').textContent = offline;
+            
+            // Get most recent heartbeat
+            const lastHeartbeat = devices.reduce((latest, device) => {
+                if (!device.last_heartbeat) return latest;
+                if (!latest || new Date(device.last_heartbeat) > new Date(latest)) {
+                    return device.last_heartbeat;
+                }
+                return latest;
+            }, null);
+            
+            document.getElementById('lastHeartbeat').textContent = formatDate(lastHeartbeat);
+        }
+
+        // Update last update time
+        function updateLastUpdateTime() {
+            const now = new Date();
+            document.getElementById('lastUpdate').textContent = 
+                `Last updated: ${now.toLocaleTimeString()}`;
+        }
+
+        // Open device configuration modal
+        async function openDeviceConfig(deviceId) {
+            currentDeviceId = deviceId;
+            const device = devices.find(d => d.device_id === deviceId);
+            
+            if (!device) {
+                showNotification('Device not found', 'error');
+                return;
+            }
+
+            // Fetch latest config
+            showLoading(true);
+            try {
+                const response = await fetch(`${API_BASE}/devices/${deviceId}/config`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const config = await response.json();
+                
+                populateConfigForm(device, config);
+                showModal(true);
+            } catch (error) {
+                console.error('Error fetching config:', error);
+                showNotification('Error loading device configuration', 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // Populate configuration form
+        function populateConfigForm(device, config) {
+            document.getElementById('modalTitle').textContent = `Configure ${device.hostname || 'Device'}`;
+            document.getElementById('deviceId').value = device.device_id;
+            document.getElementById('hostname').value = device.hostname || '';
+            
+            // Power management
+            document.getElementById('lidCloseAction').value = config.config?.lid_close_action || 'do_nothing';
+            document.getElementById('sleepTimeoutAc').value = config.config?.sleep_timeout_ac || 0;
+            document.getElementById('hibernateEnabled').checked = config.config?.hibernate || false;
+            
+            // Network
+            document.getElementById('tailscaleEnabled').checked = config.config?.tailscale_enabled || false;
+            
+            // Monitoring
+            document.getElementById('monitoringInterval').value = config.config?.monitoring_interval || 60;
+        }
+
+        // Save configuration
+        async function saveConfig() {
+            if (!currentDeviceId) return;
+            
+            const config = {
+                config: {
+                    lid_close_action: document.getElementById('lidCloseAction').value,
+                    sleep_timeout_ac: parseInt(document.getElementById('sleepTimeoutAc').value),
+                    hibernate: document.getElementById('hibernateEnabled').checked,
+                    tailscale_enabled: document.getElementById('tailscaleEnabled').checked,
+                    monitoring_interval: parseInt(document.getElementById('monitoringInterval').value)
+                }
+            };
+
+            showLoading(true);
+            try {
+                const response = await fetch(`${API_BASE}/devices/${currentDeviceId}/config`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(config)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                showNotification('Configuration saved successfully', 'success');
+                closeModal();
+                refreshDevices();
+            } catch (error) {
+                console.error('Error saving config:', error);
+                showNotification('Error saving configuration', 'error');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // Show/hide modal
+        function showModal(show) {
+            const modal = document.getElementById('configModal');
+            if (show) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // Close modal
+        function closeModal() {
+            showModal(false);
+            currentDeviceId = null;
+        }
+
+        // Show/hide loading spinner
+        function showLoading(show) {
+            const spinner = document.getElementById('loadingSpinner');
+            if (show) {
+                spinner.classList.remove('hidden');
+                spinner.classList.add('flex');
+            } else {
+                spinner.classList.add('hidden');
+                spinner.classList.remove('flex');
+            }
+        }
+
+        // Show notification (simple implementation)
+        function showNotification(message, type) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg text-white ${
+                type === 'error' ? 'bg-factory-danger' : 
+                type === 'success' ? 'bg-factory-success' : 
+                'bg-factory-warning'
+            }`;
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas ${
+                        type === 'error' ? 'fa-exclamation-circle' : 
+                        type === 'success' ? 'fa-check-circle' : 
+                        'fa-info-circle'
+                    } mr-2"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            document.body.appendChild(notification);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 5000);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('configModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

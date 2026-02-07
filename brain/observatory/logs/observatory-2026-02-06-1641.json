@@ -1,0 +1,161 @@
+{
+  "timestamp": "2026-02-06T16:41:31.670290",
+  "workers": {
+    "online": [
+      "celery@factorylm-prod"
+    ],
+    "count": 1,
+    "healthy": false
+  },
+  "tasks": {
+    "total": 20,
+    "succeeded": 16,
+    "failed": 0,
+    "pending": 4
+  },
+  "queues": {
+    "pending_artifacts": 0
+  },
+  "foreman": {
+    "shifts": [
+      {
+        "event": "shift_start",
+        "group": "morning",
+        "timestamp": "2026-02-06T05:19:03.938643",
+        "workers_online": [
+          "celery@factorylm-prod"
+        ],
+        "worker_count": 1
+      }
+    ],
+    "health_checks": [
+      {
+        "event": "health_check",
+        "timestamp": "2026-02-06T16:36:57.592835",
+        "workers": {
+          "celery@factorylm-prod": {
+            "active_tasks": 1,
+            "reserved_tasks": 0,
+            "total_tasks": 0,
+            "uptime": 36041
+          }
+        },
+        "alerts": [],
+        "healthy": true
+      },
+      {
+        "event": "health_check",
+        "timestamp": "2026-02-06T16:30:31.595159",
+        "workers": {
+          "celery@factorylm-prod": {
+            "active_tasks": 1,
+            "reserved_tasks": 0,
+            "total_tasks": 0,
+            "uptime": 35655
+          }
+        },
+        "alerts": [],
+        "healthy": true
+      },
+      {
+        "event": "health_check",
+        "timestamp": "2026-02-06T16:24:06.607011",
+        "workers": {
+          "celery@factorylm-prod": {
+            "active_tasks": 1,
+            "reserved_tasks": 0,
+            "total_tasks": 0,
+            "uptime": 35270
+          }
+        },
+        "alerts": [],
+        "healthy": true
+      },
+      {
+        "event": "health_check",
+        "timestamp": "2026-02-06T16:17:38.596200",
+        "workers": {
+          "celery@factorylm-prod": {
+            "active_tasks": 1,
+            "reserved_tasks": 0,
+            "total_tasks": 0,
+            "uptime": 34882
+          }
+        },
+        "alerts": [],
+        "healthy": true
+      },
+      {
+        "event": "health_check",
+        "timestamp": "2026-02-06T16:11:08.593637",
+        "workers": {
+          "celery@factorylm-prod": {
+            "active_tasks": 1,
+            "reserved_tasks": 0,
+            "total_tasks": 0,
+            "uptime": 34492
+          }
+        },
+        "alerts": [],
+        "healthy": true
+      }
+    ],
+    "reviews": [
+      {
+        "event": "queue_review",
+        "timestamp": "2026-02-06T16:34:58.564708",
+        "pending_count": 0,
+        "reviewed": 0,
+        "passed": 0,
+        "failed": 0
+      },
+      {
+        "event": "queue_review",
+        "timestamp": "2026-02-06T16:15:38.563822",
+        "pending_count": 0,
+        "reviewed": 0,
+        "passed": 0,
+        "failed": 0
+      },
+      {
+        "event": "queue_review",
+        "timestamp": "2026-02-06T15:56:16.565257",
+        "pending_count": 0,
+        "reviewed": 0,
+        "passed": 0,
+        "failed": 0
+      },
+      {
+        "event": "queue_review",
+        "timestamp": "2026-02-06T15:36:55.567653",
+        "pending_count": 0,
+        "reviewed": 0,
+        "passed": 0,
+        "failed": 0
+      },
+      {
+        "event": "queue_review",
+        "timestamp": "2026-02-06T15:17:29.565257",
+        "pending_count": 0,
+        "reviewed": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    ],
+    "last_health": {
+      "event": "health_check",
+      "timestamp": "2026-02-06T16:36:57.592835",
+      "workers": {
+        "celery@factorylm-prod": {
+          "active_tasks": 1,
+          "reserved_tasks": 0,
+          "total_tasks": 0,
+          "uptime": 36041
+        }
+      },
+      "alerts": [],
+      "healthy": true
+    }
+  },
+  "flower_url": "http://localhost:5555"
+}

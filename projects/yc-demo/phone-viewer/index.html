@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>FactoryLM Live I/O</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg: #0a0a0f;
+            --card-bg: #12121a;
+            --accent: #00ff88;
+            --accent-dim: #00aa5580;
+            --danger: #ff4444;
+            --warning: #ffaa00;
+            --text: #ffffff;
+            --text-dim: #888;
+            --border: #2a2a3a;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 1rem 0 1.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 2px;
+        }
+        
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .status-dot.offline {
+            background: var(--danger);
+            animation: none;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+            margin-bottom: 0.75rem;
+        }
+        
+        /* I/O Display */
+        .io-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .io-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .io-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .io-indicator {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #333;
+            border: 2px solid var(--border);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .io-indicator.on {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 15px var(--accent-dim);
+        }
+        
+        .io-indicator.red.on {
+            background: var(--danger);
+            border-color: var(--danger);
+            box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+        }
+        
+        .io-indicator.yellow.on {
+            background: var(--warning);
+            border-color: var(--warning);
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
+        }
+        
+        .io-label {
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+        
+        .io-label small {
+            display: block;
+            color: var(--text-dim);
+            font-size: 0.7rem;
+        }
+        
+        /* Force Buttons */
+        .force-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .force-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .force-btn {
+            background: linear-gradient(180deg, #1a1a25 0%, #12121a 100%);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.25rem 1rem;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        
+        .force-btn:active {
+            transform: scale(0.95);
+            background: var(--accent);
+            color: var(--bg);
+        }
+        
+        .force-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .force-btn .icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Event Log */
+        .log-section {
+            margin-bottom: 1rem;
+        }
+        
+        .log-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            max-height: 150px;
+            overflow-y: auto;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            font-size: 0.75rem;
+        }
+        
+        .log-entry {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+        
+        .log-time {
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+        
+        .log-msg {
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+        
+        /* Animations */
+        @keyframes flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        .flash {
+            animation: flash 0.3s ease-out 2;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">⚡ FACTORYLM</div>
+        <div class="status">
+            <span class="status-dot" id="statusDot"></span>
+            <span id="statusText">Connecting...</span>
+        </div>
+    </header>
+    
+    <main>
+        <!-- INPUTS -->
+        <section class="io-section">
+            <h2 class="section-title">📥 Inputs</h2>
+            <div class="io-grid" id="inputs">
+                <div class="io-item" data-io="start_button">
+                    <div class="io-indicator" id="io-start_button"></div>
+                    <div class="io-label">Start<small>I:0/0</small></div>
+                </div>
+                <div class="io-item" data-io="stop_button">
+                    <div class="io-indicator" id="io-stop_button"></div>
+                    <div class="io-label">Stop<small>I:0/1</small></div>
+                </div>
+                <div class="io-item" data-io="sensor_1">
+                    <div class="io-indicator" id="io-sensor_1"></div>
+                    <div class="io-label">Sensor 1<small>I:0/2</small></div>
+                </div>
+                <div class="io-item" data-io="sensor_2">
+                    <div class="io-indicator" id="io-sensor_2"></div>
+                    <div class="io-label">Sensor 2<small>I:0/3</small></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- OUTPUTS -->
+        <section class="io-section">
+            <h2 class="section-title">📤 Outputs</h2>
+            <div class="io-grid" id="outputs">
+                <div class="io-item" data-io="conveyor_motor">
+                    <div class="io-indicator" id="io-conveyor_motor"></div>
+                    <div class="io-label">Motor<small>O:0/0</small></div>
+                </div>
+                <div class="io-item" data-io="red_light">
+                    <div class="io-indicator red" id="io-red_light"></div>
+                    <div class="io-label">Red<small>O:0/1</small></div>
+                </div>
+                <div class="io-item" data-io="yellow_light">
+                    <div class="io-indicator yellow" id="io-yellow_light"></div>
+                    <div class="io-label">Yellow<small>O:0/2</small></div>
+                </div>
+                <div class="io-item" data-io="green_light">
+                    <div class="io-indicator" id="io-green_light"></div>
+                    <div class="io-label">Green<small>O:0/3</small></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FORCE CONTROLS -->
+        <section class="force-section">
+            <h2 class="section-title">🎮 Force Controls</h2>
+            <div class="force-buttons" id="forceButtons">
+                <button class="force-btn" onclick="forceOutput('conveyor_motor', true)">
+                    <span class="icon">▶️</span>
+                    Start Motor
+                </button>
+                <button class="force-btn" onclick="forceOutput('conveyor_motor', false)">
+                    <span class="icon">⏹️</span>
+                    Stop Motor
+                </button>
+                <button class="force-btn" onclick="forceOutput('green_light', true)">
+                    <span class="icon">🟢</span>
+                    Green ON
+                </button>
+                <button class="force-btn" onclick="forceOutput('red_light', true)">
+                    <span class="icon">🔴</span>
+                    Red ON
+                </button>
+            </div>
+        </section>
+        
+        <!-- EVENT LOG -->
+        <section class="log-section">
+            <h2 class="section-title">📋 Event Log</h2>
+            <div class="log-container" id="logContainer">
+                <div class="log-entry">
+                    <span class="log-time">--:--:--</span>
+                    <span class="log-msg">Waiting for connection...</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        FactoryLM Demo • Real PLC Connection
+    </footer>
+    
+    <script>
+        // Configuration
+        const API_BASE = window.location.hostname === 'localhost' 
+            ? 'http://localhost:8080/api/plc'
+            : '/api/plc';
+        const POLL_INTERVAL = 1000; // 1 second
+        
+        // State
+        let connected = false;
+        let lastState = {};
+        let forceEnabled = false;
+        
+        // DOM elements
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+        const logContainer = document.getElementById('logContainer');
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            log('Viewer initialized');
+            startPolling();
+            
+            // Enable force after short delay (dramatic effect)
+            setTimeout(() => {
+                forceEnabled = true;
+                log('Force controls enabled');
+            }, 2000);
+        });
+        
+        // Polling for I/O state
+        async function pollState() {
+            try {
+                const resp = await fetch(`${API_BASE}/state`);
+                if (!resp.ok) throw new Error('API error');
+                
+                const data = await resp.json();
+                updateUI(data.named_io || data);
+                setConnected(true);
+                
+            } catch (err) {
+                console.error('Poll error:', err);
+                setConnected(false);
+                // Use simulated data for demo
+                updateUI(getSimulatedState());
+            }
+        }
+        
+        function startPolling() {
+            pollState();
+            setInterval(pollState, POLL_INTERVAL);
+        }
+        
+        // Update UI with new I/O state
+        function updateUI(io) {
+            for (const [name, value] of Object.entries(io)) {
+                const el = document.getElementById(`io-${name}`);
+                if (el) {
+                    const wasOn = el.classList.contains('on');
+                    const isOn = Boolean(value);
+                    
+                    if (wasOn !== isOn) {
+                        el.classList.toggle('on', isOn);
+                        el.classList.add('flash');
+                        setTimeout(() => el.classList.remove('flash'), 600);
+                        
+                        // Log the change
+                        if (lastState[name] !== undefined) {
+                            log(`${name} → ${isOn ? 'ON' : 'OFF'}`);
+                        }
+                    }
+                }
+                lastState[name] = value;
+            }
+        }
+        
+        // Force an output
+        async function forceOutput(name, value) {
+            if (!forceEnabled) {
+                log('Force controls not yet enabled');
+                return;
+            }
+            
+            log(`FORCE: ${name} = ${value ? 'ON' : 'OFF'}`);
+            
+            // Immediate visual feedback
+            const el = document.getElementById(`io-${name}`);
+            if (el) {
+                el.classList.toggle('on', value);
+                el.classList.add('flash');
+            }
+            
+            try {
+                const resp = await fetch(`${API_BASE}/force`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, value: value ? 1 : 0 })
+                });
+                
+                if (!resp.ok) throw new Error('Force failed');
+                
+                const result = await resp.json();
+                log(`Force confirmed: ${result.success ? '✓' : '✗'}`);
+                
+            } catch (err) {
+                console.error('Force error:', err);
+                // Still show change for demo
+                log('Force sent (demo mode)');
+            }
+        }
+        
+        // Connection status
+        function setConnected(state) {
+            connected = state;
+            statusDot.classList.toggle('offline', !state);
+            statusText.textContent = state ? 'Live • Micro820' : 'Demo Mode';
+        }
+        
+        // Logging
+        function log(msg) {
+            const time = new Date().toLocaleTimeString('en-US', { hour12: false });
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.innerHTML = `<span class="log-time">${time}</span><span class="log-msg">${msg}</span>`;
+            logContainer.insertBefore(entry, logContainer.firstChild);
+            
+            // Keep only last 20 entries
+            while (logContainer.children.length > 20) {
+                logContainer.removeChild(logContainer.lastChild);
+            }
+        }
+        
+        // Simulated state for demo when API unavailable
+        function getSimulatedState() {
+            return {
+                start_button: Math.random() > 0.95,
+                stop_button: Math.random() > 0.98,
+                sensor_1: Math.random() > 0.7,
+                sensor_2: Math.random() > 0.8,
+                conveyor_motor: lastState.conveyor_motor || false,
+                red_light: lastState.red_light || false,
+                yellow_light: lastState.yellow_light || false,
+                green_light: lastState.green_light || false,
+            };
+        }
+    </script>
+</body>
+</html>

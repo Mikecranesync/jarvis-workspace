@@ -1,0 +1,31 @@
+# FactoryLM Edge Agent Server Docker Compose
+
+version: '3.8'
+
+services:
+  edge-agent-server:
+    build: .
+    container_name: factorylm-edge-agent-server
+    ports:
+      - "8090:8090"
+    environment:
+      - DATABASE_PATH=/app/data/devices.db
+      - X_AGENT_TOKEN=${X_AGENT_TOKEN:-factorylm-agent-token-2025}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8090/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  edge_agent_data:
+    driver: local

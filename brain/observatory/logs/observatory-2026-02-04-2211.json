@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-02-04T22:11:45.289509",
+  "workers": {
+    "online": [
+      "celery@factorylm-prod"
+    ],
+    "count": 1,
+    "healthy": true
+  },
+  "tasks": {
+    "total": 20,
+    "succeeded": 16,
+    "failed": 0,
+    "pending": 4
+  },
+  "queues": {
+    "pending_artifacts": 0
+  },
+  "foreman": {
+    "shifts": [],
+    "health_checks": [],
+    "reviews": [],
+    "last_health": null
+  },
+  "flower_url": "http://localhost:5555"
+}

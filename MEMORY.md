@@ -143,3 +143,27 @@ This is how industrial gateways work - they join existing networks.
 - 0.37-0.54ms ping latency
 - 0% packet loss
 - Survives power cycles
+
+## 2026-02-06 Session Highlights
+
+### New Infrastructure
+- **Jarvis Hub** (`/opt/jarvis-hub/jarvis_hub.py`): WebSocket server for node connections, port 8765
+- **VFD Simulator** (`/opt/factorylm/simulation/vfd_simulator.py`): Modbus TCP motor emulation
+- **Docs Site**: MkDocs Material at `https://mikecranesync.github.io/factorylm/`
+
+### Active Branches
+- `feature/autonomous-plc-server` - PLC laptop as Factory I/O server (Issue #22)
+
+### Brother Beta
+- Mike's brother = maintenance tech in Indiana (plastic injection molding)
+- First external user planned
+- Full bot design in `/root/jarvis-workspace/projects/factorylm-brother-beta/`
+
+### Hardware Notes
+- Mike's salvaged motors are all single-phase (won't work with VFD)
+- Pi has been offline 2+ days - needs physical check
+- PLC laptop has Quadro P620 GPU - good for local Ollama
+
+### YC Deadline
+- **February 9, 2026 @ 8:00 PM PT** (3 days from today)
+- 9 deliverables ready, need video recording + pitch deck slides

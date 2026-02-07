@@ -313,3 +313,14 @@ Full docs: https://github.com/Mikecranesync/factorylm/blob/main/README.md
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+## 📋 Gist-First for Project Deliverables
+
+When producing **project-type deliverables** (architecture docs, specs, build guides, system designs):
+
+1. **Create a GitHub Gist** (not just local file)
+2. **Include diagrams** (ASCII art + Mermaid)
+3. **Multiple files** with numbered naming (00-OVERVIEW.md, 01-TOPIC.md, etc.)
+4. **Return the gist URL** to Mike
+
+See: https://gist.github.com/Mikecranesync/341a28d1a92cde63532a3d09160e88a4 (06-JARVIS-RULES.md)

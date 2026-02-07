@@ -12029,11 +12029,231 @@
       "title": "User Manual: Raspberry Pi Edge Device Setup",
       "summary": "# User Manual: Raspberry Pi Edge Device Setup\n\n## Overview\n\nThis guide walks you through setting up a Raspberry Pi as a Modbus TCP server that bridges Factory I/O simulation to physical GPIO pins. When complete, you'll be able to control LEDs/relays on the Pi from the same web app that controls your Micro 820 PLC.\n\n**Time Required:** 30-45 minutes\n\n**Prerequisites:**\n- Raspberry Pi 3B+, 4, or 5 with Raspberry Pi OS installed\n- Pi connected to same network as your PC (192.168.1.x)\n- SSH access to",
       "last_modified": "2026-02-03T17:22:33.176272"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/ARCHITECTURE-computer-use.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/ARCHITECTURE-computer-use.md",
+      "type": "architecture",
+      "hash": "4c1bd7ae1e53253f74759abb7152f82e",
+      "size": 4703,
+      "lines": 132,
+      "title": "\ud83c\udfd7\ufe0f ARCHITECTURE: Visual Computer Use Layer",
+      "summary": "# \ud83c\udfd7\ufe0f ARCHITECTURE: Visual Computer Use Layer\n\n> Defined 2026-02-04. This is a core component of the FactoryLM stack.\n\n---\n\n## Overview\n\nVisual Computer Use (VCU) is the ability for AI to see screens and take actions. This is not a product \u2014 it's infrastructure for FactoryLM.\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                     FACTORYLM STACK                              \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502  Layer 4: Hu",
+      "last_modified": "2026-02-04T17:03:21.152119"
+    },
+    "/root/jarvis-workspace/mikes-brain/README.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/README.md",
+      "type": "readme",
+      "hash": "1b26e7e57114552ec8c299c5271d2e11",
+      "size": 3280,
+      "lines": 114,
+      "title": "\ud83e\udde0 Mike's Brain v0.1.0",
+      "summary": "# \ud83e\udde0 Mike's Brain v0.1.0\n\n> An external cognitive system for natural language programming with proof of work.\n\n## Vision\n\nMike's Brain is a living, vector-enabled knowledge graph that serves as an external cognitive system. It ingests data exhaust, archives intelligently, quality-gates everything, self-documents in real-time, takes autonomous action, and learns from outcomes.\n\n## Architecture\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                    MIKE'S BRAIN       ",
+      "last_modified": "2026-02-04T15:04:30.746830"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/PROPOSAL-visual-computer-use.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/PROPOSAL-visual-computer-use.md",
+      "type": "technical_docs",
+      "hash": "1f91f389eafd0f5e37ed6bd6a5bfc5e9",
+      "size": 3867,
+      "lines": 175,
+      "title": "\ud83c\udfaf PROPOSAL: Visual Computer Use in 5 Minutes",
+      "summary": "# \ud83c\udfaf PROPOSAL: Visual Computer Use in 5 Minutes\n\n> Ready for Mike after guitar lesson. Research completed 2026-02-04 16:40 UTC.\n\n---\n\n## The Vision (What You Said)\n\n> \"With glasses on I could sit here and you could see what's going on... you could essentially work it for me couldn't you?\"\n\n**YES.** Here's how we do it:\n\n---\n\n## \ud83c\udfc6 Winner: computer_use_ootb\n\n**Repo:** https://github.com/showlab/computer_use_ootb\n\n**Why this one:**\n- \u2705 No Docker required\n- \u2705 Works on Windows AND macOS\n- \u2705 Gradio UI ",
+      "last_modified": "2026-02-04T16:41:13.709508"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/ARCHIMEDES-LOGIC-MAP.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/ARCHIMEDES-LOGIC-MAP.md",
+      "type": "technical_docs",
+      "hash": "ad8251beef89afc851bb4f2d2a4e251b",
+      "size": 14687,
+      "lines": 289,
+      "title": "\ud83c\udfad ARCHIMEDES (Master of Puppets) - Logic Map",
+      "summary": "# \ud83c\udfad ARCHIMEDES (Master of Puppets) - Logic Map\n\n> \"Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.\"\n\n**Location:** `/opt/master_of_puppets/`\n**Orchestration:** Celery + Redis\n**Status:** Active (celerybeat-schedule present)\n\n---\n\n## \ud83c\udfd7\ufe0f Architecture Overview\n\n```\n                        \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                        \u2502         MIKE (Human)                \u2502\n                        \u2502    Voice/Text via Telegram          \u2502\n ",
+      "last_modified": "2026-02-04T17:10:04.500307"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/PHARAOHS-OBSERVATORY.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/PHARAOHS-OBSERVATORY.md",
+      "type": "technical_docs",
+      "hash": "429ff144dea79ab2988cdbb46581d3d1",
+      "size": 10456,
+      "lines": 369,
+      "title": "\ud83d\udc41\ufe0f Pharaoh's Observatory - Agent Observability System",
+      "summary": "# \ud83d\udc41\ufe0f Pharaoh's Observatory - Agent Observability System\n\n> \"They wouldn't be building the pyramid if they didn't have foremen making sure they start on schedule, don't stop working, and produce useful artifacts that they polish at least three times before sending to the QA judge.\"\n> \u2014 Mike, 2026-02-04\n\n---\n\n## The Concept\n\nMike sits atop the pyramid. Workers build beneath him. But Mike needs to SEE what's happening without disrupting the work.\n\n```\n                    \ud83d\udc51\n                   MIKE\n ",
+      "last_modified": "2026-02-04T17:58:42.807797"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/IDEAS-2026-02-04.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/IDEAS-2026-02-04.md",
+      "type": "technical_docs",
+      "hash": "cbdc8ac6f31a717633db32f70a8917ec",
+      "size": 4479,
+      "lines": 185,
+      "title": "\ud83e\udde0 Mike's Brain Dump - 2026-02-04 16:23 UTC",
+      "summary": "# \ud83e\udde0 Mike's Brain Dump - 2026-02-04 16:23 UTC\n\n> Captured from Telegram. 18 ideas in one message. This is why we need the brain.\n\n---\n\n## 1. Healthcare Resolution \u2705\n- Filed as fraud\n- Two weeks to resolve\n- Call back tomorrow for case number\n- Refund back to ~$10k\n- **Lesson learned:** Game theory - sugar > spice\n\n---\n\n## 2. Two Brains Concept\n\n| Brain | Purpose |\n|-------|---------|\n| **Technical Brain** | FactoryLM, workers, YC, code |\n| **Personal Brain** | Life admin, emails, scheduling, fina",
+      "last_modified": "2026-02-04T16:40:13.063475"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/MVP-VISUAL-COMPUTER-USE.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/MVP-VISUAL-COMPUTER-USE.md",
+      "type": "technical_docs",
+      "hash": "51e5d2bb8a1f067b704e436eeeb09512",
+      "size": 7781,
+      "lines": 270,
+      "title": "MVP: Visual Computer Use for Industrial Automation",
+      "summary": "# MVP: Visual Computer Use for Industrial Automation\n\n**Document Version:** 1.0.0  \n**Created:** 2026-02-04  \n**Author:** Mike Crane + Jarvis  \n**Status:** CAPTURED - CORE IP  \n\n---\n\n## \ud83c\udfaf The Vision (Mike's Words, Verbatim)\n\n> \"When the AI can see the real world and has Claude-type capabilities with software, I've proven that it can basically do damn near anything now, haven't I?\"\n\n> \"Control the entire mechanistic production industrial complex\"\n\n> \"All you hear on the news \u2014 AI is starting to d",
+      "last_modified": "2026-02-04T17:58:42.807797"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/WORKERS.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/WORKERS.md",
+      "type": "technical_docs",
+      "hash": "c60317854613c8856ed16a3207c924ae",
+      "size": 2850,
+      "lines": 86,
+      "title": "\ud83c\udfdb\ufe0f Worker Registry - Mike's Brain",
+      "summary": "# \ud83c\udfdb\ufe0f Worker Registry - Mike's Brain\n\n> \"Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.\" \u2014 Archimedes\n\n## The Pantheon\n\nAll workers are named after historical figures who shaped knowledge, justice, or engineering.\n\n| Worker | Role | Historical Figure | Status |\n|--------|------|-------------------|--------|\n| **Herodotus** | Archivist - collects & synthesizes | Father of History (484-425 BC) | \u2705 Code ready |\n| **Hammurabi** | Judge - QA gates & quality",
+      "last_modified": "2026-02-04T16:24:01.793933"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/FACTORYLM-WEBSITE-DESIGN-SPEC.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/FACTORYLM-WEBSITE-DESIGN-SPEC.md",
+      "type": "technical_docs",
+      "hash": "82885375edcd8a4980541ea9fea4ae5a",
+      "size": 7499,
+      "lines": 288,
+      "title": "\ud83c\udfa8 FactoryLM Website Design Specification",
+      "summary": "# \ud83c\udfa8 FactoryLM Website Design Specification\n\n> Generated by Claude Code on Mike's laptop, 2026-02-04\n> Captured for implementation reference\n\n---\n\n## Executive Summary\n\n**Decision:** Unify `factorylm.com` and `factorylm.com/edge/` using the Edge dark theme as the design system foundation.\n\n**Winner:** `/edge/` - Superior visual design, modern glassmorphism, interactive configurator\n\n---\n\n## Design System\n\n### Color Palette (Dark Industrial Theme)\n\n```css\n:root {\n  /* Backgrounds */\n  --bg-primary",
+      "last_modified": "2026-02-04T17:11:53.690984"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/SPEC-DRIVEN-DEVELOPMENT.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/SPEC-DRIVEN-DEVELOPMENT.md",
+      "type": "technical_docs",
+      "hash": "f71fdc57d985f445600a74903c35300b",
+      "size": 6253,
+      "lines": 221,
+      "title": "\ud83d\udcdc Spec-Driven Development (SDD)",
+      "summary": "# \ud83d\udcdc Spec-Driven Development (SDD)\n\n> \"Spec first, prompt template second, execute third. How can you possibly fail?\"\n> \u2014 Mike, 2026-02-04\n\n---\n\n## The Problem\n\nWhen something is \"not done,\" it's just... not done. Sitting on a Trello board. No urgency. No proactive completion.\n\n**Current state:** Agents note gaps, move on.\n**Desired state:** Agents are relentless. They TRY. They're gated by QA, so let them experiment.\n\n---\n\n## The Principle\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "last_modified": "2026-02-04T17:20:16.598894"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/RECURSIVE-LEARNING-REPAIRS.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/RECURSIVE-LEARNING-REPAIRS.md",
+      "type": "technical_docs",
+      "hash": "b2bed54374022eba2b126871f9bdedde",
+      "size": 5417,
+      "lines": 207,
+      "title": "\ud83d\udd27 Recursive Learning Loop Repairs",
+      "summary": "# \ud83d\udd27 Recursive Learning Loop Repairs\n\n> Identified issues and fixes for worker self-improvement cycles.\n\n---\n\n## Current State Analysis\n\n### \u2705 Working\n- Celery app configured with 22 workers\n- Redis broker connected\n- Evolution tasks exist (`evolution_tasks.py`)\n- Polish tasks exist (`polish_tasks.py`)\n\n### \u274c Issues Found\n\n1. **Hammurabi not wired to worker outputs**\n   - Workers produce artifacts but bypass quality gates\n   - No LLM-as-judge integration\n\n2. **Evolution cycle not triggered**\n   -",
+      "last_modified": "2026-02-04T17:10:34.863655"
+    },
+    "/root/jarvis-workspace/docs/SHOWUI-USAGE.md": {
+      "path": "/root/jarvis-workspace/docs/SHOWUI-USAGE.md",
+      "type": "technical_docs",
+      "hash": "a4899e4d304e31106a3ce8f2446feb0a",
+      "size": 1830,
+      "lines": 79,
+      "title": "ShowUI Computer Use - Usage Guide",
+      "summary": "# ShowUI Computer Use - Usage Guide\n\n## Quick Start\n\n### 1. Open the UI\nGo to: **https://a5f0c2094e874e1cee.gradio.live**\n\n### 2. Configure Models\n\n**Planner Model** (chooses what to do):\n- `claude-3-5-sonnet-20241022` \u2192 needs Anthropic API key\n- `gpt-4o` \u2192 needs OpenAI API key  \n- `qwen2-vl-2b (local)` \u2192 FREE, runs on laptop (slower)\n\n**Actor Model** (finds UI elements):\n- `ShowUI` \u2192 FREE, already downloaded \u2705\n\n### 3. Add API Key (if using Claude/GPT-4)\n- In the Settings panel, paste your API k",
+      "last_modified": "2026-02-04T23:24:06.358491"
+    },
+    "/root/jarvis-workspace/scripts/windows/README.md": {
+      "path": "/root/jarvis-workspace/scripts/windows/README.md",
+      "type": "readme",
+      "hash": "5130e9613fde978d3d2d476468d3713a",
+      "size": 1165,
+      "lines": 39,
+      "title": "FactoryLM Windows Device Configuration",
+      "summary": "# FactoryLM Windows Device Configuration\n\nEnterprise-grade device management for small teams.\n\n## Quick Setup (Any Device)\n\nRun in **Admin PowerShell**:\n\n```powershell\n# Full device setup (lid close, power, monitoring)\nirm https://raw.githubusercontent.com/Mikecranesync/jarvis-workspace/main/scripts/windows/bootstrap.ps1 | iex\n```\n\n## Individual Scripts\n\n| Script | Purpose |\n|--------|---------|\n| `configure-lid-close.ps1` | Prevent sleep on lid close |\n| `install-tailscale.ps1` | Install + conf",
+      "last_modified": "2026-02-05T08:19:38.343814"
+    },
+    "/root/jarvis-workspace/projects/edge-agent-dashboard/README.md": {
+      "path": "/root/jarvis-workspace/projects/edge-agent-dashboard/README.md",
+      "type": "readme",
+      "hash": "2306f070b85da085a251088af64577b8",
+      "size": 4632,
+      "lines": 174,
+      "title": "FactoryLM Edge Agent Dashboard",
+      "summary": "# FactoryLM Edge Agent Dashboard\n\nA modern, responsive web dashboard for managing FactoryLM Edge Agents.\n\n## Features\n\n### \ud83d\udcca Real-time Monitoring\n- **Device Overview**: Total, online, and offline device counts\n- **Live Status**: Real-time online/offline status based on heartbeat timestamps\n- **Last Seen**: Human-readable timestamps (e.g., \"2m ago\", \"1h ago\")\n- **Auto-refresh**: Automatically updates every 30 seconds\n\n### \ud83d\udda5\ufe0f Device Management\n- **Device List**: Clean table showing all registered ",
+      "last_modified": "2026-02-05T12:48:43.177715"
+    },
+    "/root/jarvis-workspace/projects/edge-agent-server/README.md": {
+      "path": "/root/jarvis-workspace/projects/edge-agent-server/README.md",
+      "type": "readme",
+      "hash": "666eb830557087f4f512649c932b9e5e",
+      "size": 4846,
+      "lines": 165,
+      "title": "FactoryLM Edge Agent Server",
+      "summary": "# FactoryLM Edge Agent Server\n\nA FastAPI-based server for managing FactoryLM edge devices. This server provides REST API endpoints for device registration, configuration management, and status monitoring.\n\n## Features\n\n- **Device Management**: Register, configure, and monitor edge devices\n- **SQLite Database**: Lightweight, embedded database for device storage\n- **Authentication**: Simple token-based authentication\n- **CORS Enabled**: Ready for web dashboard integration\n- **Production Ready**: C",
+      "last_modified": "2026-02-05T12:48:42.354730"
+    },
+    "/root/jarvis-workspace/projects/edge-agent-client/README.md": {
+      "path": "/root/jarvis-workspace/projects/edge-agent-client/README.md",
+      "type": "readme",
+      "hash": "e9d9fc60380de320742ac1f284450188",
+      "size": 6881,
+      "lines": 271,
+      "title": "FactoryLM Edge Agent - Windows Client",
+      "summary": "# FactoryLM Edge Agent - Windows Client\n\nThe FactoryLM Edge Agent is a lightweight Windows service that connects Windows devices to the FactoryLM management platform. It handles device registration, configuration management, and status reporting.\n\n## Features\n\n- **Windows Service**: Runs automatically in the background with auto-start\n- **Device Registration**: Automatically registers with FactoryLM server on first run\n- **Heartbeat Monitoring**: Sends status updates every 60 seconds\n- **Configu",
+      "last_modified": "2026-02-05T12:49:14.061164"
+    },
+    "/root/jarvis-workspace/projects/yc-demo/ARCHITECTURE.md": {
+      "path": "/root/jarvis-workspace/projects/yc-demo/ARCHITECTURE.md",
+      "type": "architecture",
+      "hash": "3332eb1a99a0b942f697aa69b23b934f",
+      "size": 12068,
+      "lines": 355,
+      "title": "\ud83c\udfac YC Demo Director - Architecture",
+      "summary": "# \ud83c\udfac YC Demo Director - Architecture\n\n> \"14 cameras, dynamic switching, phones as displays, real PLC I/O, force functions, Hollywood-level direction\"\n> \u2014 Mike, 2026-02-05\n\n---\n\n## Overview\n\nA fully automated multi-camera demo system that:\n1. Streams Factory I/O simulation to audience phones\n2. Cuts to real PLC I/O changes in sync\n3. Allows interactive force functions\n4. Shows code changes in real-time\n5. Auto-directs like a Hollywood production\n\n---\n\n## System Architecture\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "last_modified": "2026-02-05T16:13:49.728967"
+    },
+    "/root/jarvis-workspace/projects/jarvis-node-industrial/ARCHITECTURE.md": {
+      "path": "/root/jarvis-workspace/projects/jarvis-node-industrial/ARCHITECTURE.md",
+      "type": "architecture",
+      "hash": "3df2f201f4ceb4b13773ecc694e5b27d",
+      "size": 10759,
+      "lines": 308,
+      "title": "Jarvis Node Industrial Edition - System Architecture",
+      "summary": "# Jarvis Node Industrial Edition - System Architecture\n\n## \ud83c\udfed Overview\n\nThe Jarvis Node Industrial Edition is an enhanced Python-based edge agent optimized for industrial automation environments. It extends the base Jarvis Node with powerful PLC/VFD connectivity, edge AI capabilities, and industrial-grade features.\n\n## \ud83c\udfaf Design Philosophy\n\n**\"What would make a maintenance tech's jaw drop?\"**\n\n- **Zero-configuration discovery** - Auto-finds PLCs, VFDs, and industrial devices\n- **Universal protocol",
+      "last_modified": "2026-02-06T00:47:27.849892"
+    },
+    "/root/jarvis-workspace/projects/factorylm-brother-beta/ARCHITECTURE.md": {
+      "path": "/root/jarvis-workspace/projects/factorylm-brother-beta/ARCHITECTURE.md",
+      "type": "architecture",
+      "hash": "2b9eab117094469aff5dd9b162544aa6",
+      "size": 9122,
+      "lines": 289,
+      "title": "FactoryLM Telegram Bot - Technical Architecture",
+      "summary": "# FactoryLM Telegram Bot - Technical Architecture\n\n## \ud83c\udfd7\ufe0f System Overview\n\nThe FactoryLM Telegram Bot leverages existing infrastructure and extends PLC Copilot capabilities for comprehensive maintenance support.\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502   Telegram      \u2502    \u2502  FactoryLM      \u2502    \u2502     CMMS        \u2502\n\u2502   Mini App      \u2502\u25c4\u2500\u2500\u25ba\u2502  Bot Engine     \u2502\u25c4\u2500\u2500\u25ba\u2502   (Atlas)       \u2502\n\u2502                 \u2502    \u2502                 \u2502    \u2502                 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518 ",
+      "last_modified": "2026-02-06T01:48:05.750573"
+    },
+    "/root/jarvis-workspace/lib/gist-publisher/README.md": {
+      "path": "/root/jarvis-workspace/lib/gist-publisher/README.md",
+      "type": "readme",
+      "hash": "41e2ef1d499678e695c9064b97c872ad",
+      "size": 3731,
+      "lines": 130,
+      "title": "Gist Publisher - Document Delivery Service",
+      "summary": "# Gist Publisher - Document Delivery Service\n\n**Purpose:** Automatically publish documents, BOMs, reports, and any file that needs sharing as a GitHub Gist with a permanent URL.\n\n## Why Gist?\n\n1. **Instant URLs** - No deploy, no hosting, just publish\n2. **Version history** - Every edit is tracked\n3. **Markdown rendering** - GitHub renders .md beautifully\n4. **Raw access** - Direct link to raw content for scripts\n5. **Forkable** - Users can fork and modify\n6. **Free forever** - No hosting costs\n\n",
+      "last_modified": "2026-02-06T14:55:11.425820"
+    },
+    "/root/jarvis-workspace/factoryllm/README.md": {
+      "path": "/root/jarvis-workspace/factoryllm/README.md",
+      "type": "readme",
+      "hash": "9119bbde1514eb3b387922494667e5dd",
+      "size": 1687,
+      "lines": 64,
+      "title": "FactoryLLM - Mike's Industrial Maintenance Model",
+      "summary": "# FactoryLLM - Mike's Industrial Maintenance Model\n\n> A fine-tuned LLM trained on 20 years of maintenance expertise.\n\n## Architecture (Layer 0-3)\n\n```\nLayer 0: Pure Logic (deterministic, no LLM)\nLayer 1: FactoryLLM 3B (Pi/Edge) \u2190 THIS PROJECT\nLayer 2: FactoryLLM 7B (Local GPU)\nLayer 3: Cloud APIs (fallback)\n```\n\n## Training Corpus\n\n| Source | Files | Size | Content |\n|--------|-------|------|---------|\n| Book Chapters | 9 | 4.8MB | Telegram conversation logs |\n| Rivet-PRO | 327 | 18MB | Code, sp",
+      "last_modified": "2026-02-07T08:19:29.918664"
+    },
+    "/root/jarvis-workspace/docs/garage-multicam-setup.md": {
+      "path": "/root/jarvis-workspace/docs/garage-multicam-setup.md",
+      "type": "technical_docs",
+      "hash": "820220c04078e5f2988b8e52700b0134",
+      "size": 30309,
+      "lines": 554,
+      "title": "\ud83c\udfac Garage Multi-Cam Build Documentation Setup",
+      "summary": "# \ud83c\udfac Garage Multi-Cam Build Documentation Setup\n\n> **Goal:** Capture all-day conveyor build with 5+ camera angles, minimal setup, auto-switching capability.\n\n---\n\n## Equipment Inventory\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                    MIKE'S GARAGE STUDIO                         \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                                 \u2502\n\u2502  CAMERAS:                          S",
+      "last_modified": "2026-02-07T10:42:35.774147"
     }
   },
-  "last_scan": "2026-02-04T14:08:09.760061",
+  "last_scan": "2026-02-07T11:10:13.563474",
   "stats": {
-    "total_files": 1203,
+    "total_files": 1225,
     "repos_scanned": 4
   }
 }

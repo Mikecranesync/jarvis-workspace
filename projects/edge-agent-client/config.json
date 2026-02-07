@@ -1,0 +1,8 @@
+{
+  "server_url": "https://api.factorylm.com",
+  "device_id": null,
+  "hostname": null,
+  "heartbeat_interval": 60,
+  "retry_attempts": 3,
+  "retry_delay": 5
+}

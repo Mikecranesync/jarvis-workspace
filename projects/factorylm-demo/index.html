@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FactoryLM - Can You Fix It?</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .glow { box-shadow: 0 0 40px rgba(59, 130, 246, 0.3); }
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+        .typing-indicator span {
+            animation: typing 1.4s infinite;
+            display: inline-block;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+        .fade-in { animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-up { animation: slideUp 0.6s ease-out; }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(100%); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-white">
+    <div id="app" class="max-w-md mx-auto min-h-screen flex flex-col">
+        
+        <!-- Screen 1: Intro -->
+        <div id="screen-intro" class="flex-1 flex flex-col justify-center items-center p-6 text-center">
+            <div class="mb-8 pulse-ring">
+                <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center glow">
+                    <i class="fas fa-hard-hat text-4xl"></i>
+                </div>
+            </div>
+            <h1 class="text-3xl font-bold mb-4">Think You Can't Do Maintenance?</h1>
+            <p class="text-gray-400 text-lg mb-8">Let's find out in 60 seconds.</p>
+            <button onclick="startDemo()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105 glow">
+                <i class="fas fa-play mr-2"></i> Start Challenge
+            </button>
+            <p class="text-gray-500 text-sm mt-6">No experience required. Seriously.</p>
+        </div>
+
+        <!-- Screen 2: Scenario -->
+        <div id="screen-scenario" class="hidden flex-1 flex flex-col p-4">
+            <div class="bg-slate-800/50 rounded-2xl p-4 mb-4 fade-in">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-red-400"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-red-400">ALERT: Equipment Issue</p>
+                        <p class="text-gray-400 text-sm">Incoming from Plant Floor</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    The <strong class="text-white">cooling pump on Line 3</strong> is making a loud grinding noise. 
+                    Production is slowing down. The regular maintenance guy is out sick.
+                </p>
+                <p class="text-yellow-400 font-medium mt-3">
+                    <i class="fas fa-user-clock mr-2"></i> You're the only one available.
+                </p>
+            </div>
+            
+            <div class="bg-slate-800/30 rounded-2xl overflow-hidden mb-4 fade-in" style="animation-delay: 0.2s">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" 
+                     alt="Industrial pump" class="w-full h-48 object-cover">
+                <div class="p-3 bg-slate-800/80">
+                    <p class="text-sm text-gray-400"><i class="fas fa-camera mr-2"></i>Photo from operator</p>
+                </div>
+            </div>
+
+            <div class="flex-1"></div>
+            
+            <button onclick="showQuestion1()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-xl text-lg transition-all slide-up">
+                <i class="fas fa-wrench mr-2"></i> I'll Handle It
+            </button>
+        </div>
+
+        <!-- Screen 3: Question 1 -->
+        <div id="screen-q1" class="hidden flex-1 flex flex-col p-4">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                    <i class="fas fa-robot text-white"></i>
+                </div>
+                <div>
+                    <p class="font-semibold">FactoryLM AI</p>
+                    <p class="text-gray-400 text-sm">Maintenance Assistant</p>
+                </div>
+            </div>
+            
+            <div class="bg-slate-800/50 rounded-2xl p-4 mb-4 fade-in">
+                <p class="text-gray-200 leading-relaxed">
+                    I see the pump photo. A grinding noise usually means one of three things. 
+                    Quick question to narrow it down:
+                </p>
+                <p class="text-white font-medium mt-3">
+                    When did the noise start?
+                </p>
+            </div>
+
+            <div class="space-y-3 mb-4">
+                <button onclick="answer1('sudden')" class="w-full bg-slate-700/50 hover:bg-slate-700 border border-slate-600 text-left p-4 rounded-xl transition-all fade-in" style="animation-delay: 0.1s">
+                    <i class="fas fa-bolt text-yellow-400 mr-3"></i>
+                    <span>Suddenly, out of nowhere</span>
+                </button>
+                <button onclick="answer1('gradual')" class="w-full bg-slate-700/50 hover:bg-slate-700 border border-slate-600 text-left p-4 rounded-xl transition-all fade-in" style="animation-delay: 0.2s">
+                    <i class="fas fa-chart-line text-blue-400 mr-3"></i>
+                    <span>Gradually got worse over days</span>
+                </button>
+                <button onclick="answer1('unknown')" class="w-full bg-slate-700/50 hover:bg-slate-700 border border-slate-600 text-left p-4 rounded-xl transition-all fade-in" style="animation-delay: 0.3s">
+                    <i class="fas fa-question text-gray-400 mr-3"></i>
+                    <span>I don't know / Just noticed it</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Screen 4: Question 2 -->
+        <div id="screen-q2" class="hidden flex-1 flex flex-col p-4">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                    <i class="fas fa-robot text-white"></i>
+                </div>
+                <p class="font-semibold">FactoryLM AI</p>
+            </div>
+            
+            <div class="bg-slate-800/50 rounded-2xl p-4 mb-4 fade-in">
+                <p class="text-gray-200 leading-relaxed" id="q2-context">
+                    Got it. One more thing:
+                </p>
+                <p class="text-white font-medium mt-3">
+                    Can you feel the pump housing? Is it hot to the touch?
+                </p>
+            </div>
+
+            <div class="space-y-3 mb-4">
+                <button onclick="answer2('hot')" class="w-full bg-slate-700/50 hover:bg-slate-700 border border-slate-600 text-left p-4 rounded-xl transition-all fade-in">
+                    <i class="fas fa-temperature-high text-red-400 mr-3"></i>
+                    <span>Yes, it's really hot</span>
+                </button>
+                <button onclick="answer2('warm')" class="w-full bg-slate-700/50 hover:bg-slate-700 border border-slate-600 text-left p-4 rounded-xl transition-all fade-in" style="animation-delay: 0.1s">
+                    <i class="fas fa-temperature-half text-yellow-400 mr-3"></i>
+                    <span>Warm, but not unusual</span>
+                </button>
+                <button onclick="answer2('normal')" class="w-full bg-slate-700/50 hover:bg-slate-700 border border-slate-600 text-left p-4 rounded-xl transition-all fade-in" style="animation-delay: 0.2s">
+                    <i class="fas fa-temperature-low text-blue-400 mr-3"></i>
+                    <span>Normal temperature</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Screen 5: Diagnosis -->
+        <div id="screen-diagnosis" class="hidden flex-1 flex flex-col p-4">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                    <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                    <p class="font-semibold text-green-400">Diagnosis Complete</p>
+                    <p class="text-gray-400 text-sm">92% confidence</p>
+                </div>
+            </div>
+            
+            <div class="bg-slate-800/50 rounded-2xl p-4 mb-4 fade-in">
+                <h3 class="text-xl font-bold text-white mb-2" id="diagnosis-title">Bearing Failure</h3>
+                <p class="text-gray-300 leading-relaxed" id="diagnosis-text">
+                    The symptoms point to worn pump bearings. The grinding noise is metal-on-metal contact 
+                    as the bearing races degrade.
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 rounded-2xl p-4 mb-4 border border-blue-500/30 fade-in" style="animation-delay: 0.2s">
+                <h4 class="font-semibold text-blue-300 mb-3"><i class="fas fa-list-check mr-2"></i>Immediate Actions:</h4>
+                <ol class="space-y-2 text-gray-200">
+                    <li class="flex items-start gap-2">
+                        <span class="bg-blue-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center mt-0.5">1</span>
+                        <span>Shut down the pump to prevent further damage</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="bg-blue-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center mt-0.5">2</span>
+                        <span>Lock out/tag out per safety procedure</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="bg-blue-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center mt-0.5">3</span>
+                        <span>Order replacement bearings (Part #6205-2RS)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="bg-blue-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center mt-0.5">4</span>
+                        <span>Schedule repair for next shift</span>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="flex-1"></div>
+
+            <button onclick="showResult()" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 rounded-xl text-lg transition-all slide-up">
+                <i class="fas fa-flag-checkered mr-2"></i> Complete Challenge
+            </button>
+        </div>
+
+        <!-- Screen 6: Result -->
+        <div id="screen-result" class="hidden flex-1 flex flex-col justify-center items-center p-6 text-center">
+            <div class="mb-6 fade-in">
+                <div class="w-28 h-28 bg-gradient-to-br from-green-500 to-emerald-400 rounded-full flex items-center justify-center glow mx-auto">
+                    <i class="fas fa-trophy text-5xl text-white"></i>
+                </div>
+            </div>
+            
+            <h1 class="text-3xl font-bold mb-2 fade-in" style="animation-delay: 0.2s">You Just Fixed a $50,000 Pump</h1>
+            
+            <div class="bg-slate-800/50 rounded-2xl p-4 my-6 fade-in" style="animation-delay: 0.3s">
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                        <p class="text-3xl font-bold text-green-400" id="time-taken">47</p>
+                        <p class="text-gray-400 text-sm">Seconds</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-blue-400">$0</p>
+                        <p class="text-gray-400 text-sm">Training Required</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-gray-300 text-lg mb-6 fade-in" style="animation-delay: 0.4s">
+                You just did what takes most companies <strong class="text-white">6 months of training</strong> to teach.
+            </p>
+
+            <div class="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-6 mb-6 fade-in glow" style="animation-delay: 0.5s">
+                <p class="text-white font-medium text-lg">
+                    "Every person who uses FactoryLM becomes a maintenance technician."
+                </p>
+                <p class="text-blue-200 text-sm mt-2">— What you just proved</p>
+            </div>
+
+            <div class="space-y-3 w-full fade-in" style="animation-delay: 0.6s">
+                <a href="https://factorylm.com" class="block w-full bg-white text-slate-900 font-semibold py-4 rounded-xl text-lg transition-all hover:bg-gray-100">
+                    <i class="fas fa-rocket mr-2"></i> Learn More
+                </a>
+                <button onclick="restartDemo()" class="w-full bg-slate-700/50 hover:bg-slate-700 text-white font-semibold py-4 rounded-xl text-lg transition-all border border-slate-600">
+                    <i class="fas fa-redo mr-2"></i> Try Again
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let startTime;
+        let answer1Value;
+        
+        function hideAll() {
+            document.querySelectorAll('#app > div').forEach(el => el.classList.add('hidden'));
+        }
+        
+        function startDemo() {
+            startTime = Date.now();
+            hideAll();
+            document.getElementById('screen-scenario').classList.remove('hidden');
+        }
+        
+        function showQuestion1() {
+            hideAll();
+            document.getElementById('screen-q1').classList.remove('hidden');
+        }
+        
+        function answer1(value) {
+            answer1Value = value;
+            hideAll();
+            
+            const context = document.getElementById('q2-context');
+            if (value === 'sudden') {
+                context.textContent = "Sudden onset suggests something broke or seized. Let me check one more thing:";
+            } else if (value === 'gradual') {
+                context.textContent = "Gradual worsening points to wear over time. Classic bearing symptom. Quick check:";
+            } else {
+                context.textContent = "No problem - we can figure this out. One more question:";
+            }
+            
+            document.getElementById('screen-q2').classList.remove('hidden');
+        }
+        
+        function answer2(value) {
+            hideAll();
+            
+            const title = document.getElementById('diagnosis-title');
+            const text = document.getElementById('diagnosis-text');
+            
+            if (value === 'hot') {
+                title.textContent = "Bearing Failure + Overheating";
+                text.textContent = "The combination of grinding and excessive heat confirms bearing failure. The friction from worn bearings is generating heat. This needs immediate attention to prevent motor damage.";
+            } else if (value === 'warm') {
+                title.textContent = "Early Bearing Wear";
+                text.textContent = "Grinding with normal temps suggests the bearings are worn but haven't failed catastrophically yet. You caught this early - good job. Still needs repair but less urgent.";
+            } else {
+                title.textContent = "Possible Cavitation or Debris";
+                text.textContent = "Grinding without heat could indicate cavitation (air in the pump) or debris in the impeller. Check the inlet strainer and verify proper fluid levels before assuming bearings.";
+            }
+            
+            document.getElementById('screen-diagnosis').classList.remove('hidden');
+        }
+        
+        function showResult() {
+            const elapsed = Math.round((Date.now() - startTime) / 1000);
+            document.getElementById('time-taken').textContent = elapsed;
+            
+            hideAll();
+            document.getElementById('screen-result').classList.remove('hidden');
+        }
+        
+        function restartDemo() {
+            hideAll();
+            document.getElementById('screen-intro').classList.remove('hidden');
+        }
+        
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(() => {});
+        }
+    </script>
+</body>
+</html>
