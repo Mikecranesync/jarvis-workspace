@@ -87,6 +87,9 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
 
+**⚠️ READ: `SAFETY_RULES.md`** - Full destructive action prevention policy.
+Key rule: NEVER overwrite originals (videos, images, audio). Always copy first.
+
 ## External vs Internal
 
 **Safe to do freely:**
@@ -245,6 +248,10 @@ This applies to ALL code changes. No shortcuts, no exceptions.
 8. **Don't Disrupt The Loop** — Observatory is read-only
 9. **Use Prompt Templates** — Ad-hoc prompts forbidden in production
 10. **Commit To The Branch** — Git flow is law
+11. **Validate Before Done** — Type check (`pyright`), syntax check, test before saying "done"
+
+**Code Quality:** `/brain/code-quality/AGENT_CODE_STANDARDS.md`
+**Validation Script:** `/scripts/validate-python.sh <file>`
 
 Full commandments: `ENGINEERING_COMMANDMENTS.md`
 
@@ -313,3 +320,28 @@ Full docs: https://github.com/Mikecranesync/factorylm/blob/main/README.md
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+## 📋 Gist-First for Project Deliverables
+
+When producing **project-type deliverables** (architecture docs, specs, build guides, system designs):
+
+1. **Create a GitHub Gist** (not just local file)
+2. **Include diagrams** (ASCII art + Mermaid)
+3. **Multiple files** with numbered naming (00-OVERVIEW.md, 01-TOPIC.md, etc.)
+4. **Return the gist URL** to Mike
+
+See: https://gist.github.com/Mikecranesync/341a28d1a92cde63532a3d09160e88a4 (06-JARVIS-RULES.md)
+
+## 📋 VERSIONING LAW (Effective 2026-02-08)
+
+**Everything goes through GitHub manager. Everything gets versioned.**
+
+This applies to ALL agents — main, sub-agents, spawned workers, everyone.
+
+1. **All deliverables get version numbers** — gists, docs, BOMs, designs
+2. **Changelog in every document** — what changed, when, why
+3. **Proof of work for YC** — versioned history demonstrates progress
+4. **GitHub flow always** — Issues → Branch → PR → Approval → Merge
+5. **No assumptions about project names** — use what the human calls it
+
+**Why:** Creates audit trail for accelerator applications, investor due diligence, and prevents amnesia-induced hallucinations about project context.
