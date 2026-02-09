@@ -343,12 +343,12 @@
     "/root/jarvis-workspace/factorylm-dev/README.md": {
       "path": "/root/jarvis-workspace/factorylm-dev/README.md",
       "type": "readme",
-      "hash": "b359be8291a06c3488efb55ae2895b68",
-      "size": 12601,
-      "lines": 405,
+      "hash": "cdf79968f9de0e29d8203a2b4dbaa477",
+      "size": 12809,
+      "lines": 415,
       "title": "FactoryLM",
-      "summary": "# FactoryLM\n\n**Industrial AI Platform \u2014 The Vision**\n\n**Version:** 0.25  \n**Author:** Mike Harper  \n**Status:** CANONICAL \u2014 This document IS the vision. Everything references this.  \n**Last Updated:** February 3, 2026\n\n---\n\n## \u26a0\ufe0f READ THIS FIRST\n\nThis README IS the vision statement for FactoryLM.\n\n**For AI agents:** Read this at the start of EVERY session. Do not propose ideas that contradict this. Do not rediscover these concepts as if they are new.\n\n**For developers:** Every PR moves toward th",
-      "last_modified": "2026-02-03T19:13:20.141388"
+      "summary": "# FactoryLM\n\n**Industrial AI Platform \u2014 The Vision**\n\n**Version:** 1.0  \n**Author:** Mike Harper  \n**Status:** CANONICAL \u2014 This document IS the vision. Everything references this.  \n**Last Updated:** February 3, 2026\n\n---\n\n## \u26a0\ufe0f READ THIS FIRST\n\nThis README IS the vision statement for FactoryLM.\n\n**For AI agents:** Read this at the start of EVERY session. Do not propose ideas that contradict this. Do not rediscover these concepts as if they are new.\n\n**For developers:** Every PR moves toward thi",
+      "last_modified": "2026-02-08T20:24:15.054252"
     },
     "/root/jarvis-workspace/clawdbot-search/README.md": {
       "path": "/root/jarvis-workspace/clawdbot-search/README.md",
@@ -12029,11 +12029,1501 @@
       "title": "User Manual: Raspberry Pi Edge Device Setup",
       "summary": "# User Manual: Raspberry Pi Edge Device Setup\n\n## Overview\n\nThis guide walks you through setting up a Raspberry Pi as a Modbus TCP server that bridges Factory I/O simulation to physical GPIO pins. When complete, you'll be able to control LEDs/relays on the Pi from the same web app that controls your Micro 820 PLC.\n\n**Time Required:** 30-45 minutes\n\n**Prerequisites:**\n- Raspberry Pi 3B+, 4, or 5 with Raspberry Pi OS installed\n- Pi connected to same network as your PC (192.168.1.x)\n- SSH access to",
       "last_modified": "2026-02-03T17:22:33.176272"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/ARCHITECTURE-computer-use.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/ARCHITECTURE-computer-use.md",
+      "type": "architecture",
+      "hash": "4c1bd7ae1e53253f74759abb7152f82e",
+      "size": 4703,
+      "lines": 132,
+      "title": "\ud83c\udfd7\ufe0f ARCHITECTURE: Visual Computer Use Layer",
+      "summary": "# \ud83c\udfd7\ufe0f ARCHITECTURE: Visual Computer Use Layer\n\n> Defined 2026-02-04. This is a core component of the FactoryLM stack.\n\n---\n\n## Overview\n\nVisual Computer Use (VCU) is the ability for AI to see screens and take actions. This is not a product \u2014 it's infrastructure for FactoryLM.\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                     FACTORYLM STACK                              \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502  Layer 4: Hu",
+      "last_modified": "2026-02-04T17:03:21.152119"
+    },
+    "/root/jarvis-workspace/mikes-brain/README.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/README.md",
+      "type": "readme",
+      "hash": "1b26e7e57114552ec8c299c5271d2e11",
+      "size": 3280,
+      "lines": 114,
+      "title": "\ud83e\udde0 Mike's Brain v0.1.0",
+      "summary": "# \ud83e\udde0 Mike's Brain v0.1.0\n\n> An external cognitive system for natural language programming with proof of work.\n\n## Vision\n\nMike's Brain is a living, vector-enabled knowledge graph that serves as an external cognitive system. It ingests data exhaust, archives intelligently, quality-gates everything, self-documents in real-time, takes autonomous action, and learns from outcomes.\n\n## Architecture\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                    MIKE'S BRAIN       ",
+      "last_modified": "2026-02-04T15:04:30.746830"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/PROPOSAL-visual-computer-use.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/PROPOSAL-visual-computer-use.md",
+      "type": "technical_docs",
+      "hash": "1f91f389eafd0f5e37ed6bd6a5bfc5e9",
+      "size": 3867,
+      "lines": 175,
+      "title": "\ud83c\udfaf PROPOSAL: Visual Computer Use in 5 Minutes",
+      "summary": "# \ud83c\udfaf PROPOSAL: Visual Computer Use in 5 Minutes\n\n> Ready for Mike after guitar lesson. Research completed 2026-02-04 16:40 UTC.\n\n---\n\n## The Vision (What You Said)\n\n> \"With glasses on I could sit here and you could see what's going on... you could essentially work it for me couldn't you?\"\n\n**YES.** Here's how we do it:\n\n---\n\n## \ud83c\udfc6 Winner: computer_use_ootb\n\n**Repo:** https://github.com/showlab/computer_use_ootb\n\n**Why this one:**\n- \u2705 No Docker required\n- \u2705 Works on Windows AND macOS\n- \u2705 Gradio UI ",
+      "last_modified": "2026-02-04T16:41:13.709508"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/ARCHIMEDES-LOGIC-MAP.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/ARCHIMEDES-LOGIC-MAP.md",
+      "type": "technical_docs",
+      "hash": "ad8251beef89afc851bb4f2d2a4e251b",
+      "size": 14687,
+      "lines": 289,
+      "title": "\ud83c\udfad ARCHIMEDES (Master of Puppets) - Logic Map",
+      "summary": "# \ud83c\udfad ARCHIMEDES (Master of Puppets) - Logic Map\n\n> \"Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.\"\n\n**Location:** `/opt/master_of_puppets/`\n**Orchestration:** Celery + Redis\n**Status:** Active (celerybeat-schedule present)\n\n---\n\n## \ud83c\udfd7\ufe0f Architecture Overview\n\n```\n                        \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                        \u2502         MIKE (Human)                \u2502\n                        \u2502    Voice/Text via Telegram          \u2502\n ",
+      "last_modified": "2026-02-04T17:10:04.500307"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/PHARAOHS-OBSERVATORY.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/PHARAOHS-OBSERVATORY.md",
+      "type": "technical_docs",
+      "hash": "429ff144dea79ab2988cdbb46581d3d1",
+      "size": 10456,
+      "lines": 369,
+      "title": "\ud83d\udc41\ufe0f Pharaoh's Observatory - Agent Observability System",
+      "summary": "# \ud83d\udc41\ufe0f Pharaoh's Observatory - Agent Observability System\n\n> \"They wouldn't be building the pyramid if they didn't have foremen making sure they start on schedule, don't stop working, and produce useful artifacts that they polish at least three times before sending to the QA judge.\"\n> \u2014 Mike, 2026-02-04\n\n---\n\n## The Concept\n\nMike sits atop the pyramid. Workers build beneath him. But Mike needs to SEE what's happening without disrupting the work.\n\n```\n                    \ud83d\udc51\n                   MIKE\n ",
+      "last_modified": "2026-02-04T17:58:42.807797"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/IDEAS-2026-02-04.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/IDEAS-2026-02-04.md",
+      "type": "technical_docs",
+      "hash": "cbdc8ac6f31a717633db32f70a8917ec",
+      "size": 4479,
+      "lines": 185,
+      "title": "\ud83e\udde0 Mike's Brain Dump - 2026-02-04 16:23 UTC",
+      "summary": "# \ud83e\udde0 Mike's Brain Dump - 2026-02-04 16:23 UTC\n\n> Captured from Telegram. 18 ideas in one message. This is why we need the brain.\n\n---\n\n## 1. Healthcare Resolution \u2705\n- Filed as fraud\n- Two weeks to resolve\n- Call back tomorrow for case number\n- Refund back to ~$10k\n- **Lesson learned:** Game theory - sugar > spice\n\n---\n\n## 2. Two Brains Concept\n\n| Brain | Purpose |\n|-------|---------|\n| **Technical Brain** | FactoryLM, workers, YC, code |\n| **Personal Brain** | Life admin, emails, scheduling, fina",
+      "last_modified": "2026-02-04T16:40:13.063475"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/MVP-VISUAL-COMPUTER-USE.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/MVP-VISUAL-COMPUTER-USE.md",
+      "type": "technical_docs",
+      "hash": "51e5d2bb8a1f067b704e436eeeb09512",
+      "size": 7781,
+      "lines": 270,
+      "title": "MVP: Visual Computer Use for Industrial Automation",
+      "summary": "# MVP: Visual Computer Use for Industrial Automation\n\n**Document Version:** 1.0.0  \n**Created:** 2026-02-04  \n**Author:** Mike Crane + Jarvis  \n**Status:** CAPTURED - CORE IP  \n\n---\n\n## \ud83c\udfaf The Vision (Mike's Words, Verbatim)\n\n> \"When the AI can see the real world and has Claude-type capabilities with software, I've proven that it can basically do damn near anything now, haven't I?\"\n\n> \"Control the entire mechanistic production industrial complex\"\n\n> \"All you hear on the news \u2014 AI is starting to d",
+      "last_modified": "2026-02-04T17:58:42.807797"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/WORKERS.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/WORKERS.md",
+      "type": "technical_docs",
+      "hash": "c60317854613c8856ed16a3207c924ae",
+      "size": 2850,
+      "lines": 86,
+      "title": "\ud83c\udfdb\ufe0f Worker Registry - Mike's Brain",
+      "summary": "# \ud83c\udfdb\ufe0f Worker Registry - Mike's Brain\n\n> \"Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.\" \u2014 Archimedes\n\n## The Pantheon\n\nAll workers are named after historical figures who shaped knowledge, justice, or engineering.\n\n| Worker | Role | Historical Figure | Status |\n|--------|------|-------------------|--------|\n| **Herodotus** | Archivist - collects & synthesizes | Father of History (484-425 BC) | \u2705 Code ready |\n| **Hammurabi** | Judge - QA gates & quality",
+      "last_modified": "2026-02-04T16:24:01.793933"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/FACTORYLM-WEBSITE-DESIGN-SPEC.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/FACTORYLM-WEBSITE-DESIGN-SPEC.md",
+      "type": "technical_docs",
+      "hash": "82885375edcd8a4980541ea9fea4ae5a",
+      "size": 7499,
+      "lines": 288,
+      "title": "\ud83c\udfa8 FactoryLM Website Design Specification",
+      "summary": "# \ud83c\udfa8 FactoryLM Website Design Specification\n\n> Generated by Claude Code on Mike's laptop, 2026-02-04\n> Captured for implementation reference\n\n---\n\n## Executive Summary\n\n**Decision:** Unify `factorylm.com` and `factorylm.com/edge/` using the Edge dark theme as the design system foundation.\n\n**Winner:** `/edge/` - Superior visual design, modern glassmorphism, interactive configurator\n\n---\n\n## Design System\n\n### Color Palette (Dark Industrial Theme)\n\n```css\n:root {\n  /* Backgrounds */\n  --bg-primary",
+      "last_modified": "2026-02-04T17:11:53.690984"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/SPEC-DRIVEN-DEVELOPMENT.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/SPEC-DRIVEN-DEVELOPMENT.md",
+      "type": "technical_docs",
+      "hash": "f71fdc57d985f445600a74903c35300b",
+      "size": 6253,
+      "lines": 221,
+      "title": "\ud83d\udcdc Spec-Driven Development (SDD)",
+      "summary": "# \ud83d\udcdc Spec-Driven Development (SDD)\n\n> \"Spec first, prompt template second, execute third. How can you possibly fail?\"\n> \u2014 Mike, 2026-02-04\n\n---\n\n## The Problem\n\nWhen something is \"not done,\" it's just... not done. Sitting on a Trello board. No urgency. No proactive completion.\n\n**Current state:** Agents note gaps, move on.\n**Desired state:** Agents are relentless. They TRY. They're gated by QA, so let them experiment.\n\n---\n\n## The Principle\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "last_modified": "2026-02-04T17:20:16.598894"
+    },
+    "/root/jarvis-workspace/mikes-brain/docs/RECURSIVE-LEARNING-REPAIRS.md": {
+      "path": "/root/jarvis-workspace/mikes-brain/docs/RECURSIVE-LEARNING-REPAIRS.md",
+      "type": "technical_docs",
+      "hash": "b2bed54374022eba2b126871f9bdedde",
+      "size": 5417,
+      "lines": 207,
+      "title": "\ud83d\udd27 Recursive Learning Loop Repairs",
+      "summary": "# \ud83d\udd27 Recursive Learning Loop Repairs\n\n> Identified issues and fixes for worker self-improvement cycles.\n\n---\n\n## Current State Analysis\n\n### \u2705 Working\n- Celery app configured with 22 workers\n- Redis broker connected\n- Evolution tasks exist (`evolution_tasks.py`)\n- Polish tasks exist (`polish_tasks.py`)\n\n### \u274c Issues Found\n\n1. **Hammurabi not wired to worker outputs**\n   - Workers produce artifacts but bypass quality gates\n   - No LLM-as-judge integration\n\n2. **Evolution cycle not triggered**\n   -",
+      "last_modified": "2026-02-04T17:10:34.863655"
+    },
+    "/root/jarvis-workspace/docs/SHOWUI-USAGE.md": {
+      "path": "/root/jarvis-workspace/docs/SHOWUI-USAGE.md",
+      "type": "technical_docs",
+      "hash": "a4899e4d304e31106a3ce8f2446feb0a",
+      "size": 1830,
+      "lines": 79,
+      "title": "ShowUI Computer Use - Usage Guide",
+      "summary": "# ShowUI Computer Use - Usage Guide\n\n## Quick Start\n\n### 1. Open the UI\nGo to: **https://a5f0c2094e874e1cee.gradio.live**\n\n### 2. Configure Models\n\n**Planner Model** (chooses what to do):\n- `claude-3-5-sonnet-20241022` \u2192 needs Anthropic API key\n- `gpt-4o` \u2192 needs OpenAI API key  \n- `qwen2-vl-2b (local)` \u2192 FREE, runs on laptop (slower)\n\n**Actor Model** (finds UI elements):\n- `ShowUI` \u2192 FREE, already downloaded \u2705\n\n### 3. Add API Key (if using Claude/GPT-4)\n- In the Settings panel, paste your API k",
+      "last_modified": "2026-02-04T23:24:06.358491"
+    },
+    "/root/jarvis-workspace/scripts/windows/README.md": {
+      "path": "/root/jarvis-workspace/scripts/windows/README.md",
+      "type": "readme",
+      "hash": "5130e9613fde978d3d2d476468d3713a",
+      "size": 1165,
+      "lines": 39,
+      "title": "FactoryLM Windows Device Configuration",
+      "summary": "# FactoryLM Windows Device Configuration\n\nEnterprise-grade device management for small teams.\n\n## Quick Setup (Any Device)\n\nRun in **Admin PowerShell**:\n\n```powershell\n# Full device setup (lid close, power, monitoring)\nirm https://raw.githubusercontent.com/Mikecranesync/jarvis-workspace/main/scripts/windows/bootstrap.ps1 | iex\n```\n\n## Individual Scripts\n\n| Script | Purpose |\n|--------|---------|\n| `configure-lid-close.ps1` | Prevent sleep on lid close |\n| `install-tailscale.ps1` | Install + conf",
+      "last_modified": "2026-02-05T08:19:38.343814"
+    },
+    "/root/jarvis-workspace/projects/edge-agent-dashboard/README.md": {
+      "path": "/root/jarvis-workspace/projects/edge-agent-dashboard/README.md",
+      "type": "readme",
+      "hash": "2306f070b85da085a251088af64577b8",
+      "size": 4632,
+      "lines": 174,
+      "title": "FactoryLM Edge Agent Dashboard",
+      "summary": "# FactoryLM Edge Agent Dashboard\n\nA modern, responsive web dashboard for managing FactoryLM Edge Agents.\n\n## Features\n\n### \ud83d\udcca Real-time Monitoring\n- **Device Overview**: Total, online, and offline device counts\n- **Live Status**: Real-time online/offline status based on heartbeat timestamps\n- **Last Seen**: Human-readable timestamps (e.g., \"2m ago\", \"1h ago\")\n- **Auto-refresh**: Automatically updates every 30 seconds\n\n### \ud83d\udda5\ufe0f Device Management\n- **Device List**: Clean table showing all registered ",
+      "last_modified": "2026-02-05T12:48:43.177715"
+    },
+    "/root/jarvis-workspace/projects/edge-agent-server/README.md": {
+      "path": "/root/jarvis-workspace/projects/edge-agent-server/README.md",
+      "type": "readme",
+      "hash": "666eb830557087f4f512649c932b9e5e",
+      "size": 4846,
+      "lines": 165,
+      "title": "FactoryLM Edge Agent Server",
+      "summary": "# FactoryLM Edge Agent Server\n\nA FastAPI-based server for managing FactoryLM edge devices. This server provides REST API endpoints for device registration, configuration management, and status monitoring.\n\n## Features\n\n- **Device Management**: Register, configure, and monitor edge devices\n- **SQLite Database**: Lightweight, embedded database for device storage\n- **Authentication**: Simple token-based authentication\n- **CORS Enabled**: Ready for web dashboard integration\n- **Production Ready**: C",
+      "last_modified": "2026-02-05T12:48:42.354730"
+    },
+    "/root/jarvis-workspace/projects/edge-agent-client/README.md": {
+      "path": "/root/jarvis-workspace/projects/edge-agent-client/README.md",
+      "type": "readme",
+      "hash": "e9d9fc60380de320742ac1f284450188",
+      "size": 6881,
+      "lines": 271,
+      "title": "FactoryLM Edge Agent - Windows Client",
+      "summary": "# FactoryLM Edge Agent - Windows Client\n\nThe FactoryLM Edge Agent is a lightweight Windows service that connects Windows devices to the FactoryLM management platform. It handles device registration, configuration management, and status reporting.\n\n## Features\n\n- **Windows Service**: Runs automatically in the background with auto-start\n- **Device Registration**: Automatically registers with FactoryLM server on first run\n- **Heartbeat Monitoring**: Sends status updates every 60 seconds\n- **Configu",
+      "last_modified": "2026-02-05T12:49:14.061164"
+    },
+    "/root/jarvis-workspace/projects/yc-demo/ARCHITECTURE.md": {
+      "path": "/root/jarvis-workspace/projects/yc-demo/ARCHITECTURE.md",
+      "type": "architecture",
+      "hash": "3332eb1a99a0b942f697aa69b23b934f",
+      "size": 12068,
+      "lines": 355,
+      "title": "\ud83c\udfac YC Demo Director - Architecture",
+      "summary": "# \ud83c\udfac YC Demo Director - Architecture\n\n> \"14 cameras, dynamic switching, phones as displays, real PLC I/O, force functions, Hollywood-level direction\"\n> \u2014 Mike, 2026-02-05\n\n---\n\n## Overview\n\nA fully automated multi-camera demo system that:\n1. Streams Factory I/O simulation to audience phones\n2. Cuts to real PLC I/O changes in sync\n3. Allows interactive force functions\n4. Shows code changes in real-time\n5. Auto-directs like a Hollywood production\n\n---\n\n## System Architecture\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "last_modified": "2026-02-05T16:13:49.728967"
+    },
+    "/root/jarvis-workspace/projects/jarvis-node-industrial/ARCHITECTURE.md": {
+      "path": "/root/jarvis-workspace/projects/jarvis-node-industrial/ARCHITECTURE.md",
+      "type": "architecture",
+      "hash": "3df2f201f4ceb4b13773ecc694e5b27d",
+      "size": 10759,
+      "lines": 308,
+      "title": "Jarvis Node Industrial Edition - System Architecture",
+      "summary": "# Jarvis Node Industrial Edition - System Architecture\n\n## \ud83c\udfed Overview\n\nThe Jarvis Node Industrial Edition is an enhanced Python-based edge agent optimized for industrial automation environments. It extends the base Jarvis Node with powerful PLC/VFD connectivity, edge AI capabilities, and industrial-grade features.\n\n## \ud83c\udfaf Design Philosophy\n\n**\"What would make a maintenance tech's jaw drop?\"**\n\n- **Zero-configuration discovery** - Auto-finds PLCs, VFDs, and industrial devices\n- **Universal protocol",
+      "last_modified": "2026-02-06T00:47:27.849892"
+    },
+    "/root/jarvis-workspace/projects/factorylm-brother-beta/ARCHITECTURE.md": {
+      "path": "/root/jarvis-workspace/projects/factorylm-brother-beta/ARCHITECTURE.md",
+      "type": "architecture",
+      "hash": "2b9eab117094469aff5dd9b162544aa6",
+      "size": 9122,
+      "lines": 289,
+      "title": "FactoryLM Telegram Bot - Technical Architecture",
+      "summary": "# FactoryLM Telegram Bot - Technical Architecture\n\n## \ud83c\udfd7\ufe0f System Overview\n\nThe FactoryLM Telegram Bot leverages existing infrastructure and extends PLC Copilot capabilities for comprehensive maintenance support.\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502   Telegram      \u2502    \u2502  FactoryLM      \u2502    \u2502     CMMS        \u2502\n\u2502   Mini App      \u2502\u25c4\u2500\u2500\u25ba\u2502  Bot Engine     \u2502\u25c4\u2500\u2500\u25ba\u2502   (Atlas)       \u2502\n\u2502                 \u2502    \u2502                 \u2502    \u2502                 \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518 ",
+      "last_modified": "2026-02-06T01:48:05.750573"
+    },
+    "/root/jarvis-workspace/lib/gist-publisher/README.md": {
+      "path": "/root/jarvis-workspace/lib/gist-publisher/README.md",
+      "type": "readme",
+      "hash": "41e2ef1d499678e695c9064b97c872ad",
+      "size": 3731,
+      "lines": 130,
+      "title": "Gist Publisher - Document Delivery Service",
+      "summary": "# Gist Publisher - Document Delivery Service\n\n**Purpose:** Automatically publish documents, BOMs, reports, and any file that needs sharing as a GitHub Gist with a permanent URL.\n\n## Why Gist?\n\n1. **Instant URLs** - No deploy, no hosting, just publish\n2. **Version history** - Every edit is tracked\n3. **Markdown rendering** - GitHub renders .md beautifully\n4. **Raw access** - Direct link to raw content for scripts\n5. **Forkable** - Users can fork and modify\n6. **Free forever** - No hosting costs\n\n",
+      "last_modified": "2026-02-06T14:55:11.425820"
+    },
+    "/root/jarvis-workspace/factoryllm/README.md": {
+      "path": "/root/jarvis-workspace/factoryllm/README.md",
+      "type": "readme",
+      "hash": "9119bbde1514eb3b387922494667e5dd",
+      "size": 1687,
+      "lines": 64,
+      "title": "FactoryLLM - Mike's Industrial Maintenance Model",
+      "summary": "# FactoryLLM - Mike's Industrial Maintenance Model\n\n> A fine-tuned LLM trained on 20 years of maintenance expertise.\n\n## Architecture (Layer 0-3)\n\n```\nLayer 0: Pure Logic (deterministic, no LLM)\nLayer 1: FactoryLLM 3B (Pi/Edge) \u2190 THIS PROJECT\nLayer 2: FactoryLLM 7B (Local GPU)\nLayer 3: Cloud APIs (fallback)\n```\n\n## Training Corpus\n\n| Source | Files | Size | Content |\n|--------|-------|------|---------|\n| Book Chapters | 9 | 4.8MB | Telegram conversation logs |\n| Rivet-PRO | 327 | 18MB | Code, sp",
+      "last_modified": "2026-02-07T08:19:29.918664"
+    },
+    "/root/jarvis-workspace/docs/garage-multicam-setup.md": {
+      "path": "/root/jarvis-workspace/docs/garage-multicam-setup.md",
+      "type": "technical_docs",
+      "hash": "820220c04078e5f2988b8e52700b0134",
+      "size": 30309,
+      "lines": 554,
+      "title": "\ud83c\udfac Garage Multi-Cam Build Documentation Setup",
+      "summary": "# \ud83c\udfac Garage Multi-Cam Build Documentation Setup\n\n> **Goal:** Capture all-day conveyor build with 5+ camera angles, minimal setup, auto-switching capability.\n\n---\n\n## Equipment Inventory\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                    MIKE'S GARAGE STUDIO                         \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502                                                                 \u2502\n\u2502  CAMERAS:                          S",
+      "last_modified": "2026-02-07T10:42:35.774147"
+    },
+    "/root/jarvis-workspace/atlas-cmms/api/README.md": {
+      "path": "/root/jarvis-workspace/atlas-cmms/api/README.md",
+      "type": "readme",
+      "hash": "8ad25bbd2889c9d3a116d914f8330482",
+      "size": 576,
+      "lines": 18,
+      "title": "Atlas CMMS API",
+      "summary": "# Atlas CMMS API\n\nThis is the REST backend (Java 17-Spring Boot) of the web\napplication.\nWe would be very happy to have new contributors join us.\n**And please star the repo**.\n\n## How to run locally ?\n\nSet the environment variables not starting with `REACT_APP` from [here](../README.MD#set-environment-variables)\n\nWithout docker, you should first install and use JDK 17 then create a Postgres database. After that go\nto [src/main/resources/application-dev.yml](src/main/resources/application-dev.yml",
+      "last_modified": "2026-02-07T23:37:47.722946"
+    },
+    "/root/jarvis-workspace/atlas-cmms/frontend/README.md": {
+      "path": "/root/jarvis-workspace/atlas-cmms/frontend/README.md",
+      "type": "readme",
+      "hash": "2d35e7f7f29a16d5332f966370f2b2fe",
+      "size": 779,
+      "lines": 27,
+      "title": "Atlas CMMS Frontend",
+      "summary": "# Atlas CMMS Frontend\n\nThis is the frontend of the web application developed with React. You can see more explanations in [Purpose.pdf](Purpose.pdf).\nWe would be very happy to have new contributors join us.\nAnd please star the repo.\n\n\n**Screenshot**:\n![](https://i.ibb.co/7tGYCtv/Screenshot-502.png)\n\n## Usage\n\n```bash\nnpm i\nset REACT_APP_API_URL=http://localhost:8080\nnpm start\n```\n\n## Getting help\n\nIf you have questions, concerns, bug reports, etc, please file an issue in this repository's Issue ",
+      "last_modified": "2026-02-07T23:37:48.269938"
+    },
+    "/root/jarvis-workspace/atlas-cmms/mobile/README.md": {
+      "path": "/root/jarvis-workspace/atlas-cmms/mobile/README.md",
+      "type": "readme",
+      "hash": "429f191ddfd05069e9a39f9199adbeab",
+      "size": 1573,
+      "lines": 46,
+      "title": "Atlas CMMS Mobile App",
+      "summary": "# Atlas CMMS Mobile App\n\nThis project aims to help manage assets, schedule maintenance and track work orders. This is the mobile app developed\nwith React Native.\nYou can use the [live app](https://play.google.com/store/apps/details?id=com.atlas.cmms) and configure it with your custom server url, or build the app locally\n\n**And please star the repo**.\n\n**Screenshot**:\n\n<img src=\"https://i.ibb.co/B39dVjC/Screenshot-20230320-110652.jpg\" width=\"300\"/>\n<img src=\"https://i.ibb.co/NWSfcpq/Screenshot-20",
+      "last_modified": "2026-02-07T23:37:48.377936"
+    },
+    "/root/jarvis-workspace/pipeline/README.md": {
+      "path": "/root/jarvis-workspace/pipeline/README.md",
+      "type": "readme",
+      "hash": "e8d8c08e7ee94324bfe9aa96a1651ec9",
+      "size": 1262,
+      "lines": 46,
+      "title": "FactoryLM Photo \u2192 Work Order Pipeline",
+      "summary": "# FactoryLM Photo \u2192 Work Order Pipeline\n\n## Folder Structure\n\n```\npipeline/\n\u251c\u2500\u2500 _originals/          # NEVER MODIFY - raw uploads\n\u2502   \u251c\u2500\u2500 photos/          # Equipment photos\n\u2502   \u251c\u2500\u2500 videos/          # Inspection videos\n\u2502   \u2514\u2500\u2500 documents/       # PDFs, manuals, etc.\n\u2502\n\u251c\u2500\u2500 _processing/         # Currently being analyzed\n\u2502\n\u251c\u2500\u2500 _classified/         # AI-sorted by equipment type\n\u2502   \u251c\u2500\u2500 pumps/\n\u2502   \u251c\u2500\u2500 motors/\n\u2502   \u251c\u2500\u2500 conveyors/\n\u2502   \u251c\u2500\u2500 electrical/\n\u2502   \u251c\u2500\u2500 hvac/\n\u2502   \u251c\u2500\u2500 plc/\n\u2502   \u2514\u2500\u2500 other/\n\u2502\n\u251c\u2500\u2500 _work",
+      "last_modified": "2026-02-08T10:08:51.398998"
+    },
+    "/root/jarvis-workspace/infrastructure/balena/factorylm-edge-v2/README.md": {
+      "path": "/root/jarvis-workspace/infrastructure/balena/factorylm-edge-v2/README.md",
+      "type": "readme",
+      "hash": "d26ffc3b9b78e3df7634c76d9dd1f1ad",
+      "size": 1786,
+      "lines": 75,
+      "title": "FactoryLM Edge Gateway v2.0.1",
+      "summary": "# FactoryLM Edge Gateway v2.0.1\n\nOne-shot Raspberry Pi setup for industrial PLC auto-detection.\n\n## What This Does\n\n- **Auto-detects PLCs** on local network (Allen-Bradley, Siemens, Modbus)\n- **Tailscale VPN** for secure remote access\n- **Reports to VPS** automatically\n- **Web dashboard** at port 8080\n\n## Quick Flash Instructions\n\n### Step 1: Get Balena CLI (if not installed)\n```bash\nnpm install -g balena-cli\n```\n\n### Step 2: Login to Balena\n```bash\nbalena login\n```\n\n### Step 3: Push to your fle",
+      "last_modified": "2026-02-08T11:11:51.097880"
+    },
+    "/root/jarvis-workspace/docs/pi-edge-fix-plan.md": {
+      "path": "/root/jarvis-workspace/docs/pi-edge-fix-plan.md",
+      "type": "technical_docs",
+      "hash": "8f6d6f66dc4e4682d5af95a1641d7f7a",
+      "size": 9382,
+      "lines": 332,
+      "title": "FactoryLM Edge Pi Fix Plan",
+      "summary": "# FactoryLM Edge Pi Fix Plan\n\n## Executive Summary\nThe FactoryLM edge Pi (purple-bramble) has two critical issues preventing it from functioning for the YC demo:\n1. **Network-bridge container crashing** due to missing Python runtime\n2. **Tailscale connectivity down** for 4 days due to configuration issues\n\n## Root Cause Analysis\n\n### Issue 1: Network-Bridge Container Crash Loop\n\n**Problem:** The \"network-bridge\" container is crash-looping with \"python3: command not found\"\n\n**Root Cause:** \n- `Do",
+      "last_modified": "2026-02-08T10:54:42.111879"
+    },
+    "/root/jarvis-workspace/docs/openbot-cleanup-guide.md": {
+      "path": "/root/jarvis-workspace/docs/openbot-cleanup-guide.md",
+      "type": "technical_docs",
+      "hash": "2db9cb8d88cbfbfa0ae380112e78e875",
+      "size": 14490,
+      "lines": 462,
+      "title": "OpenBot Windows Cleanup & Clean Install Guide",
+      "summary": "# OpenBot Windows Cleanup & Clean Install Guide\n\n## What is OpenBot?\n\nOpenBot is Intel's open-source robotics platform that turns smartphones into robots. It consists of:\n\n- **Robot Body**: A $50 electric vehicle chassis\n- **Android App**: Smartphone-based brain for the robot\n- **Python Policy Training**: Machine learning components for autonomous navigation\n- **Arduino Firmware**: Microcontroller code for motor control\n- **Web Interface**: Training data collection and model management\n\n**GitHub",
+      "last_modified": "2026-02-08T11:58:55.663811"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/ARCHITECTURE-computer-use.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/ARCHITECTURE-computer-use.md",
+      "type": "architecture",
+      "hash": "4c1bd7ae1e53253f74759abb7152f82e",
+      "size": 4703,
+      "lines": 132,
+      "title": "\ud83c\udfd7\ufe0f ARCHITECTURE: Visual Computer Use Layer",
+      "summary": "# \ud83c\udfd7\ufe0f ARCHITECTURE: Visual Computer Use Layer\n\n> Defined 2026-02-04. This is a core component of the FactoryLM stack.\n\n---\n\n## Overview\n\nVisual Computer Use (VCU) is the ability for AI to see screens and take actions. This is not a product \u2014 it's infrastructure for FactoryLM.\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502                     FACTORYLM STACK                              \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502  Layer 4: Hu",
+      "last_modified": "2026-02-08T14:43:12.387864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/gateway/README.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/gateway/README.md",
+      "type": "readme",
+      "hash": "ee875f025b8621b2893c76853ea810ba",
+      "size": 3192,
+      "lines": 164,
+      "title": "Pi-Gateway",
+      "summary": "# Pi-Gateway\n\nIndustrial IoT gateway software - an eWON replacement for Raspberry Pi.\n\n## Features\n\n- **VPN Remote Access**: WireGuard-based secure tunneling to PLC networks\n- **PLC Data Collection**: OPC UA, Modbus TCP/RTU, Siemens S7, EtherNet/IP\n- **Web Dashboard**: React-based management interface\n- **Cloud Integration**: MQTT/REST API with Sparkplug B support\n- **Alerting**: Multi-channel notifications (Email, SMS, Telegram, Webhook)\n\n## Quick Start\n\n### Prerequisites\n\n- Python 3.11+\n- Node",
+      "last_modified": "2026-02-08T14:43:12.429864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/simulation/modbus-simulator/README.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/simulation/modbus-simulator/README.md",
+      "type": "readme",
+      "hash": "1f332c2043077bdf6f52309fa716f4e5",
+      "size": 1871,
+      "lines": 54,
+      "title": "Modbus Simulator",
+      "summary": "# Modbus Simulator\n\nModbus Simulator with GUI based on modbus-tk and Pymodbus\n\n## Checking Out the Source\n    $ git clone https://github.com/riptideio/modbus-simulator.git\n    $ cd modbus-simulator\n\n\n## Development Instructions\n1. create virtualenv and install requirements\n   \n    ```\n    $ # Kivy depends on Cython, Install Cython before running the requirements\n    $ pip install Cython==0.29.2\n    $ pip install -r requirements\n    $ # Choose Modbus Backend modbus_tk or pymodbus (default)\n    $ ",
+      "last_modified": "2026-02-08T14:43:12.431864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/simulation/motulator/README.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/simulation/motulator/README.md",
+      "type": "readme",
+      "hash": "d8e7e3fffbf17d2a37d92e607b0c9b3d",
+      "size": 11742,
+      "lines": 94,
+      "title": "*motulator:* Motor Drive and Grid Converter Simulator in Python",
+      "summary": "# *motulator:* Motor Drive and Grid Converter Simulator in Python\n\n[![DOI](https://zenodo.org/badge/377399301.svg)](https://zenodo.org/doi/10.5281/zenodo.10223090)\n[![Build Status](https://github.com/Aalto-Electric-Drives/motulator/actions/workflows/update_gh-pages.yml/badge.svg)](https://github.com/Aalto-Electric-Drives/motulator/actions/workflows/update_gh-pages.yml)\n[![License](https://img.shields.io/github/license/mashape/apistatus)](https://github.com/Aalto-Electric-Drives/motulator/blob/ma",
+      "last_modified": "2026-02-08T14:43:12.441864"
+    },
+    "/root/jarvis-workspace/projects/yc-video-autocut/README.md": {
+      "path": "/root/jarvis-workspace/projects/yc-video-autocut/README.md",
+      "type": "readme",
+      "hash": "e29c20146f1043ba1d9ef1a12e9e8a36",
+      "size": 989,
+      "lines": 33,
+      "title": "YC Founder Video - Autonomous Generation",
+      "summary": "# YC Founder Video - Autonomous Generation\n\n## Objective\nProgrammatically edit OBS recordings into a polished 60-second YC application video.\n\n## Safety Rules (CRITICAL)\n- \u26a0\ufe0f NEVER modify original video files\n- \u26a0\ufe0f Always COPY source files before processing\n- \u26a0\ufe0f All edits create NEW files, never overwrite\n- \u26a0\ufe0f Keep source videos intact on PLC laptop\n\n## Source Material\n- Location: PLC Laptop (100.72.2.99)\n- Path: %USERPROFILE%\\Videos\\ (OBS default)\n- Format: Likely MKV or MP4\n\n## Tools Available\n",
+      "last_modified": "2026-02-08T14:43:12.752858"
+    },
+    "/root/jarvis-workspace/brain/yc-domination/README.md": {
+      "path": "/root/jarvis-workspace/brain/yc-domination/README.md",
+      "type": "readme",
+      "hash": "55ca3c16b20e25e85b2ea153b7ea91f8",
+      "size": 984,
+      "lines": 26,
+      "title": "\ud83c\udfaf YC APPLICATION DOMINATION STRATEGY",
+      "summary": "# \ud83c\udfaf YC APPLICATION DOMINATION STRATEGY\n\n**Commander-in-Chief:** Mike H (CEO, FactoryLM)\n**General Manager:** Jarvis AI\n**Initiated:** 2026-02-08 15:21 UTC\n**Deadline:** 2026-02-09 20:00 PT (~29 hours)\n\n## Division Reports (incoming)\n\n| Division | Manager | Status | Report |\n|----------|---------|--------|--------|\n| Engineering | div-engineering | \ud83d\udd04 Working | ENGINEERING_DIVISION_PLAN.md |\n| YC Application | div-yc-application | \ud83d\udd04 Working | YC_APPLICATION_PLAN.md |\n| Infrastructure | div-infrast",
+      "last_modified": "2026-02-08T15:22:48.797086"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/PROPOSAL-visual-computer-use.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/PROPOSAL-visual-computer-use.md",
+      "type": "technical_docs",
+      "hash": "1f91f389eafd0f5e37ed6bd6a5bfc5e9",
+      "size": 3867,
+      "lines": 175,
+      "title": "\ud83c\udfaf PROPOSAL: Visual Computer Use in 5 Minutes",
+      "summary": "# \ud83c\udfaf PROPOSAL: Visual Computer Use in 5 Minutes\n\n> Ready for Mike after guitar lesson. Research completed 2026-02-04 16:40 UTC.\n\n---\n\n## The Vision (What You Said)\n\n> \"With glasses on I could sit here and you could see what's going on... you could essentially work it for me couldn't you?\"\n\n**YES.** Here's how we do it:\n\n---\n\n## \ud83c\udfc6 Winner: computer_use_ootb\n\n**Repo:** https://github.com/showlab/computer_use_ootb\n\n**Why this one:**\n- \u2705 No Docker required\n- \u2705 Works on Windows AND macOS\n- \u2705 Gradio UI ",
+      "last_modified": "2026-02-08T14:43:12.388864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/ARCHIMEDES-LOGIC-MAP.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/ARCHIMEDES-LOGIC-MAP.md",
+      "type": "technical_docs",
+      "hash": "ad8251beef89afc851bb4f2d2a4e251b",
+      "size": 14687,
+      "lines": 289,
+      "title": "\ud83c\udfad ARCHIMEDES (Master of Puppets) - Logic Map",
+      "summary": "# \ud83c\udfad ARCHIMEDES (Master of Puppets) - Logic Map\n\n> \"Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.\"\n\n**Location:** `/opt/master_of_puppets/`\n**Orchestration:** Celery + Redis\n**Status:** Active (celerybeat-schedule present)\n\n---\n\n## \ud83c\udfd7\ufe0f Architecture Overview\n\n```\n                        \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                        \u2502         MIKE (Human)                \u2502\n                        \u2502    Voice/Text via Telegram          \u2502\n ",
+      "last_modified": "2026-02-08T14:43:12.387864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/PHARAOHS-OBSERVATORY.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/PHARAOHS-OBSERVATORY.md",
+      "type": "technical_docs",
+      "hash": "429ff144dea79ab2988cdbb46581d3d1",
+      "size": 10456,
+      "lines": 369,
+      "title": "\ud83d\udc41\ufe0f Pharaoh's Observatory - Agent Observability System",
+      "summary": "# \ud83d\udc41\ufe0f Pharaoh's Observatory - Agent Observability System\n\n> \"They wouldn't be building the pyramid if they didn't have foremen making sure they start on schedule, don't stop working, and produce useful artifacts that they polish at least three times before sending to the QA judge.\"\n> \u2014 Mike, 2026-02-04\n\n---\n\n## The Concept\n\nMike sits atop the pyramid. Workers build beneath him. But Mike needs to SEE what's happening without disrupting the work.\n\n```\n                    \ud83d\udc51\n                   MIKE\n ",
+      "last_modified": "2026-02-08T14:43:12.388864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/IDEAS-2026-02-04.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/IDEAS-2026-02-04.md",
+      "type": "technical_docs",
+      "hash": "cbdc8ac6f31a717633db32f70a8917ec",
+      "size": 4479,
+      "lines": 185,
+      "title": "\ud83e\udde0 Mike's Brain Dump - 2026-02-04 16:23 UTC",
+      "summary": "# \ud83e\udde0 Mike's Brain Dump - 2026-02-04 16:23 UTC\n\n> Captured from Telegram. 18 ideas in one message. This is why we need the brain.\n\n---\n\n## 1. Healthcare Resolution \u2705\n- Filed as fraud\n- Two weeks to resolve\n- Call back tomorrow for case number\n- Refund back to ~$10k\n- **Lesson learned:** Game theory - sugar > spice\n\n---\n\n## 2. Two Brains Concept\n\n| Brain | Purpose |\n|-------|---------|\n| **Technical Brain** | FactoryLM, workers, YC, code |\n| **Personal Brain** | Life admin, emails, scheduling, fina",
+      "last_modified": "2026-02-08T14:43:12.388864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/MVP-VISUAL-COMPUTER-USE.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/MVP-VISUAL-COMPUTER-USE.md",
+      "type": "technical_docs",
+      "hash": "51e5d2bb8a1f067b704e436eeeb09512",
+      "size": 7781,
+      "lines": 270,
+      "title": "MVP: Visual Computer Use for Industrial Automation",
+      "summary": "# MVP: Visual Computer Use for Industrial Automation\n\n**Document Version:** 1.0.0  \n**Created:** 2026-02-04  \n**Author:** Mike Crane + Jarvis  \n**Status:** CAPTURED - CORE IP  \n\n---\n\n## \ud83c\udfaf The Vision (Mike's Words, Verbatim)\n\n> \"When the AI can see the real world and has Claude-type capabilities with software, I've proven that it can basically do damn near anything now, haven't I?\"\n\n> \"Control the entire mechanistic production industrial complex\"\n\n> \"All you hear on the news \u2014 AI is starting to d",
+      "last_modified": "2026-02-08T14:43:12.388864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/WORKERS.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/WORKERS.md",
+      "type": "technical_docs",
+      "hash": "c60317854613c8856ed16a3207c924ae",
+      "size": 2850,
+      "lines": 86,
+      "title": "\ud83c\udfdb\ufe0f Worker Registry - Mike's Brain",
+      "summary": "# \ud83c\udfdb\ufe0f Worker Registry - Mike's Brain\n\n> \"Give me a lever long enough and a fulcrum on which to place it, and I shall move the world.\" \u2014 Archimedes\n\n## The Pantheon\n\nAll workers are named after historical figures who shaped knowledge, justice, or engineering.\n\n| Worker | Role | Historical Figure | Status |\n|--------|------|-------------------|--------|\n| **Herodotus** | Archivist - collects & synthesizes | Father of History (484-425 BC) | \u2705 Code ready |\n| **Hammurabi** | Judge - QA gates & quality",
+      "last_modified": "2026-02-08T14:43:12.388864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/FACTORYLM-WEBSITE-DESIGN-SPEC.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/FACTORYLM-WEBSITE-DESIGN-SPEC.md",
+      "type": "technical_docs",
+      "hash": "82885375edcd8a4980541ea9fea4ae5a",
+      "size": 7499,
+      "lines": 288,
+      "title": "\ud83c\udfa8 FactoryLM Website Design Specification",
+      "summary": "# \ud83c\udfa8 FactoryLM Website Design Specification\n\n> Generated by Claude Code on Mike's laptop, 2026-02-04\n> Captured for implementation reference\n\n---\n\n## Executive Summary\n\n**Decision:** Unify `factorylm.com` and `factorylm.com/edge/` using the Edge dark theme as the design system foundation.\n\n**Winner:** `/edge/` - Superior visual design, modern glassmorphism, interactive configurator\n\n---\n\n## Design System\n\n### Color Palette (Dark Industrial Theme)\n\n```css\n:root {\n  /* Backgrounds */\n  --bg-primary",
+      "last_modified": "2026-02-08T14:43:12.387864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/SPEC-DRIVEN-DEVELOPMENT.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/SPEC-DRIVEN-DEVELOPMENT.md",
+      "type": "technical_docs",
+      "hash": "f71fdc57d985f445600a74903c35300b",
+      "size": 6253,
+      "lines": 221,
+      "title": "\ud83d\udcdc Spec-Driven Development (SDD)",
+      "summary": "# \ud83d\udcdc Spec-Driven Development (SDD)\n\n> \"Spec first, prompt template second, execute third. How can you possibly fail?\"\n> \u2014 Mike, 2026-02-04\n\n---\n\n## The Problem\n\nWhen something is \"not done,\" it's just... not done. Sitting on a Trello board. No urgency. No proactive completion.\n\n**Current state:** Agents note gaps, move on.\n**Desired state:** Agents are relentless. They TRY. They're gated by QA, so let them experiment.\n\n---\n\n## The Principle\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "last_modified": "2026-02-08T14:43:12.388864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/docs/RECURSIVE-LEARNING-REPAIRS.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/docs/RECURSIVE-LEARNING-REPAIRS.md",
+      "type": "technical_docs",
+      "hash": "b2bed54374022eba2b126871f9bdedde",
+      "size": 5417,
+      "lines": 207,
+      "title": "\ud83d\udd27 Recursive Learning Loop Repairs",
+      "summary": "# \ud83d\udd27 Recursive Learning Loop Repairs\n\n> Identified issues and fixes for worker self-improvement cycles.\n\n---\n\n## Current State Analysis\n\n### \u2705 Working\n- Celery app configured with 22 workers\n- Redis broker connected\n- Evolution tasks exist (`evolution_tasks.py`)\n- Polish tasks exist (`polish_tasks.py`)\n\n### \u274c Issues Found\n\n1. **Hammurabi not wired to worker outputs**\n   - Workers produce artifacts but bypass quality gates\n   - No LLM-as-judge integration\n\n2. **Evolution cycle not triggered**\n   -",
+      "last_modified": "2026-02-08T14:43:12.388864"
+    },
+    "/root/jarvis-workspace/factorylm-dev/cad/README.md": {
+      "path": "/root/jarvis-workspace/factorylm-dev/cad/README.md",
+      "type": "readme",
+      "hash": "cb6bb3d1466e6ce48e7bee368b1b8b82",
+      "size": 718,
+      "lines": 31,
+      "title": "FactoryLM CAD Files",
+      "summary": "# FactoryLM CAD Files\n\n**Versioned engineering drawings and build specifications.**\n\n## Structure\n```\ncad/\n\u251c\u2500\u2500 README.md\n\u2514\u2500\u2500 conveyor-yc-demo/\n    \u251c\u2500\u2500 v1.0/           # Original Unistrut design (archived)\n    \u2514\u2500\u2500 v2.0/           # Current 2x4 lumber build\n        \u251c\u2500\u2500 BUILD-SPEC.md\n        \u2514\u2500\u2500 BLUEPRINTS.md\n```\n\n## Versioning Rules\n\n1. **Never overwrite** - Create new version folders\n2. **Tag releases** - `git tag cad/conveyor-v2.0`\n3. **Link photos** - Document actual vs planned\n4. **Archive old",
+      "last_modified": "2026-02-08T15:57:26.089800"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/merge-descriptors/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/merge-descriptors/README.md",
+      "type": "readme",
+      "hash": "46abdb260610aef6c8a0a4dcffb6ccec",
+      "size": 1305,
+      "lines": 49,
+      "title": "merge-descriptors",
+      "summary": "# merge-descriptors\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nMerge objects using descriptors.\n\n```js\nvar thing = {\n  get name() {\n    return 'jon'\n  }\n}\n\nvar animal = {\n\n}\n\nmerge(animal, thing)\n\nanimal.name === 'jon'\n```\n\n## API\n\n### merge(destination, source)\n\nRedefines `destination`'s descriptors with `source`'s. The return value is the\n`destination` o",
+      "last_modified": "2026-02-08T23:58:56.597547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/hasown/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/hasown/README.md",
+      "type": "readme",
+      "hash": "fee8da12add9e228e0e81304b4e93ffd",
+      "size": 1613,
+      "lines": 40,
+      "title": "hasown <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# hasown <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nA robust, ES3 compatible, \"has own property\" predicate.\n\n## Example\n\n```js\nconst assert = require('assert');\nconst hasOwn = require('hasown');\n\nassert.equal(hasOwn({}, 'toString'), false);\nassert.equal(hasOw",
+      "last_modified": "2026-02-08T23:58:56.583547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/es-define-property/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/es-define-property/README.md",
+      "type": "readme",
+      "hash": "1fd50c2701c3b616f8fdff87e9d3aeac",
+      "size": 2056,
+      "lines": 49,
+      "title": "es-define-property <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# es-define-property <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\n`Object.defineProperty`, but not IE 8's broken one.\n\n## Example\n\n```js\nconst assert = require('assert');\n\nconst $defineProperty = require('es-define-property');\n\nif ($defineProperty) {\n    assert",
+      "last_modified": "2026-02-08T23:58:56.569547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/raw-body/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/raw-body/README.md",
+      "type": "readme",
+      "hash": "48fc13005fb5cf414c22ac67588903fa",
+      "size": 6553,
+      "lines": 223,
+      "title": "raw-body",
+      "summary": "# raw-body\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build status][github-actions-ci-image]][github-actions-ci-url]\n[![Test coverage][coveralls-image]][coveralls-url]\n\nGets the entire buffer of a stream either as a `Buffer` or a string.\nValidates the stream's length against an expected length and maximum limit.\nIdeal for parsing request bodies.\n\n## Install\n\nThis is a [Node.js](https://nod",
+      "last_modified": "2026-02-08T23:58:56.612546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/proxy-addr/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/proxy-addr/README.md",
+      "type": "readme",
+      "hash": "4bc9aa46f3afb34d0ab0c82cf244a21b",
+      "size": 4131,
+      "lines": 139,
+      "title": "proxy-addr",
+      "summary": "# proxy-addr\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][ci-image]][ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nDetermine address of proxied request\n\n## Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/inst",
+      "last_modified": "2026-02-08T23:58:56.607546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/destroy/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/destroy/README.md",
+      "type": "readme",
+      "hash": "5866f60785543ab8d86b79dec253db49",
+      "size": 2459,
+      "lines": 63,
+      "title": "destroy",
+      "summary": "# destroy\n\n[![NPM version][npm-image]][npm-url]\n[![Build Status][github-actions-ci-image]][github-actions-ci-url]\n[![Test coverage][coveralls-image]][coveralls-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\nDestroy a stream.\n\nThis module is meant to ensure a stream gets destroyed, handling different APIs\nand Node.js bugs.\n\n## API\n\n```js\nvar destroy = require('destroy')\n```\n\n### destroy(stream [, suppress])\n\nDestroy the given stream, and optionally s",
+      "last_modified": "2026-02-08T23:58:56.567547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/safe-buffer/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/safe-buffer/README.md",
+      "type": "readme",
+      "hash": "570381ffb15269fa623a0b75e67eb63a",
+      "size": 19552,
+      "lines": 584,
+      "title": "safe-buffer [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]",
+      "summary": "# safe-buffer [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]\n\n[travis-image]: https://img.shields.io/travis/feross/safe-buffer/master.svg\n[travis-url]: https://travis-ci.org/feross/safe-buffer\n[npm-image]: https://img.shields.io/npm/v/safe-buffer.svg\n[npm-url]: https://npmjs.org/package/safe-buffer\n[downloads-image]: https://img.shields.io/npm/dm/safe-buffer.svg\n[downloads",
+      "last_modified": "2026-02-08T23:58:56.613546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/inherits/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/inherits/README.md",
+      "type": "readme",
+      "hash": "de7eab94959b05c9765cad499ab092db",
+      "size": 1625,
+      "lines": 42,
+      "title": "Untitled",
+      "summary": "Browser-friendly inheritance fully compatible with standard node.js\n[inherits](http://nodejs.org/api/util.html#util_util_inherits_constructor_superconstructor).\n\nThis package exports standard `inherits` from node.js `util` module in\nnode environment, but also provides alternative browser-friendly\nimplementation through [browser\nfield](https://gist.github.com/shtylman/4339901). Alternative\nimplementation is a literal copy of standard one located in standalone\nmodule to avoid requiring of `util`. ",
+      "last_modified": "2026-02-08T23:58:56.589547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/has-symbols/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/has-symbols/README.md",
+      "type": "readme",
+      "hash": "540771bc2f5479ef889bee342ae45158",
+      "size": 2044,
+      "lines": 46,
+      "title": "has-symbols <sup>[![Version Badge][2]][1]</sup>",
+      "summary": "# has-symbols <sup>[![Version Badge][2]][1]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![dependency status][5]][6]\n[![dev dependency status][7]][8]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][11]][1]\n\nDetermine if the JS environment has Symbol support. Supports spec, or shams.\n\n## Example\n\n```js\nvar hasSymbols = require('has-symbols');\n\nhasSymbols() === true; // if the environment ha",
+      "last_modified": "2026-02-08T23:58:56.582547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/content-disposition/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/content-disposition/README.md",
+      "type": "readme",
+      "hash": "cbd415ae5e4605f9ce13640c323d8aaf",
+      "size": 5201,
+      "lines": 142,
+      "title": "content-disposition",
+      "summary": "# content-disposition\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][github-actions-ci-image]][github-actions-ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nCreate and parse HTTP `Content-Disposition` header\n\n## Installation\n\n```sh\n$ npm install content-disposition\n```\n\n## API\n\n```js\nvar contentDisposition = require('content-disposition')\n```\n\n### contentDisposition(",
+      "last_modified": "2026-02-08T23:58:56.558547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/debug/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/debug/README.md",
+      "type": "readme",
+      "hash": "03694893d682191b3c893701ba6f4a55",
+      "size": 17916,
+      "lines": 312,
+      "title": "debug",
+      "summary": "# debug\n[![Build Status](https://travis-ci.org/visionmedia/debug.svg?branch=master)](https://travis-ci.org/visionmedia/debug)  [![Coverage Status](https://coveralls.io/repos/github/visionmedia/debug/badge.svg?branch=master)](https://coveralls.io/github/visionmedia/debug?branch=master)  [![Slack](https://visionmedia-community-slackin.now.sh/badge.svg)](https://visionmedia-community-slackin.now.sh/) [![OpenCollective](https://opencollective.com/debug/backers/badge.svg)](#backers) \n[![OpenCollectiv",
+      "last_modified": "2026-02-08T23:58:56.565547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/side-channel-weakmap/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/side-channel-weakmap/README.md",
+      "type": "readme",
+      "hash": "116b15b53d39f741675cf801ef08c7cd",
+      "size": 2342,
+      "lines": 62,
+      "title": "side-channel-weakmap <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# side-channel-weakmap <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nStore information about any JS value in a side channel. Uses WeakMap if available.\n\nWarning: this implementation will leak memory until you `delete` the `key`.\nUse [`side-channel`](https://npmj",
+      "last_modified": "2026-02-08T23:58:56.620546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/send/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/send/README.md",
+      "type": "readme",
+      "hash": "58d01cf4d34779852c06a3c5301a44f3",
+      "size": 9476,
+      "lines": 327,
+      "title": "send",
+      "summary": "# send\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Linux Build][github-actions-ci-image]][github-actions-ci-url]\n[![Windows Build][appveyor-image]][appveyor-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nSend is a library for streaming files from the file system as a http response\nsupporting partial responses (Ranges), conditional-GET negotiation (If-Match,\nIf-Unmodified-Since, If-None-Match, If-Modified-Since), high test coverage,\n",
+      "last_modified": "2026-02-08T23:58:56.615546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/mime-db/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/mime-db/README.md",
+      "type": "readme",
+      "hash": "15bed796dab121b6c9168e4595f4f651",
+      "size": 4091,
+      "lines": 100,
+      "title": "mime-db",
+      "summary": "# mime-db\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][ci-image]][ci-url]\n[![Coverage Status][coveralls-image]][coveralls-url]\n\nThis is a large database of mime types and information about them.\nIt consists of a single, public JSON file and does not include any logic,\nallowing it to remain as un-opinionated as possible with an API.\nIt aggregates data from the following sources:\n\n- http:/",
+      "last_modified": "2026-02-08T23:58:56.598547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/ipaddr.js/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/ipaddr.js/README.md",
+      "type": "readme",
+      "hash": "6782f9a6accf829084c303895a2c26a9",
+      "size": 8307,
+      "lines": 233,
+      "title": "ipaddr.js \u2014 an IPv6 and IPv4 address manipulation library [![Build Status](https://travis-ci.org/whitequark/ipaddr.js.svg)](https://travis-ci.org/whitequark/ipaddr.js)",
+      "summary": "# ipaddr.js \u2014 an IPv6 and IPv4 address manipulation library [![Build Status](https://travis-ci.org/whitequark/ipaddr.js.svg)](https://travis-ci.org/whitequark/ipaddr.js)\n\nipaddr.js is a small (1.9K minified and gzipped) library for manipulating\nIP addresses in JavaScript environments. It runs on both CommonJS runtimes\n(e.g. [nodejs]) and in a web browser.\n\nipaddr.js allows you to verify and parse string representation of an IP\naddress, match it against a CIDR range or range list, determine if it",
+      "last_modified": "2026-02-08T23:58:56.589547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/unpipe/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/unpipe/README.md",
+      "type": "readme",
+      "hash": "b242ac151ac9750bf7ca20fe02dcf7b0",
+      "size": 1250,
+      "lines": 43,
+      "title": "unpipe",
+      "summary": "# unpipe\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nUnpipe a stream from all destinations.\n\n## Installation\n\n```sh\n$ npm install unpipe\n```\n\n## API\n\n```js\nvar unpipe = require('unpipe')\n```\n\n### unpipe(stream)\n\nUnpipes all destinations from a given stream. With stream 2+, this is\nequivalent to `stream.unpipe()`. W",
+      "last_modified": "2026-02-08T23:58:56.624546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/get-intrinsic/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/get-intrinsic/README.md",
+      "type": "readme",
+      "hash": "42f69e4537122e0dd7c9d963a5c0d6be",
+      "size": 2791,
+      "lines": 71,
+      "title": "get-intrinsic <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# get-intrinsic <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nGet and robustly cache all JS language-level intrinsics at first require time.\n\nSee the syntax describ",
+      "last_modified": "2026-02-08T23:58:56.578547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/function-bind/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/function-bind/README.md",
+      "type": "readme",
+      "hash": "e9cf820d7fdaacfefa8a583a32d1bbd5",
+      "size": 1755,
+      "lines": 46,
+      "title": "function-bind <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# function-bind <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n<!--[![coverage][codecov-image]][codecov-url]-->\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nImplementation of function.prototype.bind\n\nOld versions of phantomjs, Internet Explorer < 9, an",
+      "last_modified": "2026-02-08T23:58:56.577547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/gopd/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/gopd/README.md",
+      "type": "readme",
+      "hash": "b7828c6a2aaeb53e9bd62e7a166d4057",
+      "size": 1562,
+      "lines": 40,
+      "title": "gopd <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# gopd <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\n`Object.getOwnPropertyDescriptor`, but accounts for IE's broken implementation.\n\n## Usage\n\n```javascript\nvar gOPD = require('gopd');\nvar assert = require('assert');\n\nif (gOPD) {\n\tassert.equal(typeof gOPD, 'fun",
+      "last_modified": "2026-02-08T23:58:56.581547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/marked/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/marked/README.md",
+      "type": "readme",
+      "hash": "d914775dd18f4db775f155bb0852cabd",
+      "size": 3101,
+      "lines": 107,
+      "title": "Marked",
+      "summary": "<a href=\"https://marked.js.org\">\n  <img width=\"60px\" height=\"60px\" src=\"https://marked.js.org/img/logo-black.svg\" align=\"right\" />\n</a>\n\n# Marked\n\n[![npm](https://badgen.net/npm/v/marked)](https://www.npmjs.com/package/marked)\n[![gzip size](https://badgen.net/badgesize/gzip/https://cdn.jsdelivr.net/npm/marked/marked.min.js)](https://cdn.jsdelivr.net/npm/marked/marked.min.js)\n[![install size](https://badgen.net/packagephobia/install/marked)](https://packagephobia.now.sh/result?p=marked)\n[![downlo",
+      "last_modified": "2026-02-08T23:58:56.589547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/content-type/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/content-type/README.md",
+      "type": "readme",
+      "hash": "cb19c8aba870601aee363ac2302da33d",
+      "size": 2782,
+      "lines": 94,
+      "title": "content-type",
+      "summary": "# content-type\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][ci-image]][ci-url]\n[![Coverage Status][coveralls-image]][coveralls-url]\n\nCreate and parse HTTP Content-Type header according to RFC 7231\n\n## Installation\n\n```sh\n$ npm install content-type\n```\n\n## API\n\n```js\nvar contentType = require('content-type')\n```\n\n### contentType.parse(string)\n\n```js\nvar obj = contentType.parse('image/svg+",
+      "last_modified": "2026-02-08T23:58:56.558547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/fresh/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/fresh/README.md",
+      "type": "readme",
+      "hash": "2409eba75b77a1b1258045cd372b4b6e",
+      "size": 3374,
+      "lines": 119,
+      "title": "fresh",
+      "summary": "# fresh\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nHTTP response freshness testing\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting",
+      "last_modified": "2026-02-08T23:58:56.576547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/side-channel-list/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/side-channel-list/README.md",
+      "type": "readme",
+      "hash": "3d96e95c4cdb4a82c71e9d884fad651c",
+      "size": 2285,
+      "lines": 62,
+      "title": "side-channel-list <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# side-channel-list <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nStore information about any JS value in a side channel, using a linked list.\n\nWarning: this implementation will leak memory until you `delete` the `key`.\nUse [`side-channel`](https://npmjs.com/sid",
+      "last_modified": "2026-02-08T23:58:56.618546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/vary/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/vary/README.md",
+      "type": "readme",
+      "hash": "d7add56e89e476e09f62ad4a926f1f7a",
+      "size": 2716,
+      "lines": 101,
+      "title": "vary",
+      "summary": "# vary\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nManipulate the HTTP Vary header\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-",
+      "last_modified": "2026-02-08T23:58:56.625546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/call-bound/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/call-bound/README.md",
+      "type": "readme",
+      "hash": "216dae401646cab0235a11f5fda6fd8c",
+      "size": 1897,
+      "lines": 53,
+      "title": "call-bound <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# call-bound <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nRobust call-bound JavaScript intrinsics, using `call-bind` and `get-intrinsic`.\n\n## Getting started\n\n```s",
+      "last_modified": "2026-02-08T23:58:56.557547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/etag/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/etag/README.md",
+      "type": "readme",
+      "hash": "89c2c0f9f52f551591bfc484e9e4a5bb",
+      "size": 4174,
+      "lines": 159,
+      "title": "etag",
+      "summary": "# etag\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nCreate simple HTTP ETags\n\nThis module generates HTTP ETags (as defined in RFC 7232) for use in\nHTTP responses.\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Install",
+      "last_modified": "2026-02-08T23:58:56.572547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/finalhandler/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/finalhandler/README.md",
+      "type": "readme",
+      "hash": "18b58d12617da92bd7029c54b672a2e9",
+      "size": 4120,
+      "lines": 147,
+      "title": "finalhandler",
+      "summary": "# finalhandler\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][github-actions-ci-image]][github-actions-ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nNode.js function to invoke as the final step to respond to HTTP request.\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n",
+      "last_modified": "2026-02-08T23:58:56.575547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/mime/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/mime/README.md",
+      "type": "readme",
+      "hash": "72cfb57e293629e482629af74f4a92fd",
+      "size": 2119,
+      "lines": 90,
+      "title": "mime",
+      "summary": "# mime\n\nComprehensive MIME type mapping API based on mime-db module.\n\n## Install\n\nInstall with [npm](http://github.com/isaacs/npm):\n\n    npm install mime\n\n## Contributing / Testing\n\n    npm run test\n\n## Command Line\n\n    mime [path_string]\n\nE.g.\n\n    > mime scripts/jquery.js\n    application/javascript\n\n## API - Queries\n\n### mime.lookup(path)\nGet the mime type associated with a file, if no mime type is found `application/octet-stream` is returned. Performs a case-insensitive lookup using the exte",
+      "last_modified": "2026-02-08T23:58:56.600547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/qs/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/qs/README.md",
+      "type": "readme",
+      "hash": "2b9472f842287b11a9c74cc74b0e6dff",
+      "size": 25847,
+      "lines": 733,
+      "title": "qs <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "<p align=\"center\">\n    <img alt=\"qs\" src=\"./logos/banner_default.png\" width=\"800\" />\n</p>\n\n# qs <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/9058/badge)](https://bestpractices.coreinfrastructure.org/projects/9058)\n\n[![npm badge][",
+      "last_modified": "2026-02-08T23:58:56.608546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/mime-types/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/mime-types/README.md",
+      "type": "readme",
+      "hash": "df3aeb2c1cb5f39d454082eadd3f2a5f",
+      "size": 3481,
+      "lines": 113,
+      "title": "mime-types",
+      "summary": "# mime-types\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][ci-image]][ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nThe ultimate javascript content-type utility.\n\nSimilar to [the `mime@1.x` module](https://www.npmjs.com/package/mime), except:\n\n- __No fallbacks.__ Instead of naively returning the first available type,\n  `mime-types` simply returns `false`, so ",
+      "last_modified": "2026-02-08T23:58:56.599547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/toidentifier/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/toidentifier/README.md",
+      "type": "readme",
+      "hash": "f4a4bdb58e15b4a187d4d51deb32c8dd",
+      "size": 1803,
+      "lines": 61,
+      "title": "toidentifier",
+      "summary": "# toidentifier\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Build Status][github-actions-ci-image]][github-actions-ci-url]\n[![Test Coverage][codecov-image]][codecov-url]\n\n> Convert a string of words to a JavaScript identifier\n\n## Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/install",
+      "last_modified": "2026-02-08T23:58:56.623546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/on-finished/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/on-finished/README.md",
+      "type": "readme",
+      "hash": "562d5d7422331487f93e06407128aa82",
+      "size": 5160,
+      "lines": 162,
+      "title": "on-finished",
+      "summary": "# on-finished\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][ci-image]][ci-url]\n[![Coverage Status][coveralls-image]][coveralls-url]\n\nExecute a callback when a HTTP request closes, finishes, or errors.\n\n## Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://d",
+      "last_modified": "2026-02-08T23:58:56.605546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/side-channel/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/side-channel/README.md",
+      "type": "readme",
+      "hash": "a497391966915c8804ec1150448f1421",
+      "size": 2152,
+      "lines": 61,
+      "title": "side-channel <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# side-channel <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nStore information about any JS value in a side channel. Uses WeakMap if available.\n\nWarning: in an environment that lacks `WeakMap`, this implementation will leak memory until you `delete` the `key`.\n\n",
+      "last_modified": "2026-02-08T23:58:56.621546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/statuses/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/statuses/README.md",
+      "type": "readme",
+      "hash": "a59b8a36c079e575cfc423618c4fe0f4",
+      "size": 3866,
+      "lines": 139,
+      "title": "statuses",
+      "summary": "# statuses\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][ci-image]][ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n[![OpenSSF Scorecard Badge][ossf-scorecard-badge]][ossf-scorecard-visualizer]\n\nHTTP status utility for node.\n\nThis module provides a list of status codes and messages sourced from\na few different projects:\n\n  * The [IANA Status Code Registry](https",
+      "last_modified": "2026-02-08T23:58:56.622546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/iconv-lite/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/iconv-lite/README.md",
+      "type": "readme",
+      "hash": "011c8d9193893a9aa6ab12469e808399",
+      "size": 6532,
+      "lines": 156,
+      "title": "Untitled",
+      "summary": "## Pure JS character encoding conversion [![Build Status](https://travis-ci.org/ashtuchkin/iconv-lite.svg?branch=master)](https://travis-ci.org/ashtuchkin/iconv-lite)\n\n * Doesn't need native code compilation. Works on Windows and in sandboxed environments like [Cloud9](http://c9.io).\n * Used in popular projects like [Express.js (body_parser)](https://github.com/expressjs/body-parser), \n   [Grunt](http://gruntjs.com/), [Nodemailer](http://www.nodemailer.com/), [Yeoman](http://yeoman.io/) and othe",
+      "last_modified": "2026-02-08T23:58:56.584547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/methods/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/methods/README.md",
+      "type": "readme",
+      "hash": "882a4df2d7dc4b518fd3bb8c85e1c652",
+      "size": 1694,
+      "lines": 51,
+      "title": "Methods",
+      "summary": "# Methods\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nHTTP verbs that Node.js core's HTTP parser supports.\n\nThis module provides an export that is just like `http.METHODS` from Node.js core,\nwith the following differences:\n\n  * All method names are lower-cased.\n  * Contains a fallback list of method",
+      "last_modified": "2026-02-08T23:58:56.598547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/get-proto/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/get-proto/README.md",
+      "type": "readme",
+      "hash": "a80c58c3c9b38d192aa94040d1ecb10f",
+      "size": 1794,
+      "lines": 50,
+      "title": "get-proto <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# get-proto <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nRobustly get the [[Prototype]] of an object. Uses the best available method.\n\n## Getting started\n\n```sh\nnpm install --save get-proto\n```\n\n## Usage/Examples\n\n```js\nconst assert = require('assert');\nconst g",
+      "last_modified": "2026-02-08T23:58:56.580547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/es-errors/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/es-errors/README.md",
+      "type": "readme",
+      "hash": "539d6f055adf72086ed5ac03531e0433",
+      "size": 2114,
+      "lines": 55,
+      "title": "es-errors <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# es-errors <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nA simple cache for a few of the JS Error constructors.\n\n## Example\n\n```js\nconst assert = require('assert');\n\nconst Base = require('es-errors');\nconst Eval = require('es-errors/eval');\nconst Range = requir",
+      "last_modified": "2026-02-08T23:58:56.570547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/type-is/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/type-is/README.md",
+      "type": "readme",
+      "hash": "2683527a9b2faadd364a0eab9cc00935",
+      "size": 5183,
+      "lines": 170,
+      "title": "type-is",
+      "summary": "# type-is\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nInfer the content-type of a request.\n\n### Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.co",
+      "last_modified": "2026-02-08T23:58:56.623546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/array-flatten/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/array-flatten/README.md",
+      "type": "readme",
+      "hash": "328fdaf1ee65869341567f4fb6716e02",
+      "size": 1245,
+      "lines": 43,
+      "title": "Array Flatten",
+      "summary": "# Array Flatten\n\n[![NPM version][npm-image]][npm-url]\n[![NPM downloads][downloads-image]][downloads-url]\n[![Build status][travis-image]][travis-url]\n[![Test coverage][coveralls-image]][coveralls-url]\n\n> Flatten an array of nested arrays into a single flat array. Accepts an optional depth.\n\n## Installation\n\n```\nnpm install array-flatten --save\n```\n\n## Usage\n\n```javascript\nvar flatten = require('array-flatten')\n\nflatten([1, [2, [3, [4, [5], 6], 7], 8], 9])\n//=> [1, 2, 3, 4, 5, 6, 7, 8, 9]\n\nflatten",
+      "last_modified": "2026-02-08T23:58:56.553547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/cookie/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/cookie/README.md",
+      "type": "readme",
+      "hash": "683e2286b5cb5bd1b4b36866f573a29f",
+      "size": 11749,
+      "lines": 317,
+      "title": "cookie",
+      "summary": "# cookie\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][ci-image]][ci-url]\n[![Coverage Status][coveralls-image]][coveralls-url]\n\nBasic HTTP cookie parser and serializer for HTTP servers.\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.",
+      "last_modified": "2026-02-08T23:58:56.561547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/dunder-proto/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/dunder-proto/README.md",
+      "type": "readme",
+      "hash": "e5299df3580e2cf05ead6fa8a5ad6db6",
+      "size": 1907,
+      "lines": 54,
+      "title": "dunder-proto <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# dunder-proto <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nIf available, the `Object.prototype.__proto__` accessor and mutator, call-bound.\n\n## Getting started\n\n```sh\nnpm install --save dunder-proto\n```\n\n## Usage/Examples\n\n```js\nconst assert = require('assert'",
+      "last_modified": "2026-02-08T23:58:56.567547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/negotiator/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/negotiator/README.md",
+      "type": "readme",
+      "hash": "25135d2847230d4854ac342d46ab9e62",
+      "size": 4901,
+      "lines": 203,
+      "title": "negotiator",
+      "summary": "# negotiator\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][github-actions-ci-image]][github-actions-ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nAn HTTP content negotiator for Node.js\n\n## Installation\n\n```sh\n$ npm install negotiator\n```\n\n## API\n\n```js\nvar Negotiator = require('negotiator')\n```\n\n### Accept Negotiation\n\n```js\navailableMediaTypes = ['text/html', 'tex",
+      "last_modified": "2026-02-08T23:58:56.602546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/forwarded/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/forwarded/README.md",
+      "type": "readme",
+      "hash": "5e737f1f3045f9875119cf34bf28fb03",
+      "size": 1654,
+      "lines": 57,
+      "title": "forwarded",
+      "summary": "# forwarded\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][ci-image]][ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nParse HTTP X-Forwarded-For header\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-s",
+      "last_modified": "2026-02-08T23:58:56.576547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/call-bind-apply-helpers/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/call-bind-apply-helpers/README.md",
+      "type": "readme",
+      "hash": "750874cfb514c2a6907f084f032bb3b6",
+      "size": 2330,
+      "lines": 62,
+      "title": "call-bind-apply-helpers <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# call-bind-apply-helpers <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nHelper functions around Function call/apply/bind, for use in `call-bind`.\n\nThe only packages",
+      "last_modified": "2026-02-08T23:58:56.556547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/parseurl/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/parseurl/README.md",
+      "type": "readme",
+      "hash": "59555697a7f93937af7f76fe5326fa0d",
+      "size": 4074,
+      "lines": 133,
+      "title": "parseurl",
+      "summary": "# parseurl\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nParse a URL with memoization.\n\n## Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/insta",
+      "last_modified": "2026-02-08T23:58:56.606546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/range-parser/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/range-parser/README.md",
+      "type": "readme",
+      "hash": "f4b241a4d3c3eac1d542759d73164083",
+      "size": 2278,
+      "lines": 84,
+      "title": "range-parser",
+      "summary": "# range-parser\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nRange header field parser.\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started",
+      "last_modified": "2026-02-08T23:58:56.611546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/accepts/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/accepts/README.md",
+      "type": "readme",
+      "hash": "873e624d40d23cf9b54f9d2f74d2c8d1",
+      "size": 4123,
+      "lines": 140,
+      "title": "accepts",
+      "summary": "# accepts\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][github-actions-ci-image]][github-actions-ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nHigher level content negotiation based on [negotiator](https://www.npmjs.com/package/negotiator).\nExtracted from [koa](https://www.npmjs.com/package/koa) for general use.\n\nIn addition to negotiator, it allows:\n\n- Allow",
+      "last_modified": "2026-02-08T23:58:56.553547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/ee-first/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/ee-first/README.md",
+      "type": "readme",
+      "hash": "8591e9d47fb8574f4a99ac3de242b3cc",
+      "size": 2617,
+      "lines": 80,
+      "title": "EE First",
+      "summary": "# EE First\n\n[![NPM version][npm-image]][npm-url]\n[![Build status][travis-image]][travis-url]\n[![Test coverage][coveralls-image]][coveralls-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n[![Gittip][gittip-image]][gittip-url]\n\nGet the first event in a set of event emitters and event pairs,\nthen clean up after itself.\n\n## Install\n\n```sh\n$ npm install ee-first\n```\n\n## API\n\n```js\nvar first = require('ee-first')\n```\n\n### first(arr, listener)\n\nInvoke `liste",
+      "last_modified": "2026-02-08T23:58:56.568547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/setprototypeof/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/setprototypeof/README.md",
+      "type": "readme",
+      "hash": "618e2755f48de164d10a4d5ef5efcf6e",
+      "size": 844,
+      "lines": 31,
+      "title": "Polyfill for `Object.setPrototypeOf`",
+      "summary": "# Polyfill for `Object.setPrototypeOf`\n\n[![NPM Version](https://img.shields.io/npm/v/setprototypeof.svg)](https://npmjs.org/package/setprototypeof)\n[![NPM Downloads](https://img.shields.io/npm/dm/setprototypeof.svg)](https://npmjs.org/package/setprototypeof)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/standard/standard)\n\nA simple cross platform implementation to set the prototype of an instianted object.  Supports all modern brows",
+      "last_modified": "2026-02-08T23:58:56.617546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/math-intrinsics/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/math-intrinsics/README.md",
+      "type": "readme",
+      "hash": "6396e5df95c63753476abd3cdb531587",
+      "size": 1884,
+      "lines": 50,
+      "title": "math-intrinsics <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# math-intrinsics <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nES Math-related intrinsics and helpers, robustly cached.\n\n - `abs`\n - `floor`\n - `isFinite`\n - `isInteger`\n - `isNaN`\n - `isNegativeZero`\n - `max`\n - `min`\n - `mod`\n - `pow`\n - `round`\n - `sign`\n - ",
+      "last_modified": "2026-02-08T23:58:56.595547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/encodeurl/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/encodeurl/README.md",
+      "type": "readme",
+      "hash": "66c801e61fa01cd36503b8ad00e0fdeb",
+      "size": 3221,
+      "lines": 109,
+      "title": "Encode URL",
+      "summary": "# Encode URL\n\nEncode a URL to a percent-encoded form, excluding already-encoded sequences.\n\n## Installation\n\n```sh\nnpm install encodeurl\n```\n\n## API\n\n```js\nvar encodeUrl = require('encodeurl')\n```\n\n### encodeUrl(url)\n\nEncode a URL to a percent-encoded form, excluding already-encoded sequences.\n\nThis function accepts a URL and encodes all the non-URL code points (as UTF-8 byte sequences). It will not encode the \"%\" character unless it is not part of a valid sequence (`%20` will be left as-is, but",
+      "last_modified": "2026-02-08T23:58:56.569547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/media-typer/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/media-typer/README.md",
+      "type": "readme",
+      "hash": "6e254e8ccc8ce7eaf9cdd8e5852d7bdf",
+      "size": 2371,
+      "lines": 81,
+      "title": "media-typer",
+      "summary": "# media-typer\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nSimple RFC 6838 media type parser\n\n## Installation\n\n```sh\n$ npm install media-typer\n```\n\n## API\n\n```js\nvar typer = require('media-typer')\n```\n\n### typer.parse(string)\n\n```js\nvar obj = typer.parse('image/svg+xml; charset=utf-8')\n```\n\nParse a m",
+      "last_modified": "2026-02-08T23:58:56.597547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/http-errors/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/http-errors/README.md",
+      "type": "readme",
+      "hash": "f111cd1bb6b0e560a936c4b00a9c3ce4",
+      "size": 5962,
+      "lines": 169,
+      "title": "http-errors",
+      "summary": "# http-errors\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][node-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][ci-image]][ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nCreate HTTP errors for Express, Koa, Connect, etc. with ease.\n\n## Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npm",
+      "last_modified": "2026-02-08T23:58:56.584547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/serve-static/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/serve-static/README.md",
+      "type": "readme",
+      "hash": "8eb080567b88684dcc6729df62f472fb",
+      "size": 7812,
+      "lines": 257,
+      "title": "serve-static",
+      "summary": "# serve-static\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Linux Build][github-actions-ci-image]][github-actions-ci-url]\n[![Windows Build][appveyor-image]][appveyor-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\n## Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/insta",
+      "last_modified": "2026-02-08T23:58:56.616546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/body-parser/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/body-parser/README.md",
+      "type": "readme",
+      "hash": "11e3ebc72bab84f27db6737fa8c1caa6",
+      "size": 19180,
+      "lines": 475,
+      "title": "body-parser",
+      "summary": "# body-parser\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Build Status][ci-image]][ci-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n[![OpenSSF Scorecard Badge][ossf-scorecard-badge]][ossf-scorecard-visualizer]\n\nNode.js body parsing middleware.\n\nParse incoming request bodies in a middleware before your handlers, available\nunder the `req.body` property.\n\n**Note** As `req.body`'s shape is based on user-controlled input, all\nproperties ",
+      "last_modified": "2026-02-08T23:58:56.554547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/es-object-atoms/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/es-object-atoms/README.md",
+      "type": "readme",
+      "hash": "8cbce28d6fedc491a8a4c59564bcfc00",
+      "size": 2603,
+      "lines": 63,
+      "title": "es-object-atoms <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# es-object-atoms <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nES Object-related atoms: Object, ToObject, RequireObjectCoercible.\n\n## Example\n\n```js\nconst assert = require('assert');\n\nconst $Object = require('es-object-atoms');\nconst isObject = require('es-obje",
+      "last_modified": "2026-02-08T23:58:56.571547"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/side-channel-map/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/side-channel-map/README.md",
+      "type": "readme",
+      "hash": "516395c459c68d811b3744215446a04f",
+      "size": 2278,
+      "lines": 62,
+      "title": "side-channel-map <sup>[![Version Badge][npm-version-svg]][package-url]</sup>",
+      "summary": "# side-channel-map <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![github actions][actions-image]][actions-url]\n[![coverage][codecov-image]][codecov-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nStore information about any JS value in a side channel, using a Map.\n\nWarning: if the `key` is an object, this implementation will leak memory until you `delete` it.\nUse [`side-channel`](https://np",
+      "last_modified": "2026-02-08T23:58:56.619546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/utils-merge/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/utils-merge/README.md",
+      "type": "readme",
+      "hash": "9e6a49a7623199d699f595777116296f",
+      "size": 1319,
+      "lines": 34,
+      "title": "utils-merge",
+      "summary": "# utils-merge\n\n[![Version](https://img.shields.io/npm/v/utils-merge.svg?label=version)](https://www.npmjs.com/package/utils-merge)\n[![Build](https://img.shields.io/travis/jaredhanson/utils-merge.svg)](https://travis-ci.org/jaredhanson/utils-merge)\n[![Quality](https://img.shields.io/codeclimate/github/jaredhanson/utils-merge.svg?label=quality)](https://codeclimate.com/github/jaredhanson/utils-merge)\n[![Coverage](https://img.shields.io/coveralls/jaredhanson/utils-merge.svg)](https://coveralls.io/r",
+      "last_modified": "2026-02-08T23:58:56.625546"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/bidi-js/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/bidi-js/README.md",
+      "type": "readme",
+      "hash": "4701f79907b1b0aa984caa0ae71cc46e",
+      "size": 4951,
+      "lines": 133,
+      "title": "bidi-js",
+      "summary": "# bidi-js\n\nThis is a pure JavaScript implementation of the [Unicode Bidirectional Algorithm](https://www.unicode.org/reports/tr9/) version 13.0.0. Its goals, in no particular order, are to be:\n\n* Correct\n* Small\n* Fast\n\n\n## Conformance\n\nThis implementation currently conforms to section [UAX-C1](https://unicode.org/reports/tr9/#C1) of the bidi spec, as verified by running all the provided [conformance tests](https://unicode.org/reports/tr9/#Bidi_Conformance_Testing).\n\n## Compatibility\n\nIt has no ",
+      "last_modified": "2026-02-09T04:30:26.136238"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/html-encoding-sniffer/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/html-encoding-sniffer/README.md",
+      "type": "readme",
+      "hash": "2b2a338789a6db3aedbfbcc008dcce69",
+      "size": 2523,
+      "lines": 42,
+      "title": "Determine the Encoding of a HTML Byte Stream",
+      "summary": "# Determine the Encoding of a HTML Byte Stream\n\nThis package implements the HTML Standard's [encoding sniffing algorithm](https://html.spec.whatwg.org/multipage/syntax.html#encoding-sniffing-algorithm) in all its glory. The most interesting part of this is how it pre-scans the first 1024 bytes in order to search for certain `<meta charset>`-related patterns.\n\n```js\nconst htmlEncodingSniffer = require(\"html-encoding-sniffer\");\nconst fs = require(\"fs\");\n\nconst htmlBytes = fs.readFileSync(\"./html-p",
+      "last_modified": "2026-02-09T04:30:25.921241"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/https-proxy-agent/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/https-proxy-agent/README.md",
+      "type": "readme",
+      "hash": "8960523e6eab8df0634aed2cebf7509c",
+      "size": 2172,
+      "lines": 70,
+      "title": "Untitled",
+      "summary": "https-proxy-agent\n================\n### An HTTP(s) proxy `http.Agent` implementation for HTTPS\n\nThis module provides an `http.Agent` implementation that connects to a specified\nHTTP or HTTPS proxy server, and can be used with the built-in `https` module.\n\nSpecifically, this `Agent` implementation connects to an intermediary \"proxy\"\nserver and issues the [CONNECT HTTP method][CONNECT], which tells the proxy to\nopen a direct TCP connection to the destination server.\n\nSince this agent implements the",
+      "last_modified": "2026-02-09T04:30:25.959240"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/tldts/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/tldts/README.md",
+      "type": "readme",
+      "hash": "7a7ab339de437204a6642bdbad27a20e",
+      "size": 11209,
+      "lines": 327,
+      "title": "tldts - Blazing Fast URL Parsing",
+      "summary": "# tldts - Blazing Fast URL Parsing\n\n`tldts` is a JavaScript library to extract hostnames, domains, public suffixes, top-level domains and subdomains from URLs.\n\n**Features**:\n\n1. Tuned for **performance** (order of 0.1 to 1 \u03bcs per input)\n2. Handles both URLs and hostnames\n3. Full Unicode/IDNA support\n4. Support parsing email addresses\n5. Detect IPv4 and IPv6 addresses\n6. Continuously updated version of the public suffix list\n7. **TypeScript**, ships with `umd`, `esm`, `cjs` bundles and _type def",
+      "last_modified": "2026-02-09T04:30:26.597231"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/decimal.js/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/decimal.js/README.md",
+      "type": "readme",
+      "hash": "e709a09f2df052cb0e2d023da3972d5c",
+      "size": 8328,
+      "lines": 246,
+      "title": "Untitled",
+      "summary": "![decimal.js](https://raw.githubusercontent.com/MikeMcl/decimal.js/gh-pages/decimaljs.png)\n\nAn arbitrary-precision Decimal type for JavaScript.\n\n[![npm version](https://img.shields.io/npm/v/decimal.js.svg)](https://www.npmjs.com/package/decimal.js)\n[![npm downloads](https://img.shields.io/npm/dw/decimal.js)](https://www.npmjs.com/package/decimal.js)\n[![CDNJS](https://img.shields.io/cdnjs/v/decimal.js.svg)](https://cdnjs.com/libraries/decimal.js)\n[![](https://data.jsdelivr.com/v1/package/npm/deci",
+      "last_modified": "2026-02-09T04:30:25.928241"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/cssstyle/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/cssstyle/README.md",
+      "type": "readme",
+      "hash": "e8142efeb921adf41dcb978995effdcb",
+      "size": 559,
+      "lines": 11,
+      "title": "CSSStyleDeclaration",
+      "summary": "# CSSStyleDeclaration\n\nA Node.js implementation of the CSS Object Model [`CSSStyleDeclaration` class](https://drafts.csswg.org/cssom/#the-cssstyledeclaration-interface).\n\n## Background\n\nThis package is an extension of the `CSSStyleDeclaration` class in Nikita Vasilyev's [CSSOM](https://github.com/NV/CSSOM), with added support for modern specifications. The primary use case is for testing browser code in a Node environment.\n\nIt was originally created by Chad Walker, it is now maintained by the js",
+      "last_modified": "2026-02-09T04:30:26.510232"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/whatwg-url/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/whatwg-url/README.md",
+      "type": "readme",
+      "hash": "1911d97ab36e8bcef0767f80cedd6abf",
+      "size": 6965,
+      "lines": 104,
+      "title": "Untitled",
+      "summary": "\ufeff# whatwg-url\n\nwhatwg-url is a full implementation of the WHATWG [URL Standard](https://url.spec.whatwg.org/). It can be used standalone, but it also exposes a lot of the internal algorithms that are useful for integrating a URL parser into a project like [jsdom](https://github.com/jsdom/jsdom).\n\n## Specification conformance\n\nwhatwg-url is currently up to date with the URL spec up to commit [b6b3251](https://github.com/whatwg/url/commit/b6b3251fe911ab33d68fb051efe0e4d39ae4145e).\n\nFor `file:` URL",
+      "last_modified": "2026-02-09T04:30:26.071239"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/undici/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/undici/README.md",
+      "type": "readme",
+      "hash": "ccb5a1240b380700dd3838935daf5c1c",
+      "size": 26214,
+      "lines": 685,
+      "title": "undici",
+      "summary": "# undici\n\n[![Node CI](https://github.com/nodejs/undici/actions/workflows/ci.yml/badge.svg)](https://github.com/nodejs/undici/actions/workflows/nodejs.yml) [![neostandard javascript style](https://img.shields.io/badge/neo-standard-7fffff?style=flat\\&labelColor=ff80ff)](https://github.com/neostandard/neostandard) [![npm version](https://badge.fury.io/js/undici.svg)](https://badge.fury.io/js/undici) [![codecov](https://codecov.io/gh/nodejs/undici/branch/main/graph/badge.svg?token=yZL6LtXkOA)](https",
+      "last_modified": "2026-02-09T04:30:26.676229"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/is-potential-custom-element-name/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/is-potential-custom-element-name/README.md",
+      "type": "readme",
+      "hash": "15351a496b1b7da5fe7db707e630876b",
+      "size": 1320,
+      "lines": 40,
+      "title": "is-potential-custom-element-name [![Build status](https://travis-ci.org/mathiasbynens/is-potential-custom-element-name.svg?branch=master)](https://travis-ci.org/mathiasbynens/is-potential-custom-element-name)",
+      "summary": "# is-potential-custom-element-name [![Build status](https://travis-ci.org/mathiasbynens/is-potential-custom-element-name.svg?branch=master)](https://travis-ci.org/mathiasbynens/is-potential-custom-element-name)\n\n_is-potential-custom-element-name_ checks whether a given string matches [the `PotentialCustomElementName` production](https://html.spec.whatwg.org/multipage/scripting.html#prod-potentialcustomelementname) as defined in the HTML Standard.\n\n## Installation\n\nTo use _is-potential-custom-ele",
+      "last_modified": "2026-02-09T04:30:25.672245"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/lru-cache/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/lru-cache/README.md",
+      "type": "readme",
+      "hash": "310f41631316933c5438eac84bcbf529",
+      "size": 12655,
+      "lines": 383,
+      "title": "lru-cache",
+      "summary": "# lru-cache\n\nA cache object that deletes the least-recently-used items.\n\nSpecify a max number of the most recently used items that you\nwant to keep, and this cache will keep that many of the most\nrecently accessed items.\n\nThis is not primarily a TTL cache, and does not make strong TTL\nguarantees. There is no preemptive pruning of expired items by\ndefault, but you _may_ set a TTL on the cache or on a single\n`set`. If you do so, it will treat expired items as missing, and\ndelete them when fetched.",
+      "last_modified": "2026-02-09T04:30:26.246236"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/mdn-data/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/mdn-data/README.md",
+      "type": "readme",
+      "hash": "3f8e3b810638c70215118996908cbcaa",
+      "size": 2247,
+      "lines": 59,
+      "title": "Welcome to MDN data",
+      "summary": "# Welcome to MDN data\n\n> **Note**\n> We are in the process of deprecating the `mdn/data` package in favor of [`w3c/webref`](https://github.com/w3c/webref).\n> If you depend on this project, let us know in our community [GitHub discussions](https://github.com/mdn/mdn-community/discussions/categories/platform).\n> Thank you.\n\n[![NPM version](https://img.shields.io/npm/v/mdn-data.svg)](https://www.npmjs.com/package/mdn-data)\n[![lint](https://github.com/mdn/data/actions/workflows/lint.yml/badge.svg)](h",
+      "last_modified": "2026-02-09T04:30:26.363234"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/xml-name-validator/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/xml-name-validator/README.md",
+      "type": "readme",
+      "hash": "0081363636a7480bde62d7571842aeb7",
+      "size": 999,
+      "lines": 35,
+      "title": "Validate XML Names and Qualified Names",
+      "summary": "# Validate XML Names and Qualified Names\n\nThis package simply tells you whether or not a string matches the [`Name`](http://www.w3.org/TR/xml/#NT-Name) or [`QName`](http://www.w3.org/TR/xml-names/#NT-QName) productions in the XML Namespaces specification. We use it for implementing the [validate](https://dom.spec.whatwg.org/#validate) algorithm in jsdom, but you can use it for whatever you want.\n\n## Usage\n\nThis package's main module exports two functions, `name()` and `qname()`. Both take a stri",
+      "last_modified": "2026-02-09T04:30:25.843242"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/symbol-tree/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/symbol-tree/README.md",
+      "type": "readme",
+      "hash": "ae261f06d753c202b2970cc1f8410b13",
+      "size": 20924,
+      "lines": 545,
+      "title": "Untitled",
+      "summary": "symbol-tree\n===========\n[![Travis CI Build Status](https://api.travis-ci.org/jsdom/js-symbol-tree.svg?branch=master)](https://travis-ci.org/jsdom/js-symbol-tree) [![Coverage Status](https://coveralls.io/repos/github/jsdom/js-symbol-tree/badge.svg?branch=master)](https://coveralls.io/github/jsdom/js-symbol-tree?branch=master)\n\nTurn any collection of objects into its own efficient tree or linked list using `Symbol`.\n\nThis library has been designed to provide an efficient backing data structure for",
+      "last_modified": "2026-02-09T04:30:25.718244"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/whatwg-mimetype/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/whatwg-mimetype/README.md",
+      "type": "readme",
+      "hash": "cfbf21ad5d61dd90f79d538986736777",
+      "size": 7467,
+      "lines": 132,
+      "title": "Parse, serialize, manipulate, and sniff MIME types",
+      "summary": "# Parse, serialize, manipulate, and sniff MIME types\n\nThis package will parse [MIME types](https://mimesniff.spec.whatwg.org/#understanding-mime-types) into a structured format, which can then be manipulated and serialized:\n\n```js\nconst { MIMEType } = require(\"whatwg-mimetype\");\n\nconst mimeType = new MIMEType(`Text/HTML;Charset=\"utf-8\"`);\n\nconsole.assert(mimeType.toString() === \"text/html;charset=utf-8\");\n\nconsole.assert(mimeType.type === \"text\");\nconsole.assert(mimeType.subtype === \"html\");\ncon",
+      "last_modified": "2026-02-09T04:30:25.980240"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/isomorphic-dompurify/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/isomorphic-dompurify/README.md",
+      "type": "readme",
+      "hash": "42793232256bee95726abeb21d3751c7",
+      "size": 3240,
+      "lines": 69,
+      "title": "Isomorphic DOMPurify",
+      "summary": "# Isomorphic DOMPurify\n[![npm version](https://badge.fury.io/js/isomorphic-dompurify.svg)](https://badge.fury.io/js/isomorphic-dompurify)\n[![Test Status](https://github.com/kkomelin/isomorphic-dompurify/actions/workflows/build_test.yml/badge.svg)](https://github.com/kkomelin/isomorphic-dompurify/actions/workflows/build_test.yml)\n\nThe library makes it possible to seamlessly use [DOMPurify](https://github.com/cure53/DOMPurify) on server and client in the same way.\nIt does nothing by itself except ",
+      "last_modified": "2026-02-09T04:30:25.958240"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/tldts-core/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/tldts-core/README.md",
+      "type": "readme",
+      "hash": "51ae468ef395dd9ac8eae7b79767e543",
+      "size": 105,
+      "lines": 3,
+      "title": "`tldts-core`",
+      "summary": "# `tldts-core`\n\n> core building blocks of tldts, used by both `tldts` and `tldts-experimental` packages.\n",
+      "last_modified": "2026-02-09T04:30:26.297235"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/xmlchars/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/xmlchars/README.md",
+      "type": "readme",
+      "hash": "1796bcb548c0b38ab711880361a400c0",
+      "size": 1373,
+      "lines": 33,
+      "title": "Untitled",
+      "summary": "Utilities for determining whether characters belong to character classes defined\nby the XML specs.\n\n## Organization\n\nIt used to be that the library was contained in a single file and you could just\nimport/require/what-have-you the `xmlchars` module. However, that setup did not\nwork well for people who cared about code optimization. Importing `xmlchars`\nmeant importing *all* of the library and because of the way the code was\ngenerated there was no way to shake the resulting code tree.\n\nDifferent ",
+      "last_modified": "2026-02-09T04:30:26.046239"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/parse5/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/parse5/README.md",
+      "type": "readme",
+      "hash": "34a357735162ff7ed48ae37699bdefb1",
+      "size": 879,
+      "lines": 38,
+      "title": "Untitled",
+      "summary": "<p align=\"center\">\n    <a href=\"https://github.com/inikulin/parse5\">\n        <img src=\"https://raw.github.com/inikulin/parse5/master/media/logo.png\" alt=\"parse5\" />\n    </a>\n</p>\n\n<div align=\"center\">\n<h1>parse5</h1>\n<i><b>HTML parser and serializer.</b></i>\n</div>\n<br>\n\n<div align=\"center\">\n<code>npm install --save parse5</code>\n</div>\n<br>\n\n<p align=\"center\">\n  \ud83d\udcd6 <a href=\"https://parse5.js.org/modules/parse5.html\"><b>Documentation</b></a> \ud83d\udcd6\n</p>\n\n---\n\n<p align=\"center\">\n  <a href=\"https://gith",
+      "last_modified": "2026-02-09T04:30:26.252236"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/http-proxy-agent/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/http-proxy-agent/README.md",
+      "type": "readme",
+      "hash": "4db95f906a370d0f837d4ae4f73a2f80",
+      "size": 1365,
+      "lines": 43,
+      "title": "Untitled",
+      "summary": "http-proxy-agent\n================\n### An HTTP(s) proxy `http.Agent` implementation for HTTP\n\nThis module provides an `http.Agent` implementation that connects to a specified\nHTTP or HTTPS proxy server, and can be used with the built-in `http` module.\n\n__Note:__ For HTTP proxy usage with the `https` module, check out\n[`https-proxy-agent`](../https-proxy-agent).\n\n\nExample\n-------\n\n```ts\nimport * as http from 'http';\nimport { HttpProxyAgent } from 'http-proxy-agent';\n\nconst agent = new HttpProxyAge",
+      "last_modified": "2026-02-09T04:30:25.928241"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/tough-cookie/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/tough-cookie/README.md",
+      "type": "readme",
+      "hash": "5c99385ceefade280d5f17adaf83474f",
+      "size": 8071,
+      "lines": 195,
+      "title": "Tough Cookie &middot; [![RFC6265][rfc6265-badge]][rfc6265-tracker] [![RFC6265bis][rfc6265bis-badge]][rfc6265bis-tracker] [![npm version][npm-badge]][npm-repo] [![CI on Github Actions: salesforce/tough-cookie][ci-badge]][ci-url] ![PRs Welcome][prs-welcome-badge]",
+      "summary": "# Tough Cookie &middot; [![RFC6265][rfc6265-badge]][rfc6265-tracker] [![RFC6265bis][rfc6265bis-badge]][rfc6265bis-tracker] [![npm version][npm-badge]][npm-repo] [![CI on Github Actions: salesforce/tough-cookie][ci-badge]][ci-url] ![PRs Welcome][prs-welcome-badge]\n\nA Node.js implementation of [RFC6265][rfc6265-tracker] for cookie parsing, storage, and retrieval.\n\n## Getting Started\n\nInstall Tough Cookie using [`npm`][npm-repo]:\n\n```shell\nnpm install tough-cookie\n```\n\nor [`yarn`][yarn-repo]:\n\n```s",
+      "last_modified": "2026-02-09T04:30:26.215236"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/css-tree/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/css-tree/README.md",
+      "type": "readme",
+      "hash": "5723267c1a3a1d635e4d518bac56ecb0",
+      "size": 8343,
+      "lines": 192,
+      "title": "CSSTree",
+      "summary": "<img align=\"right\" width=\"111\" height=\"111\" alt=\"CSSTree logo\" src=\"assets/csstree-logo-rounded.svg\" />\n\n# CSSTree\n\n[![NPM version](https://img.shields.io/npm/v/css-tree.svg)](https://www.npmjs.com/package/css-tree)\n[![Build Status](https://github.com/csstree/csstree/actions/workflows/build.yml/badge.svg)](https://github.com/csstree/csstree/actions/workflows/build.yml)\n[![Coverage Status](https://coveralls.io/repos/github/csstree/csstree/badge.svg?branch=master)](https://coveralls.io/github/csst",
+      "last_modified": "2026-02-09T04:30:26.820227"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/saxes/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/saxes/README.md",
+      "type": "readme",
+      "hash": "0b14566c24617b018d6b9fb0036043d1",
+      "size": 15118,
+      "lines": 323,
+      "title": "saxes",
+      "summary": "# saxes\n\nA sax-style non-validating parser for XML.\n\nSaxes is a fork of [sax](https://github.com/isaacs/sax-js) 1.2.4. All mentions\nof sax in this project's documentation are references to sax 1.2.4.\n\nDesigned with [node](http://nodejs.org/) in mind, but should work fine in the\nbrowser or other CommonJS implementations.\n\nSaxes does not support Node versions older than 10.\n\n## Notable Differences from Sax.\n\n* Saxes aims to be much stricter than sax with regards to XML\n  well-formedness. Sax, even",
+      "last_modified": "2026-02-09T04:30:25.909241"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/source-map-js/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/source-map-js/README.md",
+      "type": "readme",
+      "hash": "3b32eb04abd34416748b950a13352efb",
+      "size": 26036,
+      "lines": 765,
+      "title": "Source Map JS",
+      "summary": "# Source Map JS\n\n[![NPM](https://nodei.co/npm/source-map-js.png?downloads=true&downloadRank=true)](https://www.npmjs.com/package/source-map-js)\n\nDifference between original [source-map](https://github.com/mozilla/source-map):\n\n> TL,DR: it's fork of original source-map@0.6, but with perfomance optimizations.\n\nThis journey starts from [source-map@0.7.0](https://github.com/mozilla/source-map/blob/master/CHANGELOG.md#070). Some part of it was rewritten to Rust and WASM and API became async.\n\nIt's st",
+      "last_modified": "2026-02-09T04:30:26.064239"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/punycode/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/punycode/README.md",
+      "type": "readme",
+      "hash": "1aa5f733b4de5c2e17c2013d7f9ff73b",
+      "size": 5620,
+      "lines": 148,
+      "title": "Punycode.js [![punycode on npm](https://img.shields.io/npm/v/punycode)](https://www.npmjs.com/package/punycode) [![](https://data.jsdelivr.com/v1/package/npm/punycode/badge)](https://www.jsdelivr.com/package/npm/punycode)",
+      "summary": "# Punycode.js [![punycode on npm](https://img.shields.io/npm/v/punycode)](https://www.npmjs.com/package/punycode) [![](https://data.jsdelivr.com/v1/package/npm/punycode/badge)](https://www.jsdelivr.com/package/npm/punycode)\n\nPunycode.js is a robust Punycode converter that fully complies to [RFC 3492](https://tools.ietf.org/html/rfc3492) and [RFC 5891](https://tools.ietf.org/html/rfc5891).\n\nThis JavaScript library is the result of comparing, optimizing and documenting different open-source implem",
+      "last_modified": "2026-02-09T04:30:25.826242"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/dompurify/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/dompurify/README.md",
+      "type": "readme",
+      "hash": "30679eae080bc64b13199aa05b5774d8",
+      "size": 28976,
+      "lines": 479,
+      "title": "DOMPurify",
+      "summary": "# DOMPurify\n\n[![npm](https://badge.fury.io/js/dompurify.svg)](http://badge.fury.io/js/dompurify) ![Tests](https://github.com/cure53/DOMPurify/workflows/Build%20and%20Test/badge.svg) [![Downloads](https://img.shields.io/npm/dm/dompurify.svg)](https://www.npmjs.com/package/dompurify) ![npm package minimized gzipped size (select exports)](https://img.shields.io/bundlejs/size/dompurify?color=%233C1&label=gzipped) [![dependents](https://badgen.net/github/dependents-repo/cure53/dompurify?color=green&l",
+      "last_modified": "2026-02-09T04:30:26.297235"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/agent-base/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/agent-base/README.md",
+      "type": "readme",
+      "hash": "3ea3f2974360879a402ddf965bd2fc6c",
+      "size": 2459,
+      "lines": 69,
+      "title": "Untitled",
+      "summary": "agent-base\n==========\n### Turn a function into an [`http.Agent`][http.Agent] instance\n\nThis module is a thin wrapper around the base `http.Agent` class.\n\nIt provides an abstract class that must define a `connect()` function,\nwhich is responsible for creating the underlying socket that the HTTP\nclient requests will use.\n\nThe `connect()` function may return an arbitrary `Duplex` stream, or\nanother `http.Agent` instance to delegate the request to, and may be\nasynchronous (by defining an `async` fun",
+      "last_modified": "2026-02-09T04:30:25.985240"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/w3c-xmlserializer/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/w3c-xmlserializer/README.md",
+      "type": "readme",
+      "hash": "5f139a6b1e9ffdecef4d0c3ee8a43d81",
+      "size": 1689,
+      "lines": 41,
+      "title": "w3c-xmlserializer",
+      "summary": "# w3c-xmlserializer\n\nAn XML serializer that follows the [W3C specification](https://w3c.github.io/DOM-Parsing/).\n\nThis package can be used in Node.js, as long as you feed it a DOM node, e.g. one produced by [jsdom](https://github.com/jsdom/jsdom).\n\n## Basic usage\n\nAssume you have a DOM tree rooted at a node `node`. In Node.js, you could create this using [jsdom](https://github.com/jsdom/jsdom) as follows:\n\n```js\nconst { JSDOM } = require(\"jsdom\");\n\nconst { document } = new JSDOM().window;\nconst ",
+      "last_modified": "2026-02-09T04:30:25.944241"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/webidl-conversions/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/webidl-conversions/README.md",
+      "type": "readme",
+      "hash": "e55776fcd9e42679b002766c8bce1549",
+      "size": 9144,
+      "lines": 99,
+      "title": "Web IDL Type Conversions on JavaScript Values",
+      "summary": "# Web IDL Type Conversions on JavaScript Values\n\nThis package implements, in JavaScript, the algorithms to convert a given JavaScript value according to a given [Web IDL](https://webidl.spec.whatwg.org/) [type](https://webidl.spec.whatwg.org/#idl-types).\n\nThe goal is that you should be able to write code like\n\n```js\n\"use strict\";\nconst conversions = require(\"webidl-conversions\");\n\nfunction doStuff(x, y) {\n    x = conversions[\"boolean\"](x);\n    y = conversions[\"unsigned long\"](y);\n    // actual a",
+      "last_modified": "2026-02-09T04:30:25.932241"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/tr46/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/tr46/README.md",
+      "type": "readme",
+      "hash": "277469114a80837f3891669ef5662ec6",
+      "size": 2188,
+      "lines": 76,
+      "title": "tr46",
+      "summary": "# tr46\n\nAn JavaScript implementation of [Unicode Technical Standard #46: Unicode IDNA Compatibility Processing](https://unicode.org/reports/tr46/).\n\n## API\n\n### `toASCII(domainName[, options])`\n\nConverts a string of Unicode symbols to a case-folded Punycode string of ASCII symbols.\n\nAvailable options:\n\n* [`checkBidi`](#checkbidi)\n* [`checkHyphens`](#checkhyphens)\n* [`checkJoiners`](#checkjoiners)\n* [`ignoreInvalidPunycode`](#ignoreinvalidpunycode)\n* [`transitionalProcessing`](#transitionalproces",
+      "last_modified": "2026-02-09T04:30:26.039239"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/data-urls/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/data-urls/README.md",
+      "type": "readme",
+      "hash": "1507c377ab8ad6b468e7acf30466d6df",
+      "size": 4045,
+      "lines": 66,
+      "title": "Parse `data:` URLs",
+      "summary": "# Parse `data:` URLs\n\nThis package helps you parse `data:` URLs [according to the WHATWG Fetch Standard](https://fetch.spec.whatwg.org/#data-urls):\n\n```js\nconst parseDataURL = require(\"data-urls\");\n\nconst textExample = parseDataURL(\"data:,Hello%2C%20World!\");\nconsole.log(textExample.mimeType.toString()); // \"text/plain;charset=US-ASCII\"\nconsole.log(textExample.body);                // Uint8Array(13) [ 72, 101, 108, 108, 111, 44, \u2026 ]\n\nconst htmlExample = parseDataURL(\"data:text/html,%3Ch1%3EHello",
+      "last_modified": "2026-02-09T04:30:25.958240"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/jsdom/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/jsdom/README.md",
+      "type": "readme",
+      "hash": "9eb5e33966d323e4a43a157ee39f6412",
+      "size": 35407,
+      "lines": 555,
+      "title": "Untitled",
+      "summary": "<h1 align=\"center\">\n    <img width=\"100\" height=\"100\" src=\"logo.svg\" alt=\"\"><br>\n    jsdom\n</h1>\n\njsdom is a pure-JavaScript implementation of many web standards, notably the WHATWG [DOM](https://dom.spec.whatwg.org/) and [HTML](https://html.spec.whatwg.org/multipage/) Standards, for use with Node.js. In general, the goal of the project is to emulate enough of a subset of a web browser to be useful for testing and scraping real-world web applications.\n\nThe latest versions of jsdom require newer ",
+      "last_modified": "2026-02-09T04:30:26.959225"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@asamuzakjp/nwsapi/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@asamuzakjp/nwsapi/README.md",
+      "type": "readme",
+      "hash": "baef6189d0d8bb16c1b82862acfffef1",
+      "size": 5440,
+      "lines": 132,
+      "title": "[NWSAPI](http://dperini.github.io/nwsapi/)",
+      "summary": "# [NWSAPI](http://dperini.github.io/nwsapi/)\n\nFast CSS Selectors API Engine\n\n![](https://img.shields.io/npm/v/nwsapi.svg?colorB=orange&style=flat) ![](https://img.shields.io/github/tag/dperini/nwsapi.svg?style=flat) ![](https://img.shields.io/npm/dw/nwsapi.svg?style=flat) ![](https://img.shields.io/github/issues/dperini/nwsapi.svg?style=flat)\n\nNWSAPI is the development progress of [NWMATCHER](https://github.com/dperini/nwmatcher) aiming at [Selectors Level 4](https://www.w3.org/TR/selectors-4/) ",
+      "last_modified": "2026-02-09T04:30:25.940241"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@asamuzakjp/dom-selector/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@asamuzakjp/dom-selector/README.md",
+      "type": "readme",
+      "hash": "9e82eb4e62033261865a10f12faf4df9",
+      "size": 10209,
+      "lines": 324,
+      "title": "DOM Selector",
+      "summary": "# DOM Selector\n\n[![build](https://github.com/asamuzaK/domSelector/actions/workflows/node.js.yml/badge.svg)](https://github.com/asamuzaK/domSelector/actions/workflows/node.js.yml)\n[![CodeQL](https://github.com/asamuzaK/domSelector/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/asamuzaK/domSelector/actions/workflows/github-code-scanning/codeql)\n[![npm (scoped)](https://img.shields.io/npm/v/@asamuzakjp/dom-selector)](https://www.npmjs.com/package/@asamuzakjp/dom-select",
+      "last_modified": "2026-02-09T04:30:26.241236"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@asamuzakjp/css-color/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@asamuzakjp/css-color/README.md",
+      "type": "readme",
+      "hash": "543778edcaec85eb4624803352206be0",
+      "size": 9649,
+      "lines": 316,
+      "title": "CSS color",
+      "summary": "# CSS color\n\n[![build](https://github.com/asamuzaK/cssColor/actions/workflows/node.js.yml/badge.svg)](https://github.com/asamuzaK/cssColor/actions/workflows/node.js.yml)\n[![CodeQL](https://github.com/asamuzaK/cssColor/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/asamuzaK/cssColor/actions/workflows/github-code-scanning/codeql)\n[![npm (scoped)](https://img.shields.io/npm/v/@asamuzakjp/css-color)](https://www.npmjs.com/package/@asamuzakjp/css-color)\n\nResolve and conv",
+      "last_modified": "2026-02-09T04:30:26.549231"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/https-proxy-agent/node_modules/debug/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/https-proxy-agent/node_modules/debug/README.md",
+      "type": "readme",
+      "hash": "8f734fe8fc520abe8a352c4f76b71ade",
+      "size": 22109,
+      "lines": 481,
+      "title": "debug",
+      "summary": "# debug\n[![OpenCollective](https://opencollective.com/debug/backers/badge.svg)](#backers)\n[![OpenCollective](https://opencollective.com/debug/sponsors/badge.svg)](#sponsors)\n\n<img width=\"647\" src=\"https://user-images.githubusercontent.com/71256/29091486-fa38524c-7c37-11e7-895f-e7ec8e1039b6.png\">\n\nA tiny JavaScript debugging utility modelled after Node.js core's debugging\ntechnique. Works in Node.js and web browsers.\n\n## Installation\n\n```bash\n$ npm install debug\n```\n\n## Usage\n\n`debug` exposes a f",
+      "last_modified": "2026-02-09T04:30:25.876242"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/undici/types/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/undici/types/README.md",
+      "type": "readme",
+      "hash": "d987b53489a02b6227f4d1bc6e81cb3e",
+      "size": 455,
+      "lines": 6,
+      "title": "undici-types",
+      "summary": "# undici-types\n\nThis package is a dual-publish of the [undici](https://www.npmjs.com/package/undici) library types. The `undici` package **still contains types**. This package is for users who _only_ need undici types (such as for `@types/node`). It is published alongside every release of `undici`, so you can always use the same version.\n\n- [GitHub nodejs/undici](https://github.com/nodejs/undici)\n- [Undici Documentation](https://undici.nodejs.org/#/)\n",
+      "last_modified": "2026-02-09T04:30:26.678229"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@exodus/bytes/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@exodus/bytes/README.md",
+      "type": "readme",
+      "hash": "389d4ad9da4a683c2385c39572de0622",
+      "size": 34275,
+      "lines": 902,
+      "title": "@exodus/bytes",
+      "summary": "# @exodus/bytes\n\n[![](https://img.shields.io/npm/v/@exodus/bytes?style=flat-square)](https://npmjs.org/package/@exodus/bytes)\n[![](https://img.shields.io/github/release/ExodusOSS/bytes?style=flat-square&logo=github)](https://github.com/ExodusOSS/bytes/releases)\n[![](https://img.shields.io/npm/dm/@exodus/bytes?style=flat-square)](https://www.npmcharts.com/compare/@exodus/bytes?minimal=true)\n[![](https://img.shields.io/npm/l/@exodus/bytes?style=flat-square&color=blue)](https://github.com/ExodusOSS",
+      "last_modified": "2026-02-09T04:30:26.369234"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/http-proxy-agent/node_modules/debug/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/http-proxy-agent/node_modules/debug/README.md",
+      "type": "readme",
+      "hash": "8f734fe8fc520abe8a352c4f76b71ade",
+      "size": 22109,
+      "lines": 481,
+      "title": "debug",
+      "summary": "# debug\n[![OpenCollective](https://opencollective.com/debug/backers/badge.svg)](#backers)\n[![OpenCollective](https://opencollective.com/debug/sponsors/badge.svg)](#sponsors)\n\n<img width=\"647\" src=\"https://user-images.githubusercontent.com/71256/29091486-fa38524c-7c37-11e7-895f-e7ec8e1039b6.png\">\n\nA tiny JavaScript debugging utility modelled after Node.js core's debugging\ntechnique. Works in Node.js and web browsers.\n\n## Installation\n\n```bash\n$ npm install debug\n```\n\n## Usage\n\n`debug` exposes a f",
+      "last_modified": "2026-02-09T04:30:25.876242"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@types/trusted-types/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@types/trusted-types/README.md",
+      "type": "readme",
+      "hash": "90437e617e57f54aefcf4217099cd5ee",
+      "size": 658,
+      "lines": 15,
+      "title": "Installation",
+      "summary": "# Installation\n> `npm install --save @types/trusted-types`\n\n# Summary\nThis package contains type definitions for trusted-types (https://github.com/WICG/trusted-types).\n\n# Details\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/trusted-types.\n\n### Additional Details\n * Last updated: Mon, 20 Nov 2023 23:36:24 GMT\n * Dependencies: none\n\n# Credits\nThese definitions were written by [Jakub Vrana](https://github.com/vrana), [Damien Engels](https://github.co",
+      "last_modified": "2026-02-09T04:30:25.652245"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@csstools/color-helpers/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@csstools/color-helpers/README.md",
+      "type": "readme",
+      "hash": "dc46d3b52db69170fddbd75ec86312d1",
+      "size": 1629,
+      "lines": 32,
+      "title": "Color Helpers <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">",
+      "summary": "# Color Helpers <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">\n\n[<img alt=\"npm version\" src=\"https://img.shields.io/npm/v/@csstools/color-helpers.svg\" height=\"20\">][npm-url]\n[<img alt=\"Build Status\" src=\"https://github.com/csstools/postcss-plugins/actions/workflows/test.yml/badge.svg?branch=main\" height=\"20\">][cli-url]\n[<img alt=\"Discord\" src=\"https://shields.io/badge/Discord-5865F2?logo=discord&logoColor=white\">][discord]\n\n## Usage\n\nAdd [Color He",
+      "last_modified": "2026-02-09T04:30:25.879242"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-calc/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-calc/README.md",
+      "type": "readme",
+      "hash": "54731294f70d916d79642247337a15d6",
+      "size": 3660,
+      "lines": 132,
+      "title": "CSS Calc <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">",
+      "summary": "# CSS Calc <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">\n\n[<img alt=\"npm version\" src=\"https://img.shields.io/npm/v/@csstools/css-calc.svg\" height=\"20\">][npm-url]\n[<img alt=\"Build Status\" src=\"https://github.com/csstools/postcss-plugins/actions/workflows/test.yml/badge.svg?branch=main\" height=\"20\">][cli-url]\n[<img alt=\"Discord\" src=\"https://shields.io/badge/Discord-5865F2?logo=discord&logoColor=white\">][discord]\n\nImplemented from : https://drafts",
+      "last_modified": "2026-02-09T04:30:25.903241"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-parser-algorithms/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-parser-algorithms/README.md",
+      "type": "readme",
+      "hash": "97314226bce1eedec75f3fe026799875",
+      "size": 3410,
+      "lines": 119,
+      "title": "CSS Parser Algorithms <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">",
+      "summary": "# CSS Parser Algorithms <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">\n\n[<img alt=\"npm version\" src=\"https://img.shields.io/npm/v/@csstools/css-parser-algorithms.svg\" height=\"20\">][npm-url]\n[<img alt=\"Build Status\" src=\"https://github.com/csstools/postcss-plugins/actions/workflows/test.yml/badge.svg?branch=main\" height=\"20\">][cli-url]\n[<img alt=\"Discord\" src=\"https://shields.io/badge/Discord-5865F2?logo=discord&logoColor=white\">][discord]\n\nImpleme",
+      "last_modified": "2026-02-09T04:30:25.888242"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-syntax-patches-for-csstree/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-syntax-patches-for-csstree/README.md",
+      "type": "readme",
+      "hash": "05eeb5af5f6e00b276750656b9b577f9",
+      "size": 1685,
+      "lines": 43,
+      "title": "CSS Syntax Patches For CSSTree <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">",
+      "summary": "# CSS Syntax Patches For CSSTree <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">\n\n[<img alt=\"npm version\" src=\"https://img.shields.io/npm/v/@csstools/css-syntax-patches-for-csstree.svg\" height=\"20\">][npm-url]\n[<img alt=\"Build Status\" src=\"https://github.com/csstools/postcss-plugins/actions/workflows/test.yml/badge.svg?branch=main\" height=\"20\">][cli-url]\n\nPatch [csstree](https://github.com/csstree/csstree) syntax definitions with the latest data fro",
+      "last_modified": "2026-02-09T04:30:26.075239"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-tokenizer/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-tokenizer/README.md",
+      "type": "readme",
+      "hash": "9547843ece6463db0d30776ddf6c63e9",
+      "size": 2474,
+      "lines": 111,
+      "title": "CSS Tokenizer <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">",
+      "summary": "# CSS Tokenizer <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">\n\n[<img alt=\"npm version\" src=\"https://img.shields.io/npm/v/@csstools/css-tokenizer.svg\" height=\"20\">][npm-url]\n[<img alt=\"Build Status\" src=\"https://github.com/csstools/postcss-plugins/actions/workflows/test.yml/badge.svg?branch=main\" height=\"20\">][cli-url]\n[<img alt=\"Discord\" src=\"https://shields.io/badge/Discord-5865F2?logo=discord&logoColor=white\">][discord]\n\nImplemented from : http",
+      "last_modified": "2026-02-09T04:30:25.889241"
+    },
+    "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-color-parser/README.md": {
+      "path": "/root/jarvis-workspace/second-brain/node_modules/@csstools/css-color-parser/README.md",
+      "type": "readme",
+      "hash": "7d04e940ce7d1bed640665b10205f887",
+      "size": 1591,
+      "lines": 37,
+      "title": "CSS Color Parser <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">",
+      "summary": "# CSS Color Parser <img src=\"https://cssdb.org/images/css.svg\" alt=\"for CSS\" width=\"90\" height=\"90\" align=\"right\">\n\n[<img alt=\"npm version\" src=\"https://img.shields.io/npm/v/@csstools/css-color-parser.svg\" height=\"20\">][npm-url]\n[<img alt=\"Build Status\" src=\"https://github.com/csstools/postcss-plugins/actions/workflows/test.yml/badge.svg?branch=main\" height=\"20\">][cli-url]\n[<img alt=\"Discord\" src=\"https://shields.io/badge/Discord-5865F2?logo=discord&logoColor=white\">][discord]\n\n## Usage\n\nAdd [CS",
+      "last_modified": "2026-02-09T04:30:25.888242"
     }
   },
-  "last_scan": "2026-02-04T14:08:09.760061",
+  "last_scan": "2026-02-09T17:32:19.576233",
   "stats": {
-    "total_files": 1203,
+    "total_files": 1352,
     "repos_scanned": 4
   }
 }
